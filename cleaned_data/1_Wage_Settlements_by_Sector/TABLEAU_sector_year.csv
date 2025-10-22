@@ -1,0 +1,634 @@
+Year,Industry,Sector_Type,Number_of_Agreements,Number_of_Employees,Duration_Months_Avg,First_Year_Pct_Adjustment_Avg,Annual_Pct_Adjustment_Avg,Extraction_Date
+2016,All industries,All Sectors,292.0,1194600.0,48.5,0.9,1.4,2025-10-21
+2016,All industries,Private Sector,128.0,247565.0,45.4,1.5,1.5,2025-10-21
+2016,All industries,Public Sector,164.0,947035.0,49.2,0.7,1.3,2025-10-21
+2017,All industries,All Sectors,224.0,868612.0,39.8,1.7,1.7,2025-10-21
+2017,All industries,Private Sector,75.0,193038.0,44.9,2.6,2.0,2025-10-21
+2017,All industries,Public Sector,149.0,675574.0,38.3,1.4,1.7,2025-10-21
+2018,All industries,All Sectors,226.0,761192.0,42.7,1.4,1.4,2025-10-21
+2018,All industries,Private Sector,82.0,220436.0,47.4,2.3,1.9,2025-10-21
+2018,All industries,Public Sector,144.0,540756.0,40.7,1.0,1.2,2025-10-21
+2019,All industries,All Sectors,269.0,684720.0,43.1,1.8,1.8,2025-10-21
+2019,All industries,Private Sector,97.0,187467.0,43.2,2.0,2.1,2025-10-21
+2019,All industries,Public Sector,172.0,497253.0,43.0,1.7,1.7,2025-10-21
+2020,All industries,All Sectors,182.0,809923.0,41.4,1.8,1.9,2025-10-21
+2020,All industries,Private Sector,60.0,139261.0,47.0,2.0,1.7,2025-10-21
+2020,All industries,Public Sector,122.0,670662.0,40.2,1.8,2.0,2025-10-21
+2021,All industries,All Sectors,179.0,1030411.0,42.8,1.8,1.9,2025-10-21
+2021,All industries,Private Sector,63.0,225105.0,48.6,2.0,2.0,2025-10-21
+2021,All industries,Public Sector,116.0,805306.0,41.2,1.8,1.9,2025-10-21
+2022,All industries,All Sectors,147.0,706936.0,42.5,2.8,2.7,2025-10-21
+2022,All industries,Private Sector,42.0,139126.0,45.1,4.2,3.6,2025-10-21
+2022,All industries,Public Sector,105.0,567810.0,41.9,2.5,2.5,2025-10-21
+2023,All industries,All Sectors,159.0,720010.0,42.9,3.7,3.4,2025-10-21
+2023,All industries,Private Sector,52.0,121682.0,41.6,6.5,4.3,2025-10-21
+2023,All industries,Public Sector,107.0,598328.0,43.2,3.1,3.2,2025-10-21
+2024,All industries,All Sectors,145.0,1115557.0,50.8,4.7,3.4,2025-10-21
+2024,All industries,Private Sector,34.0,72914.0,40.7,4.2,3.5,2025-10-21
+2024,All industries,Public Sector,111.0,1042643.0,51.5,4.8,3.3,2025-10-21
+2025,All industries,All Sectors,51.0,299241.0,47.6,5.8,3.9,2025-10-21
+2025,All industries,Private Sector,22.0,181228.0,48.2,7.2,4.3,2025-10-21
+2025,All industries,Public Sector,29.0,118013.0,46.6,3.6,3.2,2025-10-21
+2016,Primary industries,All Sectors,8.0,14090.0,32.1,0.2,0.7,2025-10-21
+2016,Primary industries,Private Sector,8.0,14090.0,32.1,0.2,0.7,2025-10-21
+2017,Primary industries,All Sectors,10.0,13602.0,36.8,0.7,0.9,2025-10-21
+2017,Primary industries,Private Sector,10.0,13602.0,36.8,0.7,0.9,2025-10-21
+2018,Primary industries,All Sectors,2.0,2213.0,50.9,8.7,2.7,2025-10-21
+2018,Primary industries,Private Sector,2.0,2213.0,50.9,8.7,2.7,2025-10-21
+2019,Primary industries,All Sectors,4.0,5630.0,55.7,2.3,2.4,2025-10-21
+2019,Primary industries,Private Sector,4.0,5630.0,55.7,2.3,2.4,2025-10-21
+2020,Primary industries,All Sectors,1.0,650.0,64.8,2.5,2.2,2025-10-21
+2020,Primary industries,Private Sector,1.0,650.0,64.8,2.5,2.2,2025-10-21
+2021,Primary industries,All Sectors,3.0,3139.0,44.5,1.4,2.4,2025-10-21
+2021,Primary industries,Private Sector,3.0,3139.0,44.5,1.4,2.4,2025-10-21
+2022,Primary industries,All Sectors,1.0,1011.0,60.0,2.0,2.0,2025-10-21
+2022,Primary industries,Private Sector,1.0,1011.0,60.0,2.0,2.0,2025-10-21
+2023,Primary industries,All Sectors,1.0,750.0,48.0,3.5,2.9,2025-10-21
+2023,Primary industries,Private Sector,1.0,750.0,48.0,3.5,2.9,2025-10-21
+2024,Primary industries,All Sectors,1.0,3317.0,36.0,5.0,4.0,2025-10-21
+2024,Primary industries,Private Sector,1.0,3317.0,36.0,5.0,4.0,2025-10-21
+2025,Primary industries,All Sectors,1.0,536.0,36.0,3.0,3.0,2025-10-21
+2025,Primary industries,Private Sector,1.0,536.0,36.0,3.0,3.0,2025-10-21
+2016,Utilities,All Sectors,8.0,5800.0,48.9,0.8,1.4,2025-10-21
+2016,Utilities,Private Sector,2.0,1490.0,28.0,0.5,1.1,2025-10-21
+2016,Utilities,Public Sector,6.0,4310.0,56.2,0.8,1.5,2025-10-21
+2017,Utilities,All Sectors,3.0,2920.0,29.4,1.6,1.7,2025-10-21
+2017,Utilities,Private Sector,2.0,2230.0,27.4,1.7,1.8,2025-10-21
+2017,Utilities,Public Sector,1.0,690.0,36.0,1.2,1.7,2025-10-21
+2018,Utilities,All Sectors,11.0,29176.0,44.9,1.3,2.0,2025-10-21
+2018,Utilities,Private Sector,3.0,4220.0,48.3,2.0,2.1,2025-10-21
+2018,Utilities,Public Sector,8.0,24956.0,44.3,1.2,2.0,2025-10-21
+2019,Utilities,All Sectors,12.0,19730.0,36.0,1.8,2.1,2025-10-21
+2019,Utilities,Private Sector,4.0,4580.0,38.2,2.0,1.8,2025-10-21
+2019,Utilities,Public Sector,8.0,15150.0,35.4,1.7,2.2,2025-10-21
+2020,Utilities,All Sectors,5.0,12606.0,44.3,1.5,1.9,2025-10-21
+2020,Utilities,Public Sector,5.0,12606.0,44.3,1.5,1.9,2025-10-21
+2021,Utilities,All Sectors,8.0,17469.0,27.5,1.1,1.1,2025-10-21
+2021,Utilities,Private Sector,2.0,1690.0,43.7,0.6,1.5,2025-10-21
+2021,Utilities,Public Sector,6.0,15779.0,25.8,1.1,1.1,2025-10-21
+2022,Utilities,All Sectors,4.0,3055.0,44.7,0.4,1.6,2025-10-21
+2022,Utilities,Public Sector,4.0,3055.0,44.7,0.4,1.6,2025-10-21
+2023,Utilities,All Sectors,8.0,19154.0,29.4,3.9,3.8,2025-10-21
+2023,Utilities,Private Sector,2.0,2258.0,36.0,2.9,2.7,2025-10-21
+2023,Utilities,Public Sector,6.0,16896.0,28.6,4.1,4.0,2025-10-21
+2024,Utilities,All Sectors,3.0,3361.0,31.9,3.3,3.0,2025-10-21
+2024,Utilities,Private Sector,1.0,1151.0,24.0,4.0,3.7,2025-10-21
+2024,Utilities,Public Sector,2.0,2210.0,36.0,3.0,2.7,2025-10-21
+2025,Utilities,All Sectors,2.0,3280.0,52.8,2.9,3.5,2025-10-21
+2025,Utilities,Private Sector,1.0,980.0,36.0,2.8,3.5,2025-10-21
+2025,Utilities,Public Sector,1.0,2300.0,60.0,3.0,3.5,2025-10-21
+2016,Construction,All Sectors,53.0,112580.0,36.7,2.0,1.9,2025-10-21
+2016,Construction,Private Sector,53.0,112580.0,36.7,2.0,1.9,2025-10-21
+2017,Construction,All Sectors,16.0,97270.0,44.5,3.4,2.0,2025-10-21
+2017,Construction,Private Sector,16.0,97270.0,44.5,3.4,2.0,2025-10-21
+2018,Construction,All Sectors,16.0,93740.0,46.9,2.1,1.5,2025-10-21
+2018,Construction,Private Sector,16.0,93740.0,46.9,2.1,1.5,2025-10-21
+2019,Construction,All Sectors,44.0,109945.0,36.6,2.0,2.1,2025-10-21
+2019,Construction,Private Sector,44.0,109945.0,36.6,2.0,2.1,2025-10-21
+2020,Construction,All Sectors,10.0,20042.0,44.5,0.8,1.0,2025-10-21
+2020,Construction,Private Sector,10.0,20042.0,44.5,0.8,1.0,2025-10-21
+2021,Construction,All Sectors,9.0,149177.0,47.9,2.0,2.0,2025-10-21
+2021,Construction,Private Sector,9.0,149177.0,47.9,2.0,2.0,2025-10-21
+2022,Construction,All Sectors,8.0,58510.0,35.7,4.6,4.4,2025-10-21
+2022,Construction,Private Sector,8.0,58510.0,35.7,4.6,4.4,2025-10-21
+2023,Construction,All Sectors,9.0,25701.0,27.8,8.2,5.9,2025-10-21
+2023,Construction,Private Sector,9.0,25701.0,27.8,8.2,5.9,2025-10-21
+2024,Construction,All Sectors,1.0,700.0,48.0,2.8,2.6,2025-10-21
+2024,Construction,Private Sector,1.0,700.0,48.0,2.8,2.6,2025-10-21
+2025,Construction,All Sectors,9.0,163584.0,48.0,7.4,4.3,2025-10-21
+2025,Construction,Private Sector,9.0,163584.0,48.0,7.4,4.3,2025-10-21
+2016,Manufacturing,All Sectors,29.0,43197.0,51.0,1.9,1.4,2025-10-21
+2016,Manufacturing,Private Sector,28.0,42677.0,51.1,1.9,1.4,2025-10-21
+2016,Manufacturing,Public Sector,1.0,520.0,48.0,1.7,1.6,2025-10-21
+2017,Manufacturing,All Sectors,10.0,10440.0,48.3,1.5,1.4,2025-10-21
+2017,Manufacturing,Private Sector,10.0,10440.0,48.3,1.5,1.4,2025-10-21
+2018,Manufacturing,All Sectors,13.0,13488.0,51.9,2.2,1.9,2025-10-21
+2018,Manufacturing,Private Sector,13.0,13488.0,51.9,2.2,1.9,2025-10-21
+2019,Manufacturing,All Sectors,16.0,17760.0,61.1,2.0,2.2,2025-10-21
+2019,Manufacturing,Private Sector,15.0,16980.0,61.7,2.0,2.2,2025-10-21
+2019,Manufacturing,Public Sector,1.0,780.0,48.0,2.0,1.7,2025-10-21
+2020,Manufacturing,All Sectors,14.0,39945.0,40.3,3.2,2.1,2025-10-21
+2020,Manufacturing,Private Sector,14.0,39945.0,40.3,3.2,2.1,2025-10-21
+2021,Manufacturing,All Sectors,15.0,14707.0,51.2,4.5,2.3,2025-10-21
+2021,Manufacturing,Private Sector,15.0,14707.0,51.2,4.5,2.3,2025-10-21
+2022,Manufacturing,All Sectors,8.0,12376.0,52.3,9.0,3.9,2025-10-21
+2022,Manufacturing,Private Sector,8.0,12376.0,52.3,9.0,3.9,2025-10-21
+2023,Manufacturing,All Sectors,9.0,22886.0,37.3,8.9,4.9,2025-10-21
+2023,Manufacturing,Private Sector,9.0,22886.0,37.3,8.9,4.9,2025-10-21
+2024,Manufacturing,All Sectors,7.0,8804.0,41.9,10.4,6.1,2025-10-21
+2024,Manufacturing,Private Sector,7.0,8804.0,41.9,10.4,6.1,2025-10-21
+2025,Manufacturing,All Sectors,1.0,2400.0,72.0,4.0,3.2,2025-10-21
+2025,Manufacturing,Private Sector,1.0,2400.0,72.0,4.0,3.2,2025-10-21
+2016,Wholesale and retail trade,All Sectors,9.0,24215.0,60.4,1.4,1.3,2025-10-21
+2016,Wholesale and retail trade,Private Sector,8.0,23420.0,60.4,1.4,1.3,2025-10-21
+2016,Wholesale and retail trade,Public Sector,1.0,795.0,60.0,0.5,1.5,2025-10-21
+2017,Wholesale and retail trade,All Sectors,7.0,14550.0,47.5,1.7,1.9,2025-10-21
+2017,Wholesale and retail trade,Private Sector,6.0,7560.0,47.0,1.9,2.0,2025-10-21
+2017,Wholesale and retail trade,Public Sector,1.0,6990.0,48.0,1.5,1.9,2025-10-21
+2018,Wholesale and retail trade,All Sectors,10.0,20373.0,52.8,0.9,1.4,2025-10-21
+2018,Wholesale and retail trade,Private Sector,8.0,18913.0,53.5,0.9,1.5,2025-10-21
+2018,Wholesale and retail trade,Public Sector,2.0,1460.0,42.7,0.1,0.3,2025-10-21
+2019,Wholesale and retail trade,All Sectors,11.0,25528.0,58.1,1.2,1.7,2025-10-21
+2019,Wholesale and retail trade,Private Sector,8.0,18450.0,54.0,1.1,1.8,2025-10-21
+2019,Wholesale and retail trade,Public Sector,3.0,7078.0,68.7,1.3,1.5,2025-10-21
+2020,Wholesale and retail trade,All Sectors,9.0,13811.0,75.5,0.9,1.0,2025-10-21
+2020,Wholesale and retail trade,Private Sector,8.0,13311.0,75.7,0.9,1.0,2025-10-21
+2020,Wholesale and retail trade,Public Sector,1.0,500.0,72.0,1.0,1.2,2025-10-21
+2021,Wholesale and retail trade,All Sectors,10.0,24770.0,55.8,1.5,1.4,2025-10-21
+2021,Wholesale and retail trade,Private Sector,9.0,23970.0,55.3,1.4,1.3,2025-10-21
+2021,Wholesale and retail trade,Public Sector,1.0,800.0,72.0,5.7,3.2,2025-10-21
+2022,Wholesale and retail trade,All Sectors,3.0,10577.0,43.5,7.9,3.1,2025-10-21
+2022,Wholesale and retail trade,Private Sector,1.0,2800.0,61.0,0.0,0.3,2025-10-21
+2022,Wholesale and retail trade,Public Sector,2.0,7777.0,37.2,10.8,4.1,2025-10-21
+2023,Wholesale and retail trade,All Sectors,4.0,13379.0,57.5,8.9,4.0,2025-10-21
+2023,Wholesale and retail trade,Private Sector,3.0,11979.0,60.0,9.8,4.0,2025-10-21
+2023,Wholesale and retail trade,Public Sector,1.0,1400.0,36.0,2.0,4.0,2025-10-21
+2024,Wholesale and retail trade,All Sectors,1.0,10229.0,36.0,3.0,2.6,2025-10-21
+2024,Wholesale and retail trade,Public Sector,1.0,10229.0,36.0,3.0,2.6,2025-10-21
+2025,Wholesale and retail trade,All Sectors,2.0,5825.0,70.2,6.1,3.4,2025-10-21
+2025,Wholesale and retail trade,Private Sector,1.0,878.0,60.0,6.7,3.9,2025-10-21
+2025,Wholesale and retail trade,Public Sector,1.0,4947.0,72.0,6.0,3.3,2025-10-21
+2016,Transportation,All Sectors,18.0,85950.0,42.0,1.0,1.4,2025-10-21
+2016,Transportation,Private Sector,9.0,15850.0,91.4,1.0,1.6,2025-10-21
+2016,Transportation,Public Sector,9.0,70100.0,30.8,1.0,1.3,2025-10-21
+2017,Transportation,All Sectors,19.0,28362.0,46.8,1.8,2.1,2025-10-21
+2017,Transportation,Private Sector,13.0,21660.0,49.0,1.8,2.2,2025-10-21
+2017,Transportation,Public Sector,6.0,6702.0,39.8,1.5,1.8,2025-10-21
+2018,Transportation,All Sectors,16.0,28882.0,44.0,2.0,2.2,2025-10-21
+2018,Transportation,Private Sector,8.0,10100.0,44.3,2.5,2.4,2025-10-21
+2018,Transportation,Public Sector,8.0,18782.0,43.9,1.8,2.1,2025-10-21
+2019,Transportation,All Sectors,20.0,41980.0,54.4,2.2,2.4,2025-10-21
+2019,Transportation,Private Sector,12.0,22540.0,52.8,2.4,2.7,2025-10-21
+2019,Transportation,Public Sector,8.0,19440.0,56.2,1.9,2.1,2025-10-21
+2020,Transportation,All Sectors,22.0,98811.0,51.5,2.1,2.3,2025-10-21
+2020,Transportation,Private Sector,12.0,27233.0,55.0,2.7,2.6,2025-10-21
+2020,Transportation,Public Sector,10.0,71578.0,50.1,1.8,2.2,2025-10-21
+2021,Transportation,All Sectors,14.0,57058.0,40.6,2.1,2.5,2025-10-21
+2021,Transportation,Private Sector,9.0,9853.0,46.1,2.7,2.1,2025-10-21
+2021,Transportation,Public Sector,5.0,47205.0,39.5,2.0,2.6,2025-10-21
+2022,Transportation,All Sectors,17.0,42278.0,42.0,3.3,2.9,2025-10-21
+2022,Transportation,Private Sector,10.0,22728.0,50.3,3.7,3.2,2025-10-21
+2022,Transportation,Public Sector,7.0,19550.0,32.3,2.8,2.6,2025-10-21
+2023,Transportation,All Sectors,24.0,44872.0,38.1,4.9,3.9,2025-10-21
+2023,Transportation,Private Sector,15.0,32557.0,34.7,5.9,4.4,2025-10-21
+2023,Transportation,Public Sector,9.0,12315.0,47.1,2.4,2.3,2025-10-21
+2024,Transportation,All Sectors,11.0,24201.0,41.5,5.0,4.0,2025-10-21
+2024,Transportation,Private Sector,9.0,12049.0,47.2,5.3,3.7,2025-10-21
+2024,Transportation,Public Sector,2.0,12152.0,36.0,4.8,4.3,2025-10-21
+2025,Transportation,All Sectors,7.0,11782.0,43.0,4.2,3.6,2025-10-21
+2025,Transportation,Private Sector,5.0,5790.0,45.2,5.4,4.1,2025-10-21
+2025,Transportation,Public Sector,2.0,5992.0,40.9,3.0,3.1,2025-10-21
+2016,Information and culture,All Sectors,5.0,14578.0,56.0,0.7,1.2,2025-10-21
+2016,Information and culture,Private Sector,3.0,8528.0,67.0,0.2,1.1,2025-10-21
+2016,Information and culture,Public Sector,2.0,6050.0,40.5,1.6,1.4,2025-10-21
+2017,Information and culture,All Sectors,6.0,8936.0,47.3,1.6,1.8,2025-10-21
+2017,Information and culture,Private Sector,4.0,7536.0,47.2,1.5,1.8,2025-10-21
+2017,Information and culture,Public Sector,2.0,1400.0,48.0,1.7,1.8,2025-10-21
+2018,Information and culture,All Sectors,8.0,25890.0,45.5,2.6,2.4,2025-10-21
+2018,Information and culture,Private Sector,7.0,24240.0,43.6,2.3,2.5,2025-10-21
+2018,Information and culture,Public Sector,1.0,1650.0,73.0,5.7,2.1,2025-10-21
+2019,Information and culture,All Sectors,6.0,10782.0,53.8,1.2,1.3,2025-10-21
+2019,Information and culture,Private Sector,3.0,2432.0,39.7,2.3,1.9,2025-10-21
+2019,Information and culture,Public Sector,3.0,8350.0,57.9,0.8,1.1,2025-10-21
+2020,Information and culture,All Sectors,2.0,3450.0,43.9,1.2,1.3,2025-10-21
+2020,Information and culture,Private Sector,1.0,1200.0,36.1,1.5,1.5,2025-10-21
+2020,Information and culture,Public Sector,1.0,2250.0,48.0,1.0,1.1,2025-10-21
+2021,Information and culture,All Sectors,5.0,8228.0,57.5,1.7,1.9,2025-10-21
+2021,Information and culture,Private Sector,4.0,7410.0,59.8,1.7,1.9,2025-10-21
+2021,Information and culture,Public Sector,1.0,818.0,36.0,2.0,2.0,2025-10-21
+2022,Information and culture,All Sectors,9.0,15770.0,47.8,2.6,2.4,2025-10-21
+2022,Information and culture,Private Sector,5.0,10990.0,49.1,3.1,2.8,2025-10-21
+2022,Information and culture,Public Sector,4.0,4780.0,44.7,1.3,1.5,2025-10-21
+2023,Information and culture,All Sectors,4.0,10961.0,57.3,1.6,2.5,2025-10-21
+2023,Information and culture,Private Sector,4.0,10961.0,57.3,1.6,2.5,2025-10-21
+2024,Information and culture,All Sectors,6.0,8605.0,40.7,3.2,2.0,2025-10-21
+2024,Information and culture,Private Sector,4.0,3320.0,45.8,3.4,2.5,2025-10-21
+2024,Information and culture,Public Sector,2.0,5285.0,37.6,3.1,1.7,2025-10-21
+2025,Information and culture,All Sectors,1.0,2500.0,60.0,4.0,3.4,2025-10-21
+2025,Information and culture,Private Sector,1.0,2500.0,60.0,4.0,3.4,2025-10-21
+2016,Finance and professional services,All Sectors,8.0,5980.0,41.7,1.9,1.7,2025-10-21
+2016,Finance and professional services,Private Sector,3.0,1820.0,33.8,1.6,1.4,2025-10-21
+2016,Finance and professional services,Public Sector,5.0,4160.0,45.2,2.0,1.8,2025-10-21
+2017,Finance and professional services,All Sectors,11.0,20770.0,53.3,2.0,2.2,2025-10-21
+2017,Finance and professional services,Private Sector,8.0,18420.0,54.7,2.1,2.3,2025-10-21
+2017,Finance and professional services,Public Sector,3.0,2350.0,42.8,1.3,1.4,2025-10-21
+2018,Finance and professional services,All Sectors,17.0,44852.0,47.9,2.7,2.1,2025-10-21
+2018,Finance and professional services,Private Sector,15.0,42652.0,48.1,2.8,2.1,2025-10-21
+2018,Finance and professional services,Public Sector,2.0,2200.0,44.4,1.5,1.7,2025-10-21
+2019,Finance and professional services,All Sectors,6.0,5820.0,47.1,2.1,1.8,2025-10-21
+2019,Finance and professional services,Private Sector,2.0,1880.0,48.0,0.5,1.2,2025-10-21
+2019,Finance and professional services,Public Sector,4.0,3940.0,46.7,2.9,2.0,2025-10-21
+2020,Finance and professional services,All Sectors,9.0,25148.0,45.8,1.3,1.6,2025-10-21
+2020,Finance and professional services,Private Sector,7.0,18938.0,47.1,1.3,1.4,2025-10-21
+2020,Finance and professional services,Public Sector,2.0,6210.0,42.0,1.5,2.2,2025-10-21
+2021,Finance and professional services,All Sectors,6.0,7582.0,43.2,0.5,2.1,2025-10-21
+2021,Finance and professional services,Private Sector,6.0,7582.0,43.2,0.5,2.1,2025-10-21
+2022,Finance and professional services,All Sectors,9.0,23855.0,53.6,1.8,2.1,2025-10-21
+2022,Finance and professional services,Private Sector,5.0,20335.0,55.5,1.8,2.2,2025-10-21
+2022,Finance and professional services,Public Sector,4.0,3520.0,42.6,1.3,1.5,2025-10-21
+2023,Finance and professional services,All Sectors,4.0,3619.0,45.8,7.0,4.3,2025-10-21
+2023,Finance and professional services,Private Sector,4.0,3619.0,45.8,7.0,4.3,2025-10-21
+2024,Finance and professional services,All Sectors,7.0,24715.0,35.1,3.4,3.7,2025-10-21
+2024,Finance and professional services,Private Sector,6.0,23695.0,34.6,3.3,3.7,2025-10-21
+2024,Finance and professional services,Public Sector,1.0,1020.0,48.0,4.8,3.1,2025-10-21
+2025,Finance and professional services,All Sectors,2.0,2386.0,36.0,4.2,4.2,2025-10-21
+2025,Finance and professional services,Private Sector,1.0,1550.0,36.0,4.2,4.6,2025-10-21
+2025,Finance and professional services,Public Sector,1.0,836.0,36.0,4.0,3.5,2025-10-21
+2016,"Education, health, and social services",All Sectors,98.0,697660.0,49.7,0.5,1.2,2025-10-21
+2016,"Education, health, and social services",Private Sector,9.0,23100.0,33.1,0.6,0.7,2025-10-21
+2016,"Education, health, and social services",Public Sector,89.0,674560.0,50.2,0.5,1.3,2025-10-21
+2017,"Education, health, and social services",All Sectors,80.0,398216.0,30.5,1.5,1.7,2025-10-21
+2017,"Education, health, and social services",Private Sector,2.0,8770.0,24.0,2.0,2.1,2025-10-21
+2017,"Education, health, and social services",Public Sector,78.0,389446.0,30.6,1.5,1.7,2025-10-21
+2018,"Education, health, and social services",All Sectors,77.0,330519.0,39.0,0.8,1.0,2025-10-21
+2018,"Education, health, and social services",Private Sector,5.0,5860.0,41.6,1.3,1.3,2025-10-21
+2018,"Education, health, and social services",Public Sector,72.0,324659.0,39.0,0.8,1.0,2025-10-21
+2019,"Education, health, and social services",All Sectors,90.0,294965.0,38.3,1.3,1.6,2025-10-21
+2019,"Education, health, and social services",Private Sector,3.0,3230.0,32.9,0.8,1.0,2025-10-21
+2019,"Education, health, and social services",Public Sector,87.0,291735.0,38.4,1.3,1.6,2025-10-21
+2020,"Education, health, and social services",All Sectors,74.0,385643.0,36.4,1.5,1.9,2025-10-21
+2020,"Education, health, and social services",Private Sector,4.0,15904.0,30.9,0.9,1.2,2025-10-21
+2020,"Education, health, and social services",Public Sector,70.0,369739.0,36.6,1.6,1.9,2025-10-21
+2021,"Education, health, and social services",All Sectors,69.0,584584.0,38.9,1.8,1.9,2025-10-21
+2021,"Education, health, and social services",Private Sector,2.0,2741.0,35.2,1.2,3.4,2025-10-21
+2021,"Education, health, and social services",Public Sector,67.0,581843.0,38.9,1.8,1.9,2025-10-21
+2022,"Education, health, and social services",All Sectors,59.0,404495.0,42.9,2.5,2.6,2025-10-21
+2022,"Education, health, and social services",Private Sector,2.0,7970.0,49.8,3.8,3.7,2025-10-21
+2022,"Education, health, and social services",Public Sector,57.0,396525.0,42.8,2.4,2.5,2025-10-21
+2023,"Education, health, and social services",All Sectors,61.0,315067.0,41.4,3.7,3.2,2025-10-21
+2023,"Education, health, and social services",Private Sector,5.0,10971.0,66.4,1.2,1.5,2025-10-21
+2023,"Education, health, and social services",Public Sector,56.0,304096.0,40.5,3.8,3.3,2025-10-21
+2024,"Education, health, and social services",All Sectors,76.0,904206.0,53.2,4.9,3.3,2025-10-21
+2024,"Education, health, and social services",Private Sector,3.0,18567.0,45.1,1.6,1.9,2025-10-21
+2024,"Education, health, and social services",Public Sector,73.0,885639.0,53.3,5.0,3.4,2025-10-21
+2025,"Education, health, and social services",All Sectors,17.0,72390.0,44.8,3.2,3.1,2025-10-21
+2025,"Education, health, and social services",Private Sector,1.0,1404.0,72.0,0.0,1.8,2025-10-21
+2025,"Education, health, and social services",Public Sector,16.0,70986.0,44.2,3.3,3.1,2025-10-21
+2016,Entertainment and hospitality,All Sectors,5.0,4010.0,45.9,1.7,1.7,2025-10-21
+2016,Entertainment and hospitality,Private Sector,5.0,4010.0,45.9,1.7,1.7,2025-10-21
+2017,Entertainment and hospitality,All Sectors,5.0,6350.0,46.7,2.0,1.9,2025-10-21
+2017,Entertainment and hospitality,Private Sector,4.0,5550.0,51.7,2.2,2.2,2025-10-21
+2017,Entertainment and hospitality,Public Sector,1.0,800.0,12.0,0.0,0.0,2025-10-21
+2018,Entertainment and hospitality,All Sectors,9.0,7940.0,45.6,2.5,2.4,2025-10-21
+2018,Entertainment and hospitality,Private Sector,5.0,5010.0,43.3,2.8,3.0,2025-10-21
+2018,Entertainment and hospitality,Public Sector,4.0,2930.0,49.5,1.9,1.5,2025-10-21
+2019,Entertainment and hospitality,All Sectors,2.0,1800.0,36.0,7.1,5.0,2025-10-21
+2019,Entertainment and hospitality,Private Sector,2.0,1800.0,36.0,7.1,5.0,2025-10-21
+2020,Entertainment and hospitality,All Sectors,3.0,2038.0,31.3,1.6,1.7,2025-10-21
+2020,Entertainment and hospitality,Private Sector,3.0,2038.0,31.3,1.6,1.7,2025-10-21
+2021,Entertainment and hospitality,All Sectors,4.0,4836.0,36.7,0.1,1.0,2025-10-21
+2021,Entertainment and hospitality,Private Sector,4.0,4836.0,36.7,0.1,1.0,2025-10-21
+2022,Entertainment and hospitality,All Sectors,2.0,2406.0,40.0,4.8,3.7,2025-10-21
+2022,Entertainment and hospitality,Private Sector,2.0,2406.0,40.0,4.8,3.7,2025-10-21
+2024,Entertainment and hospitality,All Sectors,2.0,1311.0,30.9,7.1,5.1,2025-10-21
+2024,Entertainment and hospitality,Private Sector,2.0,1311.0,30.9,7.1,5.1,2025-10-21
+2025,Entertainment and hospitality,All Sectors,1.0,1606.0,24.0,10.8,10.2,2025-10-21
+2025,Entertainment and hospitality,Private Sector,1.0,1606.0,24.0,10.8,10.2,2025-10-21
+2016,Public administration,All Sectors,51.0,186540.0,52.8,1.3,1.5,2025-10-21
+2016,Public administration,Public Sector,51.0,186540.0,52.8,1.3,1.5,2025-10-21
+2017,Public administration,All Sectors,57.0,267196.0,49.1,1.4,1.6,2025-10-21
+2017,Public administration,Public Sector,57.0,267196.0,49.1,1.4,1.6,2025-10-21
+2018,Public administration,All Sectors,47.0,164119.0,42.7,1.1,1.2,2025-10-21
+2018,Public administration,Public Sector,47.0,164119.0,42.7,1.1,1.2,2025-10-21
+2019,Public administration,All Sectors,58.0,150780.0,48.8,2.4,1.9,2025-10-21
+2019,Public administration,Public Sector,58.0,150780.0,48.8,2.4,1.9,2025-10-21
+2020,Public administration,All Sectors,33.0,207779.0,42.7,2.3,1.9,2025-10-21
+2020,Public administration,Public Sector,33.0,207779.0,42.7,2.3,1.9,2025-10-21
+2021,Public administration,All Sectors,36.0,158861.0,51.4,1.7,1.9,2025-10-21
+2021,Public administration,Public Sector,36.0,158861.0,51.4,1.7,1.9,2025-10-21
+2022,Public administration,All Sectors,27.0,132603.0,40.7,2.4,2.3,2025-10-21
+2022,Public administration,Public Sector,27.0,132603.0,40.7,2.4,2.3,2025-10-21
+2023,Public administration,All Sectors,35.0,263621.0,47.1,2.3,3.0,2025-10-21
+2023,Public administration,Public Sector,35.0,263621.0,47.1,2.3,3.0,2025-10-21
+2024,Public administration,All Sectors,30.0,126108.0,42.1,3.9,3.3,2025-10-21
+2024,Public administration,Public Sector,30.0,126108.0,42.1,3.9,3.3,2025-10-21
+2025,Public administration,All Sectors,8.0,32952.0,48.2,4.2,3.3,2025-10-21
+2025,Public administration,Public Sector,8.0,32952.0,48.2,4.2,3.3,2025-10-21
+2016,All jurisdictions,All Sectors,292.0,1194600.0,48.5,0.9,1.4,2025-10-21
+2016,All jurisdictions,Private Sector,128.0,247565.0,45.4,1.5,1.5,2025-10-21
+2016,All jurisdictions,Public Sector,164.0,947035.0,49.2,0.7,1.3,2025-10-21
+2017,All jurisdictions,All Sectors,224.0,868612.0,39.8,1.7,1.7,2025-10-21
+2017,All jurisdictions,Private Sector,75.0,193038.0,44.9,2.6,2.0,2025-10-21
+2017,All jurisdictions,Public Sector,149.0,675574.0,38.3,1.4,1.7,2025-10-21
+2018,All jurisdictions,All Sectors,226.0,761192.0,42.7,1.4,1.4,2025-10-21
+2018,All jurisdictions,Private Sector,82.0,220436.0,47.4,2.3,1.9,2025-10-21
+2018,All jurisdictions,Public Sector,144.0,540756.0,40.7,1.0,1.2,2025-10-21
+2019,All jurisdictions,All Sectors,269.0,684720.0,43.1,1.8,1.8,2025-10-21
+2019,All jurisdictions,Private Sector,97.0,187467.0,43.2,2.0,2.1,2025-10-21
+2019,All jurisdictions,Public Sector,172.0,497253.0,43.0,1.7,1.7,2025-10-21
+2020,All jurisdictions,All Sectors,182.0,809923.0,41.4,1.8,1.9,2025-10-21
+2020,All jurisdictions,Private Sector,60.0,139261.0,47.0,2.0,1.7,2025-10-21
+2020,All jurisdictions,Public Sector,122.0,670662.0,40.2,1.8,2.0,2025-10-21
+2021,All jurisdictions,All Sectors,179.0,1030411.0,42.8,1.8,1.9,2025-10-21
+2021,All jurisdictions,Private Sector,63.0,225105.0,48.6,2.0,2.0,2025-10-21
+2021,All jurisdictions,Public Sector,116.0,805306.0,41.2,1.8,1.9,2025-10-21
+2022,All jurisdictions,All Sectors,147.0,706936.0,42.5,2.8,2.7,2025-10-21
+2022,All jurisdictions,Private Sector,42.0,139126.0,45.1,4.2,3.6,2025-10-21
+2022,All jurisdictions,Public Sector,105.0,567810.0,41.9,2.5,2.5,2025-10-21
+2023,All jurisdictions,All Sectors,159.0,720010.0,42.9,3.7,3.4,2025-10-21
+2023,All jurisdictions,Private Sector,52.0,121682.0,41.6,6.5,4.3,2025-10-21
+2023,All jurisdictions,Public Sector,107.0,598328.0,43.2,3.1,3.2,2025-10-21
+2024,All jurisdictions,All Sectors,145.0,1115557.0,50.8,4.7,3.4,2025-10-21
+2024,All jurisdictions,Private Sector,34.0,72914.0,40.7,4.2,3.5,2025-10-21
+2024,All jurisdictions,Public Sector,111.0,1042643.0,51.5,4.8,3.3,2025-10-21
+2025,All jurisdictions,All Sectors,51.0,299241.0,47.6,5.8,3.9,2025-10-21
+2025,All jurisdictions,Private Sector,22.0,181228.0,48.2,7.2,4.3,2025-10-21
+2025,All jurisdictions,Public Sector,29.0,118013.0,46.6,3.6,3.2,2025-10-21
+2016,Federal jurisdiction,All Sectors,25.0,120168.0,44.7,1.1,1.4,2025-10-21
+2016,Federal jurisdiction,Private Sector,15.0,27168.0,78.4,0.8,1.5,2025-10-21
+2016,Federal jurisdiction,Public Sector,10.0,93000.0,34.9,1.2,1.3,2025-10-21
+2017,Federal jurisdiction,All Sectors,46.0,209018.0,47.4,1.4,1.6,2025-10-21
+2017,Federal jurisdiction,Private Sector,23.0,40926.0,46.3,1.8,2.1,2025-10-21
+2017,Federal jurisdiction,Public Sector,23.0,168092.0,47.7,1.3,1.4,2025-10-21
+2018,Federal jurisdiction,All Sectors,30.0,78120.0,47.9,1.8,2.0,2025-10-21
+2018,Federal jurisdiction,Private Sector,16.0,29740.0,46.5,2.4,2.3,2025-10-21
+2018,Federal jurisdiction,Public Sector,14.0,48380.0,48.7,1.4,1.7,2025-10-21
+2019,Federal jurisdiction,All Sectors,40.0,102942.0,49.6,2.5,2.1,2025-10-21
+2019,Federal jurisdiction,Private Sector,16.0,25832.0,51.2,2.3,2.5,2025-10-21
+2019,Federal jurisdiction,Public Sector,24.0,77110.0,49.1,2.5,1.9,2025-10-21
+2020,Federal jurisdiction,All Sectors,30.0,261483.0,44.3,2.4,2.2,2025-10-21
+2020,Federal jurisdiction,Private Sector,17.0,39603.0,52.2,2.3,2.2,2025-10-21
+2020,Federal jurisdiction,Public Sector,13.0,221880.0,42.8,2.4,2.2,2025-10-21
+2021,Federal jurisdiction,All Sectors,26.0,119215.0,49.1,1.9,2.4,2025-10-21
+2021,Federal jurisdiction,Private Sector,16.0,20868.0,49.7,1.9,1.9,2025-10-21
+2021,Federal jurisdiction,Public Sector,10.0,98347.0,48.9,1.9,2.5,2025-10-21
+2022,Federal jurisdiction,All Sectors,24.0,45513.0,48.7,3.4,3.0,2025-10-21
+2022,Federal jurisdiction,Private Sector,17.0,34788.0,50.2,3.5,3.0,2025-10-21
+2022,Federal jurisdiction,Public Sector,7.0,10725.0,43.7,3.4,2.8,2025-10-21
+2023,Federal jurisdiction,All Sectors,36.0,263293.0,47.1,2.7,3.2,2025-10-21
+2023,Federal jurisdiction,Private Sector,22.0,43433.0,41.3,5.1,4.1,2025-10-21
+2023,Federal jurisdiction,Public Sector,14.0,219860.0,48.2,2.2,3.0,2025-10-21
+2024,Federal jurisdiction,All Sectors,23.0,69202.0,35.6,4.5,3.6,2025-10-21
+2024,Federal jurisdiction,Private Sector,13.0,21359.0,32.1,4.9,4.0,2025-10-21
+2024,Federal jurisdiction,Public Sector,10.0,47843.0,37.1,4.4,3.5,2025-10-21
+2025,Federal jurisdiction,All Sectors,9.0,17332.0,47.9,4.8,3.8,2025-10-21
+2025,Federal jurisdiction,Private Sector,7.0,8826.0,48.9,4.9,3.8,2025-10-21
+2025,Federal jurisdiction,Public Sector,2.0,8506.0,46.8,4.7,3.7,2025-10-21
+2016,Newfoundland and Labrador,All Sectors,1.0,1400.0,42.9,1.7,1.6,2025-10-21
+2016,Newfoundland and Labrador,Private Sector,1.0,1400.0,42.9,1.7,1.6,2025-10-21
+2018,Newfoundland and Labrador,All Sectors,10.0,19903.0,49.3,1.1,0.4,2025-10-21
+2018,Newfoundland and Labrador,Private Sector,2.0,2043.0,53.5,10.6,3.7,2025-10-21
+2018,Newfoundland and Labrador,Public Sector,8.0,17860.0,48.9,0.0,0.0,2025-10-21
+2019,Newfoundland and Labrador,All Sectors,4.0,8580.0,48.0,0.0,0.2,2025-10-21
+2019,Newfoundland and Labrador,Public Sector,4.0,8580.0,48.0,0.0,0.2,2025-10-21
+2020,Newfoundland and Labrador,All Sectors,3.0,8000.0,28.2,1.9,2.0,2025-10-21
+2020,Newfoundland and Labrador,Private Sector,1.0,1400.0,48.0,1.6,1.8,2025-10-21
+2020,Newfoundland and Labrador,Public Sector,2.0,6600.0,24.0,2.0,2.0,2025-10-21
+2021,Newfoundland and Labrador,All Sectors,5.0,12450.0,49.5,1.0,1.3,2025-10-21
+2021,Newfoundland and Labrador,Private Sector,1.0,500.0,36.0,2.4,2.2,2025-10-21
+2021,Newfoundland and Labrador,Public Sector,4.0,11950.0,50.1,0.9,1.3,2025-10-21
+2022,Newfoundland and Labrador,All Sectors,2.0,2200.0,48.0,4.1,1.8,2025-10-21
+2022,Newfoundland and Labrador,Public Sector,2.0,2200.0,48.0,4.1,1.8,2025-10-21
+2023,Newfoundland and Labrador,All Sectors,4.0,14380.0,49.1,1.8,3.1,2025-10-21
+2023,Newfoundland and Labrador,Public Sector,4.0,14380.0,49.1,1.8,3.1,2025-10-21
+2024,Newfoundland and Labrador,All Sectors,2.0,1250.0,43.2,3.2,2.7,2025-10-21
+2024,Newfoundland and Labrador,Private Sector,1.0,500.0,36.0,5.1,3.6,2025-10-21
+2024,Newfoundland and Labrador,Public Sector,1.0,750.0,48.0,2.0,2.0,2025-10-21
+2016,Prince Edward Island,All Sectors,3.0,3880.0,41.1,1.6,2.5,2025-10-21
+2016,Prince Edward Island,Private Sector,1.0,550.0,72.0,2.5,2.1,2025-10-21
+2016,Prince Edward Island,Public Sector,2.0,3330.0,36.0,1.5,2.6,2025-10-21
+2018,Prince Edward Island,All Sectors,1.0,1400.0,36.0,2.0,1.5,2025-10-21
+2018,Prince Edward Island,Public Sector,1.0,1400.0,36.0,2.0,1.5,2025-10-21
+2019,Prince Edward Island,All Sectors,5.0,8120.0,41.6,2.0,1.9,2025-10-21
+2019,Prince Edward Island,Public Sector,5.0,8120.0,41.6,2.0,1.9,2025-10-21
+2021,Prince Edward Island,All Sectors,1.0,1000.0,36.0,3.3,1.9,2025-10-21
+2021,Prince Edward Island,Public Sector,1.0,1000.0,36.0,3.3,1.9,2025-10-21
+2023,Prince Edward Island,All Sectors,1.0,2600.0,36.0,3.0,3.4,2025-10-21
+2023,Prince Edward Island,Public Sector,1.0,2600.0,36.0,3.0,3.4,2025-10-21
+2016,Nova Scotia,All Sectors,1.0,690.0,36.0,2.0,1.7,2025-10-21
+2016,Nova Scotia,Public Sector,1.0,690.0,36.0,2.0,1.7,2025-10-21
+2017,Nova Scotia,All Sectors,2.0,16800.0,58.7,0.0,0.9,2025-10-21
+2017,Nova Scotia,Public Sector,2.0,16800.0,58.7,0.0,0.9,2025-10-21
+2018,Nova Scotia,All Sectors,21.0,41120.0,62.7,0.2,1.1,2025-10-21
+2018,Nova Scotia,Private Sector,8.0,9310.0,39.9,0.8,0.8,2025-10-21
+2018,Nova Scotia,Public Sector,13.0,31810.0,69.4,0.1,1.2,2025-10-21
+2019,Nova Scotia,All Sectors,4.0,4060.0,59.0,0.7,1.4,2025-10-21
+2019,Nova Scotia,Private Sector,1.0,930.0,48.0,1.7,1.9,2025-10-21
+2019,Nova Scotia,Public Sector,3.0,3130.0,62.2,0.4,1.2,2025-10-21
+2020,Nova Scotia,All Sectors,1.0,9300.0,48.0,2.0,1.7,2025-10-21
+2020,Nova Scotia,Public Sector,1.0,9300.0,48.0,2.0,1.7,2025-10-21
+2021,Nova Scotia,All Sectors,5.0,21200.0,36.8,1.4,1.8,2025-10-21
+2021,Nova Scotia,Private Sector,1.0,1200.0,60.0,0.8,1.4,2025-10-21
+2021,Nova Scotia,Public Sector,4.0,20000.0,35.4,1.5,1.8,2025-10-21
+2022,Nova Scotia,All Sectors,5.0,13924.0,37.9,1.6,2.7,2025-10-21
+2022,Nova Scotia,Public Sector,5.0,13924.0,37.9,1.6,2.7,2025-10-21
+2023,Nova Scotia,All Sectors,3.0,3180.0,39.0,2.0,2.2,2025-10-21
+2023,Nova Scotia,Public Sector,3.0,3180.0,39.0,2.0,2.2,2025-10-21
+2024,Nova Scotia,All Sectors,4.0,26712.0,29.3,4.2,3.5,2025-10-21
+2024,Nova Scotia,Public Sector,4.0,26712.0,29.3,4.2,3.5,2025-10-21
+2025,Nova Scotia,All Sectors,1.0,1180.0,24.0,5.6,3.8,2025-10-21
+2025,Nova Scotia,Public Sector,1.0,1180.0,24.0,5.6,3.8,2025-10-21
+2016,New Brunswick,All Sectors,14.0,14830.0,53.1,1.5,1.7,2025-10-21
+2016,New Brunswick,Private Sector,5.0,4600.0,36.0,1.9,2.0,2025-10-21
+2016,New Brunswick,Public Sector,9.0,10230.0,60.8,1.4,1.5,2025-10-21
+2017,New Brunswick,All Sectors,4.0,18570.0,53.7,1.0,1.0,2025-10-21
+2017,New Brunswick,Private Sector,1.0,500.0,48.0,0.0,1.2,2025-10-21
+2017,New Brunswick,Public Sector,3.0,18070.0,53.9,1.0,1.0,2025-10-21
+2018,New Brunswick,All Sectors,1.0,550.0,48.0,2.5,2.5,2025-10-21
+2018,New Brunswick,Private Sector,1.0,550.0,48.0,2.5,2.5,2025-10-21
+2019,New Brunswick,All Sectors,4.0,3050.0,36.0,1.9,2.1,2025-10-21
+2019,New Brunswick,Private Sector,4.0,3050.0,36.0,1.9,2.1,2025-10-21
+2021,New Brunswick,All Sectors,5.0,7763.0,66.5,1.8,2.1,2025-10-21
+2021,New Brunswick,Private Sector,1.0,500.0,60.0,1.8,3.5,2025-10-21
+2021,New Brunswick,Public Sector,4.0,7263.0,66.9,1.8,2.0,2025-10-21
+2022,New Brunswick,All Sectors,3.0,9470.0,58.9,1.7,2.2,2025-10-21
+2022,New Brunswick,Public Sector,3.0,9470.0,58.9,1.7,2.2,2025-10-21
+2023,New Brunswick,All Sectors,1.0,8000.0,60.0,2.0,3.0,2025-10-21
+2023,New Brunswick,Public Sector,1.0,8000.0,60.0,2.0,3.0,2025-10-21
+2024,New Brunswick,All Sectors,1.0,730.0,44.0,2.0,1.7,2025-10-21
+2024,New Brunswick,Public Sector,1.0,730.0,44.0,2.0,1.7,2025-10-21
+2016,Quebec,All Sectors,55.0,473162.0,60.4,0.1,1.1,2025-10-21
+2016,Quebec,Private Sector,11.0,10297.0,62.4,2.2,2.1,2025-10-21
+2016,Quebec,Public Sector,44.0,462865.0,60.3,0.1,1.1,2025-10-21
+2017,Quebec,All Sectors,21.0,100687.0,54.9,3.4,2.1,2025-10-21
+2017,Quebec,Private Sector,7.0,77903.0,51.1,4.0,2.2,2025-10-21
+2017,Quebec,Public Sector,14.0,22784.0,68.0,1.6,1.7,2025-10-21
+2018,Quebec,All Sectors,35.0,156818.0,53.9,1.8,1.7,2025-10-21
+2018,Quebec,Private Sector,12.0,101573.0,52.6,2.2,1.7,2025-10-21
+2018,Quebec,Public Sector,23.0,55245.0,56.2,1.1,1.7,2025-10-21
+2019,Quebec,All Sectors,24.0,35676.0,68.2,2.2,2.0,2025-10-21
+2019,Quebec,Private Sector,8.0,6545.0,69.2,2.0,2.4,2025-10-21
+2019,Quebec,Public Sector,16.0,29131.0,67.9,2.2,1.9,2025-10-21
+2020,Quebec,All Sectors,16.0,19929.0,64.6,3.5,2.3,2025-10-21
+2020,Quebec,Private Sector,6.0,5962.0,38.8,7.2,3.2,2025-10-21
+2020,Quebec,Public Sector,10.0,13967.0,75.6,1.9,1.9,2025-10-21
+2021,Quebec,All Sectors,56.0,678706.0,40.5,2.0,2.0,2025-10-21
+2021,Quebec,Private Sector,14.0,154909.0,48.5,2.1,2.1,2025-10-21
+2021,Quebec,Public Sector,42.0,523797.0,38.1,2.0,2.0,2025-10-21
+2022,Quebec,All Sectors,18.0,67394.0,50.3,2.4,2.4,2025-10-21
+2022,Quebec,Private Sector,6.0,20932.0,55.0,3.1,2.7,2025-10-21
+2022,Quebec,Public Sector,12.0,46462.0,48.1,2.1,2.2,2025-10-21
+2023,Quebec,All Sectors,10.0,16762.0,50.6,4.6,2.8,2025-10-21
+2023,Quebec,Private Sector,2.0,2069.0,67.3,4.8,2.5,2025-10-21
+2023,Quebec,Public Sector,8.0,14693.0,48.3,4.5,2.9,2025-10-21
+2024,Quebec,All Sectors,34.0,588013.0,60.1,5.9,3.6,2025-10-21
+2024,Quebec,Private Sector,4.0,9556.0,65.8,2.8,4.1,2025-10-21
+2024,Quebec,Public Sector,30.0,578457.0,60.1,6.0,3.6,2025-10-21
+2025,Quebec,All Sectors,11.0,161191.0,49.6,7.6,4.4,2025-10-21
+2025,Quebec,Private Sector,5.0,145818.0,48.1,8.0,4.5,2025-10-21
+2025,Quebec,Public Sector,6.0,15373.0,63.9,4.2,3.1,2025-10-21
+2016,Ontario,All Sectors,105.0,360580.0,36.2,1.6,1.6,2025-10-21
+2016,Ontario,Private Sector,66.0,161770.0,41.6,1.8,1.6,2025-10-21
+2016,Ontario,Public Sector,39.0,198810.0,31.8,1.5,1.6,2025-10-21
+2017,Ontario,All Sectors,78.0,396728.0,31.9,1.8,2.0,2025-10-21
+2017,Ontario,Private Sector,16.0,26668.0,36.7,3.2,2.2,2025-10-21
+2017,Ontario,Public Sector,62.0,370060.0,31.5,1.6,2.0,2025-10-21
+2018,Ontario,All Sectors,61.0,198705.0,35.5,1.8,1.7,2025-10-21
+2018,Ontario,Private Sector,19.0,41600.0,39.1,2.5,2.0,2025-10-21
+2018,Ontario,Public Sector,42.0,157105.0,34.5,1.6,1.7,2025-10-21
+2019,Ontario,All Sectors,80.0,233290.0,39.4,2.2,2.2,2025-10-21
+2019,Ontario,Private Sector,42.0,110980.0,38.9,2.0,2.2,2025-10-21
+2019,Ontario,Public Sector,38.0,122310.0,40.0,2.3,2.3,2025-10-21
+2020,Ontario,All Sectors,42.0,312434.0,37.9,1.7,2.0,2025-10-21
+2020,Ontario,Private Sector,13.0,48040.0,38.0,2.2,1.9,2025-10-21
+2020,Ontario,Public Sector,29.0,264394.0,37.9,1.6,2.1,2025-10-21
+2021,Ontario,All Sectors,32.0,66600.0,36.4,1.2,1.6,2025-10-21
+2021,Ontario,Private Sector,10.0,17606.0,34.8,1.5,1.7,2025-10-21
+2021,Ontario,Public Sector,22.0,48994.0,37.0,1.1,1.6,2025-10-21
+2022,Ontario,All Sectors,42.0,296656.0,37.0,3.7,3.4,2025-10-21
+2022,Ontario,Private Sector,11.0,68226.0,38.5,4.0,4.0,2025-10-21
+2022,Ontario,Public Sector,31.0,228430.0,36.6,3.7,3.2,2025-10-21
+2023,Ontario,All Sectors,40.0,292436.0,37.8,4.7,3.6,2025-10-21
+2023,Ontario,Private Sector,12.0,33764.0,42.3,8.9,4.6,2025-10-21
+2023,Ontario,Public Sector,28.0,258672.0,37.2,4.2,3.5,2025-10-21
+2024,Ontario,All Sectors,41.0,263583.0,39.3,3.8,3.2,2025-10-21
+2024,Ontario,Private Sector,7.0,13573.0,30.6,6.8,4.6,2025-10-21
+2024,Ontario,Public Sector,34.0,250010.0,39.8,3.6,3.1,2025-10-21
+2025,Ontario,All Sectors,8.0,17488.0,41.5,4.8,4.5,2025-10-21
+2025,Ontario,Private Sector,1.0,1606.0,24.0,10.8,10.2,2025-10-21
+2025,Ontario,Public Sector,7.0,15882.0,43.3,4.2,3.9,2025-10-21
+2016,Manitoba,All Sectors,22.0,45850.0,53.5,1.6,1.7,2025-10-21
+2016,Manitoba,Private Sector,3.0,2700.0,48.0,3.2,3.1,2025-10-21
+2016,Manitoba,Public Sector,19.0,43150.0,53.8,1.5,1.6,2025-10-21
+2017,Manitoba,All Sectors,5.0,11178.0,61.6,0.3,1.9,2025-10-21
+2017,Manitoba,Public Sector,5.0,11178.0,61.6,0.3,1.9,2025-10-21
+2018,Manitoba,All Sectors,8.0,10180.0,53.3,1.9,1.6,2025-10-21
+2018,Manitoba,Private Sector,6.0,8400.0,54.4,2.2,1.8,2025-10-21
+2018,Manitoba,Public Sector,2.0,1780.0,48.0,0.1,0.5,2025-10-21
+2019,Manitoba,All Sectors,2.0,2683.0,47.8,0.0,1.1,2025-10-21
+2019,Manitoba,Public Sector,2.0,2683.0,47.8,0.0,1.1,2025-10-21
+2020,Manitoba,All Sectors,5.0,6100.0,50.2,1.2,1.4,2025-10-21
+2020,Manitoba,Private Sector,2.0,3100.0,60.0,2.0,2.0,2025-10-21
+2020,Manitoba,Public Sector,3.0,3000.0,40.2,0.4,0.8,2025-10-21
+2021,Manitoba,All Sectors,10.0,24265.0,63.2,1.3,1.3,2025-10-21
+2021,Manitoba,Private Sector,2.0,2100.0,56.6,1.7,2.1,2025-10-21
+2021,Manitoba,Public Sector,8.0,22165.0,63.8,1.3,1.2,2025-10-21
+2022,Manitoba,All Sectors,8.0,37220.0,58.3,2.1,1.7,2025-10-21
+2022,Manitoba,Public Sector,8.0,37220.0,58.3,2.1,1.7,2025-10-21
+2023,Manitoba,All Sectors,8.0,24796.0,68.7,2.2,2.0,2025-10-21
+2023,Manitoba,Private Sector,3.0,10996.0,73.6,3.4,2.0,2025-10-21
+2023,Manitoba,Public Sector,5.0,13800.0,64.8,1.2,2.1,2025-10-21
+2024,Manitoba,All Sectors,8.0,83596.0,48.0,2.6,3.3,2025-10-21
+2024,Manitoba,Private Sector,1.0,6696.0,48.0,3.5,3.1,2025-10-21
+2024,Manitoba,Public Sector,7.0,76900.0,48.0,2.5,3.3,2025-10-21
+2025,Manitoba,All Sectors,2.0,8300.0,48.0,2.9,3.1,2025-10-21
+2025,Manitoba,Public Sector,2.0,8300.0,48.0,2.9,3.1,2025-10-21
+2016,Saskatchewan,All Sectors,4.0,13030.0,46.5,0.3,1.0,2025-10-21
+2016,Saskatchewan,Private Sector,1.0,940.0,36.0,2.7,2.7,2025-10-21
+2016,Saskatchewan,Public Sector,3.0,12090.0,47.3,0.1,0.8,2025-10-21
+2017,Saskatchewan,All Sectors,6.0,5810.0,41.8,1.3,1.6,2025-10-21
+2017,Saskatchewan,Private Sector,3.0,2330.0,43.8,0.6,1.7,2025-10-21
+2017,Saskatchewan,Public Sector,3.0,3480.0,40.5,1.9,1.6,2025-10-21
+2018,Saskatchewan,All Sectors,6.0,17440.0,31.0,0.1,0.6,2025-10-21
+2018,Saskatchewan,Private Sector,1.0,1250.0,96.1,0.0,1.1,2025-10-21
+2018,Saskatchewan,Public Sector,5.0,16190.0,25.9,0.1,0.6,2025-10-21
+2019,Saskatchewan,All Sectors,14.0,37665.0,62.0,0.2,1.1,2025-10-21
+2019,Saskatchewan,Private Sector,3.0,3840.0,60.3,1.0,1.4,2025-10-21
+2019,Saskatchewan,Public Sector,11.0,33825.0,62.2,0.1,1.1,2025-10-21
+2020,Saskatchewan,All Sectors,13.0,29250.0,55.5,0.3,1.4,2025-10-21
+2020,Saskatchewan,Private Sector,2.0,1480.0,62.1,1.6,1.4,2025-10-21
+2020,Saskatchewan,Public Sector,11.0,27770.0,55.2,0.2,1.4,2025-10-21
+2021,Saskatchewan,All Sectors,5.0,25140.0,63.3,0.1,1.1,2025-10-21
+2021,Saskatchewan,Private Sector,1.0,630.0,48.1,1.3,1.4,2025-10-21
+2021,Saskatchewan,Public Sector,4.0,24510.0,63.7,0.1,1.1,2025-10-21
+2022,Saskatchewan,All Sectors,2.0,2600.0,53.5,0.0,0.8,2025-10-21
+2022,Saskatchewan,Private Sector,1.0,600.0,72.0,0.0,1.2,2025-10-21
+2022,Saskatchewan,Public Sector,1.0,2000.0,48.0,0.0,0.7,2025-10-21
+2023,Saskatchewan,All Sectors,3.0,3190.0,44.1,2.5,2.6,2025-10-21
+2023,Saskatchewan,Private Sector,1.0,750.0,48.0,3.5,2.9,2025-10-21
+2023,Saskatchewan,Public Sector,2.0,2440.0,42.9,2.2,2.6,2025-10-21
+2024,Saskatchewan,All Sectors,4.0,12740.0,37.1,2.9,2.6,2025-10-21
+2024,Saskatchewan,Public Sector,4.0,12740.0,37.1,2.9,2.6,2025-10-21
+2025,Saskatchewan,All Sectors,1.0,12800.0,36.0,4.0,3.0,2025-10-21
+2025,Saskatchewan,Public Sector,1.0,12800.0,36.0,4.0,3.0,2025-10-21
+2016,Alberta,All Sectors,34.0,80400.0,32.5,1.3,1.1,2025-10-21
+2016,Alberta,Private Sector,15.0,27190.0,31.5,0.3,0.4,2025-10-21
+2016,Alberta,Public Sector,19.0,53210.0,33.0,1.8,1.4,2025-10-21
+2017,Alberta,All Sectors,36.0,70230.0,26.0,0.9,0.8,2025-10-21
+2017,Alberta,Private Sector,10.0,16850.0,31.3,-0.1,0.4,2025-10-21
+2017,Alberta,Public Sector,26.0,53380.0,24.4,1.2,0.9,2025-10-21
+2018,Alberta,All Sectors,34.0,157426.0,35.5,0.3,0.3,2025-10-21
+2018,Alberta,Private Sector,6.0,6350.0,39.8,1.1,1.2,2025-10-21
+2018,Alberta,Public Sector,28.0,151076.0,35.3,0.2,0.2,2025-10-21
+2019,Alberta,All Sectors,47.0,75220.0,33.1,0.2,0.4,2025-10-21
+2019,Alberta,Private Sector,12.0,12290.0,36.3,1.5,1.5,2025-10-21
+2019,Alberta,Public Sector,35.0,62930.0,32.4,-0.1,0.2,2025-10-21
+2020,Alberta,All Sectors,27.0,57480.0,37.5,0.0,0.1,2025-10-21
+2020,Alberta,Private Sector,9.0,24336.0,54.4,0.0,0.2,2025-10-21
+2020,Alberta,Public Sector,18.0,33144.0,25.1,0.0,0.1,2025-10-21
+2021,Alberta,All Sectors,17.0,49084.0,50.3,1.4,1.1,2025-10-21
+2021,Alberta,Private Sector,12.0,22002.0,58.5,1.8,1.3,2025-10-21
+2021,Alberta,Public Sector,5.0,27082.0,43.7,1.1,1.0,2025-10-21
+2022,Alberta,All Sectors,34.0,156768.0,47.0,1.0,1.2,2025-10-21
+2022,Alberta,Private Sector,4.0,9329.0,52.7,11.6,4.5,2025-10-21
+2022,Alberta,Public Sector,30.0,147439.0,46.6,0.3,1.0,2025-10-21
+2023,Alberta,All Sectors,36.0,60794.0,37.3,4.0,3.3,2025-10-21
+2023,Alberta,Private Sector,11.0,27670.0,28.1,7.5,5.4,2025-10-21
+2023,Alberta,Public Sector,25.0,33124.0,45.0,1.1,1.5,2025-10-21
+2024,Alberta,All Sectors,23.0,58167.0,45.7,1.0,1.7,2025-10-21
+2024,Alberta,Private Sector,5.0,16170.0,42.2,1.9,2.0,2025-10-21
+2024,Alberta,Public Sector,18.0,41997.0,47.1,0.7,1.5,2025-10-21
+2025,Alberta,All Sectors,17.0,77000.0,46.4,3.0,2.9,2025-10-21
+2025,Alberta,Private Sector,7.0,21028.0,48.9,2.7,2.5,2025-10-21
+2025,Alberta,Public Sector,10.0,55972.0,45.5,3.2,3.0,2025-10-21
+2016,British Columbia,All Sectors,25.0,71560.0,53.2,0.6,1.5,2025-10-21
+2016,British Columbia,Private Sector,9.0,8950.0,43.0,0.9,1.3,2025-10-21
+2016,British Columbia,Public Sector,16.0,62610.0,54.7,0.5,1.6,2025-10-21
+2017,British Columbia,All Sectors,26.0,39591.0,42.8,1.3,1.8,2025-10-21
+2017,British Columbia,Private Sector,15.0,27861.0,41.8,1.0,1.8,2025-10-21
+2017,British Columbia,Public Sector,11.0,11730.0,45.2,1.8,1.9,2025-10-21
+2018,British Columbia,All Sectors,16.0,75880.0,36.6,2.0,2.1,2025-10-21
+2018,British Columbia,Private Sector,9.0,16680.0,38.2,2.2,2.3,2025-10-21
+2018,British Columbia,Public Sector,7.0,59200.0,36.1,2.0,2.0,2025-10-21
+2019,British Columbia,All Sectors,39.0,160184.0,38.1,2.0,2.0,2025-10-21
+2019,British Columbia,Private Sector,8.0,19400.0,51.5,1.6,1.8,2025-10-21
+2019,British Columbia,Public Sector,31.0,140784.0,36.2,2.0,2.0,2025-10-21
+2020,British Columbia,All Sectors,45.0,105947.0,38.3,2.0,2.0,2025-10-21
+2020,British Columbia,Private Sector,10.0,15340.0,48.5,1.8,1.9,2025-10-21
+2020,British Columbia,Public Sector,35.0,90607.0,36.6,2.0,2.0,2025-10-21
+2021,British Columbia,All Sectors,16.0,19726.0,34.5,2.0,2.3,2025-10-21
+2021,British Columbia,Private Sector,5.0,4790.0,46.5,1.2,2.7,2025-10-21
+2021,British Columbia,Public Sector,11.0,14936.0,30.6,2.2,2.1,2025-10-21
+2022,British Columbia,All Sectors,7.0,70951.0,34.7,4.1,3.8,2025-10-21
+2022,British Columbia,Private Sector,1.0,1011.0,60.0,2.0,2.0,2025-10-21
+2022,British Columbia,Public Sector,6.0,69940.0,34.3,4.1,3.8,2025-10-21
+2023,British Columbia,All Sectors,15.0,23505.0,36.1,4.4,4.3,2025-10-21
+2023,British Columbia,Public Sector,15.0,23505.0,36.1,4.4,4.3,2025-10-21
+2024,British Columbia,All Sectors,1.0,504.0,36.0,3.2,4.0,2025-10-21
+2024,British Columbia,Public Sector,1.0,504.0,36.0,3.2,4.0,2025-10-21
+2025,British Columbia,All Sectors,2.0,3950.0,57.9,4.1,3.7,2025-10-21
+2025,British Columbia,Private Sector,2.0,3950.0,57.9,4.1,3.7,2025-10-21
+2016,All territories,All Sectors,2.0,7050.0,41.6,2.0,1.6,2025-10-21
+2016,All territories,Public Sector,2.0,7050.0,41.6,2.0,1.6,2025-10-21
+2018,All territories,All Sectors,1.0,710.0,48.0,1.0,1.5,2025-10-21
+2018,All territories,Public Sector,1.0,710.0,48.0,1.0,1.5,2025-10-21
+2019,All territories,All Sectors,3.0,8650.0,47.1,1.0,1.6,2025-10-21
+2019,All territories,Public Sector,3.0,8650.0,47.1,1.0,1.6,2025-10-21
+2021,All territories,All Sectors,1.0,5262.0,24.0,1.5,1.5,2025-10-21
+2021,All territories,Public Sector,1.0,5262.0,24.0,1.5,1.5,2025-10-21
+2023,All territories,All Sectors,1.0,4074.0,36.0,4.5,3.5,2025-10-21
+2023,All territories,Public Sector,1.0,4074.0,36.0,4.5,3.5,2025-10-21
+2024,All territories,All Sectors,1.0,6000.0,36.0,6.0,3.5,2025-10-21
+2024,All territories,Public Sector,1.0,6000.0,36.0,6.0,3.5,2025-10-21
+2016,Multi-provinces,All Sectors,1.0,2000.0,36.0,2.2,2.2,2025-10-21
+2016,Multi-provinces,Private Sector,1.0,2000.0,36.0,2.2,2.2,2025-10-21
+2018,Multi-provinces,All Sectors,2.0,2940.0,38.8,1.5,1.0,2025-10-21
+2018,Multi-provinces,Private Sector,2.0,2940.0,38.8,1.5,1.0,2025-10-21
+2019,Multi-provinces,All Sectors,3.0,4600.0,40.0,2.4,2.2,2025-10-21
+2019,Multi-provinces,Private Sector,3.0,4600.0,40.0,2.4,2.2,2025-10-21
+2022,Multi-provinces,All Sectors,2.0,4240.0,36.0,3.3,3.0,2025-10-21
+2022,Multi-provinces,Private Sector,2.0,4240.0,36.0,3.3,3.0,2025-10-21
+2023,Multi-provinces,All Sectors,1.0,3000.0,24.0,3.2,3.1,2025-10-21
+2023,Multi-provinces,Private Sector,1.0,3000.0,24.0,3.2,3.1,2025-10-21
+2024,Multi-provinces,All Sectors,3.0,5060.0,42.7,5.5,2.8,2025-10-21
+2024,Multi-provinces,Private Sector,3.0,5060.0,42.7,5.5,2.8,2025-10-21

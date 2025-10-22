@@ -1,0 +1,870 @@
+Month,Sector,COLA_Status,Number_of_Agreements,Number_of_Employees,Duration_Months_Avg,First_Year_Pct_Adjustment_Avg,Annual_Pct_Adjustment_Avg,Extraction_Date
+August 2024,All sectors,Total,5,21192,45.1,3.2,3.0,2025-10-21
+August 2024,All sectors,Without COLA,5,21192,45.1,3.2,3.0,2025-10-21
+September 2024,All sectors,Total,5,14010,31.8,5.7,4.4,2025-10-21
+September 2024,All sectors,Without COLA,4,11300,33.6,3.4,3.0,2025-10-21
+September 2024,All sectors,With COLA,1,2710,24.1,15.3,9.9,2025-10-21
+October 2024,All sectors,Total,8,45176,45.7,3.4,3.7,2025-10-21
+October 2024,All sectors,Without COLA,8,45176,45.7,3.4,3.7,2025-10-21
+November 2024,All sectors,Total,6,6894,38.1,3.7,3.4,2025-10-21
+November 2024,All sectors,Without COLA,6,6894,38.1,3.7,3.4,2025-10-21
+December 2024,All sectors,Total,15,125802,52.7,5.3,3.7,2025-10-21
+December 2024,All sectors,Without COLA,14,44129,39.1,4.1,3.8,2025-10-21
+December 2024,All sectors,With COLA,1,81673,60.0,6.0,3.6,2025-10-21
+January 2025,All sectors,Total,7,13702,57.6,5.3,3.3,2025-10-21
+January 2025,All sectors,Without COLA,7,13702,57.6,5.3,3.3,2025-10-21
+February 2025,All sectors,Total,8,15157,45.3,4.7,3.6,2025-10-21
+February 2025,All sectors,Without COLA,8,15157,45.3,4.7,3.6,2025-10-21
+March 2025,All sectors,Total,6,22135,47.7,3.1,3.3,2025-10-21
+March 2025,All sectors,Without COLA,6,22135,47.7,3.1,3.3,2025-10-21
+April 2025,All sectors,Total,13,172748,46.9,6.3,4.6,2025-10-21
+April 2025,All sectors,Without COLA,13,172748,46.9,6.3,4.6,2025-10-21
+May 2025,All sectors,Total,9,25184,45.1,3.1,3.0,2025-10-21
+May 2025,All sectors,Without COLA,9,25184,45.1,3.1,3.0,2025-10-21
+June 2025,All sectors,Total,4,4657,53.6,3.6,3.4,2025-10-21
+June 2025,All sectors,Without COLA,4,4657,53.6,3.6,3.4,2025-10-21
+July 2025,All sectors,Total,4,45658,48.4,7.4,2.1,2025-10-21
+July 2025,All sectors,Without COLA,4,45658,48.4,7.4,2.1,2025-10-21
+August 2024,Private sector,Total,2,2990,36.0,7.0,2.8,2025-10-21
+August 2024,Private sector,Without COLA,2,2990,36.0,7.0,2.8,2025-10-21
+September 2024,Private sector,Total,4,9010,29.4,6.9,5.1,2025-10-21
+September 2024,Private sector,Without COLA,3,6300,31.7,3.4,3.1,2025-10-21
+September 2024,Private sector,With COLA,1,2710,24.1,15.3,9.9,2025-10-21
+October 2024,Private sector,Total,2,7296,46.0,3.5,3.1,2025-10-21
+October 2024,Private sector,Without COLA,2,7296,46.0,3.5,3.1,2025-10-21
+December 2024,Private sector,Total,7,13801,57.2,2.8,3.7,2025-10-21
+December 2024,Private sector,Without COLA,7,13801,57.2,2.8,3.7,2025-10-21
+January 2025,Private sector,Total,3,3916,58.0,3.6,3.2,2025-10-21
+January 2025,Private sector,Without COLA,3,3916,58.0,3.6,3.2,2025-10-21
+February 2025,Private sector,Total,4,5057,44.9,5.5,4.0,2025-10-21
+February 2025,Private sector,Without COLA,4,5057,44.9,5.5,4.0,2025-10-21
+March 2025,Private sector,Total,1,1404,72.0,0.0,1.8,2025-10-21
+March 2025,Private sector,Without COLA,1,1404,72.0,0.0,1.8,2025-10-21
+April 2025,Private sector,Total,6,116015,47.8,7.7,5.3,2025-10-21
+April 2025,Private sector,Without COLA,6,116015,47.8,7.7,5.3,2025-10-21
+May 2025,Private sector,Total,4,11083,46.3,2.9,2.8,2025-10-21
+May 2025,Private sector,Without COLA,4,11083,46.3,2.9,2.8,2025-10-21
+June 2025,Private sector,Total,2,1523,47.1,4.7,3.5,2025-10-21
+June 2025,Private sector,Without COLA,2,1523,47.1,4.7,3.5,2025-10-21
+July 2025,Private sector,Total,2,42230,48.7,7.8,2.0,2025-10-21
+July 2025,Private sector,Without COLA,2,42230,48.7,7.8,2.0,2025-10-21
+August 2024,Public sector,Total,3,18202,46.5,2.6,3.1,2025-10-21
+August 2024,Public sector,Without COLA,3,18202,46.5,2.6,3.1,2025-10-21
+September 2024,Public sector,Total,1,5000,36.0,3.5,3.0,2025-10-21
+September 2024,Public sector,Without COLA,1,5000,36.0,3.5,3.0,2025-10-21
+October 2024,Public sector,Total,6,37880,45.6,3.4,3.8,2025-10-21
+October 2024,Public sector,Without COLA,6,37880,45.6,3.4,3.8,2025-10-21
+November 2024,Public sector,Total,6,6894,38.1,3.7,3.4,2025-10-21
+November 2024,Public sector,Without COLA,6,6894,38.1,3.7,3.4,2025-10-21
+December 2024,Public sector,Total,8,112001,52.1,5.7,3.7,2025-10-21
+December 2024,Public sector,Without COLA,7,30328,30.8,4.7,3.9,2025-10-21
+December 2024,Public sector,With COLA,1,81673,60.0,6.0,3.6,2025-10-21
+January 2025,Public sector,Total,4,9786,57.5,6.1,3.3,2025-10-21
+January 2025,Public sector,Without COLA,4,9786,57.5,6.1,3.3,2025-10-21
+February 2025,Public sector,Total,4,10100,45.6,4.3,3.4,2025-10-21
+February 2025,Public sector,Without COLA,4,10100,45.6,4.3,3.4,2025-10-21
+March 2025,Public sector,Total,5,20731,46.0,3.4,3.4,2025-10-21
+March 2025,Public sector,Without COLA,5,20731,46.0,3.4,3.4,2025-10-21
+April 2025,Public sector,Total,7,56733,45.3,3.4,3.1,2025-10-21
+April 2025,Public sector,Without COLA,7,56733,45.3,3.4,3.1,2025-10-21
+May 2025,Public sector,Total,5,14101,44.2,3.2,3.1,2025-10-21
+May 2025,Public sector,Without COLA,5,14101,44.2,3.2,3.1,2025-10-21
+June 2025,Public sector,Total,2,3134,56.8,3.0,3.4,2025-10-21
+June 2025,Public sector,Without COLA,2,3134,56.8,3.0,3.4,2025-10-21
+July 2025,Public sector,Total,2,3428,44.6,3.2,3.2,2025-10-21
+July 2025,Public sector,Without COLA,2,3428,44.6,3.2,3.2,2025-10-21
+Unnamed: 0_level_1,,Total,Number of agreements,Number of employees,Duration of agreements in months (average),First year percentage adjustment (average),Annual percentage adjustment (average),
+Unnamed: 0_level_1,,Without COLA,Number of agreements,Number of employees,Duration of agreements in months (average),First year percentage adjustment (average),Annual percentage adjustment (average),
+Unnamed: 0_level_1,,With COLA,Number of agreements,Number of employees,Duration of agreements in months (average),First year percentage adjustment (average),Annual percentage adjustment (average),
+All industries,August 2024,Total,5,21192,45.1,3.2,3.0,2025-10-21
+All industries,August 2024,Without COLA,5,21192,45.1,3.2,3.0,2025-10-21
+Transportation,August 2024,Total,1,652,36.0,4.0,3.3,2025-10-21
+Transportation,August 2024,Without COLA,1,652,36.0,4.0,3.3,2025-10-21
+Finance and professional services,August 2024,Total,1,2240,36.0,7.7,2.5,2025-10-21
+Finance and professional services,August 2024,Without COLA,1,2240,36.0,7.7,2.5,2025-10-21
+"Education, health, and social services",August 2024,Total,2,17550,46.9,2.6,3.1,2025-10-21
+"Education, health, and social services",August 2024,Without COLA,2,17550,46.9,2.6,3.1,2025-10-21
+Entertainment and hospitality,August 2024,Total,1,750,36.0,5.0,3.7,2025-10-21
+Entertainment and hospitality,August 2024,Without COLA,1,750,36.0,5.0,3.7,2025-10-21
+All industries,September 2024,Total,5,14010,31.8,5.7,4.4,2025-10-21
+All industries,September 2024,Without COLA,4,11300,33.6,3.4,3.0,2025-10-21
+All industries,September 2024,With COLA,1,2710,24.1,15.3,9.9,2025-10-21
+Manufacturing,September 2024,Total,1,2710,24.1,15.3,9.9,2025-10-21
+Manufacturing,September 2024,With COLA,1,2710,24.1,15.3,9.9,2025-10-21
+Transportation,September 2024,Total,1,550,48.0,5.0,4.2,2025-10-21
+Transportation,September 2024,Without COLA,1,550,48.0,5.0,4.2,2025-10-21
+Finance and professional services,September 2024,Total,2,5750,30.1,3.2,2.9,2025-10-21
+Finance and professional services,September 2024,Without COLA,2,5750,30.1,3.2,2.9,2025-10-21
+"Education, health, and social services",September 2024,Total,1,5000,36.0,3.5,3.0,2025-10-21
+"Education, health, and social services",September 2024,Without COLA,1,5000,36.0,3.5,3.0,2025-10-21
+All industries,October 2024,Total,8,45176,45.7,3.4,3.7,2025-10-21
+All industries,October 2024,Without COLA,8,45176,45.7,3.4,3.7,2025-10-21
+Transportation,October 2024,Total,1,600,24.0,3.2,3.1,2025-10-21
+Transportation,October 2024,Without COLA,1,600,24.0,3.2,3.1,2025-10-21
+"Education, health, and social services",October 2024,Total,4,36396,47.8,3.0,3.8,2025-10-21
+"Education, health, and social services",October 2024,Without COLA,4,36396,47.8,3.0,3.8,2025-10-21
+Public administration,October 2024,Total,3,8180,37.6,5.4,3.4,2025-10-21
+Public administration,October 2024,Without COLA,3,8180,37.6,5.4,3.4,2025-10-21
+All industries,November 2024,Total,6,6894,38.1,3.7,3.4,2025-10-21
+All industries,November 2024,Without COLA,6,6894,38.1,3.7,3.4,2025-10-21
+Finance and professional services,November 2024,Total,1,1020,48.0,4.8,3.1,2025-10-21
+Finance and professional services,November 2024,Without COLA,1,1020,48.0,4.8,3.1,2025-10-21
+"Education, health, and social services",November 2024,Total,2,1547,30.2,4.3,3.8,2025-10-21
+"Education, health, and social services",November 2024,Without COLA,2,1547,30.2,4.3,3.8,2025-10-21
+Public administration,November 2024,Total,3,4327,38.6,3.3,3.3,2025-10-21
+Public administration,November 2024,Without COLA,3,4327,38.6,3.3,3.3,2025-10-21
+All industries,December 2024,Total,15,125802,52.7,5.3,3.7,2025-10-21
+All industries,December 2024,Without COLA,14,44129,39.1,4.1,3.8,2025-10-21
+All industries,December 2024,With COLA,1,81673,60.0,6.0,3.6,2025-10-21
+Utilities,December 2024,Total,1,1151,24.0,4.0,3.7,2025-10-21
+Utilities,December 2024,Without COLA,1,1151,24.0,4.0,3.7,2025-10-21
+Manufacturing,December 2024,Total,1,1400,60.0,8.0,4.5,2025-10-21
+Manufacturing,December 2024,Without COLA,1,1400,60.0,8.0,4.5,2025-10-21
+Transportation,December 2024,Total,3,4394,48.0,4.0,3.1,2025-10-21
+Transportation,December 2024,Without COLA,3,4394,48.0,4.0,3.1,2025-10-21
+Finance and professional services,December 2024,Total,1,6295,72.0,0.0,3.6,2025-10-21
+Finance and professional services,December 2024,Without COLA,1,6295,72.0,0.0,3.6,2025-10-21
+"Education, health, and social services",December 2024,Total,4,99443,54.2,5.8,3.6,2025-10-21
+"Education, health, and social services",December 2024,Without COLA,3,17770,27.6,4.9,4.0,2025-10-21
+"Education, health, and social services",December 2024,With COLA,1,81673,60.0,6.0,3.6,2025-10-21
+Entertainment and hospitality,December 2024,Total,1,561,24.0,10.0,6.9,2025-10-21
+Entertainment and hospitality,December 2024,Without COLA,1,561,24.0,10.0,6.9,2025-10-21
+Public administration,December 2024,Total,4,12558,35.3,4.5,3.8,2025-10-21
+Public administration,December 2024,Without COLA,4,12558,35.3,4.5,3.8,2025-10-21
+All industries,January 2025,Total,7,13702,57.6,5.3,3.3,2025-10-21
+All industries,January 2025,Without COLA,7,13702,57.6,5.3,3.3,2025-10-21
+Primary industries,January 2025,Total,1,536,36.0,3.0,3.0,2025-10-21
+Primary industries,January 2025,Without COLA,1,536,36.0,3.0,3.0,2025-10-21
+Utilities,January 2025,Total,1,980,36.0,2.8,3.5,2025-10-21
+Utilities,January 2025,Without COLA,1,980,36.0,2.8,3.5,2025-10-21
+Manufacturing,January 2025,Total,1,2400,72.0,4.0,3.2,2025-10-21
+Manufacturing,January 2025,Without COLA,1,2400,72.0,4.0,3.2,2025-10-21
+Wholesale and retail trade,January 2025,Total,1,4947,72.0,6.0,3.3,2025-10-21
+Wholesale and retail trade,January 2025,Without COLA,1,4947,72.0,6.0,3.3,2025-10-21
+"Education, health, and social services",January 2025,Total,1,587,36.0,3.0,3.0,2025-10-21
+"Education, health, and social services",January 2025,Without COLA,1,587,36.0,3.0,3.0,2025-10-21
+Public administration,January 2025,Total,2,4252,43.6,6.5,3.4,2025-10-21
+Public administration,January 2025,Without COLA,2,4252,43.6,6.5,3.4,2025-10-21
+All industries,February 2025,Total,8,15157,45.3,4.7,3.6,2025-10-21
+All industries,February 2025,Without COLA,8,15157,45.3,4.7,3.6,2025-10-21
+Transportation,February 2025,Total,4,5057,44.9,5.5,4.0,2025-10-21
+Transportation,February 2025,Without COLA,4,5057,44.9,5.5,4.0,2025-10-21
+"Education, health, and social services",February 2025,Total,3,2430,37.9,2.7,2.6,2025-10-21
+"Education, health, and social services",February 2025,Without COLA,3,2430,37.9,2.7,2.6,2025-10-21
+Public administration,February 2025,Total,1,7670,48.0,4.7,3.7,2025-10-21
+Public administration,February 2025,Without COLA,1,7670,48.0,4.7,3.7,2025-10-21
+All industries,March 2025,Total,6,22135,47.7,3.1,3.3,2025-10-21
+All industries,March 2025,Without COLA,6,22135,47.7,3.1,3.3,2025-10-21
+Transportation,March 2025,Total,1,3400,36.0,3.0,3.2,2025-10-21
+Transportation,March 2025,Without COLA,1,3400,36.0,3.0,3.2,2025-10-21
+"Education, health, and social services",March 2025,Total,4,10495,51.2,2.6,3.0,2025-10-21
+"Education, health, and social services",March 2025,Without COLA,4,10495,51.2,2.6,3.0,2025-10-21
+Public administration,March 2025,Total,1,8240,48.0,3.9,3.7,2025-10-21
+Public administration,March 2025,Without COLA,1,8240,48.0,3.9,3.7,2025-10-21
+All industries,April 2025,Total,13,172748,46.9,6.3,4.6,2025-10-21
+All industries,April 2025,Without COLA,13,172748,46.9,6.3,4.6,2025-10-21
+Construction,April 2025,Total,4,113531,48.0,7.6,5.3,2025-10-21
+Construction,April 2025,Without COLA,4,113531,48.0,7.6,5.3,2025-10-21
+Wholesale and retail trade,April 2025,Total,1,878,60.0,6.7,3.9,2025-10-21
+Wholesale and retail trade,April 2025,Without COLA,1,878,60.0,6.7,3.9,2025-10-21
+"Education, health, and social services",April 2025,Total,6,51020,43.6,3.4,3.2,2025-10-21
+"Education, health, and social services",April 2025,Without COLA,6,51020,43.6,3.4,3.2,2025-10-21
+Entertainment and hospitality,April 2025,Total,1,1606,24.0,10.8,10.2,2025-10-21
+Entertainment and hospitality,April 2025,Without COLA,1,1606,24.0,10.8,10.2,2025-10-21
+Public administration,April 2025,Total,1,5713,60.0,2.8,2.5,2025-10-21
+Public administration,April 2025,Without COLA,1,5713,60.0,2.8,2.5,2025-10-21
+All industries,May 2025,Total,9,25184,45.1,3.1,3.0,2025-10-21
+All industries,May 2025,Without COLA,9,25184,45.1,3.1,3.0,2025-10-21
+Construction,May 2025,Total,3,9533,47.9,2.7,2.5,2025-10-21
+Construction,May 2025,Without COLA,3,9533,47.9,2.7,2.5,2025-10-21
+Finance and professional services,May 2025,Total,1,1550,36.0,4.2,4.6,2025-10-21
+Finance and professional services,May 2025,Without COLA,1,1550,36.0,4.2,4.6,2025-10-21
+"Education, health, and social services",May 2025,Total,2,7024,46.4,2.9,2.9,2025-10-21
+"Education, health, and social services",May 2025,Without COLA,2,7024,46.4,2.9,2.9,2025-10-21
+Public administration,May 2025,Total,3,7077,42.1,3.5,3.3,2025-10-21
+Public administration,May 2025,Without COLA,3,7077,42.1,3.5,3.3,2025-10-21
+All industries,June 2025,Total,4,4657,53.6,3.6,3.4,2025-10-21
+All industries,June 2025,Without COLA,4,4657,53.6,3.6,3.4,2025-10-21
+Utilities,June 2025,Total,1,2300,60.0,3.0,3.5,2025-10-21
+Utilities,June 2025,Without COLA,1,2300,60.0,3.0,3.5,2025-10-21
+Construction,June 2025,Total,1,790,46.3,4.4,2.5,2025-10-21
+Construction,June 2025,Without COLA,1,790,46.3,4.4,2.5,2025-10-21
+Transportation,June 2025,Total,1,733,48.0,5.0,4.5,2025-10-21
+Transportation,June 2025,Without COLA,1,733,48.0,5.0,4.5,2025-10-21
+"Education, health, and social services",June 2025,Total,1,834,48.0,3.0,3.0,2025-10-21
+"Education, health, and social services",June 2025,Without COLA,1,834,48.0,3.0,3.0,2025-10-21
+All industries,July 2025,Total,4,45658,48.4,7.4,2.1,2025-10-21
+All industries,July 2025,Without COLA,4,45658,48.4,7.4,2.1,2025-10-21
+Construction,July 2025,Total,1,39730,48.0,8.0,1.9,2025-10-21
+Construction,July 2025,Without COLA,1,39730,48.0,8.0,1.9,2025-10-21
+Transportation,July 2025,Total,1,2592,47.4,3.0,3.0,2025-10-21
+Transportation,July 2025,Without COLA,1,2592,47.4,3.0,3.0,2025-10-21
+Information and culture,July 2025,Total,1,2500,60.0,4.0,3.4,2025-10-21
+Information and culture,July 2025,Without COLA,1,2500,60.0,4.0,3.4,2025-10-21
+Finance and professional services,July 2025,Total,1,836,36.0,4.0,3.5,2025-10-21
+Finance and professional services,July 2025,Without COLA,1,836,36.0,4.0,3.5,2025-10-21
+All industries,2016,Total,292,1194600,48.5,0.9,1.4,2025-10-21
+All industries,2016,Without COLA,279,1096282,49.3,0.9,1.4,2025-10-21
+All industries,2016,With COLA,13,98318,38.8,1.1,1.1,2025-10-21
+Primary industries,2016,Total,8,14090,32.1,0.2,0.7,2025-10-21
+Primary industries,2016,Without COLA,8,14090,32.1,0.2,0.7,2025-10-21
+Utilities,2016,Total,8,5800,48.9,0.8,1.4,2025-10-21
+Utilities,2016,Without COLA,8,5800,48.9,0.8,1.4,2025-10-21
+Construction,2016,Total,53,112580,36.7,2.0,1.9,2025-10-21
+Construction,2016,Without COLA,53,112580,36.7,2.0,1.9,2025-10-21
+Manufacturing,2016,Total,29,43197,51.0,1.9,1.4,2025-10-21
+Manufacturing,2016,Without COLA,20,16797,55.0,2.1,2.0,2025-10-21
+Manufacturing,2016,With COLA,9,26400,48.5,1.8,1.1,2025-10-21
+Wholesale and retail trade,2016,Total,9,24215,60.4,1.4,1.3,2025-10-21
+Wholesale and retail trade,2016,Without COLA,8,18215,60.6,1.2,1.4,2025-10-21
+Wholesale and retail trade,2016,With COLA,1,6000,60.0,1.7,1.2,2025-10-21
+Transportation,2016,Total,18,85950,42.0,1.0,1.4,2025-10-21
+Transportation,2016,Without COLA,16,26950,71.5,1.4,1.8,2025-10-21
+Transportation,2016,With COLA,2,59000,28.5,0.8,1.2,2025-10-21
+Information and culture,2016,Total,5,14578,56.0,0.7,1.2,2025-10-21
+Information and culture,2016,Without COLA,4,7660,41.6,1.4,1.5,2025-10-21
+Information and culture,2016,With COLA,1,6918,72.0,0.0,1.0,2025-10-21
+Finance and professional services,2016,Total,8,5980,41.7,1.9,1.7,2025-10-21
+Finance and professional services,2016,Without COLA,8,5980,41.7,1.9,1.7,2025-10-21
+"Education, health, and social services",2016,Total,98,697660,49.7,0.5,1.2,2025-10-21
+"Education, health, and social services",2016,Without COLA,98,697660,49.7,0.5,1.2,2025-10-21
+Entertainment and hospitality,2016,Total,5,4010,45.9,1.7,1.7,2025-10-21
+Entertainment and hospitality,2016,Without COLA,5,4010,45.9,1.7,1.7,2025-10-21
+Public administration,2016,Total,51,186540,52.8,1.3,1.5,2025-10-21
+Public administration,2016,Without COLA,51,186540,52.8,1.3,1.5,2025-10-21
+All industries,2017,Total,224,868612,39.8,1.7,1.7,2025-10-21
+All industries,2017,Without COLA,222,865969,39.7,1.7,1.7,2025-10-21
+All industries,2017,With COLA,2,2643,47.3,1.6,1.8,2025-10-21
+Primary industries,2017,Total,10,13602,36.8,0.7,0.9,2025-10-21
+Primary industries,2017,Without COLA,9,11909,35.2,0.5,0.6,2025-10-21
+Primary industries,2017,With COLA,1,1693,48.0,2.4,2.6,2025-10-21
+Utilities,2017,Total,3,2920,29.4,1.6,1.7,2025-10-21
+Utilities,2017,Without COLA,3,2920,29.4,1.6,1.7,2025-10-21
+Construction,2017,Total,16,97270,44.5,3.4,2.0,2025-10-21
+Construction,2017,Without COLA,16,97270,44.5,3.4,2.0,2025-10-21
+Manufacturing,2017,Total,10,10440,48.3,1.5,1.4,2025-10-21
+Manufacturing,2017,Without COLA,9,9490,48.6,1.6,1.5,2025-10-21
+Manufacturing,2017,With COLA,1,950,46.0,0.0,0.3,2025-10-21
+Wholesale and retail trade,2017,Total,7,14550,47.5,1.7,1.9,2025-10-21
+Wholesale and retail trade,2017,Without COLA,7,14550,47.5,1.7,1.9,2025-10-21
+Transportation,2017,Total,19,28362,46.8,1.8,2.1,2025-10-21
+Transportation,2017,Without COLA,19,28362,46.8,1.8,2.1,2025-10-21
+Information and culture,2017,Total,6,8936,47.3,1.6,1.8,2025-10-21
+Information and culture,2017,Without COLA,6,8936,47.3,1.6,1.8,2025-10-21
+Finance and professional services,2017,Total,11,20770,53.3,2.0,2.2,2025-10-21
+Finance and professional services,2017,Without COLA,11,20770,53.3,2.0,2.2,2025-10-21
+"Education, health, and social services",2017,Total,80,398216,30.5,1.5,1.7,2025-10-21
+"Education, health, and social services",2017,Without COLA,80,398216,30.5,1.5,1.7,2025-10-21
+Entertainment and hospitality,2017,Total,5,6350,46.7,2.0,1.9,2025-10-21
+Entertainment and hospitality,2017,Without COLA,5,6350,46.7,2.0,1.9,2025-10-21
+Public administration,2017,Total,57,267196,49.1,1.4,1.6,2025-10-21
+Public administration,2017,Without COLA,57,267196,49.1,1.4,1.6,2025-10-21
+All industries,2018,Total,226,761192,42.7,1.4,1.4,2025-10-21
+All industries,2018,Without COLA,224,758399,42.6,1.3,1.4,2025-10-21
+All industries,2018,With COLA,2,2793,60.0,10.9,4.1,2025-10-21
+Primary industries,2018,Total,2,2213,50.9,8.7,2.7,2025-10-21
+Primary industries,2018,Without COLA,1,720,32.0,-1.4,-0.5,2025-10-21
+Primary industries,2018,With COLA,1,1493,60.0,13.7,4.3,2025-10-21
+Utilities,2018,Total,11,29176,44.9,1.3,2.0,2025-10-21
+Utilities,2018,Without COLA,11,29176,44.9,1.3,2.0,2025-10-21
+Construction,2018,Total,16,93740,46.9,2.1,1.5,2025-10-21
+Construction,2018,Without COLA,16,93740,46.9,2.1,1.5,2025-10-21
+Manufacturing,2018,Total,13,13488,51.9,2.2,1.9,2025-10-21
+Manufacturing,2018,Without COLA,12,12188,51.0,1.7,1.7,2025-10-21
+Manufacturing,2018,With COLA,1,1300,60.0,7.6,3.9,2025-10-21
+Wholesale and retail trade,2018,Total,10,20373,52.8,0.9,1.4,2025-10-21
+Wholesale and retail trade,2018,Without COLA,10,20373,52.8,0.9,1.4,2025-10-21
+Transportation,2018,Total,16,28882,44.0,2.0,2.2,2025-10-21
+Transportation,2018,Without COLA,16,28882,44.0,2.0,2.2,2025-10-21
+Information and culture,2018,Total,8,25890,45.5,2.6,2.4,2025-10-21
+Information and culture,2018,Without COLA,8,25890,45.5,2.6,2.4,2025-10-21
+Finance and professional services,2018,Total,17,44852,47.9,2.7,2.1,2025-10-21
+Finance and professional services,2018,Without COLA,17,44852,47.9,2.7,2.1,2025-10-21
+"Education, health, and social services",2018,Total,77,330519,39.0,0.8,1.0,2025-10-21
+"Education, health, and social services",2018,Without COLA,77,330519,39.0,0.8,1.0,2025-10-21
+Entertainment and hospitality,2018,Total,9,7940,45.6,2.5,2.4,2025-10-21
+Entertainment and hospitality,2018,Without COLA,9,7940,45.6,2.5,2.4,2025-10-21
+Public administration,2018,Total,47,164119,42.7,1.1,1.2,2025-10-21
+Public administration,2018,Without COLA,47,164119,42.7,1.1,1.2,2025-10-21
+All industries,2019,Total,269,684720,43.1,1.8,1.8,2025-10-21
+All industries,2019,Without COLA,268,684220,43.1,1.8,1.8,2025-10-21
+All industries,2019,With COLA,1,500,36.0,2.4,3.2,2025-10-21
+Primary industries,2019,Total,4,5630,55.7,2.3,2.4,2025-10-21
+Primary industries,2019,Without COLA,4,5630,55.7,2.3,2.4,2025-10-21
+Utilities,2019,Total,12,19730,36.0,1.8,2.1,2025-10-21
+Utilities,2019,Without COLA,12,19730,36.0,1.8,2.1,2025-10-21
+Construction,2019,Total,44,109945,36.6,2.0,2.1,2025-10-21
+Construction,2019,Without COLA,44,109945,36.6,2.0,2.1,2025-10-21
+Manufacturing,2019,Total,16,17760,61.1,2.0,2.2,2025-10-21
+Manufacturing,2019,Without COLA,15,17260,61.8,1.9,2.1,2025-10-21
+Manufacturing,2019,With COLA,1,500,36.0,2.4,3.2,2025-10-21
+Wholesale and retail trade,2019,Total,11,25528,58.1,1.2,1.7,2025-10-21
+Wholesale and retail trade,2019,Without COLA,11,25528,58.1,1.2,1.7,2025-10-21
+Transportation,2019,Total,20,41980,54.4,2.2,2.4,2025-10-21
+Transportation,2019,Without COLA,20,41980,54.4,2.2,2.4,2025-10-21
+Information and culture,2019,Total,6,10782,53.8,1.2,1.3,2025-10-21
+Information and culture,2019,Without COLA,6,10782,53.8,1.2,1.3,2025-10-21
+Finance and professional services,2019,Total,6,5820,47.1,2.1,1.8,2025-10-21
+Finance and professional services,2019,Without COLA,6,5820,47.1,2.1,1.8,2025-10-21
+"Education, health, and social services",2019,Total,90,294965,38.3,1.3,1.6,2025-10-21
+"Education, health, and social services",2019,Without COLA,90,294965,38.3,1.3,1.6,2025-10-21
+Entertainment and hospitality,2019,Total,2,1800,36.0,7.1,5.0,2025-10-21
+Entertainment and hospitality,2019,Without COLA,2,1800,36.0,7.1,5.0,2025-10-21
+Public administration,2019,Total,58,150780,48.8,2.4,1.9,2025-10-21
+Public administration,2019,Without COLA,58,150780,48.8,2.4,1.9,2025-10-21
+All industries,2020,Total,182,809923,41.4,1.8,1.9,2025-10-21
+All industries,2020,Without COLA,174,723153,40.9,1.8,1.9,2025-10-21
+All industries,2020,With COLA,8,86770,45.6,2.2,2.2,2025-10-21
+Primary industries,2020,Total,1,650,64.8,2.5,2.2,2025-10-21
+Primary industries,2020,Without COLA,1,650,64.8,2.5,2.2,2025-10-21
+Utilities,2020,Total,5,12606,44.3,1.5,1.9,2025-10-21
+Utilities,2020,Without COLA,5,12606,44.3,1.5,1.9,2025-10-21
+Construction,2020,Total,10,20042,44.5,0.8,1.0,2025-10-21
+Construction,2020,Without COLA,10,20042,44.5,0.8,1.0,2025-10-21
+Manufacturing,2020,Total,14,39945,40.3,3.2,2.1,2025-10-21
+Manufacturing,2020,Without COLA,8,12175,50.3,4.8,2.7,2025-10-21
+Manufacturing,2020,With COLA,6,27770,35.9,2.5,1.8,2025-10-21
+Wholesale and retail trade,2020,Total,9,13811,75.5,0.9,1.0,2025-10-21
+Wholesale and retail trade,2020,Without COLA,9,13811,75.5,0.9,1.0,2025-10-21
+Transportation,2020,Total,22,98811,51.5,2.1,2.3,2025-10-21
+Transportation,2020,Without COLA,20,39811,53.3,2.1,2.2,2025-10-21
+Transportation,2020,With COLA,2,59000,50.2,2.0,2.4,2025-10-21
+Information and culture,2020,Total,2,3450,43.9,1.2,1.3,2025-10-21
+Information and culture,2020,Without COLA,2,3450,43.9,1.2,1.3,2025-10-21
+Finance and professional services,2020,Total,9,25148,45.8,1.3,1.6,2025-10-21
+Finance and professional services,2020,Without COLA,9,25148,45.8,1.3,1.6,2025-10-21
+"Education, health, and social services",2020,Total,74,385643,36.4,1.5,1.9,2025-10-21
+"Education, health, and social services",2020,Without COLA,74,385643,36.4,1.5,1.9,2025-10-21
+Entertainment and hospitality,2020,Total,3,2038,31.3,1.6,1.7,2025-10-21
+Entertainment and hospitality,2020,Without COLA,3,2038,31.3,1.6,1.7,2025-10-21
+Public administration,2020,Total,33,207779,42.7,2.3,1.9,2025-10-21
+Public administration,2020,Without COLA,33,207779,42.7,2.3,1.9,2025-10-21
+All industries,2021,Total,179,1030411,42.8,1.8,1.9,2025-10-21
+All industries,2021,Without COLA,175,978532,42.9,1.8,1.9,2025-10-21
+All industries,2021,With COLA,4,51879,40.3,2.2,2.6,2025-10-21
+Primary industries,2021,Total,3,3139,44.5,1.4,2.4,2025-10-21
+Primary industries,2021,Without COLA,2,1260,39.4,2.4,2.4,2025-10-21
+Primary industries,2021,With COLA,1,1879,48.0,0.6,2.3,2025-10-21
+Utilities,2021,Total,8,17469,27.5,1.1,1.1,2025-10-21
+Utilities,2021,Without COLA,8,17469,27.5,1.1,1.1,2025-10-21
+Construction,2021,Total,9,149177,47.9,2.0,2.0,2025-10-21
+Construction,2021,Without COLA,9,149177,47.9,2.0,2.0,2025-10-21
+Manufacturing,2021,Total,15,14707,51.2,4.5,2.3,2025-10-21
+Manufacturing,2021,Without COLA,14,12707,49.8,3.9,2.1,2025-10-21
+Manufacturing,2021,With COLA,1,2000,60.0,8.4,3.3,2025-10-21
+Wholesale and retail trade,2021,Total,10,24770,55.8,1.5,1.4,2025-10-21
+Wholesale and retail trade,2021,Without COLA,9,18770,62.2,1.4,1.2,2025-10-21
+Wholesale and retail trade,2021,With COLA,1,6000,36.0,2.0,2.0,2025-10-21
+Transportation,2021,Total,14,57058,40.6,2.1,2.5,2025-10-21
+Transportation,2021,Without COLA,13,15058,43.4,2.4,2.0,2025-10-21
+Transportation,2021,With COLA,1,42000,39.7,2.0,2.7,2025-10-21
+Information and culture,2021,Total,5,8228,57.5,1.7,1.9,2025-10-21
+Information and culture,2021,Without COLA,5,8228,57.5,1.7,1.9,2025-10-21
+Finance and professional services,2021,Total,6,7582,43.2,0.5,2.1,2025-10-21
+Finance and professional services,2021,Without COLA,6,7582,43.2,0.5,2.1,2025-10-21
+"Education, health, and social services",2021,Total,69,584584,38.9,1.8,1.9,2025-10-21
+"Education, health, and social services",2021,Without COLA,69,584584,38.9,1.8,1.9,2025-10-21
+Entertainment and hospitality,2021,Total,4,4836,36.7,0.1,1.0,2025-10-21
+Entertainment and hospitality,2021,Without COLA,4,4836,36.7,0.1,1.0,2025-10-21
+Public administration,2021,Total,36,158861,51.4,1.7,1.9,2025-10-21
+Public administration,2021,Without COLA,36,158861,51.4,1.7,1.9,2025-10-21
+All industries,2022,Total,147,706936,42.5,2.8,2.7,2025-10-21
+All industries,2022,Without COLA,143,640736,43.2,2.7,2.6,2025-10-21
+All industries,2022,With COLA,4,66200,36.0,4.1,3.8,2025-10-21
+Primary industries,2022,Total,1,1011,60.0,2.0,2.0,2025-10-21
+Primary industries,2022,Without COLA,1,1011,60.0,2.0,2.0,2025-10-21
+Utilities,2022,Total,4,3055,44.7,0.4,1.6,2025-10-21
+Utilities,2022,Without COLA,4,3055,44.7,0.4,1.6,2025-10-21
+Construction,2022,Total,8,58510,35.7,4.6,4.4,2025-10-21
+Construction,2022,Without COLA,8,58510,35.7,4.6,4.4,2025-10-21
+Manufacturing,2022,Total,8,12376,52.3,9.0,3.9,2025-10-21
+Manufacturing,2022,Without COLA,7,9666,56.9,11.3,4.5,2025-10-21
+Manufacturing,2022,With COLA,1,2710,35.9,0.8,1.8,2025-10-21
+Wholesale and retail trade,2022,Total,3,10577,43.5,7.9,3.1,2025-10-21
+Wholesale and retail trade,2022,Without COLA,3,10577,43.5,7.9,3.1,2025-10-21
+Transportation,2022,Total,17,42278,42.0,3.3,2.9,2025-10-21
+Transportation,2022,Without COLA,17,42278,42.0,3.3,2.9,2025-10-21
+Information and culture,2022,Total,9,15770,47.8,2.6,2.4,2025-10-21
+Information and culture,2022,Without COLA,9,15770,47.8,2.6,2.4,2025-10-21
+Finance and professional services,2022,Total,9,23855,53.6,1.8,2.1,2025-10-21
+Finance and professional services,2022,Without COLA,9,23855,53.6,1.8,2.1,2025-10-21
+"Education, health, and social services",2022,Total,59,404495,42.9,2.5,2.6,2025-10-21
+"Education, health, and social services",2022,Without COLA,57,341685,44.2,2.1,2.3,2025-10-21
+"Education, health, and social services",2022,With COLA,2,62810,36.0,4.2,3.9,2025-10-21
+Entertainment and hospitality,2022,Total,2,2406,40.0,4.8,3.7,2025-10-21
+Entertainment and hospitality,2022,Without COLA,2,2406,40.0,4.8,3.7,2025-10-21
+Public administration,2022,Total,27,132603,40.7,2.4,2.3,2025-10-21
+Public administration,2022,Without COLA,26,131923,40.8,2.4,2.3,2025-10-21
+Public administration,2022,With COLA,1,680,36.0,4.3,3.2,2025-10-21
+All industries,2023,Total,159,720010,42.9,3.7,3.4,2025-10-21
+All industries,2023,Without COLA,149,689985,43.2,3.5,3.3,2025-10-21
+All industries,2023,With COLA,10,30025,36.1,7.2,4.6,2025-10-21
+Primary industries,2023,Total,1,750,48.0,3.5,2.9,2025-10-21
+Primary industries,2023,Without COLA,1,750,48.0,3.5,2.9,2025-10-21
+Utilities,2023,Total,8,19154,29.4,3.9,3.8,2025-10-21
+Utilities,2023,Without COLA,8,19154,29.4,3.9,3.8,2025-10-21
+Construction,2023,Total,9,25701,27.8,8.2,5.9,2025-10-21
+Construction,2023,Without COLA,9,25701,27.8,8.2,5.9,2025-10-21
+Manufacturing,2023,Total,9,22886,37.3,8.9,4.9,2025-10-21
+Manufacturing,2023,Without COLA,5,3886,43.5,6.1,4.1,2025-10-21
+Manufacturing,2023,With COLA,4,19000,36.1,9.5,5.1,2025-10-21
+Wholesale and retail trade,2023,Total,4,13379,57.5,8.9,4.0,2025-10-21
+Wholesale and retail trade,2023,Without COLA,4,13379,57.5,8.9,4.0,2025-10-21
+Transportation,2023,Total,24,44872,38.1,4.9,3.9,2025-10-21
+Transportation,2023,Without COLA,24,44872,38.1,4.9,3.9,2025-10-21
+Information and culture,2023,Total,4,10961,57.3,1.6,2.5,2025-10-21
+Information and culture,2023,Without COLA,4,10961,57.3,1.6,2.5,2025-10-21
+Finance and professional services,2023,Total,4,3619,45.8,7.0,4.3,2025-10-21
+Finance and professional services,2023,Without COLA,4,3619,45.8,7.0,4.3,2025-10-21
+"Education, health, and social services",2023,Total,61,315067,41.4,3.7,3.2,2025-10-21
+"Education, health, and social services",2023,Without COLA,55,304042,41.5,3.7,3.2,2025-10-21
+"Education, health, and social services",2023,With COLA,6,11025,36.3,3.3,3.9,2025-10-21
+Public administration,2023,Total,35,263621,47.1,2.3,3.0,2025-10-21
+Public administration,2023,Without COLA,35,263621,47.1,2.3,3.0,2025-10-21
+All industries,2024,Total,145,1115557,50.8,4.7,3.4,2025-10-21
+All industries,2024,Without COLA,121,552008,41.5,3.4,3.1,2025-10-21
+All industries,2024,With COLA,24,563549,59.8,6.0,3.6,2025-10-21
+Primary industries,2024,Total,1,3317,36.0,5.0,4.0,2025-10-21
+Primary industries,2024,Without COLA,1,3317,36.0,5.0,4.0,2025-10-21
+Utilities,2024,Total,3,3361,31.9,3.3,3.0,2025-10-21
+Utilities,2024,Without COLA,3,3361,31.9,3.3,3.0,2025-10-21
+Construction,2024,Total,1,700,48.0,2.8,2.6,2025-10-21
+Construction,2024,Without COLA,1,700,48.0,2.8,2.6,2025-10-21
+Manufacturing,2024,Total,7,8804,41.9,10.4,6.1,2025-10-21
+Manufacturing,2024,Without COLA,6,6094,49.8,8.2,4.4,2025-10-21
+Manufacturing,2024,With COLA,1,2710,24.1,15.3,9.9,2025-10-21
+Wholesale and retail trade,2024,Total,1,10229,36.0,3.0,2.6,2025-10-21
+Wholesale and retail trade,2024,Without COLA,1,10229,36.0,3.0,2.6,2025-10-21
+Transportation,2024,Total,11,24201,41.5,5.0,4.0,2025-10-21
+Transportation,2024,Without COLA,11,24201,41.5,5.0,4.0,2025-10-21
+Information and culture,2024,Total,6,8605,40.7,3.2,2.0,2025-10-21
+Information and culture,2024,Without COLA,6,8605,40.7,3.2,2.0,2025-10-21
+Finance and professional services,2024,Total,7,24715,35.1,3.4,3.7,2025-10-21
+Finance and professional services,2024,Without COLA,7,24715,35.1,3.4,3.7,2025-10-21
+"Education, health, and social services",2024,Total,76,904206,53.2,4.9,3.3,2025-10-21
+"Education, health, and social services",2024,Without COLA,53,343367,42.0,3.1,2.9,2025-10-21
+"Education, health, and social services",2024,With COLA,23,560839,60.0,6.0,3.6,2025-10-21
+Entertainment and hospitality,2024,Total,2,1311,30.9,7.1,5.1,2025-10-21
+Entertainment and hospitality,2024,Without COLA,2,1311,30.9,7.1,5.1,2025-10-21
+Public administration,2024,Total,30,126108,42.1,3.9,3.3,2025-10-21
+Public administration,2024,Without COLA,30,126108,42.1,3.9,3.3,2025-10-21
+All industries,2025,Total,51,299241,47.6,5.8,3.9,2025-10-21
+All industries,2025,Without COLA,51,299241,47.6,5.8,3.9,2025-10-21
+Primary industries,2025,Total,1,536,36.0,3.0,3.0,2025-10-21
+Primary industries,2025,Without COLA,1,536,36.0,3.0,3.0,2025-10-21
+Utilities,2025,Total,2,3280,52.8,2.9,3.5,2025-10-21
+Utilities,2025,Without COLA,2,3280,52.8,2.9,3.5,2025-10-21
+Construction,2025,Total,9,163584,48.0,7.4,4.3,2025-10-21
+Construction,2025,Without COLA,9,163584,48.0,7.4,4.3,2025-10-21
+Manufacturing,2025,Total,1,2400,72.0,4.0,3.2,2025-10-21
+Manufacturing,2025,Without COLA,1,2400,72.0,4.0,3.2,2025-10-21
+Wholesale and retail trade,2025,Total,2,5825,70.2,6.1,3.4,2025-10-21
+Wholesale and retail trade,2025,Without COLA,2,5825,70.2,6.1,3.4,2025-10-21
+Transportation,2025,Total,7,11782,43.0,4.2,3.6,2025-10-21
+Transportation,2025,Without COLA,7,11782,43.0,4.2,3.6,2025-10-21
+Information and culture,2025,Total,1,2500,60.0,4.0,3.4,2025-10-21
+Information and culture,2025,Without COLA,1,2500,60.0,4.0,3.4,2025-10-21
+Finance and professional services,2025,Total,2,2386,36.0,4.2,4.2,2025-10-21
+Finance and professional services,2025,Without COLA,2,2386,36.0,4.2,4.2,2025-10-21
+"Education, health, and social services",2025,Total,17,72390,44.8,3.2,3.1,2025-10-21
+"Education, health, and social services",2025,Without COLA,17,72390,44.8,3.2,3.1,2025-10-21
+Entertainment and hospitality,2025,Total,1,1606,24.0,10.8,10.2,2025-10-21
+Entertainment and hospitality,2025,Without COLA,1,1606,24.0,10.8,10.2,2025-10-21
+Public administration,2025,Total,8,32952,48.2,4.2,3.3,2025-10-21
+Public administration,2025,Without COLA,8,32952,48.2,4.2,3.3,2025-10-21
+Unnamed: 0_level_1,,Total,Number of agreements,Number of employees,Duration of agreements in months (average),First year percentage adjustment (average),Annual percentage adjustment (average),
+Unnamed: 0_level_1,,Without COLA,Number of agreements,Number of employees,Duration of agreements in months (average),First year percentage adjustment (average),Annual percentage adjustment (average),
+Unnamed: 0_level_1,,With COLA,Number of agreements,Number of employees,Duration of agreements in months (average),First year percentage adjustment (average),Annual percentage adjustment (average),
+2016,All sectors,Total,292,1194600,48.5,0.9,1.4,2025-10-21
+2016,All sectors,Without COLA,279,1096282,49.3,0.9,1.4,2025-10-21
+2016,All sectors,With COLA,13,98318,38.8,1.1,1.1,2025-10-21
+2017,All sectors,Total,224,868612,39.8,1.7,1.7,2025-10-21
+2017,All sectors,Without COLA,222,865969,39.7,1.7,1.7,2025-10-21
+2017,All sectors,With COLA,2,2643,47.3,1.6,1.8,2025-10-21
+2018,All sectors,Total,226,761192,42.7,1.4,1.4,2025-10-21
+2018,All sectors,Without COLA,224,758399,42.6,1.3,1.4,2025-10-21
+2018,All sectors,With COLA,2,2793,60.0,10.9,4.1,2025-10-21
+2019,All sectors,Total,269,684720,43.1,1.8,1.8,2025-10-21
+2019,All sectors,Without COLA,268,684220,43.1,1.8,1.8,2025-10-21
+2019,All sectors,With COLA,1,500,36.0,2.4,3.2,2025-10-21
+2020,All sectors,Total,182,809923,41.4,1.8,1.9,2025-10-21
+2020,All sectors,Without COLA,174,723153,40.9,1.8,1.9,2025-10-21
+2020,All sectors,With COLA,8,86770,45.6,2.2,2.2,2025-10-21
+2021,All sectors,Total,179,1030411,42.8,1.8,1.9,2025-10-21
+2021,All sectors,Without COLA,175,978532,42.9,1.8,1.9,2025-10-21
+2021,All sectors,With COLA,4,51879,40.3,2.2,2.6,2025-10-21
+2022,All sectors,Total,147,706936,42.5,2.8,2.7,2025-10-21
+2022,All sectors,Without COLA,143,640736,43.2,2.7,2.6,2025-10-21
+2022,All sectors,With COLA,4,66200,36.0,4.1,3.8,2025-10-21
+2023,All sectors,Total,159,720010,42.9,3.7,3.4,2025-10-21
+2023,All sectors,Without COLA,149,689985,43.2,3.5,3.3,2025-10-21
+2023,All sectors,With COLA,10,30025,36.1,7.2,4.6,2025-10-21
+2024,All sectors,Total,145,1115557,50.8,4.7,3.4,2025-10-21
+2024,All sectors,Without COLA,121,552008,41.5,3.4,3.1,2025-10-21
+2024,All sectors,With COLA,24,563549,59.8,6.0,3.6,2025-10-21
+2025,All sectors,Total,51,299241,47.6,5.8,3.9,2025-10-21
+2025,All sectors,Without COLA,51,299241,47.6,5.8,3.9,2025-10-21
+2016,Private sector,Total,128,247565,45.4,1.5,1.5,2025-10-21
+2016,Private sector,Without COLA,117,208247,43.7,1.5,1.6,2025-10-21
+2016,Private sector,With COLA,11,39318,54.4,1.5,1.1,2025-10-21
+2017,Private sector,Total,75,193038,44.9,2.6,2.0,2025-10-21
+2017,Private sector,Without COLA,73,190395,44.9,2.6,2.0,2025-10-21
+2017,Private sector,With COLA,2,2643,47.3,1.6,1.8,2025-10-21
+2018,Private sector,Total,82,220436,47.4,2.3,1.9,2025-10-21
+2018,Private sector,Without COLA,80,217643,47.2,2.1,1.8,2025-10-21
+2018,Private sector,With COLA,2,2793,60.0,10.9,4.1,2025-10-21
+2019,Private sector,Total,97,187467,43.2,2.0,2.1,2025-10-21
+2019,Private sector,Without COLA,96,186967,43.2,2.0,2.1,2025-10-21
+2019,Private sector,With COLA,1,500,36.0,2.4,3.2,2025-10-21
+2020,Private sector,Total,60,139261,47.0,2.0,1.7,2025-10-21
+2020,Private sector,Without COLA,54,111491,49.7,1.8,1.7,2025-10-21
+2020,Private sector,With COLA,6,27770,35.9,2.5,1.8,2025-10-21
+2021,Private sector,Total,63,225105,48.6,2.0,2.0,2025-10-21
+2021,Private sector,Without COLA,60,215226,48.9,2.0,1.9,2025-10-21
+2021,Private sector,With COLA,3,9879,43.1,3.0,2.3,2025-10-21
+2022,Private sector,Total,42,139126,45.1,4.2,3.6,2025-10-21
+2022,Private sector,Without COLA,41,136416,45.3,4.3,3.6,2025-10-21
+2022,Private sector,With COLA,1,2710,35.9,0.8,1.8,2025-10-21
+2023,Private sector,Total,52,121682,41.6,6.5,4.3,2025-10-21
+2023,Private sector,Without COLA,48,102682,42.6,5.9,4.1,2025-10-21
+2023,Private sector,With COLA,4,19000,36.1,9.5,5.1,2025-10-21
+2024,Private sector,Total,34,72914,40.7,4.2,3.5,2025-10-21
+2024,Private sector,Without COLA,33,70204,41.3,3.8,3.3,2025-10-21
+2024,Private sector,With COLA,1,2710,24.1,15.3,9.9,2025-10-21
+2025,Private sector,Total,22,181228,48.2,7.2,4.3,2025-10-21
+2025,Private sector,Without COLA,22,181228,48.2,7.2,4.3,2025-10-21
+2016,Public sector,Total,164,947035,49.2,0.7,1.3,2025-10-21
+2016,Public sector,Without COLA,162,888035,50.6,0.7,1.3,2025-10-21
+2016,Public sector,With COLA,2,59000,28.5,0.8,1.2,2025-10-21
+2017,Public sector,Total,149,675574,38.3,1.4,1.7,2025-10-21
+2017,Public sector,Without COLA,149,675574,38.3,1.4,1.7,2025-10-21
+2018,Public sector,Total,144,540756,40.7,1.0,1.2,2025-10-21
+2018,Public sector,Without COLA,144,540756,40.7,1.0,1.2,2025-10-21
+2019,Public sector,Total,172,497253,43.0,1.7,1.7,2025-10-21
+2019,Public sector,Without COLA,172,497253,43.0,1.7,1.7,2025-10-21
+2020,Public sector,Total,122,670662,40.2,1.8,2.0,2025-10-21
+2020,Public sector,Without COLA,120,611662,39.3,1.8,1.9,2025-10-21
+2020,Public sector,With COLA,2,59000,50.2,2.0,2.4,2025-10-21
+2021,Public sector,Total,116,805306,41.2,1.8,1.9,2025-10-21
+2021,Public sector,Without COLA,115,763306,41.2,1.8,1.9,2025-10-21
+2021,Public sector,With COLA,1,42000,39.7,2.0,2.7,2025-10-21
+2022,Public sector,Total,105,567810,41.9,2.5,2.5,2025-10-21
+2022,Public sector,Without COLA,102,504320,42.6,2.3,2.3,2025-10-21
+2022,Public sector,With COLA,3,63490,36.0,4.2,3.9,2025-10-21
+2023,Public sector,Total,107,598328,43.2,3.1,3.2,2025-10-21
+2023,Public sector,Without COLA,101,587303,43.3,3.1,3.2,2025-10-21
+2023,Public sector,With COLA,6,11025,36.3,3.3,3.9,2025-10-21
+2024,Public sector,Total,111,1042643,51.5,4.8,3.3,2025-10-21
+2024,Public sector,Without COLA,88,481804,41.6,3.4,3.1,2025-10-21
+2024,Public sector,With COLA,23,560839,60.0,6.0,3.6,2025-10-21
+2025,Public sector,Total,29,118013,46.6,3.6,3.2,2025-10-21
+2025,Public sector,Without COLA,29,118013,46.6,3.6,3.2,2025-10-21
+Unnamed: 0_level_1,,Total,Number of agreements,Number of employees,Duration of agreements in months (average),First year percentage adjustment (average),Annual percentage adjustment (average),
+Unnamed: 0_level_1,,Without COLA,Number of agreements,Number of employees,Duration of agreements in months (average),First year percentage adjustment (average),Annual percentage adjustment (average),
+Unnamed: 0_level_1,,With COLA,Number of agreements,Number of employees,Duration of agreements in months (average),First year percentage adjustment (average),Annual percentage adjustment (average),
+Q3 2022,All sectors,Total,46,207945,47.3,2.1,1.9,2025-10-21
+Q3 2022,All sectors,Without COLA,45,206467,47.3,2.1,1.9,2025-10-21
+Q3 2022,All sectors,With COLA,1,1478,36.0,4.2,4.6,2025-10-21
+Q4 2022,All sectors,Total,44,246342,39.3,3.9,3.6,2025-10-21
+Q4 2022,All sectors,Without COLA,43,185010,40.4,3.7,3.5,2025-10-21
+Q4 2022,All sectors,With COLA,1,61332,36.0,4.2,3.9,2025-10-21
+Q1 2023,All sectors,Total,30,61655,42.6,3.8,3.4,2025-10-21
+Q1 2023,All sectors,Without COLA,26,53170,43.7,3.8,3.4,2025-10-21
+Q1 2023,All sectors,With COLA,4,8485,36.0,3.5,3.9,2025-10-21
+Q2 2023,All sectors,Total,51,308518,42.4,2.6,3.0,2025-10-21
+Q2 2023,All sectors,Without COLA,49,305678,42.4,2.6,3.0,2025-10-21
+Q2 2023,All sectors,With COLA,2,2840,36.2,2.6,3.7,2025-10-21
+Q3 2023,All sectors,Total,46,169307,37.5,5.4,4.3,2025-10-21
+Q3 2023,All sectors,Without COLA,44,162807,37.5,5.2,4.2,2025-10-21
+Q3 2023,All sectors,With COLA,2,6500,36.5,9.0,4.9,2025-10-21
+Q4 2023,All sectors,Total,32,180530,48.9,4.0,3.0,2025-10-21
+Q4 2023,All sectors,Without COLA,30,168330,49.8,3.5,2.9,2025-10-21
+Q4 2023,All sectors,With COLA,2,12200,36.0,10.0,5.2,2025-10-21
+Q1 2024,All sectors,Total,33,188927,45.9,3.0,2.6,2025-10-21
+Q1 2024,All sectors,Without COLA,33,188927,45.9,3.0,2.6,2025-10-21
+Q2 2024,All sectors,Total,56,653329,53.5,5.3,3.5,2025-10-21
+Q2 2024,All sectors,Without COLA,34,174163,35.6,3.5,3.2,2025-10-21
+Q2 2024,All sectors,With COLA,22,479166,60.0,6.0,3.6,2025-10-21
+Q3 2024,All sectors,Total,27,95429,42.8,4.1,3.3,2025-10-21
+Q3 2024,All sectors,Without COLA,26,92719,43.3,3.8,3.1,2025-10-21
+Q3 2024,All sectors,With COLA,1,2710,24.1,15.3,9.9,2025-10-21
+Q4 2024,All sectors,Total,29,177872,50.3,4.8,3.7,2025-10-21
+Q4 2024,All sectors,Without COLA,28,96199,42.1,3.8,3.7,2025-10-21
+Q4 2024,All sectors,With COLA,1,81673,60.0,6.0,3.6,2025-10-21
+Q1 2025,All sectors,Total,21,50994,49.7,4.2,3.4,2025-10-21
+Q1 2025,All sectors,Without COLA,21,50994,49.7,4.2,3.4,2025-10-21
+Q2 2025,All sectors,Total,26,202589,46.9,5.8,4.4,2025-10-21
+Q2 2025,All sectors,Without COLA,26,202589,46.9,5.8,4.4,2025-10-21
+Q3 2022,Private sector,Total,17,54160,51.9,4.7,3.4,2025-10-21
+Q3 2022,Private sector,Without COLA,17,54160,51.9,4.7,3.4,2025-10-21
+Q4 2022,Private sector,Total,9,15408,46.9,4.6,3.7,2025-10-21
+Q4 2022,Private sector,Without COLA,9,15408,46.9,4.6,3.7,2025-10-21
+Q1 2023,Private sector,Total,10,26380,37.8,4.8,4.0,2025-10-21
+Q1 2023,Private sector,Without COLA,10,26380,37.8,4.8,4.0,2025-10-21
+Q2 2023,Private sector,Total,18,34841,30.4,6.8,4.9,2025-10-21
+Q2 2023,Private sector,Without COLA,17,33541,30.2,7.0,5.0,2025-10-21
+Q2 2023,Private sector,With COLA,1,1300,36.3,3.0,3.5,2025-10-21
+Q3 2023,Private sector,Total,14,24965,43.1,6.5,4.5,2025-10-21
+Q3 2023,Private sector,Without COLA,13,19465,45.1,5.5,4.3,2025-10-21
+Q3 2023,Private sector,With COLA,1,5500,36.1,10.0,5.2,2025-10-21
+Q4 2023,Private sector,Total,10,35496,54.2,7.4,3.7,2025-10-21
+Q4 2023,Private sector,Without COLA,8,23296,63.6,6.0,3.0,2025-10-21
+Q4 2023,Private sector,With COLA,2,12200,36.0,10.0,5.2,2025-10-21
+Q1 2024,Private sector,Total,8,21291,42.5,2.6,2.4,2025-10-21
+Q1 2024,Private sector,Without COLA,8,21291,42.5,2.6,2.4,2025-10-21
+Q2 2024,Private sector,Total,9,17020,28.5,4.9,4.2,2025-10-21
+Q2 2024,Private sector,Without COLA,9,17020,28.5,4.9,4.2,2025-10-21
+Q3 2024,Private sector,Total,8,13506,33.5,7.7,4.5,2025-10-21
+Q3 2024,Private sector,Without COLA,7,10796,35.8,5.8,3.2,2025-10-21
+Q3 2024,Private sector,With COLA,1,2710,24.1,15.3,9.9,2025-10-21
+Q4 2024,Private sector,Total,9,21097,53.3,3.0,3.5,2025-10-21
+Q4 2024,Private sector,Without COLA,9,21097,53.3,3.0,3.5,2025-10-21
+Q1 2025,Private sector,Total,8,10377,53.5,4.0,3.4,2025-10-21
+Q1 2025,Private sector,Without COLA,8,10377,53.5,4.0,3.4,2025-10-21
+Q2 2025,Private sector,Total,12,128621,47.6,7.2,5.1,2025-10-21
+Q2 2025,Private sector,Without COLA,12,128621,47.6,7.2,5.1,2025-10-21
+Q3 2022,Public sector,Total,29,153785,45.6,1.1,1.4,2025-10-21
+Q3 2022,Public sector,Without COLA,28,152307,45.7,1.1,1.4,2025-10-21
+Q3 2022,Public sector,With COLA,1,1478,36.0,4.2,4.6,2025-10-21
+Q4 2022,Public sector,Total,35,230934,38.8,3.8,3.6,2025-10-21
+Q4 2022,Public sector,Without COLA,34,169602,39.9,3.7,3.4,2025-10-21
+Q4 2022,Public sector,With COLA,1,61332,36.0,4.2,3.9,2025-10-21
+Q1 2023,Public sector,Total,20,35275,46.2,3.0,3.0,2025-10-21
+Q1 2023,Public sector,Without COLA,16,26790,49.5,2.9,2.7,2025-10-21
+Q1 2023,Public sector,With COLA,4,8485,36.0,3.5,3.9,2025-10-21
+Q2 2023,Public sector,Total,33,273677,43.9,2.0,2.8,2025-10-21
+Q2 2023,Public sector,Without COLA,32,272137,44.0,2.0,2.8,2025-10-21
+Q2 2023,Public sector,With COLA,1,1540,36.0,2.3,4.0,2025-10-21
+Q3 2023,Public sector,Total,32,144342,36.5,5.2,4.2,2025-10-21
+Q3 2023,Public sector,Without COLA,31,143342,36.5,5.2,4.2,2025-10-21
+Q3 2023,Public sector,With COLA,1,1000,39.0,3.5,3.4,2025-10-21
+Q4 2023,Public sector,Total,22,145034,47.6,3.1,2.9,2025-10-21
+Q4 2023,Public sector,Without COLA,22,145034,47.6,3.1,2.9,2025-10-21
+Q1 2024,Public sector,Total,25,167636,46.3,3.1,2.6,2025-10-21
+Q1 2024,Public sector,Without COLA,25,167636,46.3,3.1,2.6,2025-10-21
+Q2 2024,Public sector,Total,47,636309,54.2,5.3,3.5,2025-10-21
+Q2 2024,Public sector,Without COLA,25,157143,36.3,3.3,3.1,2025-10-21
+Q2 2024,Public sector,With COLA,22,479166,60.0,6.0,3.6,2025-10-21
+Q3 2024,Public sector,Total,19,81923,44.3,3.5,3.1,2025-10-21
+Q3 2024,Public sector,Without COLA,19,81923,44.3,3.5,3.1,2025-10-21
+Q4 2024,Public sector,Total,20,156775,49.9,5.0,3.7,2025-10-21
+Q4 2024,Public sector,Without COLA,19,75102,38.9,4.0,3.8,2025-10-21
+Q4 2024,Public sector,With COLA,1,81673,60.0,6.0,3.6,2025-10-21
+Q1 2025,Public sector,Total,13,40617,48.7,4.2,3.4,2025-10-21
+Q1 2025,Public sector,Without COLA,13,40617,48.7,4.2,3.4,2025-10-21
+Q2 2025,Public sector,Total,14,73968,45.6,3.3,3.1,2025-10-21
+Q2 2025,Public sector,Without COLA,14,73968,45.6,3.3,3.1,2025-10-21
+Unnamed: 0_level_1,,Total,Number of agreements,Number of employees,Duration of agreements in months (average),First year percentage adjustment (average),Annual percentage adjustment (average),
+Unnamed: 0_level_1,,Without COLA,Number of agreements,Number of employees,Duration of agreements in months (average),First year percentage adjustment (average),Annual percentage adjustment (average),
+Unnamed: 0_level_1,,With COLA,Number of agreements,Number of employees,Duration of agreements in months (average),First year percentage adjustment (average),Annual percentage adjustment (average),
+Public sector,August 2024,Total,3,18202,46.5,2.6,3.1,2025-10-21
+Public sector,August 2024,Without COLA,3,18202,46.5,2.6,3.1,2025-10-21
+Federal administration,August 2024,Total,1,652,36.0,4.0,3.3,2025-10-21
+Federal administration,August 2024,Without COLA,1,652,36.0,4.0,3.3,2025-10-21
+"Education, health, and social services",August 2024,Total,2,17550,46.9,2.6,3.1,2025-10-21
+"Education, health, and social services",August 2024,Without COLA,2,17550,46.9,2.6,3.1,2025-10-21
+Public sector,September 2024,Total,1,5000,36.0,3.5,3.0,2025-10-21
+Public sector,September 2024,Without COLA,1,5000,36.0,3.5,3.0,2025-10-21
+"Education, health, and social services",September 2024,Total,1,5000,36.0,3.5,3.0,2025-10-21
+"Education, health, and social services",September 2024,Without COLA,1,5000,36.0,3.5,3.0,2025-10-21
+Public sector,October 2024,Total,6,37880,45.6,3.4,3.8,2025-10-21
+Public sector,October 2024,Without COLA,6,37880,45.6,3.4,3.8,2025-10-21
+Federal administration,October 2024,Total,1,1080,48.0,4.7,3.2,2025-10-21
+Federal administration,October 2024,Without COLA,1,1080,48.0,4.7,3.2,2025-10-21
+Provincial administration,October 2024,Total,1,6000,36.0,6.0,3.5,2025-10-21
+Provincial administration,October 2024,Without COLA,1,6000,36.0,6.0,3.5,2025-10-21
+Local administration,October 2024,Total,1,1100,36.0,3.0,3.0,2025-10-21
+Local administration,October 2024,Without COLA,1,1100,36.0,3.0,3.0,2025-10-21
+"Education, health, and social services",October 2024,Total,3,29700,47.8,2.8,4.0,2025-10-21
+"Education, health, and social services",October 2024,Without COLA,3,29700,47.8,2.8,4.0,2025-10-21
+Public sector,November 2024,Total,6,6894,38.1,3.7,3.4,2025-10-21
+Public sector,November 2024,Without COLA,6,6894,38.1,3.7,3.4,2025-10-21
+Federal administration,November 2024,Total,1,1020,48.0,4.8,3.1,2025-10-21
+Federal administration,November 2024,Without COLA,1,1020,48.0,4.8,3.1,2025-10-21
+Local administration,November 2024,Total,3,4327,38.6,3.3,3.3,2025-10-21
+Local administration,November 2024,Without COLA,3,4327,38.6,3.3,3.3,2025-10-21
+"Education, health, and social services",November 2024,Total,2,1547,30.2,4.3,3.8,2025-10-21
+"Education, health, and social services",November 2024,Without COLA,2,1547,30.2,4.3,3.8,2025-10-21
+Public sector,December 2024,Total,8,112001,52.1,5.7,3.7,2025-10-21
+Public sector,December 2024,Without COLA,7,30328,30.8,4.7,3.9,2025-10-21
+Public sector,December 2024,With COLA,1,81673,60.0,6.0,3.6,2025-10-21
+Federal administration,December 2024,Total,2,6410,48.0,4.8,3.2,2025-10-21
+Federal administration,December 2024,Without COLA,2,6410,48.0,4.8,3.2,2025-10-21
+Local administration,December 2024,Total,2,6148,22.2,4.1,4.4,2025-10-21
+Local administration,December 2024,Without COLA,2,6148,22.2,4.1,4.4,2025-10-21
+"Education, health, and social services",December 2024,Total,4,99443,54.2,5.8,3.6,2025-10-21
+"Education, health, and social services",December 2024,Without COLA,3,17770,27.6,4.9,4.0,2025-10-21
+"Education, health, and social services",December 2024,With COLA,1,81673,60.0,6.0,3.6,2025-10-21
+Public sector,January 2025,Total,3,4839,42.6,6.1,3.3,2025-10-21
+Public sector,January 2025,Without COLA,3,4839,42.6,6.1,3.3,2025-10-21
+Local administration,January 2025,Total,2,4252,43.6,6.5,3.4,2025-10-21
+Local administration,January 2025,Without COLA,2,4252,43.6,6.5,3.4,2025-10-21
+"Education, health, and social services",January 2025,Total,1,587,36.0,3.0,3.0,2025-10-21
+"Education, health, and social services",January 2025,Without COLA,1,587,36.0,3.0,3.0,2025-10-21
+Public sector,February 2025,Total,4,10100,45.6,4.3,3.4,2025-10-21
+Public sector,February 2025,Without COLA,4,10100,45.6,4.3,3.4,2025-10-21
+Federal administration,February 2025,Total,1,7670,48.0,4.7,3.7,2025-10-21
+Federal administration,February 2025,Without COLA,1,7670,48.0,4.7,3.7,2025-10-21
+"Education, health, and social services",February 2025,Total,3,2430,37.9,2.7,2.6,2025-10-21
+"Education, health, and social services",February 2025,Without COLA,3,2430,37.9,2.7,2.6,2025-10-21
+Public sector,March 2025,Total,4,17331,48.0,3.4,3.4,2025-10-21
+Public sector,March 2025,Without COLA,4,17331,48.0,3.4,3.4,2025-10-21
+Local administration,March 2025,Total,1,8240,48.0,3.9,3.7,2025-10-21
+Local administration,March 2025,Without COLA,1,8240,48.0,3.9,3.7,2025-10-21
+"Education, health, and social services",March 2025,Total,3,9091,48.0,2.9,3.2,2025-10-21
+"Education, health, and social services",March 2025,Without COLA,3,9091,48.0,2.9,3.2,2025-10-21
+Public sector,April 2025,Total,7,56733,45.3,3.4,3.1,2025-10-21
+Public sector,April 2025,Without COLA,7,56733,45.3,3.4,3.1,2025-10-21
+Provincial administration,April 2025,Total,1,5713,60.0,2.8,2.5,2025-10-21
+Provincial administration,April 2025,Without COLA,1,5713,60.0,2.8,2.5,2025-10-21
+"Education, health, and social services",April 2025,Total,6,51020,43.6,3.4,3.2,2025-10-21
+"Education, health, and social services",April 2025,Without COLA,6,51020,43.6,3.4,3.2,2025-10-21
+Public sector,May 2025,Total,5,14101,44.2,3.2,3.1,2025-10-21
+Public sector,May 2025,Without COLA,5,14101,44.2,3.2,3.1,2025-10-21
+Local administration,May 2025,Total,3,7077,42.1,3.5,3.3,2025-10-21
+Local administration,May 2025,Without COLA,3,7077,42.1,3.5,3.3,2025-10-21
+"Education, health, and social services",May 2025,Total,2,7024,46.4,2.9,2.9,2025-10-21
+"Education, health, and social services",May 2025,Without COLA,2,7024,46.4,2.9,2.9,2025-10-21
+Public sector,June 2025,Total,2,3134,56.8,3.0,3.4,2025-10-21
+Public sector,June 2025,Without COLA,2,3134,56.8,3.0,3.4,2025-10-21
+Telephone and utilities,June 2025,Total,1,2300,60.0,3.0,3.5,2025-10-21
+Telephone and utilities,June 2025,Without COLA,1,2300,60.0,3.0,3.5,2025-10-21
+"Education, health, and social services",June 2025,Total,1,834,48.0,3.0,3.0,2025-10-21
+"Education, health, and social services",June 2025,Without COLA,1,834,48.0,3.0,3.0,2025-10-21
+Public sector,July 2025,Total,1,836,36.0,4.0,3.5,2025-10-21
+Public sector,July 2025,Without COLA,1,836,36.0,4.0,3.5,2025-10-21
+Federal administration,July 2025,Total,1,836,36.0,4.0,3.5,2025-10-21
+Federal administration,July 2025,Without COLA,1,836,36.0,4.0,3.5,2025-10-21
+Public sector,2016,Total,154,931510,49.3,0.7,1.3,2025-10-21
+Public sector,2016,Without COLA,152,872510,50.7,0.7,1.3,2025-10-21
+Public sector,2016,With COLA,2,59000,28.5,0.8,1.2,2025-10-21
+Federal administration,2016,Total,8,86800,34.5,1.1,1.3,2025-10-21
+Federal administration,2016,Without COLA,6,27800,47.3,1.8,1.5,2025-10-21
+Federal administration,2016,With COLA,2,59000,28.5,0.8,1.2,2025-10-21
+Provincial administration,2016,Total,21,98310,55.1,0.9,1.4,2025-10-21
+Provincial administration,2016,Without COLA,21,98310,55.1,0.9,1.4,2025-10-21
+Local administration,2016,Total,29,63730,51.2,1.7,1.7,2025-10-21
+Local administration,2016,Without COLA,29,63730,51.2,1.7,1.7,2025-10-21
+Telephone and utilities,2016,Total,7,8110,46.8,1.3,1.5,2025-10-21
+Telephone and utilities,2016,Without COLA,7,8110,46.8,1.3,1.5,2025-10-21
+"Education, health, and social services",2016,Total,89,674560,50.2,0.5,1.3,2025-10-21
+"Education, health, and social services",2016,Without COLA,89,674560,50.2,0.5,1.3,2025-10-21
+Public sector,2017,Total,142,664494,38.2,1.4,1.7,2025-10-21
+Public sector,2017,Without COLA,142,664494,38.2,1.4,1.7,2025-10-21
+Federal administration,2017,Total,22,167592,47.7,1.3,1.4,2025-10-21
+Federal administration,2017,Without COLA,22,167592,47.7,1.3,1.4,2025-10-21
+Provincial administration,2017,Total,5,59500,52.3,1.4,1.9,2025-10-21
+Provincial administration,2017,Without COLA,5,59500,52.3,1.4,1.9,2025-10-21
+Local administration,2017,Total,36,47266,49.0,1.7,1.9,2025-10-21
+Local administration,2017,Without COLA,36,47266,49.0,1.7,1.9,2025-10-21
+Telephone and utilities,2017,Total,1,690,36.0,1.2,1.7,2025-10-21
+Telephone and utilities,2017,Without COLA,1,690,36.0,1.2,1.7,2025-10-21
+"Education, health, and social services",2017,Total,78,389446,30.6,1.5,1.7,2025-10-21
+"Education, health, and social services",2017,Without COLA,78,389446,30.6,1.5,1.7,2025-10-21
+Public sector,2018,Total,132,520074,40.6,1.0,1.2,2025-10-21
+Public sector,2018,Without COLA,132,520074,40.6,1.0,1.2,2025-10-21
+Federal administration,2018,Total,14,48380,48.7,1.4,1.7,2025-10-21
+Federal administration,2018,Without COLA,14,48380,48.7,1.4,1.7,2025-10-21
+Provincial administration,2018,Total,20,105026,41.3,0.8,0.9,2025-10-21
+Provincial administration,2018,Without COLA,20,105026,41.3,0.8,0.9,2025-10-21
+Local administration,2018,Total,18,17053,38.5,2.6,2.1,2025-10-21
+Local administration,2018,Without COLA,18,17053,38.5,2.6,2.1,2025-10-21
+Telephone and utilities,2018,Total,8,24956,44.3,1.2,2.0,2025-10-21
+Telephone and utilities,2018,Without COLA,8,24956,44.3,1.2,2.0,2025-10-21
+"Education, health, and social services",2018,Total,72,324659,39.0,0.8,1.0,2025-10-21
+"Education, health, and social services",2018,Without COLA,72,324659,39.0,0.8,1.0,2025-10-21
+Public sector,2019,Total,161,471105,42.1,1.7,1.7,2025-10-21
+Public sector,2019,Without COLA,161,471105,42.1,1.7,1.7,2025-10-21
+Federal administration,2019,Total,23,74110,48.7,2.6,1.9,2025-10-21
+Federal administration,2019,Without COLA,23,74110,48.7,2.6,1.9,2025-10-21
+Provincial administration,2019,Total,13,47017,52.8,2.5,2.0,2025-10-21
+Provincial administration,2019,Without COLA,13,47017,52.8,2.5,2.0,2025-10-21
+Local administration,2019,Total,29,40093,45.4,1.8,1.5,2025-10-21
+Local administration,2019,Without COLA,29,40093,45.4,1.8,1.5,2025-10-21
+Telephone and utilities,2019,Total,9,18150,39.5,1.5,2.0,2025-10-21
+Telephone and utilities,2019,Without COLA,9,18150,39.5,1.5,2.0,2025-10-21
+"Education, health, and social services",2019,Total,87,291735,38.4,1.3,1.6,2025-10-21
+"Education, health, and social services",2019,Without COLA,87,291735,38.4,1.3,1.6,2025-10-21
+Public sector,2020,Total,111,650614,40.0,1.8,2.0,2025-10-21
+Public sector,2020,Without COLA,109,591614,39.0,1.8,1.9,2025-10-21
+Public sector,2020,With COLA,2,59000,50.2,2.0,2.4,2025-10-21
+Federal administration,2020,Total,12,219680,42.7,2.5,2.2,2025-10-21
+Federal administration,2020,Without COLA,10,160680,39.9,2.6,2.1,2025-10-21
+Federal administration,2020,With COLA,2,59000,50.2,2.0,2.4,2025-10-21
+Provincial administration,2020,Total,2,1710,32.5,2.5,2.4,2025-10-21
+Provincial administration,2020,Without COLA,2,1710,32.5,2.5,2.4,2025-10-21
+Local administration,2020,Total,22,46879,53.0,1.2,1.4,2025-10-21
+Local administration,2020,Without COLA,22,46879,53.0,1.2,1.4,2025-10-21
+Telephone and utilities,2020,Total,5,12606,44.3,1.5,1.9,2025-10-21
+Telephone and utilities,2020,Without COLA,5,12606,44.3,1.5,1.9,2025-10-21
+"Education, health, and social services",2020,Total,70,369739,36.6,1.6,1.9,2025-10-21
+"Education, health, and social services",2020,Without COLA,70,369739,36.6,1.6,1.9,2025-10-21
+Public sector,2021,Total,114,803688,41.1,1.8,1.9,2025-10-21
+Public sector,2021,Without COLA,113,761688,41.2,1.8,1.9,2025-10-21
+Public sector,2021,With COLA,1,42000,39.7,2.0,2.7,2025-10-21
+Federal administration,2021,Total,10,98347,48.9,1.9,2.5,2025-10-21
+Federal administration,2021,Without COLA,9,56347,55.9,1.8,2.3,2025-10-21
+Federal administration,2021,With COLA,1,42000,39.7,2.0,2.7,2025-10-21
+Provincial administration,2021,Total,7,58631,40.4,1.6,1.5,2025-10-21
+Provincial administration,2021,Without COLA,7,58631,40.4,1.6,1.5,2025-10-21
+Local administration,2021,Total,24,49088,57.8,1.8,1.9,2025-10-21
+Local administration,2021,Without COLA,24,49088,57.8,1.8,1.9,2025-10-21
+Telephone and utilities,2021,Total,6,15779,25.8,1.1,1.1,2025-10-21
+Telephone and utilities,2021,Without COLA,6,15779,25.8,1.1,1.1,2025-10-21
+"Education, health, and social services",2021,Total,67,581843,38.9,1.8,1.9,2025-10-21
+"Education, health, and social services",2021,Without COLA,67,581843,38.9,1.8,1.9,2025-10-21
+Public sector,2022,Total,94,538408,42.3,2.4,2.5,2025-10-21
+Public sector,2022,Without COLA,91,474918,43.1,2.2,2.3,2025-10-21
+Public sector,2022,With COLA,3,63490,36.0,4.2,3.9,2025-10-21
+Federal administration,2022,Total,7,10725,43.7,3.4,2.8,2025-10-21
+Federal administration,2022,Without COLA,7,10725,43.7,3.4,2.8,2025-10-21
+Provincial administration,2022,Total,13,102743,40.7,2.4,2.4,2025-10-21
+Provincial administration,2022,Without COLA,12,102063,40.7,2.4,2.4,2025-10-21
+Provincial administration,2022,With COLA,1,680,36.0,4.3,3.2,2025-10-21
+Local administration,2022,Total,13,25360,39.7,1.9,1.8,2025-10-21
+Local administration,2022,Without COLA,13,25360,39.7,1.9,1.8,2025-10-21
+Telephone and utilities,2022,Total,4,3055,44.7,0.4,1.6,2025-10-21
+Telephone and utilities,2022,Without COLA,4,3055,44.7,0.4,1.6,2025-10-21
+"Education, health, and social services",2022,Total,57,396525,42.8,2.4,2.5,2025-10-21
+"Education, health, and social services",2022,Without COLA,55,333715,44.1,2.1,2.3,2025-10-21
+"Education, health, and social services",2022,With COLA,2,62810,36.0,4.2,3.9,2025-10-21
+Public sector,2023,Total,100,587525,43.2,3.1,3.2,2025-10-21
+Public sector,2023,Without COLA,94,576500,43.3,3.1,3.2,2025-10-21
+Public sector,2023,With COLA,6,11025,36.3,3.3,3.9,2025-10-21
+Federal administration,2023,Total,14,219860,48.2,2.2,3.0,2025-10-21
+Federal administration,2023,Without COLA,14,219860,48.2,2.2,3.0,2025-10-21
+Provincial administration,2023,Total,6,23384,39.7,2.8,2.8,2025-10-21
+Provincial administration,2023,Without COLA,6,23384,39.7,2.8,2.8,2025-10-21
+Local administration,2023,Total,18,23289,45.7,3.0,2.8,2025-10-21
+Local administration,2023,Without COLA,18,23289,45.7,3.0,2.8,2025-10-21
+Telephone and utilities,2023,Total,6,16896,28.6,4.1,4.0,2025-10-21
+Telephone and utilities,2023,Without COLA,6,16896,28.6,4.1,4.0,2025-10-21
+"Education, health, and social services",2023,Total,56,304096,40.5,3.8,3.3,2025-10-21
+"Education, health, and social services",2023,Without COLA,50,293071,40.6,3.8,3.3,2025-10-21
+"Education, health, and social services",2023,With COLA,6,11025,36.3,3.3,3.9,2025-10-21
+Public sector,2024,Total,108,1020229,51.8,4.8,3.3,2025-10-21
+Public sector,2024,Without COLA,85,459390,41.8,3.3,3.1,2025-10-21
+Public sector,2024,With COLA,23,560839,60.0,6.0,3.6,2025-10-21
+Federal administration,2024,Total,10,47843,37.1,4.4,3.5,2025-10-21
+Federal administration,2024,Without COLA,10,47843,37.1,4.4,3.5,2025-10-21
+Provincial administration,2024,Total,9,57167,48.4,3.9,3.1,2025-10-21
+Provincial administration,2024,Without COLA,9,57167,48.4,3.9,3.1,2025-10-21
+Local administration,2024,Total,14,27370,36.7,2.9,3.1,2025-10-21
+Local administration,2024,Without COLA,14,27370,36.7,2.9,3.1,2025-10-21
+Telephone and utilities,2024,Total,2,2210,36.0,3.0,2.7,2025-10-21
+Telephone and utilities,2024,Without COLA,2,2210,36.0,3.0,2.7,2025-10-21
+"Education, health, and social services",2024,Total,73,885639,53.3,5.0,3.4,2025-10-21
+"Education, health, and social services",2024,Without COLA,50,324800,41.8,3.1,3.0,2025-10-21
+"Education, health, and social services",2024,With COLA,23,560839,60.0,6.0,3.6,2025-10-21
+Public sector,2025,Total,26,107074,45.7,3.6,3.2,2025-10-21
+Public sector,2025,Without COLA,26,107074,45.7,3.6,3.2,2025-10-21
+Federal administration,2025,Total,2,8506,46.8,4.7,3.7,2025-10-21
+Federal administration,2025,Without COLA,2,8506,46.8,4.7,3.7,2025-10-21
+Provincial administration,2025,Total,1,5713,60.0,2.8,2.5,2025-10-21
+Provincial administration,2025,Without COLA,1,5713,60.0,2.8,2.5,2025-10-21
+Local administration,2025,Total,6,19569,44.9,4.3,3.5,2025-10-21
+Local administration,2025,Without COLA,6,19569,44.9,4.3,3.5,2025-10-21
+Telephone and utilities,2025,Total,1,2300,60.0,3.0,3.5,2025-10-21
+Telephone and utilities,2025,Without COLA,1,2300,60.0,3.0,3.5,2025-10-21
+"Education, health, and social services",2025,Total,16,70986,44.2,3.3,3.1,2025-10-21
+"Education, health, and social services",2025,Without COLA,16,70986,44.2,3.3,3.1,2025-10-21

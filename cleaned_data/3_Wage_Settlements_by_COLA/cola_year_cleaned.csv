@@ -1,0 +1,32 @@
+unnamed:_0_level_0,total,total.1,total.2,total.3,total.4,without_cola,without_cola.1,without_cola.2,without_cola.3,without_cola.4,with_cola,with_cola.1,with_cola.2,with_cola.3,with_cola.4,page_source,section,extraction_date
+Unnamed: 0_level_1,Number of agreements,Number of employees,Duration of agreements in months (average),First year percentage adjustment (average),Annual percentage adjustment (average),Number of agreements,Number of employees,Duration of agreements in months (average),First year percentage adjustment (average),Annual percentage adjustment (average),Number of agreements,Number of employees,Duration of agreements in months (average),First year percentage adjustment (average),Annual percentage adjustment (average),,,
+2016,292,1194600,48.5,0.9,1.4,279,1096282,49.3,0.9,1.4,13,98318,38.8,1.1,1.1,cola_year,All sectors,2025-10-21
+2017,224,868612,39.8,1.7,1.7,222,865969,39.7,1.7,1.7,2,2643,47.3,1.6,1.8,cola_year,All sectors,2025-10-21
+2018,226,761192,42.7,1.4,1.4,224,758399,42.6,1.3,1.4,2,2793,60.0,10.9,4.1,cola_year,All sectors,2025-10-21
+2019,269,684720,43.1,1.8,1.8,268,684220,43.1,1.8,1.8,1,500,36.0,2.4,3.2,cola_year,All sectors,2025-10-21
+2020,182,809923,41.4,1.8,1.9,174,723153,40.9,1.8,1.9,8,86770,45.6,2.2,2.2,cola_year,All sectors,2025-10-21
+2021,179,1030411,42.8,1.8,1.9,175,978532,42.9,1.8,1.9,4,51879,40.3,2.2,2.6,cola_year,All sectors,2025-10-21
+2022,147,706936,42.5,2.8,2.7,143,640736,43.2,2.7,2.6,4,66200,36.0,4.1,3.8,cola_year,All sectors,2025-10-21
+2023,159,720010,42.9,3.7,3.4,149,689985,43.2,3.5,3.3,10,30025,36.1,7.2,4.6,cola_year,All sectors,2025-10-21
+2024,145,1115557,50.8,4.7,3.4,121,552008,41.5,3.4,3.1,24,563549,59.8,6.0,3.6,cola_year,All sectors,2025-10-21
+2025,51,299241,47.6,5.8,3.9,51,299241,47.6,5.8,3.9,,,,,,cola_year,All sectors,2025-10-21
+2016,128,247565,45.4,1.5,1.5,117,208247,43.7,1.5,1.6,11,39318,54.4,1.5,1.1,cola_year,Private sector,2025-10-21
+2017,75,193038,44.9,2.6,2.0,73,190395,44.9,2.6,2.0,2,2643,47.3,1.6,1.8,cola_year,Private sector,2025-10-21
+2018,82,220436,47.4,2.3,1.9,80,217643,47.2,2.1,1.8,2,2793,60.0,10.9,4.1,cola_year,Private sector,2025-10-21
+2019,97,187467,43.2,2.0,2.1,96,186967,43.2,2.0,2.1,1,500,36.0,2.4,3.2,cola_year,Private sector,2025-10-21
+2020,60,139261,47.0,2.0,1.7,54,111491,49.7,1.8,1.7,6,27770,35.9,2.5,1.8,cola_year,Private sector,2025-10-21
+2021,63,225105,48.6,2.0,2.0,60,215226,48.9,2.0,1.9,3,9879,43.1,3.0,2.3,cola_year,Private sector,2025-10-21
+2022,42,139126,45.1,4.2,3.6,41,136416,45.3,4.3,3.6,1,2710,35.9,0.8,1.8,cola_year,Private sector,2025-10-21
+2023,52,121682,41.6,6.5,4.3,48,102682,42.6,5.9,4.1,4,19000,36.1,9.5,5.1,cola_year,Private sector,2025-10-21
+2024,34,72914,40.7,4.2,3.5,33,70204,41.3,3.8,3.3,1,2710,24.1,15.3,9.9,cola_year,Private sector,2025-10-21
+2025,22,181228,48.2,7.2,4.3,22,181228,48.2,7.2,4.3,,,,,,cola_year,Private sector,2025-10-21
+2016,164,947035,49.2,0.7,1.3,162,888035,50.6,0.7,1.3,2,59000,28.5,0.8,1.2,cola_year,Public sector,2025-10-21
+2017,149,675574,38.3,1.4,1.7,149,675574,38.3,1.4,1.7,,,,,,cola_year,Public sector,2025-10-21
+2018,144,540756,40.7,1.0,1.2,144,540756,40.7,1.0,1.2,,,,,,cola_year,Public sector,2025-10-21
+2019,172,497253,43.0,1.7,1.7,172,497253,43.0,1.7,1.7,,,,,,cola_year,Public sector,2025-10-21
+2020,122,670662,40.2,1.8,2.0,120,611662,39.3,1.8,1.9,2,59000,50.2,2.0,2.4,cola_year,Public sector,2025-10-21
+2021,116,805306,41.2,1.8,1.9,115,763306,41.2,1.8,1.9,1,42000,39.7,2.0,2.7,cola_year,Public sector,2025-10-21
+2022,105,567810,41.9,2.5,2.5,102,504320,42.6,2.3,2.3,3,63490,36.0,4.2,3.9,cola_year,Public sector,2025-10-21
+2023,107,598328,43.2,3.1,3.2,101,587303,43.3,3.1,3.2,6,11025,36.3,3.3,3.9,cola_year,Public sector,2025-10-21
+2024,111,1042643,51.5,4.8,3.3,88,481804,41.6,3.4,3.1,23,560839,60.0,6.0,3.6,cola_year,Public sector,2025-10-21
+2025,29,118013,46.6,3.6,3.2,29,118013,46.6,3.6,3.2,,,,,,cola_year,Public sector,2025-10-21

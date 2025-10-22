@@ -1,0 +1,284 @@
+Month,Industry,Sector_Type,Number_of_Agreements,Number_of_Employees,Duration_Months_Avg,First_Year_Pct_Adjustment_Avg,Annual_Pct_Adjustment_Avg,Extraction_Date
+August 2024,All industries,All Sectors,5.0,21192.0,45.1,3.2,3.0,2025-10-21
+August 2024,All industries,Private Sector,2.0,2990.0,36.0,7.0,2.8,2025-10-21
+August 2024,All industries,Public Sector,3.0,18202.0,46.5,2.6,3.1,2025-10-21
+September 2024,All industries,All Sectors,5.0,14010.0,31.8,5.7,4.4,2025-10-21
+September 2024,All industries,Private Sector,4.0,9010.0,29.4,6.9,5.1,2025-10-21
+September 2024,All industries,Public Sector,1.0,5000.0,36.0,3.5,3.0,2025-10-21
+October 2024,All industries,All Sectors,8.0,45176.0,45.7,3.4,3.7,2025-10-21
+October 2024,All industries,Private Sector,2.0,7296.0,46.0,3.5,3.1,2025-10-21
+October 2024,All industries,Public Sector,6.0,37880.0,45.6,3.4,3.8,2025-10-21
+November 2024,All industries,All Sectors,6.0,6894.0,38.1,3.7,3.4,2025-10-21
+November 2024,All industries,Public Sector,6.0,6894.0,38.1,3.7,3.4,2025-10-21
+December 2024,All industries,All Sectors,15.0,125802.0,52.7,5.3,3.7,2025-10-21
+December 2024,All industries,Private Sector,7.0,13801.0,57.2,2.8,3.7,2025-10-21
+December 2024,All industries,Public Sector,8.0,112001.0,52.1,5.7,3.7,2025-10-21
+January 2025,All industries,All Sectors,7.0,13702.0,57.6,5.3,3.3,2025-10-21
+January 2025,All industries,Private Sector,3.0,3916.0,58.0,3.6,3.2,2025-10-21
+January 2025,All industries,Public Sector,4.0,9786.0,57.5,6.1,3.3,2025-10-21
+February 2025,All industries,All Sectors,8.0,15157.0,45.3,4.7,3.6,2025-10-21
+February 2025,All industries,Private Sector,4.0,5057.0,44.9,5.5,4.0,2025-10-21
+February 2025,All industries,Public Sector,4.0,10100.0,45.6,4.3,3.4,2025-10-21
+March 2025,All industries,All Sectors,6.0,22135.0,47.7,3.1,3.3,2025-10-21
+March 2025,All industries,Private Sector,1.0,1404.0,72.0,0.0,1.8,2025-10-21
+March 2025,All industries,Public Sector,5.0,20731.0,46.0,3.4,3.4,2025-10-21
+April 2025,All industries,All Sectors,13.0,172748.0,46.9,6.3,4.6,2025-10-21
+April 2025,All industries,Private Sector,6.0,116015.0,47.8,7.7,5.3,2025-10-21
+April 2025,All industries,Public Sector,7.0,56733.0,45.3,3.4,3.1,2025-10-21
+May 2025,All industries,All Sectors,9.0,25184.0,45.1,3.1,3.0,2025-10-21
+May 2025,All industries,Private Sector,4.0,11083.0,46.3,2.9,2.8,2025-10-21
+May 2025,All industries,Public Sector,5.0,14101.0,44.2,3.2,3.1,2025-10-21
+June 2025,All industries,All Sectors,4.0,4657.0,53.6,3.6,3.4,2025-10-21
+June 2025,All industries,Private Sector,2.0,1523.0,47.1,4.7,3.5,2025-10-21
+June 2025,All industries,Public Sector,2.0,3134.0,56.8,3.0,3.4,2025-10-21
+July 2025,All industries,All Sectors,4.0,45658.0,48.4,7.4,2.1,2025-10-21
+July 2025,All industries,Private Sector,2.0,42230.0,48.7,7.8,2.0,2025-10-21
+July 2025,All industries,Public Sector,2.0,3428.0,44.6,3.2,3.2,2025-10-21
+January 2025,Primary industries,All Sectors,1.0,536.0,36.0,3.0,3.0,2025-10-21
+January 2025,Primary industries,Private Sector,1.0,536.0,36.0,3.0,3.0,2025-10-21
+December 2024,Utilities,All Sectors,1.0,1151.0,24.0,4.0,3.7,2025-10-21
+December 2024,Utilities,Private Sector,1.0,1151.0,24.0,4.0,3.7,2025-10-21
+January 2025,Utilities,All Sectors,1.0,980.0,36.0,2.8,3.5,2025-10-21
+January 2025,Utilities,Private Sector,1.0,980.0,36.0,2.8,3.5,2025-10-21
+June 2025,Utilities,All Sectors,1.0,2300.0,60.0,3.0,3.5,2025-10-21
+June 2025,Utilities,Public Sector,1.0,2300.0,60.0,3.0,3.5,2025-10-21
+April 2025,Construction,All Sectors,4.0,113531.0,48.0,7.6,5.3,2025-10-21
+April 2025,Construction,Private Sector,4.0,113531.0,48.0,7.6,5.3,2025-10-21
+May 2025,Construction,All Sectors,3.0,9533.0,47.9,2.7,2.5,2025-10-21
+May 2025,Construction,Private Sector,3.0,9533.0,47.9,2.7,2.5,2025-10-21
+June 2025,Construction,All Sectors,1.0,790.0,46.3,4.4,2.5,2025-10-21
+June 2025,Construction,Private Sector,1.0,790.0,46.3,4.4,2.5,2025-10-21
+July 2025,Construction,All Sectors,1.0,39730.0,48.0,8.0,1.9,2025-10-21
+July 2025,Construction,Private Sector,1.0,39730.0,48.0,8.0,1.9,2025-10-21
+September 2024,Manufacturing,All Sectors,1.0,2710.0,24.1,15.3,9.9,2025-10-21
+September 2024,Manufacturing,Private Sector,1.0,2710.0,24.1,15.3,9.9,2025-10-21
+December 2024,Manufacturing,All Sectors,1.0,1400.0,60.0,8.0,4.5,2025-10-21
+December 2024,Manufacturing,Private Sector,1.0,1400.0,60.0,8.0,4.5,2025-10-21
+January 2025,Manufacturing,All Sectors,1.0,2400.0,72.0,4.0,3.2,2025-10-21
+January 2025,Manufacturing,Private Sector,1.0,2400.0,72.0,4.0,3.2,2025-10-21
+January 2025,Wholesale and retail trade,All Sectors,1.0,4947.0,72.0,6.0,3.3,2025-10-21
+January 2025,Wholesale and retail trade,Public Sector,1.0,4947.0,72.0,6.0,3.3,2025-10-21
+April 2025,Wholesale and retail trade,All Sectors,1.0,878.0,60.0,6.7,3.9,2025-10-21
+April 2025,Wholesale and retail trade,Private Sector,1.0,878.0,60.0,6.7,3.9,2025-10-21
+August 2024,Transportation,All Sectors,1.0,652.0,36.0,4.0,3.3,2025-10-21
+August 2024,Transportation,Public Sector,1.0,652.0,36.0,4.0,3.3,2025-10-21
+September 2024,Transportation,All Sectors,1.0,550.0,48.0,5.0,4.2,2025-10-21
+September 2024,Transportation,Private Sector,1.0,550.0,48.0,5.0,4.2,2025-10-21
+October 2024,Transportation,All Sectors,1.0,600.0,24.0,3.2,3.1,2025-10-21
+October 2024,Transportation,Private Sector,1.0,600.0,24.0,3.2,3.1,2025-10-21
+December 2024,Transportation,All Sectors,3.0,4394.0,48.0,4.0,3.1,2025-10-21
+December 2024,Transportation,Private Sector,3.0,4394.0,48.0,4.0,3.1,2025-10-21
+February 2025,Transportation,All Sectors,4.0,5057.0,44.9,5.5,4.0,2025-10-21
+February 2025,Transportation,Private Sector,4.0,5057.0,44.9,5.5,4.0,2025-10-21
+March 2025,Transportation,All Sectors,1.0,3400.0,36.0,3.0,3.2,2025-10-21
+March 2025,Transportation,Public Sector,1.0,3400.0,36.0,3.0,3.2,2025-10-21
+June 2025,Transportation,All Sectors,1.0,733.0,48.0,5.0,4.5,2025-10-21
+June 2025,Transportation,Private Sector,1.0,733.0,48.0,5.0,4.5,2025-10-21
+July 2025,Transportation,All Sectors,1.0,2592.0,47.4,3.0,3.0,2025-10-21
+July 2025,Transportation,Public Sector,1.0,2592.0,47.4,3.0,3.0,2025-10-21
+July 2025,Information and culture,All Sectors,1.0,2500.0,60.0,4.0,3.4,2025-10-21
+July 2025,Information and culture,Private Sector,1.0,2500.0,60.0,4.0,3.4,2025-10-21
+August 2024,Finance and professional services,All Sectors,1.0,2240.0,36.0,7.7,2.5,2025-10-21
+August 2024,Finance and professional services,Private Sector,1.0,2240.0,36.0,7.7,2.5,2025-10-21
+September 2024,Finance and professional services,All Sectors,2.0,5750.0,30.1,3.2,2.9,2025-10-21
+September 2024,Finance and professional services,Private Sector,2.0,5750.0,30.1,3.2,2.9,2025-10-21
+November 2024,Finance and professional services,All Sectors,1.0,1020.0,48.0,4.8,3.1,2025-10-21
+November 2024,Finance and professional services,Public Sector,1.0,1020.0,48.0,4.8,3.1,2025-10-21
+December 2024,Finance and professional services,All Sectors,1.0,6295.0,72.0,0.0,3.6,2025-10-21
+December 2024,Finance and professional services,Private Sector,1.0,6295.0,72.0,0.0,3.6,2025-10-21
+May 2025,Finance and professional services,All Sectors,1.0,1550.0,36.0,4.2,4.6,2025-10-21
+May 2025,Finance and professional services,Private Sector,1.0,1550.0,36.0,4.2,4.6,2025-10-21
+July 2025,Finance and professional services,All Sectors,1.0,836.0,36.0,4.0,3.5,2025-10-21
+July 2025,Finance and professional services,Public Sector,1.0,836.0,36.0,4.0,3.5,2025-10-21
+August 2024,"Education, health, and social services",All Sectors,2.0,17550.0,46.9,2.6,3.1,2025-10-21
+August 2024,"Education, health, and social services",Public Sector,2.0,17550.0,46.9,2.6,3.1,2025-10-21
+September 2024,"Education, health, and social services",All Sectors,1.0,5000.0,36.0,3.5,3.0,2025-10-21
+September 2024,"Education, health, and social services",Public Sector,1.0,5000.0,36.0,3.5,3.0,2025-10-21
+October 2024,"Education, health, and social services",All Sectors,4.0,36396.0,47.8,3.0,3.8,2025-10-21
+October 2024,"Education, health, and social services",Private Sector,1.0,6696.0,48.0,3.5,3.1,2025-10-21
+October 2024,"Education, health, and social services",Public Sector,3.0,29700.0,47.8,2.8,4.0,2025-10-21
+November 2024,"Education, health, and social services",All Sectors,2.0,1547.0,30.2,4.3,3.8,2025-10-21
+November 2024,"Education, health, and social services",Public Sector,2.0,1547.0,30.2,4.3,3.8,2025-10-21
+December 2024,"Education, health, and social services",All Sectors,4.0,99443.0,54.2,5.8,3.6,2025-10-21
+December 2024,"Education, health, and social services",Public Sector,4.0,99443.0,54.2,5.8,3.6,2025-10-21
+January 2025,"Education, health, and social services",All Sectors,1.0,587.0,36.0,3.0,3.0,2025-10-21
+January 2025,"Education, health, and social services",Public Sector,1.0,587.0,36.0,3.0,3.0,2025-10-21
+February 2025,"Education, health, and social services",All Sectors,3.0,2430.0,37.9,2.7,2.6,2025-10-21
+February 2025,"Education, health, and social services",Public Sector,3.0,2430.0,37.9,2.7,2.6,2025-10-21
+March 2025,"Education, health, and social services",All Sectors,4.0,10495.0,51.2,2.6,3.0,2025-10-21
+March 2025,"Education, health, and social services",Private Sector,1.0,1404.0,72.0,0.0,1.8,2025-10-21
+March 2025,"Education, health, and social services",Public Sector,3.0,9091.0,48.0,2.9,3.2,2025-10-21
+April 2025,"Education, health, and social services",All Sectors,6.0,51020.0,43.6,3.4,3.2,2025-10-21
+April 2025,"Education, health, and social services",Public Sector,6.0,51020.0,43.6,3.4,3.2,2025-10-21
+May 2025,"Education, health, and social services",All Sectors,2.0,7024.0,46.4,2.9,2.9,2025-10-21
+May 2025,"Education, health, and social services",Public Sector,2.0,7024.0,46.4,2.9,2.9,2025-10-21
+June 2025,"Education, health, and social services",All Sectors,1.0,834.0,48.0,3.0,3.0,2025-10-21
+June 2025,"Education, health, and social services",Public Sector,1.0,834.0,48.0,3.0,3.0,2025-10-21
+August 2024,Entertainment and hospitality,All Sectors,1.0,750.0,36.0,5.0,3.7,2025-10-21
+August 2024,Entertainment and hospitality,Private Sector,1.0,750.0,36.0,5.0,3.7,2025-10-21
+December 2024,Entertainment and hospitality,All Sectors,1.0,561.0,24.0,10.0,6.9,2025-10-21
+December 2024,Entertainment and hospitality,Private Sector,1.0,561.0,24.0,10.0,6.9,2025-10-21
+April 2025,Entertainment and hospitality,All Sectors,1.0,1606.0,24.0,10.8,10.2,2025-10-21
+April 2025,Entertainment and hospitality,Private Sector,1.0,1606.0,24.0,10.8,10.2,2025-10-21
+October 2024,Public administration,All Sectors,3.0,8180.0,37.6,5.4,3.4,2025-10-21
+October 2024,Public administration,Public Sector,3.0,8180.0,37.6,5.4,3.4,2025-10-21
+November 2024,Public administration,All Sectors,3.0,4327.0,38.6,3.3,3.3,2025-10-21
+November 2024,Public administration,Public Sector,3.0,4327.0,38.6,3.3,3.3,2025-10-21
+December 2024,Public administration,All Sectors,4.0,12558.0,35.3,4.5,3.8,2025-10-21
+December 2024,Public administration,Public Sector,4.0,12558.0,35.3,4.5,3.8,2025-10-21
+January 2025,Public administration,All Sectors,2.0,4252.0,43.6,6.5,3.4,2025-10-21
+January 2025,Public administration,Public Sector,2.0,4252.0,43.6,6.5,3.4,2025-10-21
+February 2025,Public administration,All Sectors,1.0,7670.0,48.0,4.7,3.7,2025-10-21
+February 2025,Public administration,Public Sector,1.0,7670.0,48.0,4.7,3.7,2025-10-21
+March 2025,Public administration,All Sectors,1.0,8240.0,48.0,3.9,3.7,2025-10-21
+March 2025,Public administration,Public Sector,1.0,8240.0,48.0,3.9,3.7,2025-10-21
+April 2025,Public administration,All Sectors,1.0,5713.0,60.0,2.8,2.5,2025-10-21
+April 2025,Public administration,Public Sector,1.0,5713.0,60.0,2.8,2.5,2025-10-21
+May 2025,Public administration,All Sectors,3.0,7077.0,42.1,3.5,3.3,2025-10-21
+May 2025,Public administration,Public Sector,3.0,7077.0,42.1,3.5,3.3,2025-10-21
+August 2024,All jurisdictions,All Sectors,5.0,21192.0,45.1,3.2,3.0,2025-10-21
+August 2024,All jurisdictions,Private Sector,2.0,2990.0,36.0,7.0,2.8,2025-10-21
+August 2024,All jurisdictions,Public Sector,3.0,18202.0,46.5,2.6,3.1,2025-10-21
+September 2024,All jurisdictions,All Sectors,5.0,14010.0,31.8,5.7,4.4,2025-10-21
+September 2024,All jurisdictions,Private Sector,4.0,9010.0,29.4,6.9,5.1,2025-10-21
+September 2024,All jurisdictions,Public Sector,1.0,5000.0,36.0,3.5,3.0,2025-10-21
+October 2024,All jurisdictions,All Sectors,8.0,45176.0,45.7,3.4,3.7,2025-10-21
+October 2024,All jurisdictions,Private Sector,2.0,7296.0,46.0,3.5,3.1,2025-10-21
+October 2024,All jurisdictions,Public Sector,6.0,37880.0,45.6,3.4,3.8,2025-10-21
+November 2024,All jurisdictions,All Sectors,6.0,6894.0,38.1,3.7,3.4,2025-10-21
+November 2024,All jurisdictions,Public Sector,6.0,6894.0,38.1,3.7,3.4,2025-10-21
+December 2024,All jurisdictions,All Sectors,15.0,125802.0,52.7,5.3,3.7,2025-10-21
+December 2024,All jurisdictions,Private Sector,7.0,13801.0,57.2,2.8,3.7,2025-10-21
+December 2024,All jurisdictions,Public Sector,8.0,112001.0,52.1,5.7,3.7,2025-10-21
+January 2025,All jurisdictions,All Sectors,7.0,13702.0,57.6,5.3,3.3,2025-10-21
+January 2025,All jurisdictions,Private Sector,3.0,3916.0,58.0,3.6,3.2,2025-10-21
+January 2025,All jurisdictions,Public Sector,4.0,9786.0,57.5,6.1,3.3,2025-10-21
+February 2025,All jurisdictions,All Sectors,8.0,15157.0,45.3,4.7,3.6,2025-10-21
+February 2025,All jurisdictions,Private Sector,4.0,5057.0,44.9,5.5,4.0,2025-10-21
+February 2025,All jurisdictions,Public Sector,4.0,10100.0,45.6,4.3,3.4,2025-10-21
+March 2025,All jurisdictions,All Sectors,6.0,22135.0,47.7,3.1,3.3,2025-10-21
+March 2025,All jurisdictions,Private Sector,1.0,1404.0,72.0,0.0,1.8,2025-10-21
+March 2025,All jurisdictions,Public Sector,5.0,20731.0,46.0,3.4,3.4,2025-10-21
+April 2025,All jurisdictions,All Sectors,13.0,172748.0,46.9,6.3,4.6,2025-10-21
+April 2025,All jurisdictions,Private Sector,6.0,116015.0,47.8,7.7,5.3,2025-10-21
+April 2025,All jurisdictions,Public Sector,7.0,56733.0,45.3,3.4,3.1,2025-10-21
+May 2025,All jurisdictions,All Sectors,9.0,25184.0,45.1,3.1,3.0,2025-10-21
+May 2025,All jurisdictions,Private Sector,4.0,11083.0,46.3,2.9,2.8,2025-10-21
+May 2025,All jurisdictions,Public Sector,5.0,14101.0,44.2,3.2,3.1,2025-10-21
+June 2025,All jurisdictions,All Sectors,4.0,4657.0,53.6,3.6,3.4,2025-10-21
+June 2025,All jurisdictions,Private Sector,2.0,1523.0,47.1,4.7,3.5,2025-10-21
+June 2025,All jurisdictions,Public Sector,2.0,3134.0,56.8,3.0,3.4,2025-10-21
+July 2025,All jurisdictions,All Sectors,4.0,45658.0,48.4,7.4,2.1,2025-10-21
+July 2025,All jurisdictions,Private Sector,2.0,42230.0,48.7,7.8,2.0,2025-10-21
+July 2025,All jurisdictions,Public Sector,2.0,3428.0,44.6,3.2,3.2,2025-10-21
+August 2024,Federal jurisdiction,All Sectors,1.0,652.0,36.0,4.0,3.3,2025-10-21
+August 2024,Federal jurisdiction,Public Sector,1.0,652.0,36.0,4.0,3.3,2025-10-21
+September 2024,Federal jurisdiction,All Sectors,1.0,550.0,48.0,5.0,4.2,2025-10-21
+September 2024,Federal jurisdiction,Private Sector,1.0,550.0,48.0,5.0,4.2,2025-10-21
+October 2024,Federal jurisdiction,All Sectors,2.0,1680.0,39.4,4.2,3.2,2025-10-21
+October 2024,Federal jurisdiction,Private Sector,1.0,600.0,24.0,3.2,3.1,2025-10-21
+October 2024,Federal jurisdiction,Public Sector,1.0,1080.0,48.0,4.7,3.2,2025-10-21
+November 2024,Federal jurisdiction,All Sectors,1.0,1020.0,48.0,4.8,3.1,2025-10-21
+November 2024,Federal jurisdiction,Public Sector,1.0,1020.0,48.0,4.8,3.1,2025-10-21
+December 2024,Federal jurisdiction,All Sectors,4.0,9004.0,48.0,4.8,3.2,2025-10-21
+December 2024,Federal jurisdiction,Private Sector,2.0,2594.0,48.0,4.7,3.2,2025-10-21
+December 2024,Federal jurisdiction,Public Sector,2.0,6410.0,48.0,4.8,3.2,2025-10-21
+January 2025,Federal jurisdiction,All Sectors,1.0,536.0,36.0,3.0,3.0,2025-10-21
+January 2025,Federal jurisdiction,Private Sector,1.0,536.0,36.0,3.0,3.0,2025-10-21
+February 2025,Federal jurisdiction,All Sectors,5.0,12727.0,46.7,5.0,3.8,2025-10-21
+February 2025,Federal jurisdiction,Private Sector,4.0,5057.0,44.9,5.5,4.0,2025-10-21
+February 2025,Federal jurisdiction,Public Sector,1.0,7670.0,48.0,4.7,3.7,2025-10-21
+June 2025,Federal jurisdiction,All Sectors,1.0,733.0,48.0,5.0,4.5,2025-10-21
+June 2025,Federal jurisdiction,Private Sector,1.0,733.0,48.0,5.0,4.5,2025-10-21
+July 2025,Federal jurisdiction,All Sectors,2.0,3336.0,54.0,4.0,3.4,2025-10-21
+July 2025,Federal jurisdiction,Private Sector,1.0,2500.0,60.0,4.0,3.4,2025-10-21
+July 2025,Federal jurisdiction,Public Sector,1.0,836.0,36.0,4.0,3.5,2025-10-21
+December 2024,Nova Scotia,All Sectors,2.0,16870.0,24.0,5.1,4.1,2025-10-21
+December 2024,Nova Scotia,Public Sector,2.0,16870.0,24.0,5.1,4.1,2025-10-21
+April 2025,Nova Scotia,All Sectors,1.0,1180.0,24.0,5.6,3.8,2025-10-21
+April 2025,Nova Scotia,Public Sector,1.0,1180.0,24.0,5.6,3.8,2025-10-21
+December 2024,Quebec,All Sectors,4.0,89929.0,60.6,5.6,3.6,2025-10-21
+December 2024,Quebec,Private Sector,3.0,8256.0,66.7,2.0,4.0,2025-10-21
+December 2024,Quebec,Public Sector,1.0,81673.0,60.0,6.0,3.6,2025-10-21
+January 2025,Quebec,All Sectors,1.0,4947.0,72.0,6.0,3.3,2025-10-21
+January 2025,Quebec,Public Sector,1.0,4947.0,72.0,6.0,3.3,2025-10-21
+February 2025,Quebec,All Sectors,1.0,566.0,60.0,2.8,2.6,2025-10-21
+February 2025,Quebec,Public Sector,1.0,566.0,60.0,2.8,2.6,2025-10-21
+April 2025,Quebec,All Sectors,5.0,111801.0,48.7,7.7,5.3,2025-10-21
+April 2025,Quebec,Private Sector,4.0,106088.0,48.1,8.0,5.5,2025-10-21
+April 2025,Quebec,Public Sector,1.0,5713.0,60.0,2.8,2.5,2025-10-21
+May 2025,Quebec,All Sectors,2.0,1847.0,60.0,5.5,4.2,2025-10-21
+May 2025,Quebec,Public Sector,2.0,1847.0,60.0,5.5,4.2,2025-10-21
+June 2025,Quebec,All Sectors,1.0,2300.0,60.0,3.0,3.5,2025-10-21
+June 2025,Quebec,Public Sector,1.0,2300.0,60.0,3.0,3.5,2025-10-21
+July 2025,Quebec,All Sectors,1.0,39730.0,48.0,8.0,1.9,2025-10-21
+July 2025,Quebec,Private Sector,1.0,39730.0,48.0,8.0,1.9,2025-10-21
+August 2024,Ontario,All Sectors,1.0,1550.0,36.0,3.1,2.9,2025-10-21
+August 2024,Ontario,Public Sector,1.0,1550.0,36.0,3.1,2.9,2025-10-21
+September 2024,Ontario,All Sectors,4.0,13460.0,31.1,5.7,4.4,2025-10-21
+September 2024,Ontario,Private Sector,3.0,8460.0,28.2,7.1,5.2,2025-10-21
+September 2024,Ontario,Public Sector,1.0,5000.0,36.0,3.5,3.0,2025-10-21
+October 2024,Ontario,All Sectors,2.0,10700.0,47.5,3.4,2.8,2025-10-21
+October 2024,Ontario,Public Sector,2.0,10700.0,47.5,3.4,2.8,2025-10-21
+November 2024,Ontario,All Sectors,3.0,2747.0,32.7,3.7,3.4,2025-10-21
+November 2024,Ontario,Public Sector,3.0,2747.0,32.7,3.7,3.4,2025-10-21
+December 2024,Ontario,All Sectors,1.0,4840.0,12.0,5.0,5.0,2025-10-21
+December 2024,Ontario,Public Sector,1.0,4840.0,12.0,5.0,5.0,2025-10-21
+January 2025,Ontario,All Sectors,2.0,1927.0,52.7,5.7,3.6,2025-10-21
+January 2025,Ontario,Public Sector,2.0,1927.0,52.7,5.7,3.6,2025-10-21
+February 2025,Ontario,All Sectors,1.0,1300.0,24.0,2.5,2.5,2025-10-21
+February 2025,Ontario,Public Sector,1.0,1300.0,24.0,2.5,2.5,2025-10-21
+March 2025,Ontario,All Sectors,1.0,8240.0,48.0,3.9,3.7,2025-10-21
+March 2025,Ontario,Public Sector,1.0,8240.0,48.0,3.9,3.7,2025-10-21
+April 2025,Ontario,All Sectors,3.0,5111.0,32.2,6.7,7.0,2025-10-21
+April 2025,Ontario,Private Sector,1.0,1606.0,24.0,10.8,10.2,2025-10-21
+April 2025,Ontario,Public Sector,2.0,3505.0,36.0,4.8,5.5,2025-10-21
+May 2025,Ontario,All Sectors,1.0,910.0,36.0,2.5,2.5,2025-10-21
+May 2025,Ontario,Public Sector,1.0,910.0,36.0,2.5,2.5,2025-10-21
+August 2024,Manitoba,All Sectors,1.0,16000.0,48.0,2.5,3.1,2025-10-21
+August 2024,Manitoba,Public Sector,1.0,16000.0,48.0,2.5,3.1,2025-10-21
+October 2024,Manitoba,All Sectors,2.0,25696.0,48.0,2.8,4.2,2025-10-21
+October 2024,Manitoba,Private Sector,1.0,6696.0,48.0,3.5,3.1,2025-10-21
+October 2024,Manitoba,Public Sector,1.0,19000.0,48.0,2.5,4.6,2025-10-21
+March 2025,Manitoba,All Sectors,2.0,8300.0,48.0,2.9,3.1,2025-10-21
+March 2025,Manitoba,Public Sector,2.0,8300.0,48.0,2.9,3.1,2025-10-21
+April 2025,Saskatchewan,All Sectors,1.0,12800.0,36.0,4.0,3.0,2025-10-21
+April 2025,Saskatchewan,Public Sector,1.0,12800.0,36.0,4.0,3.0,2025-10-21
+August 2024,Alberta,All Sectors,1.0,750.0,36.0,5.0,3.7,2025-10-21
+August 2024,Alberta,Private Sector,1.0,750.0,36.0,5.0,3.7,2025-10-21
+October 2024,Alberta,All Sectors,1.0,1100.0,36.0,3.0,3.0,2025-10-21
+October 2024,Alberta,Public Sector,1.0,1100.0,36.0,3.0,3.0,2025-10-21
+November 2024,Alberta,All Sectors,2.0,3127.0,39.6,3.4,3.4,2025-10-21
+November 2024,Alberta,Public Sector,2.0,3127.0,39.6,3.4,3.4,2025-10-21
+December 2024,Alberta,All Sectors,3.0,3359.0,57.2,1.7,2.6,2025-10-21
+December 2024,Alberta,Private Sector,1.0,1151.0,24.0,4.0,3.7,2025-10-21
+December 2024,Alberta,Public Sector,2.0,2208.0,74.5,0.6,2.0,2025-10-21
+January 2025,Alberta,All Sectors,2.0,3892.0,36.0,5.4,3.2,2025-10-21
+January 2025,Alberta,Private Sector,1.0,980.0,36.0,2.8,3.5,2025-10-21
+January 2025,Alberta,Public Sector,1.0,2912.0,36.0,6.3,3.2,2025-10-21
+February 2025,Alberta,All Sectors,1.0,564.0,48.0,3.0,3.0,2025-10-21
+February 2025,Alberta,Public Sector,1.0,564.0,48.0,3.0,3.0,2025-10-21
+March 2025,Alberta,All Sectors,3.0,5595.0,46.7,2.2,2.9,2025-10-21
+March 2025,Alberta,Private Sector,1.0,1404.0,72.0,0.0,1.8,2025-10-21
+March 2025,Alberta,Public Sector,2.0,4191.0,38.3,3.0,3.3,2025-10-21
+April 2025,Alberta,All Sectors,3.0,41856.0,48.0,3.0,2.9,2025-10-21
+April 2025,Alberta,Private Sector,1.0,8321.0,47.9,3.0,2.5,2025-10-21
+April 2025,Alberta,Public Sector,2.0,33535.0,48.0,3.0,3.0,2025-10-21
+May 2025,Alberta,All Sectors,5.0,20877.0,44.9,2.8,2.8,2025-10-21
+May 2025,Alberta,Private Sector,3.0,9533.0,47.9,2.7,2.5,2025-10-21
+May 2025,Alberta,Public Sector,2.0,11344.0,42.3,2.9,3.0,2025-10-21
+June 2025,Alberta,All Sectors,2.0,1624.0,47.2,3.7,2.8,2025-10-21
+June 2025,Alberta,Private Sector,1.0,790.0,46.3,4.4,2.5,2025-10-21
+June 2025,Alberta,Public Sector,1.0,834.0,48.0,3.0,3.0,2025-10-21
+July 2025,Alberta,All Sectors,1.0,2592.0,47.4,3.0,3.0,2025-10-21
+July 2025,Alberta,Public Sector,1.0,2592.0,47.4,3.0,3.0,2025-10-21
+January 2025,British Columbia,All Sectors,1.0,2400.0,72.0,4.0,3.2,2025-10-21
+January 2025,British Columbia,Private Sector,1.0,2400.0,72.0,4.0,3.2,2025-10-21
+May 2025,British Columbia,All Sectors,1.0,1550.0,36.0,4.2,4.6,2025-10-21
+May 2025,British Columbia,Private Sector,1.0,1550.0,36.0,4.2,4.6,2025-10-21
+October 2024,All territories,All Sectors,1.0,6000.0,36.0,6.0,3.5,2025-10-21
+October 2024,All territories,Public Sector,1.0,6000.0,36.0,6.0,3.5,2025-10-21
+August 2024,Multi-provinces,All Sectors,1.0,2240.0,36.0,7.7,2.5,2025-10-21
+August 2024,Multi-provinces,Private Sector,1.0,2240.0,36.0,7.7,2.5,2025-10-21
+December 2024,Multi-provinces,All Sectors,1.0,1800.0,48.0,3.0,3.0,2025-10-21
+December 2024,Multi-provinces,Private Sector,1.0,1800.0,48.0,3.0,3.0,2025-10-21

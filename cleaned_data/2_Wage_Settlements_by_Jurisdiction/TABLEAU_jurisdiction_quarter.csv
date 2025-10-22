@@ -1,0 +1,356 @@
+Quarter,Sector,Jurisdiction,Number_of_Agreements,Number_of_Employees,Duration_Months_Avg,First_Year_Pct_Adjustment_Avg,Annual_Pct_Adjustment_Avg,Extraction_Date
+Q3 2022,All industries,All Jurisdictions,46.0,207945.0,47.3,2.1,1.9,2025-10-21
+Q3 2022,All industries,Federal Jurisdiction,13.0,30144.0,49.2,3.5,3.0,2025-10-21
+Q3 2022,All industries,Provincial Jurisdiction,33.0,177801.0,46.9,1.8,1.7,2025-10-21
+Q4 2022,All industries,All Jurisdictions,44.0,246342.0,39.3,3.9,3.6,2025-10-21
+Q4 2022,All industries,Federal Jurisdiction,6.0,9188.0,48.8,3.3,2.7,2025-10-21
+Q4 2022,All industries,Provincial Jurisdiction,38.0,237154.0,39.0,3.9,3.6,2025-10-21
+Q1 2023,All industries,All Jurisdictions,30.0,61655.0,42.6,3.8,3.4,2025-10-21
+Q1 2023,All industries,Federal Jurisdiction,5.0,11340.0,55.9,1.3,2.6,2025-10-21
+Q1 2023,All industries,Provincial Jurisdiction,25.0,50315.0,39.6,4.4,3.6,2025-10-21
+Q2 2023,All industries,All Jurisdictions,51.0,308518.0,42.4,2.6,3.0,2025-10-21
+Q2 2023,All industries,Federal Jurisdiction,15.0,189076.0,46.2,2.5,3.2,2025-10-21
+Q2 2023,All industries,Provincial Jurisdiction,36.0,119442.0,36.3,2.7,2.8,2025-10-21
+Q3 2023,All industries,All Jurisdictions,46.0,169307.0,37.5,5.4,4.3,2025-10-21
+Q3 2023,All industries,Federal Jurisdiction,12.0,36336.0,46.5,3.0,3.7,2025-10-21
+Q3 2023,All industries,Provincial Jurisdiction,34.0,132971.0,35.0,6.0,4.4,2025-10-21
+Q4 2023,All industries,All Jurisdictions,32.0,180530.0,48.9,4.0,3.0,2025-10-21
+Q4 2023,All industries,Federal Jurisdiction,4.0,26541.0,50.5,3.8,3.3,2025-10-21
+Q4 2023,All industries,Provincial Jurisdiction,28.0,153989.0,48.6,4.0,3.0,2025-10-21
+Q1 2024,All industries,All Jurisdictions,33.0,188927.0,45.9,3.0,2.6,2025-10-21
+Q1 2024,All industries,Federal Jurisdiction,6.0,14181.0,44.7,4.6,2.7,2025-10-21
+Q1 2024,All industries,Provincial Jurisdiction,27.0,174746.0,46.0,2.9,2.6,2025-10-21
+Q2 2024,All industries,All Jurisdictions,56.0,653329.0,53.5,5.3,3.5,2025-10-21
+Q2 2024,All industries,Federal Jurisdiction,6.0,32460.0,23.5,4.1,4.1,2025-10-21
+Q2 2024,All industries,Provincial Jurisdiction,50.0,620869.0,55.1,5.4,3.5,2025-10-21
+Q3 2024,All industries,All Jurisdictions,27.0,95429.0,42.8,4.1,3.3,2025-10-21
+Q3 2024,All industries,Federal Jurisdiction,4.0,10857.0,47.9,5.6,3.8,2025-10-21
+Q3 2024,All industries,Provincial Jurisdiction,23.0,84572.0,42.1,3.9,3.3,2025-10-21
+Q4 2024,All industries,All Jurisdictions,29.0,177872.0,50.3,4.8,3.7,2025-10-21
+Q4 2024,All industries,Federal Jurisdiction,7.0,11704.0,46.8,4.7,3.2,2025-10-21
+Q4 2024,All industries,Provincial Jurisdiction,22.0,166168.0,50.6,4.8,3.7,2025-10-21
+Q1 2025,All industries,All Jurisdictions,21.0,50994.0,49.7,4.2,3.4,2025-10-21
+Q1 2025,All industries,Federal Jurisdiction,6.0,13263.0,46.3,4.9,3.8,2025-10-21
+Q1 2025,All industries,Provincial Jurisdiction,15.0,37731.0,50.8,3.9,3.2,2025-10-21
+Q2 2025,All industries,All Jurisdictions,26.0,202589.0,46.9,5.8,4.4,2025-10-21
+Q2 2025,All industries,Federal Jurisdiction,1.0,733.0,48.0,5.0,4.5,2025-10-21
+Q2 2025,All industries,Provincial Jurisdiction,25.0,201856.0,46.9,5.8,4.4,2025-10-21
+Q3 2022,Primary industries,All Jurisdictions,1.0,1011.0,60.0,2.0,2.0,2025-10-21
+Q3 2022,Primary industries,Provincial Jurisdiction,1.0,1011.0,60.0,2.0,2.0,2025-10-21
+Q1 2023,Primary industries,All Jurisdictions,1.0,750.0,48.0,3.5,2.9,2025-10-21
+Q1 2023,Primary industries,Provincial Jurisdiction,1.0,750.0,48.0,3.5,2.9,2025-10-21
+Q1 2024,Primary industries,All Jurisdictions,1.0,3317.0,36.0,5.0,4.0,2025-10-21
+Q1 2024,Primary industries,Provincial Jurisdiction,1.0,3317.0,36.0,5.0,4.0,2025-10-21
+Q1 2025,Primary industries,All Jurisdictions,1.0,536.0,36.0,3.0,3.0,2025-10-21
+Q1 2025,Primary industries,Federal Jurisdiction,1.0,536.0,36.0,3.0,3.0,2025-10-21
+Q3 2022,Utilities,All Jurisdictions,2.0,1425.0,47.6,0.3,1.0,2025-10-21
+Q3 2022,Utilities,Provincial Jurisdiction,2.0,1425.0,47.6,0.3,1.0,2025-10-21
+Q4 2022,Utilities,All Jurisdictions,1.0,780.0,35.9,1.0,2.3,2025-10-21
+Q4 2022,Utilities,Provincial Jurisdiction,1.0,780.0,35.9,1.0,2.3,2025-10-21
+Q1 2023,Utilities,All Jurisdictions,3.0,2972.0,40.1,2.2,2.6,2025-10-21
+Q1 2023,Utilities,Provincial Jurisdiction,3.0,2972.0,40.1,2.2,2.6,2025-10-21
+Q2 2023,Utilities,All Jurisdictions,3.0,7554.0,27.1,4.3,3.7,2025-10-21
+Q2 2023,Utilities,Provincial Jurisdiction,3.0,7554.0,27.1,4.3,3.7,2025-10-21
+Q3 2023,Utilities,All Jurisdictions,1.0,5408.0,30.0,4.5,4.8,2025-10-21
+Q3 2023,Utilities,Provincial Jurisdiction,1.0,5408.0,30.0,4.5,4.8,2025-10-21
+Q4 2023,Utilities,All Jurisdictions,1.0,3220.0,24.0,3.7,3.5,2025-10-21
+Q4 2023,Utilities,Provincial Jurisdiction,1.0,3220.0,24.0,3.7,3.5,2025-10-21
+Q1 2024,Utilities,All Jurisdictions,1.0,520.0,36.0,3.0,2.7,2025-10-21
+Q1 2024,Utilities,Provincial Jurisdiction,1.0,520.0,36.0,3.0,2.7,2025-10-21
+Q2 2024,Utilities,All Jurisdictions,1.0,1690.0,36.0,3.0,2.7,2025-10-21
+Q2 2024,Utilities,Provincial Jurisdiction,1.0,1690.0,36.0,3.0,2.7,2025-10-21
+Q4 2024,Utilities,All Jurisdictions,1.0,1151.0,24.0,4.0,3.7,2025-10-21
+Q4 2024,Utilities,Provincial Jurisdiction,1.0,1151.0,24.0,4.0,3.7,2025-10-21
+Q1 2025,Utilities,All Jurisdictions,1.0,980.0,36.0,2.8,3.5,2025-10-21
+Q1 2025,Utilities,Provincial Jurisdiction,1.0,980.0,36.0,2.8,3.5,2025-10-21
+Q2 2025,Utilities,All Jurisdictions,1.0,2300.0,60.0,3.0,3.5,2025-10-21
+Q2 2025,Utilities,Provincial Jurisdiction,1.0,2300.0,60.0,3.0,3.5,2025-10-21
+Q3 2022,Construction,All Jurisdictions,3.0,8120.0,34.5,10.8,6.0,2025-10-21
+Q3 2022,Construction,Provincial Jurisdiction,3.0,8120.0,34.5,10.8,6.0,2025-10-21
+Q4 2022,Construction,All Jurisdictions,1.0,790.0,30.1,12.5,6.7,2025-10-21
+Q4 2022,Construction,Provincial Jurisdiction,1.0,790.0,30.1,12.5,6.7,2025-10-21
+Q1 2023,Construction,All Jurisdictions,3.0,14650.0,26.5,7.5,5.2,2025-10-21
+Q1 2023,Construction,Provincial Jurisdiction,3.0,14650.0,26.5,7.5,5.2,2025-10-21
+Q2 2023,Construction,All Jurisdictions,4.0,9202.0,24.0,8.4,7.3,2025-10-21
+Q2 2023,Construction,Provincial Jurisdiction,4.0,9202.0,24.0,8.4,7.3,2025-10-21
+Q3 2023,Construction,All Jurisdictions,2.0,1849.0,56.8,12.8,4.0,2025-10-21
+Q3 2023,Construction,Federal Jurisdiction,1.0,850.0,60.0,4.0,3.8,2025-10-21
+Q3 2023,Construction,Provincial Jurisdiction,1.0,999.0,54.0,20.3,4.2,2025-10-21
+Q2 2024,Construction,All Jurisdictions,1.0,700.0,48.0,2.8,2.6,2025-10-21
+Q2 2024,Construction,Federal Jurisdiction,1.0,700.0,48.0,2.8,2.6,2025-10-21
+Q2 2025,Construction,All Jurisdictions,8.0,123854.0,48.0,7.2,5.0,2025-10-21
+Q2 2025,Construction,Provincial Jurisdiction,8.0,123854.0,48.0,7.2,5.0,2025-10-21
+Q3 2022,Manufacturing,All Jurisdictions,3.0,3650.0,60.0,11.8,4.8,2025-10-21
+Q3 2022,Manufacturing,Provincial Jurisdiction,3.0,3650.0,60.0,11.8,4.8,2025-10-21
+Q4 2022,Manufacturing,All Jurisdictions,2.0,2560.0,43.9,6.5,4.2,2025-10-21
+Q4 2022,Manufacturing,Provincial Jurisdiction,2.0,2560.0,43.9,6.5,4.2,2025-10-21
+Q1 2023,Manufacturing,All Jurisdictions,1.0,596.0,36.0,3.9,3.0,2025-10-21
+Q1 2023,Manufacturing,Provincial Jurisdiction,1.0,596.0,36.0,3.9,3.0,2025-10-21
+Q2 2023,Manufacturing,All Jurisdictions,2.0,1800.0,42.9,4.1,3.7,2025-10-21
+Q2 2023,Manufacturing,Provincial Jurisdiction,2.0,1800.0,42.9,4.1,3.7,2025-10-21
+Q3 2023,Manufacturing,All Jurisdictions,3.0,7490.0,37.7,9.0,4.9,2025-10-21
+Q3 2023,Manufacturing,Provincial Jurisdiction,3.0,7490.0,37.7,9.0,4.9,2025-10-21
+Q4 2023,Manufacturing,All Jurisdictions,3.0,13000.0,36.4,9.8,5.2,2025-10-21
+Q4 2023,Manufacturing,Provincial Jurisdiction,3.0,13000.0,36.4,9.8,5.2,2025-10-21
+Q1 2024,Manufacturing,All Jurisdictions,1.0,1303.0,36.0,7.8,4.6,2025-10-21
+Q1 2024,Manufacturing,Provincial Jurisdiction,1.0,1303.0,36.0,7.8,4.6,2025-10-21
+Q2 2024,Manufacturing,All Jurisdictions,3.0,2540.0,51.8,8.2,4.3,2025-10-21
+Q2 2024,Manufacturing,Provincial Jurisdiction,3.0,2540.0,51.8,8.2,4.3,2025-10-21
+Q3 2024,Manufacturing,All Jurisdictions,2.0,3561.0,29.8,13.8,8.5,2025-10-21
+Q3 2024,Manufacturing,Provincial Jurisdiction,2.0,3561.0,29.8,13.8,8.5,2025-10-21
+Q4 2024,Manufacturing,All Jurisdictions,1.0,1400.0,60.0,8.0,4.5,2025-10-21
+Q4 2024,Manufacturing,Provincial Jurisdiction,1.0,1400.0,60.0,8.0,4.5,2025-10-21
+Q1 2025,Manufacturing,All Jurisdictions,1.0,2400.0,72.0,4.0,3.2,2025-10-21
+Q1 2025,Manufacturing,Provincial Jurisdiction,1.0,2400.0,72.0,4.0,3.2,2025-10-21
+Q4 2022,Wholesale and retail trade,All Jurisdictions,1.0,787.0,48.0,1.0,0.6,2025-10-21
+Q4 2022,Wholesale and retail trade,Provincial Jurisdiction,1.0,787.0,48.0,1.0,0.6,2025-10-21
+Q3 2023,Wholesale and retail trade,All Jurisdictions,1.0,1400.0,36.0,2.0,4.0,2025-10-21
+Q3 2023,Wholesale and retail trade,Provincial Jurisdiction,1.0,1400.0,36.0,2.0,4.0,2025-10-21
+Q4 2023,Wholesale and retail trade,All Jurisdictions,3.0,11979.0,60.0,9.8,4.0,2025-10-21
+Q4 2023,Wholesale and retail trade,Provincial Jurisdiction,3.0,11979.0,60.0,9.8,4.0,2025-10-21
+Q3 2024,Wholesale and retail trade,All Jurisdictions,1.0,10229.0,36.0,3.0,2.6,2025-10-21
+Q3 2024,Wholesale and retail trade,Provincial Jurisdiction,1.0,10229.0,36.0,3.0,2.6,2025-10-21
+Q1 2025,Wholesale and retail trade,All Jurisdictions,1.0,4947.0,72.0,6.0,3.3,2025-10-21
+Q1 2025,Wholesale and retail trade,Provincial Jurisdiction,1.0,4947.0,72.0,6.0,3.3,2025-10-21
+Q2 2025,Wholesale and retail trade,All Jurisdictions,1.0,878.0,60.0,6.7,3.9,2025-10-21
+Q2 2025,Wholesale and retail trade,Provincial Jurisdiction,1.0,878.0,60.0,6.7,3.9,2025-10-21
+Q3 2022,Transportation,All Jurisdictions,8.0,19994.0,49.5,3.9,3.3,2025-10-21
+Q3 2022,Transportation,Federal Jurisdiction,8.0,19994.0,49.5,3.9,3.3,2025-10-21
+Q4 2022,Transportation,All Jurisdictions,4.0,4088.0,51.5,3.2,2.8,2025-10-21
+Q4 2022,Transportation,Federal Jurisdiction,4.0,4088.0,51.5,3.2,2.8,2025-10-21
+Q1 2023,Transportation,All Jurisdictions,3.0,4553.0,34.5,1.4,1.8,2025-10-21
+Q1 2023,Transportation,Federal Jurisdiction,2.0,1837.0,31.7,3.6,3.0,2025-10-21
+Q1 2023,Transportation,Provincial Jurisdiction,1.0,2716.0,36.4,0.0,1.0,2025-10-21
+Q2 2023,Transportation,All Jurisdictions,10.0,19783.0,28.7,6.6,4.1,2025-10-21
+Q2 2023,Transportation,Federal Jurisdiction,8.0,16143.0,29.3,7.3,4.3,2025-10-21
+Q2 2023,Transportation,Provincial Jurisdiction,2.0,3640.0,26.1,3.8,3.2,2025-10-21
+Q3 2023,Transportation,All Jurisdictions,7.0,16358.0,43.9,4.5,4.3,2025-10-21
+Q3 2023,Transportation,Federal Jurisdiction,5.0,12608.0,44.5,4.8,5.0,2025-10-21
+Q3 2023,Transportation,Provincial Jurisdiction,2.0,3750.0,42.0,3.3,2.1,2025-10-21
+Q4 2023,Transportation,All Jurisdictions,4.0,4178.0,63.8,2.4,3.1,2025-10-21
+Q4 2023,Transportation,Federal Jurisdiction,2.0,1881.0,83.0,3.6,3.2,2025-10-21
+Q4 2023,Transportation,Provincial Jurisdiction,2.0,2297.0,48.1,1.4,3.1,2025-10-21
+Q1 2024,Transportation,All Jurisdictions,1.0,2100.0,60.0,8.2,5.4,2025-10-21
+Q1 2024,Transportation,Federal Jurisdiction,1.0,2100.0,60.0,8.2,5.4,2025-10-21
+Q2 2024,Transportation,All Jurisdictions,3.0,15250.0,37.1,4.4,4.0,2025-10-21
+Q2 2024,Transportation,Federal Jurisdiction,2.0,3750.0,40.5,3.1,3.1,2025-10-21
+Q2 2024,Transportation,Provincial Jurisdiction,1.0,11500.0,36.0,4.8,4.3,2025-10-21
+Q3 2024,Transportation,All Jurisdictions,3.0,1857.0,47.7,9.7,4.3,2025-10-21
+Q3 2024,Transportation,Federal Jurisdiction,3.0,1857.0,47.7,9.7,4.3,2025-10-21
+Q4 2024,Transportation,All Jurisdictions,4.0,4994.0,45.1,3.9,3.1,2025-10-21
+Q4 2024,Transportation,Federal Jurisdiction,3.0,3194.0,43.5,4.4,3.2,2025-10-21
+Q4 2024,Transportation,Provincial Jurisdiction,1.0,1800.0,48.0,3.0,3.0,2025-10-21
+Q1 2025,Transportation,All Jurisdictions,5.0,8457.0,41.3,4.5,3.7,2025-10-21
+Q1 2025,Transportation,Federal Jurisdiction,4.0,5057.0,44.9,5.5,4.0,2025-10-21
+Q1 2025,Transportation,Provincial Jurisdiction,1.0,3400.0,36.0,3.0,3.2,2025-10-21
+Q2 2025,Transportation,All Jurisdictions,1.0,733.0,48.0,5.0,4.5,2025-10-21
+Q2 2025,Transportation,Federal Jurisdiction,1.0,733.0,48.0,5.0,4.5,2025-10-21
+Q3 2022,Information and culture,All Jurisdictions,6.0,10870.0,47.6,2.4,2.2,2025-10-21
+Q3 2022,Information and culture,Federal Jurisdiction,4.0,9590.0,50.0,2.6,2.4,2025-10-21
+Q3 2022,Information and culture,Provincial Jurisdiction,2.0,1280.0,30.0,0.8,0.8,2025-10-21
+Q4 2022,Information and culture,All Jurisdictions,1.0,600.0,36.0,2.0,2.0,2025-10-21
+Q4 2022,Information and culture,Federal Jurisdiction,1.0,600.0,36.0,2.0,2.0,2025-10-21
+Q1 2023,Information and culture,All Jurisdictions,1.0,6918.0,63.0,0.0,2.2,2025-10-21
+Q1 2023,Information and culture,Federal Jurisdiction,1.0,6918.0,63.0,0.0,2.2,2025-10-21
+Q2 2023,Information and culture,All Jurisdictions,1.0,2160.0,48.1,3.2,3.2,2025-10-21
+Q2 2023,Information and culture,Federal Jurisdiction,1.0,2160.0,48.1,3.2,3.2,2025-10-21
+Q3 2023,Information and culture,All Jurisdictions,2.0,1883.0,46.8,5.5,2.6,2025-10-21
+Q3 2023,Information and culture,Federal Jurisdiction,2.0,1883.0,46.8,5.5,2.6,2025-10-21
+Q1 2024,Information and culture,All Jurisdictions,3.0,6400.0,39.1,3.3,1.8,2025-10-21
+Q1 2024,Information and culture,Federal Jurisdiction,2.0,5100.0,40.2,3.2,1.6,2025-10-21
+Q1 2024,Information and culture,Provincial Jurisdiction,1.0,1300.0,35.0,4.0,2.7,2025-10-21
+Q2 2024,Information and culture,All Jurisdictions,3.0,2205.0,45.4,2.8,2.4,2025-10-21
+Q2 2024,Information and culture,Federal Jurisdiction,1.0,500.0,36.0,2.0,2.3,2025-10-21
+Q2 2024,Information and culture,Provincial Jurisdiction,2.0,1705.0,48.1,3.0,2.5,2025-10-21
+Q3 2022,Finance and professional services,All Jurisdictions,4.0,18860.0,57.6,1.7,2.0,2025-10-21
+Q3 2022,Finance and professional services,Federal Jurisdiction,1.0,560.0,24.0,4.0,3.5,2025-10-21
+Q3 2022,Finance and professional services,Provincial Jurisdiction,3.0,18300.0,58.6,1.6,2.0,2025-10-21
+Q1 2023,Finance and professional services,All Jurisdictions,1.0,635.0,36.0,4.5,4.2,2025-10-21
+Q1 2023,Finance and professional services,Federal Jurisdiction,1.0,635.0,36.0,4.5,4.2,2025-10-21
+Q2 2023,Finance and professional services,All Jurisdictions,3.0,2984.0,47.8,7.5,4.4,2025-10-21
+Q2 2023,Finance and professional services,Federal Jurisdiction,2.0,1430.0,24.0,11.1,6.9,2025-10-21
+Q2 2023,Finance and professional services,Provincial Jurisdiction,1.0,1554.0,69.8,4.2,2.0,2025-10-21
+Q1 2024,Finance and professional services,All Jurisdictions,1.0,900.0,12.0,0.0,0.0,2025-10-21
+Q1 2024,Finance and professional services,Federal Jurisdiction,1.0,900.0,12.0,0.0,0.0,2025-10-21
+Q2 2024,Finance and professional services,All Jurisdictions,1.0,8510.0,12.0,5.0,5.0,2025-10-21
+Q2 2024,Finance and professional services,Federal Jurisdiction,1.0,8510.0,12.0,5.0,5.0,2025-10-21
+Q3 2024,Finance and professional services,All Jurisdictions,3.0,7990.0,31.8,4.5,2.8,2025-10-21
+Q3 2024,Finance and professional services,Provincial Jurisdiction,3.0,7990.0,31.8,4.5,2.8,2025-10-21
+Q4 2024,Finance and professional services,All Jurisdictions,2.0,7315.0,68.6,0.7,3.5,2025-10-21
+Q4 2024,Finance and professional services,Federal Jurisdiction,1.0,1020.0,48.0,4.8,3.1,2025-10-21
+Q4 2024,Finance and professional services,Provincial Jurisdiction,1.0,6295.0,72.0,0.0,3.6,2025-10-21
+Q2 2025,Finance and professional services,All Jurisdictions,1.0,1550.0,36.0,4.2,4.6,2025-10-21
+Q2 2025,Finance and professional services,Provincial Jurisdiction,1.0,1550.0,36.0,4.2,4.6,2025-10-21
+Q3 2022,"Education, health, and social services",All Jurisdictions,13.0,95502.0,48.6,0.5,1.1,2025-10-21
+Q3 2022,"Education, health, and social services",Provincial Jurisdiction,13.0,95502.0,48.6,0.5,1.1,2025-10-21
+Q4 2022,"Education, health, and social services",All Jurisdictions,21.0,197159.0,38.2,4.1,3.8,2025-10-21
+Q4 2022,"Education, health, and social services",Provincial Jurisdiction,21.0,197159.0,38.2,4.1,3.8,2025-10-21
+Q1 2023,"Education, health, and social services",All Jurisdictions,12.0,22421.0,45.3,3.9,3.6,2025-10-21
+Q1 2023,"Education, health, and social services",Provincial Jurisdiction,12.0,22421.0,45.3,3.9,3.6,2025-10-21
+Q2 2023,"Education, health, and social services",All Jurisdictions,20.0,81194.0,37.4,1.7,2.2,2025-10-21
+Q2 2023,"Education, health, and social services",Provincial Jurisdiction,20.0,81194.0,37.4,1.7,2.2,2025-10-21
+Q3 2023,"Education, health, and social services",All Jurisdictions,16.0,101311.0,33.6,6.2,4.6,2025-10-21
+Q3 2023,"Education, health, and social services",Provincial Jurisdiction,16.0,101311.0,33.6,6.2,4.6,2025-10-21
+Q4 2023,"Education, health, and social services",All Jurisdictions,13.0,110141.0,50.6,2.8,2.6,2025-10-21
+Q4 2023,"Education, health, and social services",Provincial Jurisdiction,13.0,110141.0,50.6,2.8,2.6,2025-10-21
+Q1 2024,"Education, health, and social services",All Jurisdictions,19.0,144591.0,46.4,2.8,2.5,2025-10-21
+Q1 2024,"Education, health, and social services",Provincial Jurisdiction,19.0,144591.0,46.4,2.8,2.5,2025-10-21
+Q2 2024,"Education, health, and social services",All Jurisdictions,37.0,586903.0,55.8,5.5,3.5,2025-10-21
+Q2 2024,"Education, health, and social services",Provincial Jurisdiction,37.0,586903.0,55.8,5.5,3.5,2025-10-21
+Q3 2024,"Education, health, and social services",All Jurisdictions,10.0,35326.0,41.8,2.8,3.0,2025-10-21
+Q3 2024,"Education, health, and social services",Provincial Jurisdiction,10.0,35326.0,41.8,2.8,3.0,2025-10-21
+Q4 2024,"Education, health, and social services",All Jurisdictions,10.0,137386.0,52.3,5.0,3.7,2025-10-21
+Q4 2024,"Education, health, and social services",Provincial Jurisdiction,10.0,137386.0,52.3,5.0,3.7,2025-10-21
+Q1 2025,"Education, health, and social services",All Jurisdictions,8.0,13512.0,48.2,2.6,2.9,2025-10-21
+Q1 2025,"Education, health, and social services",Provincial Jurisdiction,8.0,13512.0,48.2,2.6,2.9,2025-10-21
+Q2 2025,"Education, health, and social services",All Jurisdictions,9.0,58878.0,44.0,3.4,3.2,2025-10-21
+Q2 2025,"Education, health, and social services",Provincial Jurisdiction,9.0,58878.0,44.0,3.4,3.2,2025-10-21
+Q3 2022,Entertainment and hospitality,All Jurisdictions,1.0,800.0,48.0,8.6,4.4,2025-10-21
+Q3 2022,Entertainment and hospitality,Provincial Jurisdiction,1.0,800.0,48.0,8.6,4.4,2025-10-21
+Q3 2024,Entertainment and hospitality,All Jurisdictions,1.0,750.0,36.0,5.0,3.7,2025-10-21
+Q3 2024,Entertainment and hospitality,Provincial Jurisdiction,1.0,750.0,36.0,5.0,3.7,2025-10-21
+Q4 2024,Entertainment and hospitality,All Jurisdictions,1.0,561.0,24.0,10.0,6.9,2025-10-21
+Q4 2024,Entertainment and hospitality,Provincial Jurisdiction,1.0,561.0,24.0,10.0,6.9,2025-10-21
+Q2 2025,Entertainment and hospitality,All Jurisdictions,1.0,1606.0,24.0,10.8,10.2,2025-10-21
+Q2 2025,Entertainment and hospitality,Provincial Jurisdiction,1.0,1606.0,24.0,10.8,10.2,2025-10-21
+Q3 2022,Public administration,All Jurisdictions,5.0,47713.0,40.5,2.2,1.9,2025-10-21
+Q3 2022,Public administration,Provincial Jurisdiction,5.0,47713.0,40.5,2.2,1.9,2025-10-21
+Q4 2022,Public administration,All Jurisdictions,13.0,39578.0,43.5,2.7,2.4,2025-10-21
+Q4 2022,Public administration,Federal Jurisdiction,1.0,4500.0,48.0,3.5,2.8,2025-10-21
+Q4 2022,Public administration,Provincial Jurisdiction,12.0,35078.0,42.9,2.5,2.4,2025-10-21
+Q1 2023,Public administration,All Jurisdictions,5.0,8160.0,53.1,2.0,2.2,2025-10-21
+Q1 2023,Public administration,Federal Jurisdiction,1.0,1950.0,60.0,2.8,2.9,2025-10-21
+Q1 2023,Public administration,Provincial Jurisdiction,4.0,6210.0,50.9,1.8,2.0,2025-10-21
+Q2 2023,Public administration,All Jurisdictions,8.0,183841.0,47.4,2.0,3.0,2025-10-21
+Q2 2023,Public administration,Federal Jurisdiction,4.0,169343.0,48.0,2.0,3.0,2025-10-21
+Q2 2023,Public administration,Provincial Jurisdiction,4.0,14498.0,40.8,2.8,2.6,2025-10-21
+Q3 2023,Public administration,All Jurisdictions,14.0,33608.0,45.8,2.4,3.0,2025-10-21
+Q3 2023,Public administration,Federal Jurisdiction,4.0,20995.0,47.0,1.7,3.0,2025-10-21
+Q3 2023,Public administration,Provincial Jurisdiction,10.0,12613.0,43.6,3.5,3.0,2025-10-21
+Q4 2023,Public administration,All Jurisdictions,8.0,38012.0,45.2,3.5,3.2,2025-10-21
+Q4 2023,Public administration,Federal Jurisdiction,2.0,24660.0,48.0,3.8,3.3,2025-10-21
+Q4 2023,Public administration,Provincial Jurisdiction,6.0,13352.0,40.0,3.0,3.1,2025-10-21
+Q1 2024,Public administration,All Jurisdictions,6.0,29796.0,46.6,3.1,2.9,2025-10-21
+Q1 2024,Public administration,Federal Jurisdiction,2.0,6081.0,48.0,5.2,3.2,2025-10-21
+Q1 2024,Public administration,Provincial Jurisdiction,4.0,23715.0,46.3,2.5,2.8,2025-10-21
+Q2 2024,Public administration,All Jurisdictions,7.0,35531.0,34.8,3.5,3.4,2025-10-21
+Q2 2024,Public administration,Federal Jurisdiction,1.0,19000.0,24.0,4.0,4.0,2025-10-21
+Q2 2024,Public administration,Provincial Jurisdiction,6.0,16531.0,47.3,2.9,2.7,2025-10-21
+Q3 2024,Public administration,All Jurisdictions,7.0,35716.0,49.3,4.4,3.4,2025-10-21
+Q3 2024,Public administration,Federal Jurisdiction,1.0,9000.0,48.0,4.8,3.7,2025-10-21
+Q3 2024,Public administration,Provincial Jurisdiction,6.0,26716.0,49.8,4.3,3.3,2025-10-21
+Q4 2024,Public administration,All Jurisdictions,10.0,25065.0,36.6,4.6,3.6,2025-10-21
+Q4 2024,Public administration,Federal Jurisdiction,3.0,7490.0,48.0,4.8,3.2,2025-10-21
+Q4 2024,Public administration,Provincial Jurisdiction,7.0,17575.0,31.8,4.5,3.7,2025-10-21
+Q1 2025,Public administration,All Jurisdictions,4.0,20162.0,47.1,4.8,3.6,2025-10-21
+Q1 2025,Public administration,Federal Jurisdiction,1.0,7670.0,48.0,4.7,3.7,2025-10-21
+Q1 2025,Public administration,Provincial Jurisdiction,3.0,12492.0,46.5,4.8,3.6,2025-10-21
+Q2 2025,Public administration,All Jurisdictions,4.0,12790.0,50.1,3.2,2.9,2025-10-21
+Q2 2025,Public administration,Provincial Jurisdiction,4.0,12790.0,50.1,3.2,2.9,2025-10-21
+Q3 2022,All sectors,All Jurisdictions,46.0,207945.0,47.3,2.1,1.9,2025-10-21
+Q3 2022,All sectors,Federal Jurisdiction,13.0,30144.0,49.2,3.5,3.0,2025-10-21
+Q3 2022,All sectors,Provincial Jurisdiction,33.0,177801.0,46.9,1.8,1.7,2025-10-21
+Q4 2022,All sectors,All Jurisdictions,44.0,246342.0,39.3,3.9,3.6,2025-10-21
+Q4 2022,All sectors,Federal Jurisdiction,6.0,9188.0,48.8,3.3,2.7,2025-10-21
+Q4 2022,All sectors,Provincial Jurisdiction,38.0,237154.0,39.0,3.9,3.6,2025-10-21
+Q1 2023,All sectors,All Jurisdictions,30.0,61655.0,42.6,3.8,3.4,2025-10-21
+Q1 2023,All sectors,Federal Jurisdiction,5.0,11340.0,55.9,1.3,2.6,2025-10-21
+Q1 2023,All sectors,Provincial Jurisdiction,25.0,50315.0,39.6,4.4,3.6,2025-10-21
+Q2 2023,All sectors,All Jurisdictions,51.0,308518.0,42.4,2.6,3.0,2025-10-21
+Q2 2023,All sectors,Federal Jurisdiction,15.0,189076.0,46.2,2.5,3.2,2025-10-21
+Q2 2023,All sectors,Provincial Jurisdiction,36.0,119442.0,36.3,2.7,2.8,2025-10-21
+Q3 2023,All sectors,All Jurisdictions,46.0,169307.0,37.5,5.4,4.3,2025-10-21
+Q3 2023,All sectors,Federal Jurisdiction,12.0,36336.0,46.5,3.0,3.7,2025-10-21
+Q3 2023,All sectors,Provincial Jurisdiction,34.0,132971.0,35.0,6.0,4.4,2025-10-21
+Q4 2023,All sectors,All Jurisdictions,32.0,180530.0,48.9,4.0,3.0,2025-10-21
+Q4 2023,All sectors,Federal Jurisdiction,4.0,26541.0,50.5,3.8,3.3,2025-10-21
+Q4 2023,All sectors,Provincial Jurisdiction,28.0,153989.0,48.6,4.0,3.0,2025-10-21
+Q1 2024,All sectors,All Jurisdictions,33.0,188927.0,45.9,3.0,2.6,2025-10-21
+Q1 2024,All sectors,Federal Jurisdiction,6.0,14181.0,44.7,4.6,2.7,2025-10-21
+Q1 2024,All sectors,Provincial Jurisdiction,27.0,174746.0,46.0,2.9,2.6,2025-10-21
+Q2 2024,All sectors,All Jurisdictions,56.0,653329.0,53.5,5.3,3.5,2025-10-21
+Q2 2024,All sectors,Federal Jurisdiction,6.0,32460.0,23.5,4.1,4.1,2025-10-21
+Q2 2024,All sectors,Provincial Jurisdiction,50.0,620869.0,55.1,5.4,3.5,2025-10-21
+Q3 2024,All sectors,All Jurisdictions,27.0,95429.0,42.8,4.1,3.3,2025-10-21
+Q3 2024,All sectors,Federal Jurisdiction,4.0,10857.0,47.9,5.6,3.8,2025-10-21
+Q3 2024,All sectors,Provincial Jurisdiction,23.0,84572.0,42.1,3.9,3.3,2025-10-21
+Q4 2024,All sectors,All Jurisdictions,29.0,177872.0,50.3,4.8,3.7,2025-10-21
+Q4 2024,All sectors,Federal Jurisdiction,7.0,11704.0,46.8,4.7,3.2,2025-10-21
+Q4 2024,All sectors,Provincial Jurisdiction,22.0,166168.0,50.6,4.8,3.7,2025-10-21
+Q1 2025,All sectors,All Jurisdictions,21.0,50994.0,49.7,4.2,3.4,2025-10-21
+Q1 2025,All sectors,Federal Jurisdiction,6.0,13263.0,46.3,4.9,3.8,2025-10-21
+Q1 2025,All sectors,Provincial Jurisdiction,15.0,37731.0,50.8,3.9,3.2,2025-10-21
+Q2 2025,All sectors,All Jurisdictions,26.0,202589.0,46.9,5.8,4.4,2025-10-21
+Q2 2025,All sectors,Federal Jurisdiction,1.0,733.0,48.0,5.0,4.5,2025-10-21
+Q2 2025,All sectors,Provincial Jurisdiction,25.0,201856.0,46.9,5.8,4.4,2025-10-21
+Q3 2022,Private sector,All Jurisdictions,17.0,54160.0,51.9,4.7,3.4,2025-10-21
+Q3 2022,Private sector,Federal Jurisdiction,8.0,24579.0,51.0,3.6,3.1,2025-10-21
+Q3 2022,Private sector,Provincial Jurisdiction,9.0,29581.0,52.7,5.7,3.6,2025-10-21
+Q4 2022,Private sector,All Jurisdictions,9.0,15408.0,46.9,4.6,3.7,2025-10-21
+Q4 2022,Private sector,Federal Jurisdiction,5.0,4688.0,49.5,3.0,2.7,2025-10-21
+Q4 2022,Private sector,Provincial Jurisdiction,4.0,10720.0,45.7,5.3,4.2,2025-10-21
+Q1 2023,Private sector,All Jurisdictions,10.0,26380.0,37.8,4.8,4.0,2025-10-21
+Q1 2023,Private sector,Federal Jurisdiction,4.0,9390.0,55.0,1.0,2.5,2025-10-21
+Q1 2023,Private sector,Provincial Jurisdiction,6.0,16990.0,28.3,6.9,4.9,2025-10-21
+Q2 2023,Private sector,All Jurisdictions,18.0,34841.0,30.4,6.8,4.9,2025-10-21
+Q2 2023,Private sector,Federal Jurisdiction,9.0,18021.0,29.8,7.4,4.5,2025-10-21
+Q2 2023,Private sector,Provincial Jurisdiction,9.0,16820.0,31.2,6.3,5.4,2025-10-21
+Q3 2023,Private sector,All Jurisdictions,14.0,24965.0,43.1,6.5,4.5,2025-10-21
+Q3 2023,Private sector,Federal Jurisdiction,8.0,15341.0,45.7,4.8,4.6,2025-10-21
+Q3 2023,Private sector,Provincial Jurisdiction,6.0,9624.0,39.0,9.1,4.3,2025-10-21
+Q4 2023,Private sector,All Jurisdictions,10.0,35496.0,54.2,7.4,3.7,2025-10-21
+Q4 2023,Private sector,Federal Jurisdiction,1.0,681.0,60.0,5.0,4.0,2025-10-21
+Q4 2023,Private sector,Provincial Jurisdiction,9.0,34815.0,54.0,7.4,3.7,2025-10-21
+Q1 2024,Private sector,All Jurisdictions,8.0,21291.0,42.5,2.6,2.4,2025-10-21
+Q1 2024,Private sector,Federal Jurisdiction,3.0,3500.0,50.4,4.9,3.3,2025-10-21
+Q1 2024,Private sector,Provincial Jurisdiction,5.0,17791.0,40.9,2.2,2.2,2025-10-21
+Q2 2024,Private sector,All Jurisdictions,9.0,17020.0,28.5,4.9,4.2,2025-10-21
+Q2 2024,Private sector,Federal Jurisdiction,5.0,13460.0,22.7,4.2,4.2,2025-10-21
+Q2 2024,Private sector,Provincial Jurisdiction,4.0,3560.0,50.7,7.3,3.9,2025-10-21
+Q3 2024,Private sector,All Jurisdictions,8.0,13506.0,33.5,7.7,4.5,2025-10-21
+Q3 2024,Private sector,Federal Jurisdiction,2.0,1205.0,54.0,12.7,4.8,2025-10-21
+Q3 2024,Private sector,Provincial Jurisdiction,6.0,12301.0,31.5,7.2,4.5,2025-10-21
+Q4 2024,Private sector,All Jurisdictions,9.0,21097.0,53.3,3.0,3.5,2025-10-21
+Q4 2024,Private sector,Federal Jurisdiction,3.0,3194.0,43.5,4.4,3.2,2025-10-21
+Q4 2024,Private sector,Provincial Jurisdiction,6.0,17903.0,55.1,2.8,3.5,2025-10-21
+Q1 2025,Private sector,All Jurisdictions,8.0,10377.0,53.5,4.0,3.4,2025-10-21
+Q1 2025,Private sector,Federal Jurisdiction,5.0,5593.0,44.0,5.2,3.9,2025-10-21
+Q1 2025,Private sector,Provincial Jurisdiction,3.0,4784.0,64.6,2.6,2.8,2025-10-21
+Q2 2025,Private sector,All Jurisdictions,12.0,128621.0,47.6,7.2,5.1,2025-10-21
+Q2 2025,Private sector,Federal Jurisdiction,1.0,733.0,48.0,5.0,4.5,2025-10-21
+Q2 2025,Private sector,Provincial Jurisdiction,11.0,127888.0,47.6,7.2,5.1,2025-10-21
+Q3 2022,Public sector,All Jurisdictions,29.0,153785.0,45.6,1.1,1.4,2025-10-21
+Q3 2022,Public sector,Federal Jurisdiction,5.0,5565.0,41.0,3.3,2.7,2025-10-21
+Q3 2022,Public sector,Provincial Jurisdiction,24.0,148220.0,45.8,1.1,1.3,2025-10-21
+Q4 2022,Public sector,All Jurisdictions,35.0,230934.0,38.8,3.8,3.6,2025-10-21
+Q4 2022,Public sector,Federal Jurisdiction,1.0,4500.0,48.0,3.5,2.8,2025-10-21
+Q4 2022,Public sector,Provincial Jurisdiction,34.0,226434.0,38.6,3.8,3.6,2025-10-21
+Q1 2023,Public sector,All Jurisdictions,20.0,35275.0,46.2,3.0,3.0,2025-10-21
+Q1 2023,Public sector,Federal Jurisdiction,1.0,1950.0,60.0,2.8,2.9,2025-10-21
+Q1 2023,Public sector,Provincial Jurisdiction,19.0,33325.0,45.4,3.0,3.0,2025-10-21
+Q2 2023,Public sector,All Jurisdictions,33.0,273677.0,43.9,2.0,2.8,2025-10-21
+Q2 2023,Public sector,Federal Jurisdiction,6.0,171055.0,48.0,2.0,3.0,2025-10-21
+Q2 2023,Public sector,Provincial Jurisdiction,27.0,102622.0,37.1,2.1,2.4,2025-10-21
+Q3 2023,Public sector,All Jurisdictions,32.0,144342.0,36.5,5.2,4.2,2025-10-21
+Q3 2023,Public sector,Federal Jurisdiction,4.0,20995.0,47.0,1.7,3.0,2025-10-21
+Q3 2023,Public sector,Provincial Jurisdiction,28.0,123347.0,34.7,5.8,4.4,2025-10-21
+Q4 2023,Public sector,All Jurisdictions,22.0,145034.0,47.6,3.1,2.9,2025-10-21
+Q4 2023,Public sector,Federal Jurisdiction,3.0,25860.0,50.2,3.8,3.2,2025-10-21
+Q4 2023,Public sector,Provincial Jurisdiction,19.0,119174.0,47.0,3.0,2.8,2025-10-21
+Q1 2024,Public sector,All Jurisdictions,25.0,167636.0,46.3,3.1,2.6,2025-10-21
+Q1 2024,Public sector,Federal Jurisdiction,3.0,10681.0,42.8,4.5,2.6,2025-10-21
+Q1 2024,Public sector,Provincial Jurisdiction,22.0,156955.0,46.6,3.0,2.6,2025-10-21
+Q2 2024,Public sector,All Jurisdictions,47.0,636309.0,54.2,5.3,3.5,2025-10-21
+Q2 2024,Public sector,Federal Jurisdiction,1.0,19000.0,24.0,4.0,4.0,2025-10-21
+Q2 2024,Public sector,Provincial Jurisdiction,46.0,617309.0,55.1,5.4,3.5,2025-10-21
+Q3 2024,Public sector,All Jurisdictions,19.0,81923.0,44.3,3.5,3.1,2025-10-21
+Q3 2024,Public sector,Federal Jurisdiction,2.0,9652.0,47.2,4.7,3.7,2025-10-21
+Q3 2024,Public sector,Provincial Jurisdiction,17.0,72271.0,43.9,3.4,3.1,2025-10-21
+Q4 2024,Public sector,All Jurisdictions,20.0,156775.0,49.9,5.0,3.7,2025-10-21
+Q4 2024,Public sector,Federal Jurisdiction,4.0,8510.0,48.0,4.8,3.2,2025-10-21
+Q4 2024,Public sector,Provincial Jurisdiction,16.0,148265.0,50.0,5.0,3.7,2025-10-21
+Q1 2025,Public sector,All Jurisdictions,13.0,40617.0,48.7,4.2,3.4,2025-10-21
+Q1 2025,Public sector,Federal Jurisdiction,1.0,7670.0,48.0,4.7,3.7,2025-10-21
+Q1 2025,Public sector,Provincial Jurisdiction,12.0,32947.0,48.8,4.1,3.3,2025-10-21
+Q2 2025,Public sector,All Jurisdictions,14.0,73968.0,45.6,3.3,3.1,2025-10-21
+Q2 2025,Public sector,Provincial Jurisdiction,14.0,73968.0,45.6,3.3,3.1,2025-10-21

@@ -1,0 +1,182 @@
+unnamed:_0_level_0,all_jurisdictions,all_jurisdictions.1,all_jurisdictions.2,all_jurisdictions.3,all_jurisdictions.4,federal_jurisdiction,federal_jurisdiction.1,federal_jurisdiction.2,federal_jurisdiction.3,federal_jurisdiction.4,provincial_jurisdiction,provincial_jurisdiction.1,provincial_jurisdiction.2,provincial_jurisdiction.3,provincial_jurisdiction.4,page_source,section,extraction_date
+Unnamed: 0_level_1,Number of agreements,Number of employees,Duration of agreements in months (average),First year percentage adjustment (average),Annual percentage adjustment (average),Number of agreements,Number of employees,Duration of agreements in months (average),First year percentage adjustment (average),Annual percentage adjustment (average),Number of agreements,Number of employees,Duration of agreements in months (average),First year percentage adjustment (average),Annual percentage adjustment (average),,,
+Q3 2022,46,207945,47.3,2.1,1.9,13,30144,49.2,3.5,3.0,33,177801,46.9,1.8,1.7,jurisdiction_quarter,All industries,2025-10-21
+Q4 2022,44,246342,39.3,3.9,3.6,6,9188,48.8,3.3,2.7,38,237154,39.0,3.9,3.6,jurisdiction_quarter,All industries,2025-10-21
+Q1 2023,30,61655,42.6,3.8,3.4,5,11340,55.9,1.3,2.6,25,50315,39.6,4.4,3.6,jurisdiction_quarter,All industries,2025-10-21
+Q2 2023,51,308518,42.4,2.6,3.0,15,189076,46.2,2.5,3.2,36,119442,36.3,2.7,2.8,jurisdiction_quarter,All industries,2025-10-21
+Q3 2023,46,169307,37.5,5.4,4.3,12,36336,46.5,3.0,3.7,34,132971,35.0,6.0,4.4,jurisdiction_quarter,All industries,2025-10-21
+Q4 2023,32,180530,48.9,4.0,3.0,4,26541,50.5,3.8,3.3,28,153989,48.6,4.0,3.0,jurisdiction_quarter,All industries,2025-10-21
+Q1 2024,33,188927,45.9,3.0,2.6,6,14181,44.7,4.6,2.7,27,174746,46.0,2.9,2.6,jurisdiction_quarter,All industries,2025-10-21
+Q2 2024,56,653329,53.5,5.3,3.5,6,32460,23.5,4.1,4.1,50,620869,55.1,5.4,3.5,jurisdiction_quarter,All industries,2025-10-21
+Q3 2024,27,95429,42.8,4.1,3.3,4,10857,47.9,5.6,3.8,23,84572,42.1,3.9,3.3,jurisdiction_quarter,All industries,2025-10-21
+Q4 2024,29,177872,50.3,4.8,3.7,7,11704,46.8,4.7,3.2,22,166168,50.6,4.8,3.7,jurisdiction_quarter,All industries,2025-10-21
+Q1 2025,21,50994,49.7,4.2,3.4,6,13263,46.3,4.9,3.8,15,37731,50.8,3.9,3.2,jurisdiction_quarter,All industries,2025-10-21
+Q2 2025,26,202589,46.9,5.8,4.4,1,733,48.0,5.0,4.5,25,201856,46.9,5.8,4.4,jurisdiction_quarter,All industries,2025-10-21
+Q3 2022,1,1011,60.0,2.0,2.0,,,,,,1,1011,60.0,2.0,2.0,jurisdiction_quarter,Primary industries,2025-10-21
+Q4 2022,,,,,,,,,,,,,,,,jurisdiction_quarter,Primary industries,2025-10-21
+Q1 2023,1,750,48.0,3.5,2.9,,,,,,1,750,48.0,3.5,2.9,jurisdiction_quarter,Primary industries,2025-10-21
+Q2 2023,,,,,,,,,,,,,,,,jurisdiction_quarter,Primary industries,2025-10-21
+Q3 2023,,,,,,,,,,,,,,,,jurisdiction_quarter,Primary industries,2025-10-21
+Q4 2023,,,,,,,,,,,,,,,,jurisdiction_quarter,Primary industries,2025-10-21
+Q1 2024,1,3317,36.0,5.0,4.0,,,,,,1,3317,36.0,5.0,4.0,jurisdiction_quarter,Primary industries,2025-10-21
+Q2 2024,,,,,,,,,,,,,,,,jurisdiction_quarter,Primary industries,2025-10-21
+Q3 2024,,,,,,,,,,,,,,,,jurisdiction_quarter,Primary industries,2025-10-21
+Q4 2024,,,,,,,,,,,,,,,,jurisdiction_quarter,Primary industries,2025-10-21
+Q1 2025,1,536,36.0,3.0,3.0,1,536,36.0,3.0,3.0,,,,,,jurisdiction_quarter,Primary industries,2025-10-21
+Q2 2025,,,,,,,,,,,,,,,,jurisdiction_quarter,Primary industries,2025-10-21
+Q3 2022,2,1425,47.6,0.3,1.0,,,,,,2,1425,47.6,0.3,1.0,jurisdiction_quarter,Utilities,2025-10-21
+Q4 2022,1,780,35.9,1.0,2.3,,,,,,1,780,35.9,1.0,2.3,jurisdiction_quarter,Utilities,2025-10-21
+Q1 2023,3,2972,40.1,2.2,2.6,,,,,,3,2972,40.1,2.2,2.6,jurisdiction_quarter,Utilities,2025-10-21
+Q2 2023,3,7554,27.1,4.3,3.7,,,,,,3,7554,27.1,4.3,3.7,jurisdiction_quarter,Utilities,2025-10-21
+Q3 2023,1,5408,30.0,4.5,4.8,,,,,,1,5408,30.0,4.5,4.8,jurisdiction_quarter,Utilities,2025-10-21
+Q4 2023,1,3220,24.0,3.7,3.5,,,,,,1,3220,24.0,3.7,3.5,jurisdiction_quarter,Utilities,2025-10-21
+Q1 2024,1,520,36.0,3.0,2.7,,,,,,1,520,36.0,3.0,2.7,jurisdiction_quarter,Utilities,2025-10-21
+Q2 2024,1,1690,36.0,3.0,2.7,,,,,,1,1690,36.0,3.0,2.7,jurisdiction_quarter,Utilities,2025-10-21
+Q3 2024,,,,,,,,,,,,,,,,jurisdiction_quarter,Utilities,2025-10-21
+Q4 2024,1,1151,24.0,4.0,3.7,,,,,,1,1151,24.0,4.0,3.7,jurisdiction_quarter,Utilities,2025-10-21
+Q1 2025,1,980,36.0,2.8,3.5,,,,,,1,980,36.0,2.8,3.5,jurisdiction_quarter,Utilities,2025-10-21
+Q2 2025,1,2300,60.0,3.0,3.5,,,,,,1,2300,60.0,3.0,3.5,jurisdiction_quarter,Utilities,2025-10-21
+Q3 2022,3,8120,34.5,10.8,6.0,,,,,,3,8120,34.5,10.8,6.0,jurisdiction_quarter,Construction,2025-10-21
+Q4 2022,1,790,30.1,12.5,6.7,,,,,,1,790,30.1,12.5,6.7,jurisdiction_quarter,Construction,2025-10-21
+Q1 2023,3,14650,26.5,7.5,5.2,,,,,,3,14650,26.5,7.5,5.2,jurisdiction_quarter,Construction,2025-10-21
+Q2 2023,4,9202,24.0,8.4,7.3,,,,,,4,9202,24.0,8.4,7.3,jurisdiction_quarter,Construction,2025-10-21
+Q3 2023,2,1849,56.8,12.8,4.0,1,850,60.0,4.0,3.8,1,999,54.0,20.3,4.2,jurisdiction_quarter,Construction,2025-10-21
+Q4 2023,,,,,,,,,,,,,,,,jurisdiction_quarter,Construction,2025-10-21
+Q1 2024,,,,,,,,,,,,,,,,jurisdiction_quarter,Construction,2025-10-21
+Q2 2024,1,700,48.0,2.8,2.6,1,700,48.0,2.8,2.6,,,,,,jurisdiction_quarter,Construction,2025-10-21
+Q3 2024,,,,,,,,,,,,,,,,jurisdiction_quarter,Construction,2025-10-21
+Q4 2024,,,,,,,,,,,,,,,,jurisdiction_quarter,Construction,2025-10-21
+Q1 2025,,,,,,,,,,,,,,,,jurisdiction_quarter,Construction,2025-10-21
+Q2 2025,8,123854,48.0,7.2,5.0,,,,,,8,123854,48.0,7.2,5.0,jurisdiction_quarter,Construction,2025-10-21
+Q3 2022,3,3650,60.0,11.8,4.8,,,,,,3,3650,60.0,11.8,4.8,jurisdiction_quarter,Manufacturing,2025-10-21
+Q4 2022,2,2560,43.9,6.5,4.2,,,,,,2,2560,43.9,6.5,4.2,jurisdiction_quarter,Manufacturing,2025-10-21
+Q1 2023,1,596,36.0,3.9,3.0,,,,,,1,596,36.0,3.9,3.0,jurisdiction_quarter,Manufacturing,2025-10-21
+Q2 2023,2,1800,42.9,4.1,3.7,,,,,,2,1800,42.9,4.1,3.7,jurisdiction_quarter,Manufacturing,2025-10-21
+Q3 2023,3,7490,37.7,9.0,4.9,,,,,,3,7490,37.7,9.0,4.9,jurisdiction_quarter,Manufacturing,2025-10-21
+Q4 2023,3,13000,36.4,9.8,5.2,,,,,,3,13000,36.4,9.8,5.2,jurisdiction_quarter,Manufacturing,2025-10-21
+Q1 2024,1,1303,36.0,7.8,4.6,,,,,,1,1303,36.0,7.8,4.6,jurisdiction_quarter,Manufacturing,2025-10-21
+Q2 2024,3,2540,51.8,8.2,4.3,,,,,,3,2540,51.8,8.2,4.3,jurisdiction_quarter,Manufacturing,2025-10-21
+Q3 2024,2,3561,29.8,13.8,8.5,,,,,,2,3561,29.8,13.8,8.5,jurisdiction_quarter,Manufacturing,2025-10-21
+Q4 2024,1,1400,60.0,8.0,4.5,,,,,,1,1400,60.0,8.0,4.5,jurisdiction_quarter,Manufacturing,2025-10-21
+Q1 2025,1,2400,72.0,4.0,3.2,,,,,,1,2400,72.0,4.0,3.2,jurisdiction_quarter,Manufacturing,2025-10-21
+Q2 2025,,,,,,,,,,,,,,,,jurisdiction_quarter,Manufacturing,2025-10-21
+Q3 2022,,,,,,,,,,,,,,,,jurisdiction_quarter,Wholesale and retail trade,2025-10-21
+Q4 2022,1,787,48.0,1.0,0.6,,,,,,1,787,48.0,1.0,0.6,jurisdiction_quarter,Wholesale and retail trade,2025-10-21
+Q1 2023,,,,,,,,,,,,,,,,jurisdiction_quarter,Wholesale and retail trade,2025-10-21
+Q2 2023,,,,,,,,,,,,,,,,jurisdiction_quarter,Wholesale and retail trade,2025-10-21
+Q3 2023,1,1400,36.0,2.0,4.0,,,,,,1,1400,36.0,2.0,4.0,jurisdiction_quarter,Wholesale and retail trade,2025-10-21
+Q4 2023,3,11979,60.0,9.8,4.0,,,,,,3,11979,60.0,9.8,4.0,jurisdiction_quarter,Wholesale and retail trade,2025-10-21
+Q1 2024,,,,,,,,,,,,,,,,jurisdiction_quarter,Wholesale and retail trade,2025-10-21
+Q2 2024,,,,,,,,,,,,,,,,jurisdiction_quarter,Wholesale and retail trade,2025-10-21
+Q3 2024,1,10229,36.0,3.0,2.6,,,,,,1,10229,36.0,3.0,2.6,jurisdiction_quarter,Wholesale and retail trade,2025-10-21
+Q4 2024,,,,,,,,,,,,,,,,jurisdiction_quarter,Wholesale and retail trade,2025-10-21
+Q1 2025,1,4947,72.0,6.0,3.3,,,,,,1,4947,72.0,6.0,3.3,jurisdiction_quarter,Wholesale and retail trade,2025-10-21
+Q2 2025,1,878,60.0,6.7,3.9,,,,,,1,878,60.0,6.7,3.9,jurisdiction_quarter,Wholesale and retail trade,2025-10-21
+Q3 2022,8,19994,49.5,3.9,3.3,8,19994,49.5,3.9,3.3,,,,,,jurisdiction_quarter,Transportation,2025-10-21
+Q4 2022,4,4088,51.5,3.2,2.8,4,4088,51.5,3.2,2.8,,,,,,jurisdiction_quarter,Transportation,2025-10-21
+Q1 2023,3,4553,34.5,1.4,1.8,2,1837,31.7,3.6,3.0,1,2716,36.4,0.0,1.0,jurisdiction_quarter,Transportation,2025-10-21
+Q2 2023,10,19783,28.7,6.6,4.1,8,16143,29.3,7.3,4.3,2,3640,26.1,3.8,3.2,jurisdiction_quarter,Transportation,2025-10-21
+Q3 2023,7,16358,43.9,4.5,4.3,5,12608,44.5,4.8,5.0,2,3750,42.0,3.3,2.1,jurisdiction_quarter,Transportation,2025-10-21
+Q4 2023,4,4178,63.8,2.4,3.1,2,1881,83.0,3.6,3.2,2,2297,48.1,1.4,3.1,jurisdiction_quarter,Transportation,2025-10-21
+Q1 2024,1,2100,60.0,8.2,5.4,1,2100,60.0,8.2,5.4,,,,,,jurisdiction_quarter,Transportation,2025-10-21
+Q2 2024,3,15250,37.1,4.4,4.0,2,3750,40.5,3.1,3.1,1,11500,36.0,4.8,4.3,jurisdiction_quarter,Transportation,2025-10-21
+Q3 2024,3,1857,47.7,9.7,4.3,3,1857,47.7,9.7,4.3,,,,,,jurisdiction_quarter,Transportation,2025-10-21
+Q4 2024,4,4994,45.1,3.9,3.1,3,3194,43.5,4.4,3.2,1,1800,48.0,3.0,3.0,jurisdiction_quarter,Transportation,2025-10-21
+Q1 2025,5,8457,41.3,4.5,3.7,4,5057,44.9,5.5,4.0,1,3400,36.0,3.0,3.2,jurisdiction_quarter,Transportation,2025-10-21
+Q2 2025,1,733,48.0,5.0,4.5,1,733,48.0,5.0,4.5,,,,,,jurisdiction_quarter,Transportation,2025-10-21
+Q3 2022,6,10870,47.6,2.4,2.2,4,9590,50.0,2.6,2.4,2,1280,30.0,0.8,0.8,jurisdiction_quarter,Information and culture,2025-10-21
+Q4 2022,1,600,36.0,2.0,2.0,1,600,36.0,2.0,2.0,,,,,,jurisdiction_quarter,Information and culture,2025-10-21
+Q1 2023,1,6918,63.0,0.0,2.2,1,6918,63.0,0.0,2.2,,,,,,jurisdiction_quarter,Information and culture,2025-10-21
+Q2 2023,1,2160,48.1,3.2,3.2,1,2160,48.1,3.2,3.2,,,,,,jurisdiction_quarter,Information and culture,2025-10-21
+Q3 2023,2,1883,46.8,5.5,2.6,2,1883,46.8,5.5,2.6,,,,,,jurisdiction_quarter,Information and culture,2025-10-21
+Q4 2023,,,,,,,,,,,,,,,,jurisdiction_quarter,Information and culture,2025-10-21
+Q1 2024,3,6400,39.1,3.3,1.8,2,5100,40.2,3.2,1.6,1,1300,35.0,4.0,2.7,jurisdiction_quarter,Information and culture,2025-10-21
+Q2 2024,3,2205,45.4,2.8,2.4,1,500,36.0,2.0,2.3,2,1705,48.1,3.0,2.5,jurisdiction_quarter,Information and culture,2025-10-21
+Q3 2024,,,,,,,,,,,,,,,,jurisdiction_quarter,Information and culture,2025-10-21
+Q4 2024,,,,,,,,,,,,,,,,jurisdiction_quarter,Information and culture,2025-10-21
+Q1 2025,,,,,,,,,,,,,,,,jurisdiction_quarter,Information and culture,2025-10-21
+Q2 2025,,,,,,,,,,,,,,,,jurisdiction_quarter,Information and culture,2025-10-21
+Q3 2022,4,18860,57.6,1.7,2.0,1,560,24.0,4.0,3.5,3,18300,58.6,1.6,2.0,jurisdiction_quarter,Finance and professional services,2025-10-21
+Q4 2022,,,,,,,,,,,,,,,,jurisdiction_quarter,Finance and professional services,2025-10-21
+Q1 2023,1,635,36.0,4.5,4.2,1,635,36.0,4.5,4.2,,,,,,jurisdiction_quarter,Finance and professional services,2025-10-21
+Q2 2023,3,2984,47.8,7.5,4.4,2,1430,24.0,11.1,6.9,1,1554,69.8,4.2,2.0,jurisdiction_quarter,Finance and professional services,2025-10-21
+Q3 2023,,,,,,,,,,,,,,,,jurisdiction_quarter,Finance and professional services,2025-10-21
+Q4 2023,,,,,,,,,,,,,,,,jurisdiction_quarter,Finance and professional services,2025-10-21
+Q1 2024,1,900,12.0,0.0,0.0,1,900,12.0,0.0,0.0,,,,,,jurisdiction_quarter,Finance and professional services,2025-10-21
+Q2 2024,1,8510,12.0,5.0,5.0,1,8510,12.0,5.0,5.0,,,,,,jurisdiction_quarter,Finance and professional services,2025-10-21
+Q3 2024,3,7990,31.8,4.5,2.8,,,,,,3,7990,31.8,4.5,2.8,jurisdiction_quarter,Finance and professional services,2025-10-21
+Q4 2024,2,7315,68.6,0.7,3.5,1,1020,48.0,4.8,3.1,1,6295,72.0,0.0,3.6,jurisdiction_quarter,Finance and professional services,2025-10-21
+Q1 2025,,,,,,,,,,,,,,,,jurisdiction_quarter,Finance and professional services,2025-10-21
+Q2 2025,1,1550,36.0,4.2,4.6,,,,,,1,1550,36.0,4.2,4.6,jurisdiction_quarter,Finance and professional services,2025-10-21
+Q3 2022,13,95502,48.6,0.5,1.1,,,,,,13,95502,48.6,0.5,1.1,jurisdiction_quarter,"Education, health, and social services",2025-10-21
+Q4 2022,21,197159,38.2,4.1,3.8,,,,,,21,197159,38.2,4.1,3.8,jurisdiction_quarter,"Education, health, and social services",2025-10-21
+Q1 2023,12,22421,45.3,3.9,3.6,,,,,,12,22421,45.3,3.9,3.6,jurisdiction_quarter,"Education, health, and social services",2025-10-21
+Q2 2023,20,81194,37.4,1.7,2.2,,,,,,20,81194,37.4,1.7,2.2,jurisdiction_quarter,"Education, health, and social services",2025-10-21
+Q3 2023,16,101311,33.6,6.2,4.6,,,,,,16,101311,33.6,6.2,4.6,jurisdiction_quarter,"Education, health, and social services",2025-10-21
+Q4 2023,13,110141,50.6,2.8,2.6,,,,,,13,110141,50.6,2.8,2.6,jurisdiction_quarter,"Education, health, and social services",2025-10-21
+Q1 2024,19,144591,46.4,2.8,2.5,,,,,,19,144591,46.4,2.8,2.5,jurisdiction_quarter,"Education, health, and social services",2025-10-21
+Q2 2024,37,586903,55.8,5.5,3.5,,,,,,37,586903,55.8,5.5,3.5,jurisdiction_quarter,"Education, health, and social services",2025-10-21
+Q3 2024,10,35326,41.8,2.8,3.0,,,,,,10,35326,41.8,2.8,3.0,jurisdiction_quarter,"Education, health, and social services",2025-10-21
+Q4 2024,10,137386,52.3,5.0,3.7,,,,,,10,137386,52.3,5.0,3.7,jurisdiction_quarter,"Education, health, and social services",2025-10-21
+Q1 2025,8,13512,48.2,2.6,2.9,,,,,,8,13512,48.2,2.6,2.9,jurisdiction_quarter,"Education, health, and social services",2025-10-21
+Q2 2025,9,58878,44.0,3.4,3.2,,,,,,9,58878,44.0,3.4,3.2,jurisdiction_quarter,"Education, health, and social services",2025-10-21
+Q3 2022,1,800,48.0,8.6,4.4,,,,,,1,800,48.0,8.6,4.4,jurisdiction_quarter,Entertainment and hospitality,2025-10-21
+Q4 2022,,,,,,,,,,,,,,,,jurisdiction_quarter,Entertainment and hospitality,2025-10-21
+Q1 2023,,,,,,,,,,,,,,,,jurisdiction_quarter,Entertainment and hospitality,2025-10-21
+Q2 2023,,,,,,,,,,,,,,,,jurisdiction_quarter,Entertainment and hospitality,2025-10-21
+Q3 2023,,,,,,,,,,,,,,,,jurisdiction_quarter,Entertainment and hospitality,2025-10-21
+Q4 2023,,,,,,,,,,,,,,,,jurisdiction_quarter,Entertainment and hospitality,2025-10-21
+Q1 2024,,,,,,,,,,,,,,,,jurisdiction_quarter,Entertainment and hospitality,2025-10-21
+Q2 2024,,,,,,,,,,,,,,,,jurisdiction_quarter,Entertainment and hospitality,2025-10-21
+Q3 2024,1,750,36.0,5.0,3.7,,,,,,1,750,36.0,5.0,3.7,jurisdiction_quarter,Entertainment and hospitality,2025-10-21
+Q4 2024,1,561,24.0,10.0,6.9,,,,,,1,561,24.0,10.0,6.9,jurisdiction_quarter,Entertainment and hospitality,2025-10-21
+Q1 2025,,,,,,,,,,,,,,,,jurisdiction_quarter,Entertainment and hospitality,2025-10-21
+Q2 2025,1,1606,24.0,10.8,10.2,,,,,,1,1606,24.0,10.8,10.2,jurisdiction_quarter,Entertainment and hospitality,2025-10-21
+Q3 2022,5,47713,40.5,2.2,1.9,,,,,,5,47713,40.5,2.2,1.9,jurisdiction_quarter,Public administration,2025-10-21
+Q4 2022,13,39578,43.5,2.7,2.4,1,4500,48.0,3.5,2.8,12,35078,42.9,2.5,2.4,jurisdiction_quarter,Public administration,2025-10-21
+Q1 2023,5,8160,53.1,2.0,2.2,1,1950,60.0,2.8,2.9,4,6210,50.9,1.8,2.0,jurisdiction_quarter,Public administration,2025-10-21
+Q2 2023,8,183841,47.4,2.0,3.0,4,169343,48.0,2.0,3.0,4,14498,40.8,2.8,2.6,jurisdiction_quarter,Public administration,2025-10-21
+Q3 2023,14,33608,45.8,2.4,3.0,4,20995,47.0,1.7,3.0,10,12613,43.6,3.5,3.0,jurisdiction_quarter,Public administration,2025-10-21
+Q4 2023,8,38012,45.2,3.5,3.2,2,24660,48.0,3.8,3.3,6,13352,40.0,3.0,3.1,jurisdiction_quarter,Public administration,2025-10-21
+Q1 2024,6,29796,46.6,3.1,2.9,2,6081,48.0,5.2,3.2,4,23715,46.3,2.5,2.8,jurisdiction_quarter,Public administration,2025-10-21
+Q2 2024,7,35531,34.8,3.5,3.4,1,19000,24.0,4.0,4.0,6,16531,47.3,2.9,2.7,jurisdiction_quarter,Public administration,2025-10-21
+Q3 2024,7,35716,49.3,4.4,3.4,1,9000,48.0,4.8,3.7,6,26716,49.8,4.3,3.3,jurisdiction_quarter,Public administration,2025-10-21
+Q4 2024,10,25065,36.6,4.6,3.6,3,7490,48.0,4.8,3.2,7,17575,31.8,4.5,3.7,jurisdiction_quarter,Public administration,2025-10-21
+Q1 2025,4,20162,47.1,4.8,3.6,1,7670,48.0,4.7,3.7,3,12492,46.5,4.8,3.6,jurisdiction_quarter,Public administration,2025-10-21
+Q2 2025,4,12790,50.1,3.2,2.9,,,,,,4,12790,50.1,3.2,2.9,jurisdiction_quarter,Public administration,2025-10-21
+Q3 2022,46,207945,47.3,2.1,1.9,13,30144,49.2,3.5,3.0,33,177801,46.9,1.8,1.7,jurisdiction_quarter,All sectors,2025-10-21
+Q4 2022,44,246342,39.3,3.9,3.6,6,9188,48.8,3.3,2.7,38,237154,39.0,3.9,3.6,jurisdiction_quarter,All sectors,2025-10-21
+Q1 2023,30,61655,42.6,3.8,3.4,5,11340,55.9,1.3,2.6,25,50315,39.6,4.4,3.6,jurisdiction_quarter,All sectors,2025-10-21
+Q2 2023,51,308518,42.4,2.6,3.0,15,189076,46.2,2.5,3.2,36,119442,36.3,2.7,2.8,jurisdiction_quarter,All sectors,2025-10-21
+Q3 2023,46,169307,37.5,5.4,4.3,12,36336,46.5,3.0,3.7,34,132971,35.0,6.0,4.4,jurisdiction_quarter,All sectors,2025-10-21
+Q4 2023,32,180530,48.9,4.0,3.0,4,26541,50.5,3.8,3.3,28,153989,48.6,4.0,3.0,jurisdiction_quarter,All sectors,2025-10-21
+Q1 2024,33,188927,45.9,3.0,2.6,6,14181,44.7,4.6,2.7,27,174746,46.0,2.9,2.6,jurisdiction_quarter,All sectors,2025-10-21
+Q2 2024,56,653329,53.5,5.3,3.5,6,32460,23.5,4.1,4.1,50,620869,55.1,5.4,3.5,jurisdiction_quarter,All sectors,2025-10-21
+Q3 2024,27,95429,42.8,4.1,3.3,4,10857,47.9,5.6,3.8,23,84572,42.1,3.9,3.3,jurisdiction_quarter,All sectors,2025-10-21
+Q4 2024,29,177872,50.3,4.8,3.7,7,11704,46.8,4.7,3.2,22,166168,50.6,4.8,3.7,jurisdiction_quarter,All sectors,2025-10-21
+Q1 2025,21,50994,49.7,4.2,3.4,6,13263,46.3,4.9,3.8,15,37731,50.8,3.9,3.2,jurisdiction_quarter,All sectors,2025-10-21
+Q2 2025,26,202589,46.9,5.8,4.4,1,733,48.0,5.0,4.5,25,201856,46.9,5.8,4.4,jurisdiction_quarter,All sectors,2025-10-21
+Q3 2022,17,54160,51.9,4.7,3.4,8,24579,51.0,3.6,3.1,9,29581,52.7,5.7,3.6,jurisdiction_quarter,Private sector,2025-10-21
+Q4 2022,9,15408,46.9,4.6,3.7,5,4688,49.5,3.0,2.7,4,10720,45.7,5.3,4.2,jurisdiction_quarter,Private sector,2025-10-21
+Q1 2023,10,26380,37.8,4.8,4.0,4,9390,55.0,1.0,2.5,6,16990,28.3,6.9,4.9,jurisdiction_quarter,Private sector,2025-10-21
+Q2 2023,18,34841,30.4,6.8,4.9,9,18021,29.8,7.4,4.5,9,16820,31.2,6.3,5.4,jurisdiction_quarter,Private sector,2025-10-21
+Q3 2023,14,24965,43.1,6.5,4.5,8,15341,45.7,4.8,4.6,6,9624,39.0,9.1,4.3,jurisdiction_quarter,Private sector,2025-10-21
+Q4 2023,10,35496,54.2,7.4,3.7,1,681,60.0,5.0,4.0,9,34815,54.0,7.4,3.7,jurisdiction_quarter,Private sector,2025-10-21
+Q1 2024,8,21291,42.5,2.6,2.4,3,3500,50.4,4.9,3.3,5,17791,40.9,2.2,2.2,jurisdiction_quarter,Private sector,2025-10-21
+Q2 2024,9,17020,28.5,4.9,4.2,5,13460,22.7,4.2,4.2,4,3560,50.7,7.3,3.9,jurisdiction_quarter,Private sector,2025-10-21
+Q3 2024,8,13506,33.5,7.7,4.5,2,1205,54.0,12.7,4.8,6,12301,31.5,7.2,4.5,jurisdiction_quarter,Private sector,2025-10-21
+Q4 2024,9,21097,53.3,3.0,3.5,3,3194,43.5,4.4,3.2,6,17903,55.1,2.8,3.5,jurisdiction_quarter,Private sector,2025-10-21
+Q1 2025,8,10377,53.5,4.0,3.4,5,5593,44.0,5.2,3.9,3,4784,64.6,2.6,2.8,jurisdiction_quarter,Private sector,2025-10-21
+Q2 2025,12,128621,47.6,7.2,5.1,1,733,48.0,5.0,4.5,11,127888,47.6,7.2,5.1,jurisdiction_quarter,Private sector,2025-10-21
+Q3 2022,29,153785,45.6,1.1,1.4,5,5565,41.0,3.3,2.7,24,148220,45.8,1.1,1.3,jurisdiction_quarter,Public sector,2025-10-21
+Q4 2022,35,230934,38.8,3.8,3.6,1,4500,48.0,3.5,2.8,34,226434,38.6,3.8,3.6,jurisdiction_quarter,Public sector,2025-10-21
+Q1 2023,20,35275,46.2,3.0,3.0,1,1950,60.0,2.8,2.9,19,33325,45.4,3.0,3.0,jurisdiction_quarter,Public sector,2025-10-21
+Q2 2023,33,273677,43.9,2.0,2.8,6,171055,48.0,2.0,3.0,27,102622,37.1,2.1,2.4,jurisdiction_quarter,Public sector,2025-10-21
+Q3 2023,32,144342,36.5,5.2,4.2,4,20995,47.0,1.7,3.0,28,123347,34.7,5.8,4.4,jurisdiction_quarter,Public sector,2025-10-21
+Q4 2023,22,145034,47.6,3.1,2.9,3,25860,50.2,3.8,3.2,19,119174,47.0,3.0,2.8,jurisdiction_quarter,Public sector,2025-10-21
+Q1 2024,25,167636,46.3,3.1,2.6,3,10681,42.8,4.5,2.6,22,156955,46.6,3.0,2.6,jurisdiction_quarter,Public sector,2025-10-21
+Q2 2024,47,636309,54.2,5.3,3.5,1,19000,24.0,4.0,4.0,46,617309,55.1,5.4,3.5,jurisdiction_quarter,Public sector,2025-10-21
+Q3 2024,19,81923,44.3,3.5,3.1,2,9652,47.2,4.7,3.7,17,72271,43.9,3.4,3.1,jurisdiction_quarter,Public sector,2025-10-21
+Q4 2024,20,156775,49.9,5.0,3.7,4,8510,48.0,4.8,3.2,16,148265,50.0,5.0,3.7,jurisdiction_quarter,Public sector,2025-10-21
+Q1 2025,13,40617,48.7,4.2,3.4,1,7670,48.0,4.7,3.7,12,32947,48.8,4.1,3.3,jurisdiction_quarter,Public sector,2025-10-21
+Q2 2025,14,73968,45.6,3.3,3.1,,,,,,14,73968,45.6,3.3,3.1,jurisdiction_quarter,Public sector,2025-10-21

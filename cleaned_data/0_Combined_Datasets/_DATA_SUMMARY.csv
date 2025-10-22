@@ -1,0 +1,22 @@
+dataset,total_rows,total_columns,non_null_rows,date_range
+cola_month,37,19,37,4 time periods
+cola_industry,265,19,265,23 time periods
+sector_industry,409,19,409,35 time periods
+listing_jurisdiction_sector,36,17,36,7 time periods
+listing_cola_quarter,109,17,109,4 time periods
+sector_year,261,19,261,27 time periods
+listing_sector_jurisdiction,8,17,8,2 time periods
+listing_cola_month,104,17,104,12 time periods
+listing_industry_month,140,17,140,12 time periods
+jurisdiction_sector,103,19,103,35 time periods
+cola_year,31,19,31,4 time periods
+sector_month,313,19,313,27 time periods
+jurisdiction_quarter,181,19,181,16 time periods
+cola_quarter,37,19,37,4 time periods
+jurisdiction_year,151,19,151,16 time periods
+sector_quarter,313,19,313,27 time periods
+cola_administration,155,19,155,23 time periods
+jurisdiction_month,181,19,181,16 time periods
+listing_industry_quarter,132,17,132,4 time periods
+jurisdiction_industry,409,19,409,35 time periods
+sector_jurisdiction,477,19,477,35 time periods

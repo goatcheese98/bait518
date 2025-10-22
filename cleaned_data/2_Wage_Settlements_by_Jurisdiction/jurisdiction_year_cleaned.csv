@@ -1,0 +1,152 @@
+unnamed:_0_level_0,all_jurisdictions,all_jurisdictions.1,all_jurisdictions.2,all_jurisdictions.3,all_jurisdictions.4,federal_jurisdiction,federal_jurisdiction.1,federal_jurisdiction.2,federal_jurisdiction.3,federal_jurisdiction.4,provincial_jurisdiction,provincial_jurisdiction.1,provincial_jurisdiction.2,provincial_jurisdiction.3,provincial_jurisdiction.4,page_source,section,extraction_date
+Unnamed: 0_level_1,Number of agreements,Number of employees,Duration of agreements in months (average),First year percentage adjustment (average),Annual percentage adjustment (average),Number of agreements,Number of employees,Duration of agreements in months (average),First year percentage adjustment (average),Annual percentage adjustment (average),Number of agreements,Number of employees,Duration of agreements in months (average),First year percentage adjustment (average),Annual percentage adjustment (average),,,
+2016,292,1194600,48.5,0.9,1.4,25,120168,44.7,1.1,1.4,267,1074432,48.9,0.8,1.4,jurisdiction_year,All industries,2025-10-21
+2017,224,868612,39.8,1.7,1.7,46,209018,47.4,1.4,1.6,178,659594,37.3,1.8,1.8,jurisdiction_year,All industries,2025-10-21
+2018,226,761192,42.7,1.4,1.4,30,78120,47.9,1.8,2.0,196,683072,42.1,1.3,1.3,jurisdiction_year,All industries,2025-10-21
+2019,269,684720,43.1,1.8,1.8,40,102942,49.6,2.5,2.1,229,581778,41.9,1.7,1.8,jurisdiction_year,All industries,2025-10-21
+2020,182,809923,41.4,1.8,1.9,30,261483,44.3,2.4,2.2,152,548440,40.0,1.6,1.8,jurisdiction_year,All industries,2025-10-21
+2021,179,1030411,42.8,1.8,1.9,26,119215,49.1,1.9,2.4,153,911196,42.0,1.8,1.9,jurisdiction_year,All industries,2025-10-21
+2022,147,706936,42.5,2.8,2.7,24,45513,48.7,3.4,3.0,123,661423,42.1,2.8,2.7,jurisdiction_year,All industries,2025-10-21
+2023,159,720010,42.9,3.7,3.4,36,263293,47.1,2.7,3.2,123,456717,40.5,4.3,3.4,jurisdiction_year,All industries,2025-10-21
+2024,145,1115557,50.8,4.7,3.4,23,69202,35.6,4.5,3.6,122,1046355,51.8,4.8,3.3,jurisdiction_year,All industries,2025-10-21
+2025,51,299241,47.6,5.8,3.9,9,17332,47.9,4.8,3.8,42,281909,47.6,5.8,3.9,jurisdiction_year,All industries,2025-10-21
+2016,8,14090,32.1,0.2,0.7,,,,,,8,14090,32.1,0.2,0.7,jurisdiction_year,Primary industries,2025-10-21
+2017,10,13602,36.8,0.7,0.9,2,1150,45.1,2.3,1.9,8,12452,36.1,0.6,0.8,jurisdiction_year,Primary industries,2025-10-21
+2018,2,2213,50.9,8.7,2.7,,,,,,2,2213,50.9,8.7,2.7,jurisdiction_year,Primary industries,2025-10-21
+2019,4,5630,55.7,2.3,2.4,,,,,,4,5630,55.7,2.3,2.4,jurisdiction_year,Primary industries,2025-10-21
+2020,1,650,64.8,2.5,2.2,,,,,,1,650,64.8,2.5,2.2,jurisdiction_year,Primary industries,2025-10-21
+2021,3,3139,44.5,1.4,2.4,1,710,42.0,2.0,2.0,2,2429,45.3,1.2,2.5,jurisdiction_year,Primary industries,2025-10-21
+2022,1,1011,60.0,2.0,2.0,,,,,,1,1011,60.0,2.0,2.0,jurisdiction_year,Primary industries,2025-10-21
+2023,1,750,48.0,3.5,2.9,,,,,,1,750,48.0,3.5,2.9,jurisdiction_year,Primary industries,2025-10-21
+2024,1,3317,36.0,5.0,4.0,,,,,,1,3317,36.0,5.0,4.0,jurisdiction_year,Primary industries,2025-10-21
+2025,1,536,36.0,3.0,3.0,1,536,36.0,3.0,3.0,,,,,,jurisdiction_year,Primary industries,2025-10-21
+2016,8,5800,48.9,0.8,1.4,,,,,,8,5800,48.9,0.8,1.4,jurisdiction_year,Utilities,2025-10-21
+2017,3,2920,29.4,1.6,1.7,,,,,,3,2920,29.4,1.6,1.7,jurisdiction_year,Utilities,2025-10-21
+2018,11,29176,44.9,1.3,2.0,,,,,,11,29176,44.9,1.3,2.0,jurisdiction_year,Utilities,2025-10-21
+2019,12,19730,36.0,1.8,2.1,,,,,,12,19730,36.0,1.8,2.1,jurisdiction_year,Utilities,2025-10-21
+2020,5,12606,44.3,1.5,1.9,,,,,,5,12606,44.3,1.5,1.9,jurisdiction_year,Utilities,2025-10-21
+2021,8,17469,27.5,1.1,1.1,,,,,,8,17469,27.5,1.1,1.1,jurisdiction_year,Utilities,2025-10-21
+2022,4,3055,44.7,0.4,1.6,,,,,,4,3055,44.7,0.4,1.6,jurisdiction_year,Utilities,2025-10-21
+2023,8,19154,29.4,3.9,3.8,,,,,,8,19154,29.4,3.9,3.8,jurisdiction_year,Utilities,2025-10-21
+2024,3,3361,31.9,3.3,3.0,,,,,,3,3361,31.9,3.3,3.0,jurisdiction_year,Utilities,2025-10-21
+2025,2,3280,52.8,2.9,3.5,,,,,,2,3280,52.8,2.9,3.5,jurisdiction_year,Utilities,2025-10-21
+2016,53,112580,36.7,2.0,1.9,1,1380,48.0,2.0,2.0,52,111200,36.5,2.0,1.9,jurisdiction_year,Construction,2025-10-21
+2017,16,97270,44.5,3.4,2.0,,,,,,16,97270,44.5,3.4,2.0,jurisdiction_year,Construction,2025-10-21
+2018,16,93740,46.9,2.1,1.5,1,850,60.0,0.0,1.6,15,92890,46.8,2.1,1.5,jurisdiction_year,Construction,2025-10-21
+2019,44,109945,36.6,2.0,2.1,,,,,,44,109945,36.6,2.0,2.1,jurisdiction_year,Construction,2025-10-21
+2020,10,20042,44.5,0.8,1.0,1,850,48.0,1.5,1.8,9,19192,44.4,0.8,1.0,jurisdiction_year,Construction,2025-10-21
+2021,9,149177,47.9,2.0,2.0,,,,,,9,149177,47.9,2.0,2.0,jurisdiction_year,Construction,2025-10-21
+2022,8,58510,35.7,4.6,4.4,,,,,,8,58510,35.7,4.6,4.4,jurisdiction_year,Construction,2025-10-21
+2023,9,25701,27.8,8.2,5.9,1,850,60.0,4.0,3.8,8,24851,26.7,8.4,5.9,jurisdiction_year,Construction,2025-10-21
+2024,1,700,48.0,2.8,2.6,1,700,48.0,2.8,2.6,,,,,,jurisdiction_year,Construction,2025-10-21
+2025,9,163584,48.0,7.4,4.3,,,,,,9,163584,48.0,7.4,4.3,jurisdiction_year,Construction,2025-10-21
+2016,29,43197,51.0,1.9,1.4,2,1270,40.8,1.3,1.9,27,41927,51.3,1.9,1.4,jurisdiction_year,Manufacturing,2025-10-21
+2017,10,10440,48.3,1.5,1.4,,,,,,10,10440,48.3,1.5,1.4,jurisdiction_year,Manufacturing,2025-10-21
+2018,13,13488,51.9,2.2,1.9,,,,,,13,13488,51.9,2.2,1.9,jurisdiction_year,Manufacturing,2025-10-21
+2019,16,17760,61.1,2.0,2.2,1,780,48.0,2.0,1.7,15,16980,61.7,2.0,2.2,jurisdiction_year,Manufacturing,2025-10-21
+2020,14,39945,40.3,3.2,2.1,,,,,,14,39945,40.3,3.2,2.1,jurisdiction_year,Manufacturing,2025-10-21
+2021,15,14707,51.2,4.5,2.3,,,,,,15,14707,51.2,4.5,2.3,jurisdiction_year,Manufacturing,2025-10-21
+2022,8,12376,52.3,9.0,3.9,,,,,,8,12376,52.3,9.0,3.9,jurisdiction_year,Manufacturing,2025-10-21
+2023,9,22886,37.3,8.9,4.9,,,,,,9,22886,37.3,8.9,4.9,jurisdiction_year,Manufacturing,2025-10-21
+2024,7,8804,41.9,10.4,6.1,,,,,,7,8804,41.9,10.4,6.1,jurisdiction_year,Manufacturing,2025-10-21
+2025,1,2400,72.0,4.0,3.2,,,,,,1,2400,72.0,4.0,3.2,jurisdiction_year,Manufacturing,2025-10-21
+2016,9,24215,60.4,1.4,1.3,,,,,,9,24215,60.4,1.4,1.3,jurisdiction_year,Wholesale and retail trade,2025-10-21
+2017,7,14550,47.5,1.7,1.9,,,,,,7,14550,47.5,1.7,1.9,jurisdiction_year,Wholesale and retail trade,2025-10-21
+2018,10,20373,52.8,0.9,1.4,,,,,,10,20373,52.8,0.9,1.4,jurisdiction_year,Wholesale and retail trade,2025-10-21
+2019,11,25528,58.1,1.2,1.7,,,,,,11,25528,58.1,1.2,1.7,jurisdiction_year,Wholesale and retail trade,2025-10-21
+2020,9,13811,75.5,0.9,1.0,,,,,,9,13811,75.5,0.9,1.0,jurisdiction_year,Wholesale and retail trade,2025-10-21
+2021,10,24770,55.8,1.5,1.4,,,,,,10,24770,55.8,1.5,1.4,jurisdiction_year,Wholesale and retail trade,2025-10-21
+2022,3,10577,43.5,7.9,3.1,,,,,,3,10577,43.5,7.9,3.1,jurisdiction_year,Wholesale and retail trade,2025-10-21
+2023,4,13379,57.5,8.9,4.0,,,,,,4,13379,57.5,8.9,4.0,jurisdiction_year,Wholesale and retail trade,2025-10-21
+2024,1,10229,36.0,3.0,2.6,,,,,,1,10229,36.0,3.0,2.6,jurisdiction_year,Wholesale and retail trade,2025-10-21
+2025,2,5825,70.2,6.1,3.4,,,,,,2,5825,70.2,6.1,3.4,jurisdiction_year,Wholesale and retail trade,2025-10-21
+2016,18,85950,42.0,1.0,1.4,15,79380,42.2,0.9,1.3,3,6570,39.4,1.9,1.9,jurisdiction_year,Transportation,2025-10-21
+2017,19,28362,46.8,1.8,2.1,16,26382,48.1,1.8,2.1,3,1980,30.6,1.8,1.6,jurisdiction_year,Transportation,2025-10-21
+2018,16,28882,44.0,2.0,2.2,9,11950,46.8,2.3,2.5,7,16932,42.1,1.9,2.0,jurisdiction_year,Transportation,2025-10-21
+2019,20,41980,54.4,2.2,2.4,13,23660,52.6,2.4,2.6,7,18320,56.7,1.9,2.1,jurisdiction_year,Transportation,2025-10-21
+2020,22,98811,51.5,2.1,2.3,15,89283,51.9,2.2,2.4,7,9528,47.9,0.7,1.1,jurisdiction_year,Transportation,2025-10-21
+2021,14,57058,40.6,2.1,2.5,13,56028,40.5,2.1,2.5,1,1030,48.0,3.0,2.5,jurisdiction_year,Transportation,2025-10-21
+2022,17,42278,42.0,3.3,2.9,13,24833,49.1,3.9,3.3,4,17445,31.8,2.5,2.4,jurisdiction_year,Transportation,2025-10-21
+2023,24,44872,38.1,4.9,3.9,17,32469,38.5,5.9,4.4,7,12403,37.2,2.4,2.4,jurisdiction_year,Transportation,2025-10-21
+2024,11,24201,41.5,5.0,4.0,9,10901,46.3,5.6,3.7,2,13300,37.6,4.6,4.2,jurisdiction_year,Transportation,2025-10-21
+2025,7,11782,43.0,4.2,3.6,5,5790,45.2,5.4,4.1,2,5992,40.9,3.0,3.1,jurisdiction_year,Transportation,2025-10-21
+2016,5,14578,56.0,0.7,1.2,4,12328,57.5,0.7,1.2,1,2250,48.0,1.3,1.3,jurisdiction_year,Information and culture,2025-10-21
+2017,6,8936,47.3,1.6,1.8,4,7536,47.2,1.5,1.8,2,1400,48.0,1.7,1.8,jurisdiction_year,Information and culture,2025-10-21
+2018,8,25890,45.5,2.6,2.4,6,17240,50.7,2.4,2.3,2,8650,35.1,2.8,2.8,jurisdiction_year,Information and culture,2025-10-21
+2019,6,10782,53.8,1.2,1.3,4,9012,55.2,1.0,1.3,2,1770,46.4,1.7,1.1,jurisdiction_year,Information and culture,2025-10-21
+2020,2,3450,43.9,1.2,1.3,1,1200,36.1,1.5,1.5,1,2250,48.0,1.0,1.1,jurisdiction_year,Information and culture,2025-10-21
+2021,5,8228,57.5,1.7,1.9,4,7410,59.8,1.7,1.9,1,818,36.0,2.0,2.0,jurisdiction_year,Information and culture,2025-10-21
+2022,9,15770,47.8,2.6,2.4,6,13890,48.9,2.8,2.6,3,1880,39.5,1.1,1.1,jurisdiction_year,Information and culture,2025-10-21
+2023,4,10961,57.3,1.6,2.5,4,10961,57.3,1.6,2.5,,,,,,jurisdiction_year,Information and culture,2025-10-21
+2024,6,8605,40.7,3.2,2.0,3,5600,39.8,3.1,1.7,3,3005,42.4,3.4,2.6,jurisdiction_year,Information and culture,2025-10-21
+2025,1,2500,60.0,4.0,3.4,1,2500,60.0,4.0,3.4,,,,,,jurisdiction_year,Information and culture,2025-10-21
+2016,8,5980,41.7,1.9,1.7,2,1310,21.0,2.1,2.1,6,4670,47.6,1.8,1.5,jurisdiction_year,Finance and professional services,2025-10-21
+2017,11,20770,53.3,2.0,2.2,8,13520,39.7,1.6,2.0,3,7250,78.8,2.7,2.7,jurisdiction_year,Finance and professional services,2025-10-21
+2018,17,44852,47.9,2.7,2.1,5,6040,39.1,3.1,2.0,12,38812,49.3,2.7,2.1,jurisdiction_year,Finance and professional services,2025-10-21
+2019,6,5820,47.1,2.1,1.8,6,5820,47.1,2.1,1.8,,,,,,jurisdiction_year,Finance and professional services,2025-10-21
+2020,9,25148,45.8,1.3,1.6,4,10960,47.5,1.4,1.3,5,14188,44.5,1.3,1.8,jurisdiction_year,Finance and professional services,2025-10-21
+2021,6,7582,43.2,0.5,2.1,3,3925,40.4,0.5,1.7,3,3657,46.2,0.4,2.5,jurisdiction_year,Finance and professional services,2025-10-21
+2022,9,23855,53.6,1.8,2.1,4,2290,44.3,2.4,2.7,5,21565,54.6,1.7,2.0,jurisdiction_year,Finance and professional services,2025-10-21
+2023,4,3619,45.8,7.0,4.3,3,2065,27.7,9.0,6.1,1,1554,69.8,4.2,2.0,jurisdiction_year,Finance and professional services,2025-10-21
+2024,7,24715,35.1,3.4,3.7,3,10430,15.5,4.5,4.4,4,14285,49.5,2.5,3.2,jurisdiction_year,Finance and professional services,2025-10-21
+2025,2,2386,36.0,4.2,4.2,1,836,36.0,4.0,3.5,1,1550,36.0,4.2,4.6,jurisdiction_year,Finance and professional services,2025-10-21
+2016,98,697660,49.7,0.5,1.2,,,,,,98,697660,49.7,0.5,1.2,jurisdiction_year,"Education, health, and social services",2025-10-21
+2017,80,398216,30.5,1.5,1.7,,,,,,80,398216,30.5,1.5,1.7,jurisdiction_year,"Education, health, and social services",2025-10-21
+2018,77,330519,39.0,0.8,1.0,,,,,,77,330519,39.0,0.8,1.0,jurisdiction_year,"Education, health, and social services",2025-10-21
+2019,90,294965,38.3,1.3,1.6,,,,,,90,294965,38.3,1.3,1.6,jurisdiction_year,"Education, health, and social services",2025-10-21
+2020,74,385643,36.4,1.5,1.9,,,,,,74,385643,36.4,1.5,1.9,jurisdiction_year,"Education, health, and social services",2025-10-21
+2021,69,584584,38.9,1.8,1.9,,,,,,69,584584,38.9,1.8,1.9,jurisdiction_year,"Education, health, and social services",2025-10-21
+2022,59,404495,42.9,2.5,2.6,,,,,,59,404495,42.9,2.5,2.6,jurisdiction_year,"Education, health, and social services",2025-10-21
+2023,61,315067,41.4,3.7,3.2,,,,,,61,315067,41.4,3.7,3.2,jurisdiction_year,"Education, health, and social services",2025-10-21
+2024,76,904206,53.2,4.9,3.3,,,,,,76,904206,53.2,4.9,3.3,jurisdiction_year,"Education, health, and social services",2025-10-21
+2025,17,72390,44.8,3.2,3.1,,,,,,17,72390,44.8,3.2,3.1,jurisdiction_year,"Education, health, and social services",2025-10-21
+2016,5,4010,45.9,1.7,1.7,,,,,,5,4010,45.9,1.7,1.7,jurisdiction_year,Entertainment and hospitality,2025-10-21
+2017,5,6350,46.7,2.0,1.9,,,,,,5,6350,46.7,2.0,1.9,jurisdiction_year,Entertainment and hospitality,2025-10-21
+2018,9,7940,45.6,2.5,2.4,,,,,,9,7940,45.6,2.5,2.4,jurisdiction_year,Entertainment and hospitality,2025-10-21
+2019,2,1800,36.0,7.1,5.0,,,,,,2,1800,36.0,7.1,5.0,jurisdiction_year,Entertainment and hospitality,2025-10-21
+2020,3,2038,31.3,1.6,1.7,,,,,,3,2038,31.3,1.6,1.7,jurisdiction_year,Entertainment and hospitality,2025-10-21
+2021,4,4836,36.7,0.1,1.0,,,,,,4,4836,36.7,0.1,1.0,jurisdiction_year,Entertainment and hospitality,2025-10-21
+2022,2,2406,40.0,4.8,3.7,,,,,,2,2406,40.0,4.8,3.7,jurisdiction_year,Entertainment and hospitality,2025-10-21
+2023,,,,,,,,,,,,,,,,jurisdiction_year,Entertainment and hospitality,2025-10-21
+2024,2,1311,30.9,7.1,5.1,,,,,,2,1311,30.9,7.1,5.1,jurisdiction_year,Entertainment and hospitality,2025-10-21
+2025,1,1606,24.0,10.8,10.2,,,,,,1,1606,24.0,10.8,10.2,jurisdiction_year,Entertainment and hospitality,2025-10-21
+2016,51,186540,52.8,1.3,1.5,1,24500,48.0,1.8,1.4,50,162040,53.6,1.2,1.5,jurisdiction_year,Public administration,2025-10-21
+2017,57,267196,49.1,1.4,1.6,16,160430,48.0,1.3,1.4,41,106766,50.8,1.6,1.9,jurisdiction_year,Public administration,2025-10-21
+2018,47,164119,42.7,1.1,1.2,9,42040,48.0,1.2,1.7,38,122079,40.9,1.1,1.1,jurisdiction_year,Public administration,2025-10-21
+2019,58,150780,48.8,2.4,1.9,16,63670,48.0,2.7,2.0,42,87110,49.4,2.2,1.8,jurisdiction_year,Public administration,2025-10-21
+2020,33,207779,42.7,2.3,1.9,9,159190,39.8,2.6,2.1,24,48589,52.3,1.2,1.4,jurisdiction_year,Public administration,2025-10-21
+2021,36,158861,51.4,1.7,1.9,5,51142,57.6,1.8,2.4,31,107719,48.4,1.7,1.7,jurisdiction_year,Public administration,2025-10-21
+2022,27,132603,40.7,2.4,2.3,1,4500,48.0,3.5,2.8,26,128103,40.5,2.3,2.3,jurisdiction_year,Public administration,2025-10-21
+2023,35,263621,47.1,2.3,3.0,11,216948,48.0,2.2,3.0,24,46673,42.7,2.9,2.8,jurisdiction_year,Public administration,2025-10-21
+2024,30,126108,42.1,3.9,3.3,7,41571,37.0,4.5,3.7,23,84537,44.6,3.6,3.1,jurisdiction_year,Public administration,2025-10-21
+2025,8,32952,48.2,4.2,3.3,1,7670,48.0,4.7,3.7,7,25282,48.3,4.0,3.2,jurisdiction_year,Public administration,2025-10-21
+2016,292,1194600,48.5,0.9,1.4,25,120168,44.7,1.1,1.4,267,1074432,48.9,0.8,1.4,jurisdiction_year,All sectors,2025-10-21
+2017,224,868612,39.8,1.7,1.7,46,209018,47.4,1.4,1.6,178,659594,37.3,1.8,1.8,jurisdiction_year,All sectors,2025-10-21
+2018,226,761192,42.7,1.4,1.4,30,78120,47.9,1.8,2.0,196,683072,42.1,1.3,1.3,jurisdiction_year,All sectors,2025-10-21
+2019,269,684720,43.1,1.8,1.8,40,102942,49.6,2.5,2.1,229,581778,41.9,1.7,1.8,jurisdiction_year,All sectors,2025-10-21
+2020,182,809923,41.4,1.8,1.9,30,261483,44.3,2.4,2.2,152,548440,40.0,1.6,1.8,jurisdiction_year,All sectors,2025-10-21
+2021,179,1030411,42.8,1.8,1.9,26,119215,49.1,1.9,2.4,153,911196,42.0,1.8,1.9,jurisdiction_year,All sectors,2025-10-21
+2022,147,706936,42.5,2.8,2.7,24,45513,48.7,3.4,3.0,123,661423,42.1,2.8,2.7,jurisdiction_year,All sectors,2025-10-21
+2023,159,720010,42.9,3.7,3.4,36,263293,47.1,2.7,3.2,123,456717,40.5,4.3,3.4,jurisdiction_year,All sectors,2025-10-21
+2024,145,1115557,50.8,4.7,3.4,23,69202,35.6,4.5,3.6,122,1046355,51.8,4.8,3.3,jurisdiction_year,All sectors,2025-10-21
+2025,51,299241,47.6,5.8,3.9,9,17332,47.9,4.8,3.8,42,281909,47.6,5.8,3.9,jurisdiction_year,All sectors,2025-10-21
+2016,128,247565,45.4,1.5,1.5,15,27168,78.4,0.8,1.5,113,220397,41.4,1.6,1.5,jurisdiction_year,Private sector,2025-10-21
+2017,75,193038,44.9,2.6,2.0,23,40926,46.3,1.8,2.1,52,152112,44.5,2.8,1.9,jurisdiction_year,Private sector,2025-10-21
+2018,82,220436,47.4,2.3,1.9,16,29740,46.5,2.4,2.3,66,190696,47.5,2.2,1.8,jurisdiction_year,Private sector,2025-10-21
+2019,97,187467,43.2,2.0,2.1,16,25832,51.2,2.3,2.5,81,161635,42.0,1.9,2.1,jurisdiction_year,Private sector,2025-10-21
+2020,60,139261,47.0,2.0,1.7,17,39603,52.2,2.3,2.2,43,99658,44.9,1.9,1.5,jurisdiction_year,Private sector,2025-10-21
+2021,63,225105,48.6,2.0,2.0,16,20868,49.7,1.9,1.9,47,204237,48.5,2.0,2.0,jurisdiction_year,Private sector,2025-10-21
+2022,42,139126,45.1,4.2,3.6,17,34788,50.2,3.5,3.0,25,104338,43.4,4.4,3.7,jurisdiction_year,Private sector,2025-10-21
+2023,52,121682,41.6,6.5,4.3,22,43433,41.3,5.1,4.1,30,78249,41.7,7.3,4.4,jurisdiction_year,Private sector,2025-10-21
+2024,34,72914,40.7,4.2,3.5,13,21359,32.1,4.9,4.0,21,51555,44.3,3.9,3.3,jurisdiction_year,Private sector,2025-10-21
+2025,22,181228,48.2,7.2,4.3,7,8826,48.9,4.9,3.8,15,172402,48.2,7.3,4.3,jurisdiction_year,Private sector,2025-10-21
+2016,164,947035,49.2,0.7,1.3,10,93000,34.9,1.2,1.3,154,854035,50.8,0.7,1.3,jurisdiction_year,Public sector,2025-10-21
+2017,149,675574,38.3,1.4,1.7,23,168092,47.7,1.3,1.4,126,507482,35.2,1.5,1.8,jurisdiction_year,Public sector,2025-10-21
+2018,144,540756,40.7,1.0,1.2,14,48380,48.7,1.4,1.7,130,492376,40.0,0.9,1.1,jurisdiction_year,Public sector,2025-10-21
+2019,172,497253,43.0,1.7,1.7,24,77110,49.1,2.5,1.9,148,420143,41.9,1.6,1.7,jurisdiction_year,Public sector,2025-10-21
+2020,122,670662,40.2,1.8,2.0,13,221880,42.8,2.4,2.2,109,448782,38.9,1.5,1.8,jurisdiction_year,Public sector,2025-10-21
+2021,116,805306,41.2,1.8,1.9,10,98347,48.9,1.9,2.5,106,706959,40.1,1.8,1.9,jurisdiction_year,Public sector,2025-10-21
+2022,105,567810,41.9,2.5,2.5,7,10725,43.7,3.4,2.8,98,557085,41.9,2.5,2.5,jurisdiction_year,Public sector,2025-10-21
+2023,107,598328,43.2,3.1,3.2,14,219860,48.2,2.2,3.0,93,378468,40.2,3.7,3.2,jurisdiction_year,Public sector,2025-10-21
+2024,111,1042643,51.5,4.8,3.3,10,47843,37.1,4.4,3.5,101,994800,52.2,4.8,3.3,jurisdiction_year,Public sector,2025-10-21
+2025,29,118013,46.6,3.6,3.2,2,8506,46.8,4.7,3.7,27,109507,46.6,3.6,3.2,jurisdiction_year,Public sector,2025-10-21
