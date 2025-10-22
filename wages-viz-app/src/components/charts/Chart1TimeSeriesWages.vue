@@ -53,29 +53,62 @@ const processData = (data) => {
   })
 
   chartOption.value = {
+    backgroundColor: '#ffffff',
     title: {
-      text: 'Wage Adjustment Trends: Public vs Private Sector (2016-2024)',
+      text: 'Public vs Private: Wage Adjustment Over Time',
+      subtext: 'Annual percentage adjustment trends (2016-2024)',
       left: 'center',
+      top: 15,
       textStyle: {
-        fontSize: 20,
-        fontWeight: 'bold'
+        fontSize: 32,
+        fontWeight: 'bold',
+        color: '#2c3e50'
+      },
+      subtextStyle: {
+        fontSize: 18,
+        color: '#666666'
       }
     },
     tooltip: {
       trigger: 'axis',
       axisPointer: {
-        type: 'cross'
+        type: 'cross',
+        crossStyle: {
+          color: '#999'
+        }
+      },
+      backgroundColor: 'rgba(50, 50, 50, 0.95)',
+      borderColor: '#333',
+      borderWidth: 1,
+      textStyle: {
+        color: '#fff',
+        fontSize: 14
+      },
+      formatter: (params) => {
+        let result = `<strong style="font-size: 16px;">${params[0].axisValue}</strong><br/>`
+        params.forEach(item => {
+          result += `${item.marker} ${item.seriesName}: <strong>${item.value}%</strong><br/>`
+        })
+        return result
       }
     },
     legend: {
-      data: ['Public Sector Wage %', 'Private Sector Wage %', 'Public Employees', 'Private Employees'],
-      top: 40
+      data: ['Public Sector', 'Private Sector'],
+      top: 85,
+      textStyle: {
+        color: '#2c3e50',
+        fontSize: 16,
+        fontWeight: '500'
+      },
+      itemGap: 40,
+      itemWidth: 30,
+      itemHeight: 4
     },
     grid: {
-      left: '5%',
-      right: '5%',
-      bottom: '15%',
-      top: '20%',
+      left: '8%',
+      right: '6%',
+      bottom: '12%',
+      top: '25%',
       containLabel: true
     },
     xAxis: {
@@ -83,85 +116,113 @@ const processData = (data) => {
       data: years,
       name: 'Year',
       nameLocation: 'middle',
-      nameGap: 30,
-      axisLabel: {
-        fontSize: 12
-      }
-    },
-    yAxis: [
-      {
-        type: 'value',
-        name: 'Annual Wage Adjustment (%)',
-        position: 'left',
-        axisLabel: {
-          formatter: '{value}%'
+      nameGap: 45,
+      nameTextStyle: {
+        color: '#2c3e50',
+        fontSize: 18,
+        fontWeight: 'bold'
+      },
+      axisLine: {
+        lineStyle: {
+          color: '#333333',
+          width: 2
         }
       },
-      {
-        type: 'value',
-        name: 'Number of Employees',
-        position: 'right',
-        axisLabel: {
-          formatter: (value) => {
-            return (value / 1000).toFixed(0) + 'K'
-          }
+      axisLabel: {
+        fontSize: 16,
+        color: '#2c3e50',
+        fontWeight: '500'
+      },
+      axisTick: {
+        lineStyle: {
+          color: '#333333'
         }
       }
-    ],
+    },
+    yAxis: {
+      type: 'value',
+      name: 'Annual Wage Adjustment (%)',
+      nameLocation: 'middle',
+      nameGap: 65,
+      nameTextStyle: {
+        color: '#2c3e50',
+        fontSize: 18,
+        fontWeight: 'bold'
+      },
+      axisLine: {
+        show: true,
+        lineStyle: {
+          color: '#333333',
+          width: 2
+        }
+      },
+      axisLabel: {
+        formatter: '{value}%',
+        fontSize: 16,
+        color: '#2c3e50',
+        fontWeight: '500'
+      },
+      splitLine: {
+        lineStyle: {
+          color: '#e0e0e0',
+          width: 1
+        }
+      },
+      axisTick: {
+        lineStyle: {
+          color: '#333333'
+        }
+      }
+    },
     series: [
       {
-        name: 'Public Sector Wage %',
+        name: 'Public Sector',
         type: 'line',
         data: publicWages,
         smooth: true,
         lineStyle: {
-          width: 3
+          width: 5,
+          color: '#1976d2'
         },
         itemStyle: {
-          color: '#5470c6'
+          color: '#1976d2',
+          borderWidth: 3,
+          borderColor: '#ffffff'
         },
+        symbolSize: 12,
         emphasis: {
-          focus: 'series'
+          focus: 'series',
+          itemStyle: {
+            borderWidth: 4,
+            shadowBlur: 15,
+            shadowColor: 'rgba(25, 118, 210, 0.5)',
+            scale: 1.3
+          }
         }
       },
       {
-        name: 'Private Sector Wage %',
+        name: 'Private Sector',
         type: 'line',
         data: privateWages,
         smooth: true,
         lineStyle: {
-          width: 3
+          width: 5,
+          color: '#d32f2f'
         },
         itemStyle: {
-          color: '#ee6666'
+          color: '#d32f2f',
+          borderWidth: 3,
+          borderColor: '#ffffff'
         },
+        symbolSize: 12,
         emphasis: {
-          focus: 'series'
-        }
-      },
-      {
-        name: 'Public Employees',
-        type: 'bar',
-        yAxisIndex: 1,
-        data: publicEmployees,
-        itemStyle: {
-          color: 'rgba(84, 112, 198, 0.3)'
-        },
-        barGap: '-100%',
-        emphasis: {
-          focus: 'series'
-        }
-      },
-      {
-        name: 'Private Employees',
-        type: 'bar',
-        yAxisIndex: 1,
-        data: privateEmployees,
-        itemStyle: {
-          color: 'rgba(238, 102, 102, 0.3)'
-        },
-        emphasis: {
-          focus: 'series'
+          focus: 'series',
+          itemStyle: {
+            borderWidth: 4,
+            shadowBlur: 15,
+            shadowColor: 'rgba(211, 47, 47, 0.5)',
+            scale: 1.3
+          }
         }
       }
     ]
@@ -174,10 +235,7 @@ const processData = (data) => {
 <template>
   <div class="chart-container">
     <div v-if="loading" class="loading">Loading data...</div>
-    <v-chart v-else :option="chartOption" style="width: 100%; height: 500px;" autoresize />
-    <div class="chart-notes">
-      <p><strong>Key Insight:</strong> Track how wage adjustments changed over time, especially during COVID-19 and recent inflation periods.</p>
-    </div>
+    <v-chart v-else :option="chartOption" style="width: 100%; height: 620px;" autoresize />
   </div>
 </template>
 
@@ -189,26 +247,13 @@ const processData = (data) => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: #ffffff;
 }
 
 .loading {
-  font-size: 1.5rem;
-  color: #666;
+  font-size: 1.8rem;
+  color: #2c3e50;
   padding: 2rem;
-}
-
-.chart-notes {
-  margin-top: 1rem;
-  padding: 0.75rem;
-  background: #f0f2f5;
-  border-radius: 6px;
-  max-width: 900px;
-  text-align: center;
-}
-
-.chart-notes p {
-  margin: 0;
-  color: #555;
-  font-size: 0.9rem;
+  font-weight: 500;
 }
 </style>

@@ -46,15 +46,15 @@ const onSlideChange = (swiper) => {
         </SwiperSlide>
 
         <SwiperSlide>
+          <Chart4COLAAdoption />
+        </SwiperSlide>
+
+        <SwiperSlide>
           <Chart2GeographicComparison />
         </SwiperSlide>
 
         <SwiperSlide>
           <Chart3SectorDeepDive />
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <Chart4COLAAdoption />
         </SwiperSlide>
 
         <SwiperSlide>
@@ -83,27 +83,28 @@ const onSlideChange = (swiper) => {
 #app {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #ffffff;
   display: flex;
   flex-direction: column;
 }
 
 header {
-  background: rgba(255, 255, 255, 0.95);
-  padding: 2rem;
+  background: #ffffff;
+  padding: 1rem 2rem;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid #e0e0e0;
 }
 
 header h1 {
   color: #2c3e50;
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
 }
 
 .subtitle {
-  color: #7f8c8d;
-  font-size: 1rem;
+  color: #666666;
+  font-size: 0.85rem;
 }
 
 .slideshow-container {
@@ -115,11 +116,12 @@ header h1 {
 }
 
 .wages-swiper {
-  height: 600px;
-  background: white;
+  height: 700px;
+  background: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 3rem;
+  border: 1px solid #e0e0e0;
 }
 
 .swiper-slide {
@@ -132,43 +134,54 @@ header h1 {
 .slide-counter {
   text-align: center;
   margin-top: 1.5rem;
-  color: white;
-  font-size: 1.2rem;
-  font-weight: bold;
+  color: #2c3e50;
+  font-size: 1.1rem;
+  font-weight: 600;
 }
 
 footer {
-  background: rgba(0, 0, 0, 0.2);
-  color: white;
+  background: #ffffff;
+  color: #666666;
   text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
+  padding: 0.75rem;
+  font-size: 0.85rem;
+  border-top: 2px solid #e0e0e0;
 }
 
 /* Swiper navigation buttons styling */
 :deep(.swiper-button-next),
 :deep(.swiper-button-prev) {
-  color: #667eea;
-  background: white;
+  color: #2c3e50;
+  background: rgba(255, 255, 255, 0.9);
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 2px solid #2c3e50;
+}
+
+:deep(.swiper-button-next:hover),
+:deep(.swiper-button-prev:hover) {
+  background: #2c3e50;
+  color: #ffffff;
 }
 
 :deep(.swiper-button-next:after),
 :deep(.swiper-button-prev:after) {
   font-size: 20px;
+  font-weight: bold;
 }
 
 :deep(.swiper-pagination-bullet) {
-  background: #667eea;
-  opacity: 0.5;
+  background: #cccccc;
+  opacity: 1;
+  width: 12px;
+  height: 12px;
 }
 
 :deep(.swiper-pagination-bullet-active) {
-  opacity: 1;
-  background: #667eea;
+  background: #2c3e50;
+  width: 30px;
+  border-radius: 6px;
 }
 
 /* Responsive design */
