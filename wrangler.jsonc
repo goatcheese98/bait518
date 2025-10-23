@@ -2,9 +2,6 @@
   "name": "wages-viz-app",
   "compatibility_date": "2025-10-23",
   "assets": {
-    "directory": "./wages-viz-app/dist",
-    "build": {
-      "command": "cd wages-viz-app && npm install && npm run build"
-    }
+    "directory": "./wages-viz-app/dist"
   }
 }

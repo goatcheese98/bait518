@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "cd wages-viz-app && npm install && npm run build"
+    "build": "npm --prefix wages-viz-app install && npm --prefix wages-viz-app run build",
+    "pages:build": "npm --prefix wages-viz-app install && npm --prefix wages-viz-app run build"
   }
 }
