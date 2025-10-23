@@ -281,13 +281,18 @@ const processData = (data) => {
     },
     legend: {
       data: [...highlightSeries.map((item) => item.name), 'Other industries'],
-      top: 85,
+      orient: 'vertical',
+      top: 'middle',
+      right: '4%',
       textStyle: {
         color: '#2c3e50',
         fontSize: 16,
         fontWeight: '500'
       },
-      itemGap: 30
+      backgroundColor: 'rgba(255, 255, 255, 0.9)',
+      padding: [12, 16],
+      borderRadius: 10,
+      itemGap: 18
     },
     graphic: [
       {
@@ -326,7 +331,7 @@ const processData = (data) => {
     },
     grid: {
       left: '8%',
-      right: '6%',
+      right: '20%',
       bottom: '16%',
       top: '26%',
       containLabel: true
