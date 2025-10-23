@@ -158,7 +158,7 @@ const processData = (data) => {
       text: 'Do Bigger Bargaining Units Win Bigger Raises?',
       subtext: 'Average annual % adjustment vs. employees represented (2016-2025)',
       left: 'center',
-      top: 15,
+      top: 5,
       textStyle: {
         fontSize: 32,
         fontWeight: 'bold',
@@ -192,7 +192,7 @@ const processData = (data) => {
     },
     legend: {
       data: [...highlightSeries.map((series) => series.name), ...(otherSeries ? ['Other provinces'] : [])],
-      top: 85,
+      top: 70,
       textStyle: {
         color: '#2c3e50',
         fontSize: 16,
@@ -204,7 +204,7 @@ const processData = (data) => {
       left: '10%',
       right: '6%',
       bottom: '12%',
-      top: '26%',
+      top: '20%',
       containLabel: true
     },
     xAxis: {
@@ -269,7 +269,13 @@ const processData = (data) => {
 <template>
   <div class="chart-container">
     <div v-if="loading" class="loading">Loading data...</div>
-    <v-chart v-else :option="chartOption" style="width: 100%; height: 620px;" autoresize />
+    <v-chart
+      v-else
+      :option="chartOption"
+      class="chart-canvas"
+      style="width: 100%; height: 100%;"
+      autoresize
+    />
   </div>
 </template>
 
@@ -289,5 +295,10 @@ const processData = (data) => {
   color: #2c3e50;
   padding: 2rem;
   font-weight: 500;
+}
+
+.chart-canvas {
+  flex: 1;
+  min-height: 440px;
 }
 </style>

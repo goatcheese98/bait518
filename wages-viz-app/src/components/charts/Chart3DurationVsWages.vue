@@ -153,12 +153,15 @@ const processData = (data) => {
   const otherSeries = {
     name: 'Other industries',
     type: 'scatter',
+    itemStyle: {
+      color: '#b0bec5',
+      shadowBlur: 10,
+      shadowColor: 'rgba(0, 0, 0, 0.15)'
+    },
     data: otherPoints.map((item) => ({
       ...makeScatterPoint(item),
       itemStyle: {
-        color: '#b0bec5',
-        shadowBlur: 10,
-        shadowColor: 'rgba(0, 0, 0, 0.15)'
+        color: '#b0bec5'
       }
     })),
     emphasis: {
@@ -172,14 +175,15 @@ const processData = (data) => {
     return {
       name: alias,
       type: 'scatter',
+      color,
+      itemStyle: {
+        color,
+        shadowBlur: 20,
+        shadowColor: 'rgba(0, 0, 0, 0.25)'
+      },
       data: [
         {
           ...makeScatterPoint(point),
-          itemStyle: {
-            color,
-            shadowBlur: 20,
-            shadowColor: 'rgba(0, 0, 0, 0.25)'
-          },
           label: {
             show: true,
             formatter: alias,
@@ -267,7 +271,7 @@ const processData = (data) => {
       text: 'Do Longer Contracts Deliver Better Raises?',
       subtext: 'Average contract duration vs. annual wage adjustment (2023-2025)\nBubble size = total agreements signed',
       left: 'center',
-      top: 15,
+      top: 5,
       textStyle: {
         fontSize: 32,
         fontWeight: 'bold',
@@ -281,18 +285,17 @@ const processData = (data) => {
     },
     legend: {
       data: [...highlightSeries.map((item) => item.name), 'Other industries'],
-      orient: 'vertical',
-      top: 'middle',
-      right: '4%',
+      top: 100,
+      left: 'center',
       textStyle: {
         color: '#2c3e50',
         fontSize: 16,
         fontWeight: '500'
       },
-      backgroundColor: 'rgba(255, 255, 255, 0.9)',
-      padding: [12, 16],
-      borderRadius: 10,
-      itemGap: 18
+      itemWidth: 22,
+      itemHeight: 10,
+      itemGap: 30,
+      icon: 'roundRect'
     },
     graphic: [
       {
@@ -331,9 +334,9 @@ const processData = (data) => {
     },
     grid: {
       left: '8%',
-      right: '20%',
+      right: '6%',
       bottom: '16%',
-      top: '26%',
+      top: '22%',
       containLabel: true
     },
     xAxis: {
@@ -408,7 +411,13 @@ const processData = (data) => {
 <template>
   <div class="chart-container">
     <div v-if="loading" class="loading">Loading data...</div>
-    <v-chart v-else :option="chartOption" style="width: 100%; height: 620px;" autoresize />
+    <v-chart
+      v-else
+      :option="chartOption"
+      class="chart-canvas"
+      style="width: 100%; height: 100%;"
+      autoresize
+    />
   </div>
 </template>
 
@@ -428,5 +437,10 @@ const processData = (data) => {
   color: #2c3e50;
   padding: 2rem;
   font-weight: 500;
+}
+
+.chart-canvas {
+  flex: 1;
+  min-height: 440px;
 }
 </style>

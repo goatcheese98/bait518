@@ -4,6 +4,9 @@ import Papa from 'papaparse'
 
 const chartOption = ref({})
 const loading = ref(true)
+const chartRef = ref(null)
+const activeYear = ref(null)
+const timelineYears = ref([])
 
 onMounted(async () => {
   try {
@@ -36,12 +39,14 @@ const processData = (data) => {
   const years = Array.from(new Set([...publicData, ...privateData].map((row) => row.Year))).sort(
     (a, b) => a - b
   )
+  timelineYears.value = years
 
   if (!years.length) {
     chartOption.value = {}
     loading.value = false
     return
   }
+  activeYear.value = years[0]
 
   const valueForYear = (rows, key) =>
     years.map((year) => {
@@ -69,23 +74,37 @@ const processData = (data) => {
     baseOption: {
       backgroundColor: '#ffffff',
       timeline: {
+        show: true,
         axisType: 'category',
         autoPlay: true,
         loop: false,
         playInterval: 1500,
+        bottom: 8,
+        left: '12%',
+        right: '12%',
+        height: 54,
         symbolSize: 12,
-        top: 120,
-        tooltip: {
-          formatter: '{b}'
-        },
         label: {
-          color: '#2c3e50',
+          color: '#37474f',
           fontSize: 14,
+          margin: 18,
           formatter: (value) => `${value}`
         },
         controlStyle: {
           color: '#2c3e50',
           borderColor: '#2c3e50'
+        },
+        lineStyle: {
+          color: '#90caf9'
+        },
+        progress: {
+          lineStyle: {
+            color: '#1976d2',
+            width: 5
+          },
+          itemStyle: {
+            color: '#1976d2'
+          }
         },
         data: years.map(String)
       },
@@ -93,7 +112,7 @@ const processData = (data) => {
         text: 'Public vs Private: Wage Adjustment Race',
         subtext: 'Annual percentage adjustment trends (2016-2025)',
         left: 'center',
-        top: 15,
+        top: 5,
         textStyle: {
           fontSize: 32,
           fontWeight: 'bold',
@@ -142,7 +161,7 @@ const processData = (data) => {
       },
       legend: {
         data: ['Public Sector', 'Private Sector'],
-        top: 85,
+        top: 70,
         textStyle: {
           color: '#2c3e50',
           fontSize: 16,
@@ -155,8 +174,8 @@ const processData = (data) => {
       grid: {
         left: '8%',
         right: '6%',
-        bottom: '18%',
-        top: '32%',
+        bottom: 108,
+        top: '18%',
         containLabel: true
       },
       xAxis: {
@@ -164,7 +183,7 @@ const processData = (data) => {
         name: 'Year',
         boundaryGap: false,
         nameLocation: 'middle',
-        nameGap: 45,
+        nameGap: 32,
         nameTextStyle: {
           color: '#2c3e50',
           fontSize: 18,
@@ -322,12 +341,43 @@ const processData = (data) => {
 
   loading.value = false
 }
+
+const replayAnimation = () => {
+  const chart = chartRef.value?.chart
+  if (!chart || !timelineYears.value.length) return
+  chart.dispatchAction({ type: 'timelineChange', currentIndex: 0 })
+  chart.dispatchAction({ type: 'timelinePlayChange', playState: true })
+  activeYear.value = timelineYears.value[0]
+}
+
+const onTimelineChange = (event) => {
+  const index = event?.currentIndex ?? 0
+  const year = timelineYears.value[index]
+  if (year != null) {
+    activeYear.value = year
+  }
+}
 </script>
 
 <template>
   <div class="chart-container">
     <div v-if="loading" class="loading">Loading data...</div>
-    <v-chart v-else :option="chartOption" style="width: 100%; height: 620px;" autoresize />
+    <div v-else class="chart-wrapper">
+      <div class="chart-controls">
+        <span v-if="activeYear != null" class="year-badge">Current year: {{ activeYear }}</span>
+        <button type="button" class="replay-button" @click="replayAnimation">
+          Replay Animation
+        </button>
+      </div>
+      <v-chart
+        ref="chartRef"
+        :option="chartOption"
+        class="chart-canvas"
+        style="width: 100%; height: 100%;"
+        autoresize
+        @timelinechanged="onTimelineChange"
+      />
+    </div>
   </div>
 </template>
 
@@ -347,5 +397,55 @@ const processData = (data) => {
   color: #2c3e50;
   padding: 2rem;
   font-weight: 500;
+}
+
+.chart-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.chart-canvas {
+  flex: 1;
+  min-height: 440px;
+}
+
+.chart-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  align-items: center;
+}
+
+.replay-button {
+  background: #2c3e50;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.replay-button:hover {
+  background: #1a252f;
+  transform: translateY(-1px);
+}
+
+.replay-button:active {
+  transform: translateY(0);
+}
+
+.year-badge {
+  background: rgba(44, 62, 80, 0.08);
+  color: #2c3e50;
+  border-radius: 999px;
+  padding: 0.4rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 </style>
