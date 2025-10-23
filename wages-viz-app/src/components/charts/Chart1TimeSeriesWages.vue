@@ -1,12 +1,29 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed, watch } from 'vue'
 import Papa from 'papaparse'
+
+const props = defineProps({
+  fullscreen: {
+    type: Boolean,
+    default: false
+  }
+})
 
 const chartOption = ref({})
 const loading = ref(true)
 const chartRef = ref(null)
 const activeYear = ref(null)
 const timelineYears = ref([])
+const fontScale = computed(() => props.fullscreen ? 1.3 : 1)
+const rawData = ref(null)
+
+const fs = (size) => Math.round(size * fontScale.value)
+
+watch(() => props.fullscreen, () => {
+  if (rawData.value) {
+    processData(rawData.value)
+  }
+})
 
 onMounted(async () => {
   try {
@@ -18,6 +35,7 @@ onMounted(async () => {
       header: true,
       dynamicTyping: true,
       complete: (results) => {
+        rawData.value = results.data
         processData(results.data)
       }
     })
@@ -79,14 +97,14 @@ const processData = (data) => {
         autoPlay: true,
         loop: false,
         playInterval: 1500,
-        bottom: 8,
+        bottom: 12,
         left: '12%',
         right: '12%',
-        height: 54,
-        symbolSize: 12,
+        height: 48,
+        symbolSize: 11,
         label: {
           color: '#37474f',
-          fontSize: 14,
+          fontSize: fs(14),
           margin: 18,
           formatter: (value) => `${value}`
         },
@@ -114,12 +132,12 @@ const processData = (data) => {
         left: 'center',
         top: 5,
         textStyle: {
-          fontSize: 32,
+          fontSize: fs(32),
           fontWeight: 'bold',
           color: '#2c3e50'
         },
         subtextStyle: {
-          fontSize: 18,
+          fontSize: fs(18),
           color: '#666666'
         }
       },
@@ -132,17 +150,19 @@ const processData = (data) => {
             width: 2
           }
         },
-        backgroundColor: 'rgba(48, 48, 48, 0.95)',
-        borderColor: '#333',
-        borderWidth: 1,
+        backgroundColor: 'rgba(255, 252, 245, 0.98)',
+        borderColor: '#2c3e50',
+        borderWidth: 3,
+        padding: [16, 20],
         textStyle: {
-          color: '#fff',
-          fontSize: 14
+          color: '#2c3e50',
+          fontSize: fs(17),
+          fontFamily: 'Comic Sans MS, Brush Script MT, cursive'
         },
         formatter: (params) => {
           if (!params.length) return ''
           const dataIndex = params[0].dataIndex
-          let result = `<strong style="font-size: 16px;">${params[0].axisValue}</strong><br/>`
+          let result = `<strong style="font-size: ${fs(20)}px; font-family: Comic Sans MS, Brush Script MT, cursive;">${params[0].axisValue}</strong><br/>`
           params.forEach((item) => {
             const employees =
               item.seriesName === 'Public Sector'
@@ -150,7 +170,7 @@ const processData = (data) => {
                 : privateEmployees[dataIndex]
             result += `${item.marker} ${item.seriesName}: <strong>${item.value}%</strong>`
             if (employees != null) {
-              result += ` <span style="color:#cccccc;">(${formatEmployees(
+              result += ` <span style="color:#666666;">(${formatEmployees(
                 employees
               )} employees)</span>`
             }
@@ -161,10 +181,10 @@ const processData = (data) => {
       },
       legend: {
         data: ['Public Sector', 'Private Sector'],
-        top: 70,
+        top: 80,
         textStyle: {
           color: '#2c3e50',
-          fontSize: 16,
+          fontSize: fs(16),
           fontWeight: '500'
         },
         itemGap: 40,
@@ -174,8 +194,8 @@ const processData = (data) => {
       grid: {
         left: '8%',
         right: '6%',
-        bottom: 108,
-        top: '18%',
+        bottom: 120,
+        top: '20%',
         containLabel: true
       },
       xAxis: {
@@ -186,7 +206,7 @@ const processData = (data) => {
         nameGap: 32,
         nameTextStyle: {
           color: '#2c3e50',
-          fontSize: 18,
+          fontSize: fs(18),
           fontWeight: 'bold'
         },
         axisLine: {
@@ -196,7 +216,7 @@ const processData = (data) => {
           }
         },
         axisLabel: {
-          fontSize: 16,
+          fontSize: fs(16),
           color: '#2c3e50',
           fontWeight: '500'
         },
@@ -214,7 +234,7 @@ const processData = (data) => {
         nameGap: 65,
         nameTextStyle: {
           color: '#2c3e50',
-          fontSize: 18,
+          fontSize: fs(18),
           fontWeight: 'bold'
         },
         axisLine: {
@@ -226,7 +246,7 @@ const processData = (data) => {
         },
         axisLabel: {
           formatter: '{value}%',
-          fontSize: 16,
+          fontSize: fs(16),
           color: '#2c3e50',
           fontWeight: '500'
         },
@@ -273,7 +293,7 @@ const processData = (data) => {
             borderWidth: 1,
             borderRadius: 6,
             padding: [4, 8],
-            fontSize: 14,
+            fontSize: fs(14),
             fontWeight: '600',
             color: '#1976d2',
             formatter: ({ value }) => (value != null ? `${value}%` : '')
@@ -311,7 +331,7 @@ const processData = (data) => {
             borderWidth: 1,
             borderRadius: 6,
             padding: [4, 8],
-            fontSize: 14,
+            fontSize: fs(14),
             fontWeight: '600',
             color: '#d32f2f',
             formatter: ({ value }) => (value != null ? `${value}%` : '')

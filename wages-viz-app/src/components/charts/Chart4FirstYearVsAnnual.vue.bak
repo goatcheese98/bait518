@@ -1,25 +1,9 @@
 <script setup>
-import { ref, onMounted, computed, watch } from 'vue'
+import { ref, onMounted } from 'vue'
 import Papa from 'papaparse'
-
-const props = defineProps({
-  fullscreen: {
-    type: Boolean,
-    default: false
-  }
-})
 
 const chartOption = ref({})
 const loading = ref(true)
-const rawData = ref(null)
-const fontScale = computed(() => props.fullscreen ? 1.3 : 1)
-const fs = (size) => Math.round(size * fontScale.value)
-
-watch(() => props.fullscreen, () => {
-  if (rawData.value) {
-    processData(rawData.value)
-  }
-})
 
 onMounted(async () => {
   try {
@@ -30,7 +14,6 @@ onMounted(async () => {
       header: true,
       dynamicTyping: true,
       complete: (results) => {
-        rawData.value = results.data
         processData(results.data)
       }
     })
@@ -52,7 +35,7 @@ const processData = (data) => {
         left: 'center',
         top: '40%',
         textStyle: {
-          fontSize: fs(28),
+          fontSize: 28,
           fontWeight: 'bold',
           color: '#2c3e50'
         }
@@ -63,7 +46,7 @@ const processData = (data) => {
         top: '52%',
         style: {
           text: 'No aggregate industry data available.',
-          fontSize: fs(18),
+          fontSize: 18,
           fill: '#666666'
         }
       }
@@ -106,21 +89,21 @@ const processData = (data) => {
       left: 'center',
       top: 5,
       textStyle: {
-        fontSize: fs(32),
+        fontSize: 32,
         fontWeight: 'bold',
         color: '#2c3e50'
       },
       subtextStyle: {
-        fontSize: fs(16),
+        fontSize: 16,
         color: '#666666'
       }
     },
     legend: {
       data: ['First-Year Adjustment', 'Annualised Adjustment'],
-      top: 80,
+      top: 70,
       textStyle: {
         color: '#2c3e50',
-        fontSize: fs(16),
+        fontSize: 16,
         fontWeight: '500'
       },
       itemGap: 40,
@@ -138,7 +121,7 @@ const processData = (data) => {
       padding: [16, 20],
       textStyle: {
         color: '#2c3e50',
-        fontSize: fs(17),
+        fontSize: 17,
         fontFamily: 'Comic Sans MS, Brush Script MT, cursive'
       },
       formatter: (params) => {
@@ -146,7 +129,7 @@ const processData = (data) => {
         const annual = params.find((item) => item.seriesName === 'Annualised Adjustment')
         const gap =
           first && annual ? Number((first.value - annual.value).toFixed(2)) : null
-        let tooltip = `<strong style=\"font-size: ${fs(20)}px; font-family: Comic Sans MS, Brush Script MT, cursive;\">${params[0].axisValue}</strong><br/>`
+        let tooltip = `<strong style=\"font-size: 20px; font-family: Comic Sans MS, Brush Script MT, cursive;\">${params[0].axisValue}</strong><br/>`
         params.forEach((item) => {
           tooltip += `${item.marker} ${item.seriesName}: <strong>${item.value}%</strong><br/>`
         })
@@ -160,7 +143,7 @@ const processData = (data) => {
       left: '8%',
       right: '6%',
       bottom: '12%',
-      top: '23%',
+      top: '22%',
       containLabel: true
     },
     xAxis: {
@@ -172,7 +155,7 @@ const processData = (data) => {
       nameGap: 45,
       nameTextStyle: {
         color: '#2c3e50',
-        fontSize: fs(18),
+        fontSize: 18,
         fontWeight: 'bold'
       },
       axisLine: {
@@ -182,7 +165,7 @@ const processData = (data) => {
         }
       },
       axisLabel: {
-        fontSize: fs(16),
+        fontSize: 16,
         color: '#2c3e50',
         fontWeight: '500'
       },
@@ -202,7 +185,7 @@ const processData = (data) => {
       max: Math.ceil((annualMax || 5) + 1),
       nameTextStyle: {
         color: '#2c3e50',
-        fontSize: fs(18),
+        fontSize: 18,
         fontWeight: 'bold'
       },
       axisLine: {
@@ -213,7 +196,7 @@ const processData = (data) => {
       },
       axisLabel: {
         formatter: '{value}%',
-        fontSize: fs(16),
+        fontSize: 16,
         color: '#2c3e50',
         fontWeight: '500'
       },
@@ -240,7 +223,7 @@ const processData = (data) => {
           show: true,
           position: 'top',
           formatter: '{c}%',
-          fontSize: fs(12),
+          fontSize: 12,
           fontWeight: 600,
           color: '#2c3e50'
         },
@@ -263,7 +246,7 @@ const processData = (data) => {
           show: true,
           position: 'top',
           formatter: '{c}%',
-          fontSize: fs(12),
+          fontSize: 12,
           fontWeight: 600,
           color: '#2c3e50'
         },
@@ -301,7 +284,7 @@ const processData = (data) => {
           rich: {
             pos: {
               color: '#1b5e20',
-              fontSize: fs(12),
+              fontSize: 12,
               fontWeight: 600,
               backgroundColor: 'rgba(255,255,255,0.9)',
               borderRadius: 4,
@@ -311,7 +294,7 @@ const processData = (data) => {
             },
             neg: {
               color: '#b71c1c',
-              fontSize: fs(12),
+              fontSize: 12,
               fontWeight: 600,
               backgroundColor: 'rgba(255,255,255,0.9)',
               borderRadius: 4,
@@ -335,7 +318,7 @@ const processData = (data) => {
             top: '20%',
             style: {
               text: 'Notice the widening front-load since 2022.',
-              fontSize: fs(14),
+              fontSize: 14,
               fill: '#424242',
               fontWeight: 500,
               backgroundColor: 'rgba(255, 255, 255, 0.8)',

@@ -14,6 +14,7 @@ import Chart2IndustryLeaders from './components/charts/Chart2IndustryLeaders.vue
 import Chart3DurationVsWages from './components/charts/Chart3DurationVsWages.vue'
 import Chart4FirstYearVsAnnual from './components/charts/Chart4FirstYearVsAnnual.vue'
 import Chart5EmployeesVsRaises from './components/charts/Chart5EmployeesVsRaises.vue'
+import Chart6IndustryWageDistribution from './components/charts/Chart6IndustryWageDistribution.vue'
 
 const swiperModules = [Navigation, Pagination, Keyboard]
 const currentSlide = ref(1)
@@ -85,31 +86,37 @@ onBeforeUnmount(() => {
       >
         <SwiperSlide>
           <div class="slide-card">
-            <Chart1TimeSeriesWages />
+            <Chart1TimeSeriesWages :fullscreen="isFullscreen" />
           </div>
         </SwiperSlide>
 
         <SwiperSlide>
           <div class="slide-card">
-            <Chart2IndustryLeaders />
+            <Chart6IndustryWageDistribution :fullscreen="isFullscreen" />
           </div>
         </SwiperSlide>
 
         <SwiperSlide>
           <div class="slide-card">
-            <Chart3DurationVsWages />
+            <Chart2IndustryLeaders :fullscreen="isFullscreen" />
           </div>
         </SwiperSlide>
 
         <SwiperSlide>
           <div class="slide-card">
-            <Chart4FirstYearVsAnnual />
+            <Chart3DurationVsWages :fullscreen="isFullscreen" />
           </div>
         </SwiperSlide>
 
         <SwiperSlide>
           <div class="slide-card">
-            <Chart5EmployeesVsRaises />
+            <Chart4FirstYearVsAnnual :fullscreen="isFullscreen" />
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <div class="slide-card">
+            <Chart5EmployeesVsRaises :fullscreen="isFullscreen" />
           </div>
         </SwiperSlide>
       </Swiper>
@@ -279,7 +286,7 @@ footer {
   max-width: none;
   width: 96vw;
   height: 94vh;
-  padding: 1.5rem 2rem;
+  padding: 2rem 2.5rem;
   border-radius: 18px;
   margin: 0;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
@@ -303,7 +310,7 @@ footer {
 }
 
 #app.fullscreen :deep(.swiper-pagination) {
-  bottom: 2rem !important;
+  bottom: 1rem !important;
 }
 
 #app.fullscreen :deep(.swiper-pagination-bullet),

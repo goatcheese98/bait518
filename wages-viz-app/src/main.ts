@@ -15,7 +15,8 @@ import {
   LineChart,
   BarChart,
   ScatterChart,
-  PieChart
+  PieChart,
+  BoxplotChart
 } from 'echarts/charts'
 import {
   GridComponent,
@@ -24,7 +25,8 @@ import {
   TitleComponent,
   DataZoomComponent,
   ToolboxComponent,
-  TimelineComponent
+  TimelineComponent,
+  GraphicComponent
 } from 'echarts/components'
 
 // Register ECharts components
@@ -34,13 +36,15 @@ use([
   BarChart,
   ScatterChart,
   PieChart,
+  BoxplotChart,
   GridComponent,
   TooltipComponent,
   LegendComponent,
   TitleComponent,
   DataZoomComponent,
   ToolboxComponent,
-  TimelineComponent
+  TimelineComponent,
+  GraphicComponent
 ])
 
 const app = createApp(App)

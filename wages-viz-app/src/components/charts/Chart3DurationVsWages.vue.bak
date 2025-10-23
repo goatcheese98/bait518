@@ -1,25 +1,9 @@
 <script setup>
-import { ref, onMounted, computed, watch } from 'vue'
+import { ref, onMounted } from 'vue'
 import Papa from 'papaparse'
-
-const props = defineProps({
-  fullscreen: {
-    type: Boolean,
-    default: false
-  }
-})
 
 const chartOption = ref({})
 const loading = ref(true)
-const rawData = ref(null)
-const fontScale = computed(() => props.fullscreen ? 1.3 : 1)
-const fs = (size) => Math.round(size * fontScale.value)
-
-watch(() => props.fullscreen, () => {
-  if (rawData.value) {
-    processData(rawData.value)
-  }
-})
 
 const INDUSTRIES = [
   'Construction',
@@ -44,7 +28,6 @@ onMounted(async () => {
       header: true,
       dynamicTyping: true,
       complete: (results) => {
-        rawData.value = results.data
         processData(results.data)
       }
     })
@@ -100,7 +83,7 @@ const processData = (data) => {
         left: 'center',
         top: '40%',
         textStyle: {
-          fontSize: fs(28),
+          fontSize: 28,
           fontWeight: 'bold',
           color: '#2c3e50'
         }
@@ -111,7 +94,7 @@ const processData = (data) => {
         top: '52%',
         style: {
           text: 'No duration data available for the selected period.',
-          fontSize: fs(18),
+          fontSize: 18,
           fill: '#666666'
         }
       }
@@ -269,7 +252,7 @@ const processData = (data) => {
             formatter: '4%+ raises',
             color: '#1976d2',
             fontWeight: '600',
-            fontSize: fs(13),
+            fontSize: 13,
             padding: [4, 6],
             backgroundColor: 'rgba(255,255,255,0.8)',
             borderRadius: 6,
@@ -290,23 +273,23 @@ const processData = (data) => {
       left: 'center',
       top: 5,
       textStyle: {
-        fontSize: fs(32),
+        fontSize: 32,
         fontWeight: 'bold',
         color: '#2c3e50'
       },
       subtextStyle: {
-        fontSize: fs(16),
+        fontSize: 16,
         color: '#666666',
         lineHeight: 22
       }
     },
     legend: {
       data: [...highlightSeries.map((item) => item.name), 'Other industries'],
-      top: 110,
+      top: 100,
       left: 'center',
       textStyle: {
         color: '#2c3e50',
-        fontSize: fs(16),
+        fontSize: 16,
         fontWeight: '500'
       },
       itemWidth: 22,
@@ -321,7 +304,7 @@ const processData = (data) => {
         top: '86%',
         style: {
           text: 'Shaded band highlights annual raises above 3.5%',
-          fontSize: fs(13),
+          fontSize: 13,
           fill: '#455a64',
           fontWeight: 500,
           lineHeight: 20
@@ -336,13 +319,13 @@ const processData = (data) => {
       padding: [16, 20],
       textStyle: {
         color: '#2c3e50',
-        fontSize: fs(17),
+        fontSize: 17,
         fontFamily: 'Comic Sans MS, Brush Script MT, cursive'
       },
       formatter: (params) => {
         const { data } = params
         return `
-          <strong style="font-size: ${fs(20)}px; font-family: Comic Sans MS, Brush Script MT, cursive;">${data.name}</strong><br/>
+          <strong style="font-size: 20px; font-family: Comic Sans MS, Brush Script MT, cursive;">${data.name}</strong><br/>
           Avg Annual Adjustment: <strong>${data.avgAnnual}%</strong><br/>
           Avg First-Year Adjustment: <strong>${data.avgFirstYear}%</strong><br/>
           Avg Contract Duration: <strong>${data.avgDuration} months</strong><br/>
@@ -355,7 +338,7 @@ const processData = (data) => {
       left: '8%',
       right: '6%',
       bottom: '16%',
-      top: '25%',
+      top: '22%',
       containLabel: true
     },
     xAxis: {
@@ -367,7 +350,7 @@ const processData = (data) => {
       max: Math.ceil(Math.max(...scatterData.map((item) => item.value[0])) + 2),
       nameTextStyle: {
         color: '#2c3e50',
-        fontSize: fs(18),
+        fontSize: 18,
         fontWeight: 'bold'
       },
       axisLine: {
@@ -377,7 +360,7 @@ const processData = (data) => {
         }
       },
       axisLabel: {
-        fontSize: fs(16),
+        fontSize: 16,
         color: '#2c3e50',
         fontWeight: '500'
       },
@@ -397,7 +380,7 @@ const processData = (data) => {
       max: Math.ceil(Math.max(...scatterData.map((item) => item.value[1])) + 1),
       nameTextStyle: {
         color: '#2c3e50',
-        fontSize: fs(18),
+        fontSize: 18,
         fontWeight: 'bold'
       },
       axisLine: {
@@ -408,7 +391,7 @@ const processData = (data) => {
       },
       axisLabel: {
         formatter: '{value}%',
-        fontSize: fs(16),
+        fontSize: 16,
         color: '#2c3e50',
         fontWeight: '500'
       },

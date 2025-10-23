@@ -1,25 +1,9 @@
 <script setup>
-import { ref, onMounted, computed, watch } from 'vue'
+import { ref, onMounted } from 'vue'
 import Papa from 'papaparse'
-
-const props = defineProps({
-  fullscreen: {
-    type: Boolean,
-    default: false
-  }
-})
 
 const chartOption = ref({})
 const loading = ref(true)
-const rawData = ref(null)
-const fontScale = computed(() => props.fullscreen ? 1.3 : 1)
-const fs = (size) => Math.round(size * fontScale.value)
-
-watch(() => props.fullscreen, () => {
-  if (rawData.value) {
-    processData(rawData.value)
-  }
-})
 
 const PROVINCES = [
   'Alberta',
@@ -44,7 +28,6 @@ onMounted(async () => {
       header: true,
       dynamicTyping: true,
       complete: (results) => {
-        rawData.value = results.data
         processData(results.data)
       }
     })
@@ -94,7 +77,7 @@ const processData = (data) => {
         left: 'center',
         top: '40%',
         textStyle: {
-          fontSize: fs(28),
+          fontSize: 28,
           fontWeight: 'bold',
           color: '#2c3e50'
         }
@@ -105,7 +88,7 @@ const processData = (data) => {
         top: '52%',
         style: {
           text: 'No regional data available for the selected period.',
-          fontSize: fs(18),
+          fontSize: 18,
           fill: '#666666'
         }
       }
@@ -177,12 +160,12 @@ const processData = (data) => {
       left: 'center',
       top: 5,
       textStyle: {
-        fontSize: fs(32),
+        fontSize: 32,
         fontWeight: 'bold',
         color: '#2c3e50'
       },
       subtextStyle: {
-        fontSize: fs(16),
+        fontSize: 16,
         color: '#666666'
       }
     },
@@ -194,13 +177,13 @@ const processData = (data) => {
       padding: [16, 20],
       textStyle: {
         color: '#2c3e50',
-        fontSize: fs(17),
+        fontSize: 17,
         fontFamily: 'Comic Sans MS, Brush Script MT, cursive'
       },
       formatter: (params) => {
         const { data } = params
         return `
-          <strong style="font-size: ${fs(20)}px; font-family: Comic Sans MS, Brush Script MT, cursive;">${data.name}</strong><br/>
+          <strong style="font-size: 20px; font-family: Comic Sans MS, Brush Script MT, cursive;">${data.name}</strong><br/>
           Avg Annual Adjustment: <strong>${data.annualAvg.toFixed(2)}%</strong><br/>
           Avg First-Year Adjustment: <strong>${data.firstYearAvg.toFixed(2)}%</strong><br/>
           Avg Employees Covered (per year): <strong>${Math.round(data.employees).toLocaleString()}</strong><br/>
@@ -211,10 +194,10 @@ const processData = (data) => {
     },
     legend: {
       data: [...highlightSeries.map((series) => series.name), ...(otherSeries ? ['Other provinces'] : [])],
-      top: 80,
+      top: 70,
       textStyle: {
         color: '#2c3e50',
-        fontSize: fs(16),
+        fontSize: 16,
         fontWeight: '500'
       },
       itemGap: 26
@@ -223,7 +206,7 @@ const processData = (data) => {
       left: '10%',
       right: '6%',
       bottom: '12%',
-      top: '21%',
+      top: '20%',
       containLabel: true
     },
     xAxis: {
@@ -233,14 +216,9 @@ const processData = (data) => {
       nameGap: 50,
       min: Math.max(Math.floor(employeeMin / 1000) * 1000 - 5000, 0),
       max: Math.ceil(employeeMax / 1000) * 1000 + 5000,
-      nameTextStyle: {
-        color: '#2c3e50',
-        fontSize: fs(18),
-        fontWeight: 'bold'
-      },
       axisLabel: {
       formatter: (value) => `${(value / 1000).toFixed(0)}k`,
-        fontSize: fs(16),
+        fontSize: 16,
         color: '#2c3e50',
         fontWeight: '500'
       },
@@ -264,14 +242,9 @@ const processData = (data) => {
       nameGap: 60,
       min: Math.max(Math.floor(annualMin) - 1, 0),
       max: Math.ceil(annualMax + 1),
-      nameTextStyle: {
-        color: '#2c3e50',
-        fontSize: fs(18),
-        fontWeight: 'bold'
-      },
       axisLabel: {
         formatter: '{value}%',
-        fontSize: fs(16),
+        fontSize: 16,
         color: '#2c3e50',
         fontWeight: '500'
       },

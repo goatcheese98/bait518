@@ -106,37 +106,6 @@ const processData = (data) => {
 
   const topIndustries = industrySummary.slice(0, 8)
 
-  // Cohesive color palette - darker blues for higher employee coverage
-  const getBarColor = (employeeTotal, index) => {
-    // Create gradient based on employee count (more employees = darker blues)
-    const minEmployees = Math.min(...topIndustries.map(item => item.employeeTotal))
-    const maxEmployees = Math.max(...topIndustries.map(item => item.employeeTotal))
-    const normalized = (employeeTotal - minEmployees) / (maxEmployees - minEmployees)
-
-    // Blue palette from very light to dark based on employee coverage
-    const lightBlue = [187, 222, 251]  // #BBDEFB - Much lighter for better contrast
-    const darkBlue = [25, 118, 210]    // #1976D2
-
-    const r = Math.round(lightBlue[0] + (darkBlue[0] - lightBlue[0]) * normalized)
-    const g = Math.round(lightBlue[1] + (darkBlue[1] - lightBlue[1]) * normalized)
-    const b = Math.round(lightBlue[2] + (darkBlue[2] - lightBlue[2]) * normalized)
-
-    const startColor = `rgb(${r}, ${g}, ${b})`
-    const endColor = `rgb(${Math.min(r + 40, 255)}, ${Math.min(g + 40, 255)}, ${Math.min(b + 40, 255)})`
-
-    return {
-      type: 'linear',
-      x: 0,
-      y: 0,
-      x2: 1,
-      y2: 0,
-      colorStops: [
-        { offset: 0, color: startColor },
-        { offset: 1, color: endColor }
-      ]
-    }
-  }
-
   if (!topIndustries.length) {
     chartOption.value = {
       title: {
@@ -144,7 +113,7 @@ const processData = (data) => {
         left: 'center',
         top: '40%',
         textStyle: {
-          fontSize: fs(28),
+          fontSize: 28,
           fontWeight: 'bold',
           color: '#2c3e50'
         }
@@ -155,7 +124,7 @@ const processData = (data) => {
         top: '52%',
         style: {
           text: 'No industry-level data available for the selected period.',
-          fontSize: fs(18),
+          fontSize: 18,
           fill: '#666666'
         }
       }
@@ -220,10 +189,10 @@ const processData = (data) => {
       }
     },
     grid: {
-      left: '3%',
-      right: '10%',
+      left: '5%',
+      right: '8%',
       bottom: '12%',
-      top: '15%',
+      top: '28%',
       containLabel: true
     },
     xAxis: {
@@ -235,23 +204,25 @@ const processData = (data) => {
       nameGap: 50,
       nameTextStyle: {
         color: '#2c3e50',
-        fontSize: fs(18),
+        fontSize: 18,
         fontWeight: 'bold'
       },
       axisLine: {
-        show: false
+        lineStyle: {
+          color: '#333333',
+          width: 2
+        }
       },
       axisLabel: {
         formatter: '{value}%',
-        fontSize: fs(16),
-        color: '#37474f',
+        fontSize: 16,
+        color: '#2c3e50',
         fontWeight: '500'
       },
       splitLine: {
         lineStyle: {
-          color: '#f0f0f0',
-          width: 1,
-          type: 'dashed'
+          color: '#e0e0e0',
+          width: 1
         }
       }
     },
@@ -263,38 +234,29 @@ const processData = (data) => {
       nameGap: 15,
       nameTextStyle: {
         color: '#2c3e50',
-        fontSize: fs(18),
+        fontSize: 18,
         fontWeight: 'bold'
       },
       axisLine: {
         lineStyle: {
-          color: '#e0e0e0',
-          width: 1
+          color: '#333333',
+          width: 2
         }
       },
       axisLabel: {
-        fontSize: fs(15),
-        color: '#37474f',
-        fontWeight: '500',
-        margin: 12
+        fontSize: 15,
+        color: '#2c3e50',
+        fontWeight: '500'
       },
       axisTick: {
         show: false
-      },
-      splitLine: {
-        show: true,
-        lineStyle: {
-          color: '#f5f5f5',
-          width: 1,
-          type: 'solid'
-        }
       }
     },
     visualMap: null,
     series: [
       {
         type: 'bar',
-        data: topIndustries.map((item, index) => ({
+        data: topIndustries.map((item) => ({
           value: item.avgAnnual,
           industry: item.industry,
           avgAnnual: item.avgAnnual,
@@ -303,35 +265,26 @@ const processData = (data) => {
           latestAnnual: item.latestAnnual,
           employeeTotal: item.employeeTotal,
           itemStyle: {
-            color: getBarColor(item.employeeTotal, index),
-            borderRadius: [0, 12, 12, 0],
-            shadowBlur: 8,
-            shadowColor: 'rgba(0, 0, 0, 0.15)',
-            shadowOffsetX: 2,
-            shadowOffsetY: 2
+            color: interpolateColor(item.avgFirstYear)
           }
         })),
         realtimeSort: true,
-        barMaxWidth: 45,
+        barMaxWidth: 38,
+        itemStyle: {
+          borderRadius: [0, 10, 10, 0]
+        },
         label: {
           show: true,
           position: 'right',
           formatter: '{c}%',
-          fontSize: fs(16),
+          fontSize: 15,
           fontWeight: 'bold',
-          color: '#2c3e50',
-          distance: 8
+          color: '#2c3e50'
         },
         emphasis: {
           itemStyle: {
-            shadowBlur: 20,
-            shadowColor: 'rgba(0, 0, 0, 0.35)',
-            borderWidth: 2,
-            borderColor: '#ffffff'
-          },
-          label: {
-            fontSize: fs(18),
-            fontWeight: 'bold'
+            shadowBlur: 12,
+            shadowColor: 'rgba(0, 0, 0, 0.25)'
           }
         }
       }
