@@ -10,10 +10,10 @@ import 'swiper/css/pagination'
 
 // Import chart components
 import Chart1TimeSeriesWages from './components/charts/Chart1TimeSeriesWages.vue'
-import Chart2GeographicComparison from './components/charts/Chart2GeographicComparison.vue'
-import Chart3SectorDeepDive from './components/charts/Chart3SectorDeepDive.vue'
-import Chart4COLAAdoption from './components/charts/Chart4COLAAdoption.vue'
-import Chart5DurationVsWages from './components/charts/Chart5DurationVsWages.vue'
+import Chart2IndustryLeaders from './components/charts/Chart2IndustryLeaders.vue'
+import Chart3DurationVsWages from './components/charts/Chart3DurationVsWages.vue'
+import Chart4FirstYearVsAnnual from './components/charts/Chart4FirstYearVsAnnual.vue'
+import Chart5EmployeesVsRaises from './components/charts/Chart5EmployeesVsRaises.vue'
 
 const swiperModules = [Navigation, Pagination, Keyboard]
 const currentSlide = ref(1)
@@ -46,19 +46,19 @@ const onSlideChange = (swiper) => {
         </SwiperSlide>
 
         <SwiperSlide>
-          <Chart4COLAAdoption />
+          <Chart2IndustryLeaders />
         </SwiperSlide>
 
         <SwiperSlide>
-          <Chart2GeographicComparison />
+          <Chart3DurationVsWages />
         </SwiperSlide>
 
         <SwiperSlide>
-          <Chart3SectorDeepDive />
+          <Chart4FirstYearVsAnnual />
         </SwiperSlide>
 
         <SwiperSlide>
-          <Chart5DurationVsWages />
+          <Chart5EmployeesVsRaises />
         </SwiperSlide>
       </Swiper>
 

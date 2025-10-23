@@ -1,0 +1,7 @@
+{
+  "name": "wages-viz-app",
+  "compatibility_date": "2025-10-23",
+  "assets": {
+    "directory": "./wages-viz-app/dist"
+  }
+}

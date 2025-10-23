@@ -25,207 +25,299 @@ onMounted(async () => {
 })
 
 const processData = (data) => {
-  // Filter for All Industries and separate by sector
-  const publicData = data.filter(row =>
-    row.Industry === 'All industries' && row.Sector_Type === 'Public Sector'
+  // Filter for "All industries" and split by sector to prepare the race
+  const publicData = data.filter(
+    (row) => row.Industry === 'All industries' && row.Sector_Type === 'Public Sector'
   )
-  const privateData = data.filter(row =>
-    row.Industry === 'All industries' && row.Sector_Type === 'Private Sector'
+  const privateData = data.filter(
+    (row) => row.Industry === 'All industries' && row.Sector_Type === 'Private Sector'
   )
 
-  // Extract years and values
-  const years = publicData.map(row => row.Year).sort()
-  const publicWages = years.map(year => {
-    const row = publicData.find(r => r.Year === year)
-    return row ? row.Annual_Pct_Adjustment_Avg : null
-  })
-  const privateWages = years.map(year => {
-    const row = privateData.find(r => r.Year === year)
-    return row ? row.Annual_Pct_Adjustment_Avg : null
-  })
-  const publicEmployees = years.map(year => {
-    const row = publicData.find(r => r.Year === year)
-    return row ? row.Number_of_Employees : null
-  })
-  const privateEmployees = years.map(year => {
-    const row = privateData.find(r => r.Year === year)
-    return row ? row.Number_of_Employees : null
-  })
+  const years = Array.from(new Set([...publicData, ...privateData].map((row) => row.Year))).sort(
+    (a, b) => a - b
+  )
+
+  if (!years.length) {
+    chartOption.value = {}
+    loading.value = false
+    return
+  }
+
+  const valueForYear = (rows, key) =>
+    years.map((year) => {
+      const match = rows.find((row) => row.Year === year)
+      return match ? match[key] : null
+    })
+
+  const publicWages = valueForYear(publicData, 'Annual_Pct_Adjustment_Avg')
+  const privateWages = valueForYear(privateData, 'Annual_Pct_Adjustment_Avg')
+  const publicEmployees = valueForYear(publicData, 'Number_of_Employees')
+  const privateEmployees = valueForYear(privateData, 'Number_of_Employees')
+
+  const formatEmployees = (value) => (value != null ? value.toLocaleString('en-CA') : 'N/A')
+
+  const cumulative = (series) =>
+    years.map((_, index) => {
+      return series.slice(0, index + 1)
+    })
+
+  const cumulativeYears = cumulative(years)
+  const publicRace = cumulative(publicWages)
+  const privateRace = cumulative(privateWages)
 
   chartOption.value = {
-    backgroundColor: '#ffffff',
-    title: {
-      text: 'Public vs Private: Wage Adjustment Over Time',
-      subtext: 'Annual percentage adjustment trends (2016-2024)',
-      left: 'center',
-      top: 15,
-      textStyle: {
-        fontSize: 32,
-        fontWeight: 'bold',
-        color: '#2c3e50'
-      },
-      subtextStyle: {
-        fontSize: 18,
-        color: '#666666'
-      }
-    },
-    tooltip: {
-      trigger: 'axis',
-      axisPointer: {
-        type: 'cross',
-        crossStyle: {
-          color: '#999'
-        }
-      },
-      backgroundColor: 'rgba(50, 50, 50, 0.95)',
-      borderColor: '#333',
-      borderWidth: 1,
-      textStyle: {
-        color: '#fff',
-        fontSize: 14
-      },
-      formatter: (params) => {
-        let result = `<strong style="font-size: 16px;">${params[0].axisValue}</strong><br/>`
-        params.forEach(item => {
-          result += `${item.marker} ${item.seriesName}: <strong>${item.value}%</strong><br/>`
-        })
-        return result
-      }
-    },
-    legend: {
-      data: ['Public Sector', 'Private Sector'],
-      top: 85,
-      textStyle: {
-        color: '#2c3e50',
-        fontSize: 16,
-        fontWeight: '500'
-      },
-      itemGap: 40,
-      itemWidth: 30,
-      itemHeight: 4
-    },
-    grid: {
-      left: '8%',
-      right: '6%',
-      bottom: '12%',
-      top: '25%',
-      containLabel: true
-    },
-    xAxis: {
-      type: 'category',
-      data: years,
-      name: 'Year',
-      nameLocation: 'middle',
-      nameGap: 45,
-      nameTextStyle: {
-        color: '#2c3e50',
-        fontSize: 18,
-        fontWeight: 'bold'
-      },
-      axisLine: {
-        lineStyle: {
-          color: '#333333',
-          width: 2
-        }
-      },
-      axisLabel: {
-        fontSize: 16,
-        color: '#2c3e50',
-        fontWeight: '500'
-      },
-      axisTick: {
-        lineStyle: {
-          color: '#333333'
-        }
-      }
-    },
-    yAxis: {
-      type: 'value',
-      name: 'Annual Wage Adjustment (%)',
-      nameLocation: 'middle',
-      nameGap: 65,
-      nameTextStyle: {
-        color: '#2c3e50',
-        fontSize: 18,
-        fontWeight: 'bold'
-      },
-      axisLine: {
-        show: true,
-        lineStyle: {
-          color: '#333333',
-          width: 2
-        }
-      },
-      axisLabel: {
-        formatter: '{value}%',
-        fontSize: 16,
-        color: '#2c3e50',
-        fontWeight: '500'
-      },
-      splitLine: {
-        lineStyle: {
-          color: '#e0e0e0',
-          width: 1
-        }
-      },
-      axisTick: {
-        lineStyle: {
-          color: '#333333'
-        }
-      }
-    },
-    series: [
-      {
-        name: 'Public Sector',
-        type: 'line',
-        data: publicWages,
-        smooth: true,
-        lineStyle: {
-          width: 5,
-          color: '#1976d2'
-        },
-        itemStyle: {
-          color: '#1976d2',
-          borderWidth: 3,
-          borderColor: '#ffffff'
-        },
+    baseOption: {
+      backgroundColor: '#ffffff',
+      timeline: {
+        axisType: 'category',
+        autoPlay: true,
+        loop: false,
+        playInterval: 1500,
         symbolSize: 12,
-        emphasis: {
-          focus: 'series',
-          itemStyle: {
-            borderWidth: 4,
-            shadowBlur: 15,
-            shadowColor: 'rgba(25, 118, 210, 0.5)',
-            scale: 1.3
+        top: 120,
+        tooltip: {
+          formatter: '{b}'
+        },
+        label: {
+          color: '#2c3e50',
+          fontSize: 14,
+          formatter: (value) => `${value}`
+        },
+        controlStyle: {
+          color: '#2c3e50',
+          borderColor: '#2c3e50'
+        },
+        data: years.map(String)
+      },
+      title: {
+        text: 'Public vs Private: Wage Adjustment Race',
+        subtext: 'Annual percentage adjustment trends (2016-2025)',
+        left: 'center',
+        top: 15,
+        textStyle: {
+          fontSize: 32,
+          fontWeight: 'bold',
+          color: '#2c3e50'
+        },
+        subtextStyle: {
+          fontSize: 18,
+          color: '#666666'
+        }
+      },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'line',
+          lineStyle: {
+            color: '#999',
+            width: 2
+          }
+        },
+        backgroundColor: 'rgba(48, 48, 48, 0.95)',
+        borderColor: '#333',
+        borderWidth: 1,
+        textStyle: {
+          color: '#fff',
+          fontSize: 14
+        },
+        formatter: (params) => {
+          if (!params.length) return ''
+          const dataIndex = params[0].dataIndex
+          let result = `<strong style="font-size: 16px;">${params[0].axisValue}</strong><br/>`
+          params.forEach((item) => {
+            const employees =
+              item.seriesName === 'Public Sector'
+                ? publicEmployees[dataIndex]
+                : privateEmployees[dataIndex]
+            result += `${item.marker} ${item.seriesName}: <strong>${item.value}%</strong>`
+            if (employees != null) {
+              result += ` <span style="color:#cccccc;">(${formatEmployees(
+                employees
+              )} employees)</span>`
+            }
+            result += '<br/>'
+          })
+          return result
+        }
+      },
+      legend: {
+        data: ['Public Sector', 'Private Sector'],
+        top: 85,
+        textStyle: {
+          color: '#2c3e50',
+          fontSize: 16,
+          fontWeight: '500'
+        },
+        itemGap: 40,
+        itemWidth: 30,
+        itemHeight: 4
+      },
+      grid: {
+        left: '8%',
+        right: '6%',
+        bottom: '18%',
+        top: '32%',
+        containLabel: true
+      },
+      xAxis: {
+        type: 'category',
+        name: 'Year',
+        boundaryGap: false,
+        nameLocation: 'middle',
+        nameGap: 45,
+        nameTextStyle: {
+          color: '#2c3e50',
+          fontSize: 18,
+          fontWeight: 'bold'
+        },
+        axisLine: {
+          lineStyle: {
+            color: '#333333',
+            width: 2
+          }
+        },
+        axisLabel: {
+          fontSize: 16,
+          color: '#2c3e50',
+          fontWeight: '500'
+        },
+        axisTick: {
+          lineStyle: {
+            color: '#333333'
+          }
+        },
+        data: cumulativeYears[0].map(String)
+      },
+      yAxis: {
+        type: 'value',
+        name: 'Annual Wage Adjustment (%)',
+        nameLocation: 'middle',
+        nameGap: 65,
+        nameTextStyle: {
+          color: '#2c3e50',
+          fontSize: 18,
+          fontWeight: 'bold'
+        },
+        axisLine: {
+          show: true,
+          lineStyle: {
+            color: '#333333',
+            width: 2
+          }
+        },
+        axisLabel: {
+          formatter: '{value}%',
+          fontSize: 16,
+          color: '#2c3e50',
+          fontWeight: '500'
+        },
+        splitLine: {
+          lineStyle: {
+            color: '#e0e0e0',
+            width: 1
+          }
+        },
+        axisTick: {
+          lineStyle: {
+            color: '#333333'
           }
         }
       },
-      {
-        name: 'Private Sector',
-        type: 'line',
-        data: privateWages,
-        smooth: true,
-        lineStyle: {
-          width: 5,
-          color: '#d32f2f'
-        },
-        itemStyle: {
-          color: '#d32f2f',
-          borderWidth: 3,
-          borderColor: '#ffffff'
-        },
-        symbolSize: 12,
-        emphasis: {
-          focus: 'series',
+      series: [
+        {
+          name: 'Public Sector',
+          type: 'line',
+          smooth: true,
+          symbolSize: 12,
+          lineStyle: {
+            width: 5,
+            color: '#1976d2'
+          },
           itemStyle: {
-            borderWidth: 4,
-            shadowBlur: 15,
-            shadowColor: 'rgba(211, 47, 47, 0.5)',
-            scale: 1.3
-          }
+            color: '#1976d2',
+            borderWidth: 3,
+            borderColor: '#ffffff'
+          },
+          emphasis: {
+            focus: 'series',
+            scale: 1.2,
+            itemStyle: {
+              borderWidth: 4,
+              shadowBlur: 15,
+              shadowColor: 'rgba(25, 118, 210, 0.5)'
+            }
+          },
+          endLabel: {
+            show: true,
+            backgroundColor: 'rgba(255,255,255,0.9)',
+            borderColor: '#1976d2',
+            borderWidth: 1,
+            borderRadius: 6,
+            padding: [4, 8],
+            fontSize: 14,
+            fontWeight: '600',
+            color: '#1976d2',
+            formatter: ({ value }) => (value != null ? `${value}%` : '')
+          },
+          universalTransition: true,
+          data: publicRace[0]
+        },
+        {
+          name: 'Private Sector',
+          type: 'line',
+          smooth: true,
+          symbolSize: 12,
+          lineStyle: {
+            width: 5,
+            color: '#d32f2f'
+          },
+          itemStyle: {
+            color: '#d32f2f',
+            borderWidth: 3,
+            borderColor: '#ffffff'
+          },
+          emphasis: {
+            focus: 'series',
+            scale: 1.2,
+            itemStyle: {
+              borderWidth: 4,
+              shadowBlur: 15,
+              shadowColor: 'rgba(211, 47, 47, 0.5)'
+            }
+          },
+          endLabel: {
+            show: true,
+            backgroundColor: 'rgba(255,255,255,0.9)',
+            borderColor: '#d32f2f',
+            borderWidth: 1,
+            borderRadius: 6,
+            padding: [4, 8],
+            fontSize: 14,
+            fontWeight: '600',
+            color: '#d32f2f',
+            formatter: ({ value }) => (value != null ? `${value}%` : '')
+          },
+          universalTransition: true,
+          data: privateRace[0]
         }
-      }
-    ]
+      ]
+    },
+    options: years.map((year, index) => ({
+      title: {
+        subtext: `Annual percentage adjustment trends (${years[0]}-${year})`
+      },
+      xAxis: {
+        data: cumulativeYears[index].map(String)
+      },
+      series: [
+        {
+          data: publicRace[index]
+        },
+        {
+          data: privateRace[index]
+        }
+      ]
+    }))
   }
 
   loading.value = false

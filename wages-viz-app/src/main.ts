@@ -23,7 +23,8 @@ import {
   LegendComponent,
   TitleComponent,
   DataZoomComponent,
-  ToolboxComponent
+  ToolboxComponent,
+  TimelineComponent
 } from 'echarts/components'
 
 // Register ECharts components
@@ -38,7 +39,8 @@ use([
   LegendComponent,
   TitleComponent,
   DataZoomComponent,
-  ToolboxComponent
+  ToolboxComponent,
+  TimelineComponent
 ])
 
 const app = createApp(App)
