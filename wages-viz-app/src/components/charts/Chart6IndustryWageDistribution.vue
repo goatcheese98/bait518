@@ -170,7 +170,7 @@ const processData = (data) => {
     backgroundColor: '#ffffff',
     title: {
       text: 'How Do Wage Gains Vary Across Industries?',
-      subtext: 'Annual wage adjustment distribution by industry (2016-2025)',
+      subtext: 'Annual wage adjustment distribution by industry {bold|(2016-2025)}',
       left: 'center',
       top: 5,
       textStyle: {
@@ -181,11 +181,18 @@ const processData = (data) => {
       subtextStyle: {
         fontSize: fs(16),
         color: '#666666',
-        lineHeight: 20
+        lineHeight: 20,
+        rich: {
+          bold: {
+            fontWeight: 'bold',
+            color: '#2c3e50'
+          }
+        }
       }
     },
     legend: {
       data: [
+        { name: 'Highlighted Years:', icon: 'none' },
         { name: '2020', itemStyle: { color: yearColors[2020] } },
         { name: '2021', itemStyle: { color: yearColors[2021] } },
         { name: '2022', itemStyle: { color: yearColors[2022] } },
@@ -203,7 +210,7 @@ const processData = (data) => {
       },
       itemWidth: 22,
       itemHeight: 22,
-      itemGap: 25,
+      itemGap: 15,
       icon: 'circle',
       backgroundColor: 'rgba(255, 255, 255, 0.95)',
       borderColor: '#d0d0d0',
@@ -252,7 +259,7 @@ const processData = (data) => {
     grid: {
       left: '5%',
       right: '3%',
-      bottom: '8%',
+      bottom: '10%',
       top: '20%',
       containLabel: true
     },
@@ -268,14 +275,14 @@ const processData = (data) => {
         }
       },
       axisLabel: {
-        fontSize: fs(15),
+        fontSize: fs(13),
         color: '#2c3e50',
         fontWeight: 'bold',
         interval: 0,
-        rotate: 25,
-        margin: 10,
-        lineHeight: 18,
-        align: 'right'
+        rotate: 0,
+        margin: 8,
+        lineHeight: 16,
+        align: 'center'
       },
       axisTick: {
         show: true,
@@ -338,6 +345,13 @@ const processData = (data) => {
             shadowColor: 'rgba(0, 0, 0, 0.4)'
           }
         }
+      },
+      // Dummy series for legend label
+      {
+        name: 'Highlighted Years:',
+        type: 'scatter',
+        data: [],
+        symbolSize: 0
       },
       // Older years (2016-2019) - gray
       {

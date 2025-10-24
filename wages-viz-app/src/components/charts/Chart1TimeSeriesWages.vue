@@ -77,8 +77,6 @@ const processData = (data) => {
   const publicEmployees = valueForYear(publicData, 'Number_of_Employees')
   const privateEmployees = valueForYear(privateData, 'Number_of_Employees')
 
-  const formatEmployees = (value) => (value != null ? value.toLocaleString('en-CA') : 'N/A')
-
   const cumulative = (series) =>
     years.map((_, index) => {
       return series.slice(0, index + 1)
@@ -127,8 +125,8 @@ const processData = (data) => {
         data: years.map(String)
       },
       title: {
-        text: 'Public vs Private: Wage Adjustment Race',
-        subtext: 'Annual percentage adjustment trends (2016-2025)',
+        text: 'Public vs Private: Wage Adjustment Racing Chart',
+        subtext: 'Annual percentage adjustment trends {bold|(2016-2025)}',
         left: 'center',
         top: 5,
         textStyle: {
@@ -138,7 +136,13 @@ const processData = (data) => {
         },
         subtextStyle: {
           fontSize: fs(18),
-          color: '#666666'
+          color: '#666666',
+          rich: {
+            bold: {
+              fontWeight: 'bold',
+              color: '#2c3e50'
+            }
+          }
         }
       },
       tooltip: {
@@ -162,26 +166,38 @@ const processData = (data) => {
         formatter: (params) => {
           if (!params.length) return ''
           const dataIndex = params[0].dataIndex
-          let result = `<strong style="font-size: ${fs(20)}px; font-family: Comic Sans MS, Brush Script MT, cursive;">${params[0].axisValue}</strong><br/>`
+          const year = params[0].axisValue
+          let result = `<strong style="font-size: ${fs(20)}px; font-family: Comic Sans MS, Brush Script MT, cursive;">${year}</strong><br/><br/>`
+
+          // Get 2016 baseline values (first year)
+          const public2016 = publicWages[0]
+          const private2016 = privateWages[0]
+
           params.forEach((item) => {
-            const employees =
-              item.seriesName === 'Public Sector'
-                ? publicEmployees[dataIndex]
-                : privateEmployees[dataIndex]
-            result += `${item.marker} ${item.seriesName}: <strong>${item.value}%</strong>`
-            if (employees != null) {
-              result += ` <span style="color:#666666;">(${formatEmployees(
-                employees
-              )} employees)</span>`
+            // Color code sector names
+            const sectorColor = item.seriesName === 'Public Sector' ? '#1976d2' : '#d32f2f'
+            result += `${item.marker} <strong style="color:${sectorColor};">${item.seriesName}: ${item.value}%</strong>`
+
+            // Calculate multiplier from 2016 levels
+            if (dataIndex > 0 && item.value != null) {
+              const baseline2016 = item.seriesName === 'Public Sector' ? public2016 : private2016
+
+              if (baseline2016 != null && baseline2016 !== 0) {
+                const multiplier = item.value / baseline2016
+                const multiplierText = `${multiplier.toFixed(1)}x`
+                const changeColor = multiplier >= 1 ? '#27ae60' : '#e74c3c'
+                result += ` <span style="color:${changeColor}; font-weight:bold;">(${multiplierText} vs 2016)</span>`
+              }
             }
             result += '<br/>'
           })
+
           return result
         }
       },
       legend: {
         data: ['Public Sector', 'Private Sector'],
-        top: 80,
+        top: 95,
         textStyle: {
           color: '#2c3e50',
           fontSize: fs(16),
