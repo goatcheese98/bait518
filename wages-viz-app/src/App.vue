@@ -86,13 +86,13 @@ onBeforeUnmount(() => {
       >
         <SwiperSlide>
           <div class="slide-card">
-            <Chart6IndustryWageDistribution :fullscreen="isFullscreen" />
+            <Chart1TimeSeriesWages :fullscreen="isFullscreen" />
           </div>
         </SwiperSlide>
 
         <SwiperSlide>
           <div class="slide-card">
-            <Chart1TimeSeriesWages :fullscreen="isFullscreen" />
+            <Chart6IndustryWageDistribution :fullscreen="isFullscreen" />
           </div>
         </SwiperSlide>
 
