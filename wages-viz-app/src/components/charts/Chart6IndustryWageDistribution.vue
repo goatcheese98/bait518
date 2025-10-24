@@ -218,8 +218,8 @@ const processData = (data) => {
       padding: [12, 20],
       borderRadius: 6,
       selectedMode: 'multiple',
-      inactiveColor: '#bdbdbd',
-      inactiveBorderColor: '#999999'
+      inactiveColor: '#90caf9',
+      inactiveBorderColor: '#64b5f6'
     },
     tooltip: {
       trigger: 'item',
