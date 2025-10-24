@@ -92,9 +92,10 @@ const processData = (data) => {
       timeline: {
         show: true,
         axisType: 'category',
-        autoPlay: true,
+        autoPlay: false,
         loop: false,
         playInterval: 1500,
+        currentIndex: 5,
         bottom: 12,
         left: '12%',
         right: '12%',
