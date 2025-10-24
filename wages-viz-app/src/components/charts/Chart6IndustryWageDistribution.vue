@@ -22,17 +22,11 @@ watch(() => props.fullscreen, () => {
 })
 
 const INDUSTRIES = [
-  'Construction',
-  'Education, health, and social services',
-  'Entertainment and hospitality',
-  'Finance and professional services',
   'Information and culture',
-  'Manufacturing',
-  'Primary industries',
+  'Education, health, and social services',
   'Public administration',
-  'Transportation',
-  'Utilities',
-  'Wholesale and retail trade'
+  'Manufacturing',
+  'Entertainment and hospitality'
 ]
 
 onMounted(async () => {
@@ -180,14 +174,14 @@ const processData = (data) => {
       left: 'center',
       top: 5,
       textStyle: {
-        fontSize: fs(24),
+        fontSize: fs(32),
         fontWeight: 'bold',
         color: '#2c3e50'
       },
       subtextStyle: {
-        fontSize: fs(13),
+        fontSize: fs(16),
         color: '#666666',
-        lineHeight: 18
+        lineHeight: 20
       }
     },
     legend: {
@@ -199,23 +193,23 @@ const processData = (data) => {
         { name: '2024', itemStyle: { color: yearColors[2024] } },
         { name: '2025', itemStyle: { color: yearColors[2025] } }
       ],
-      top: '13%',
-      right: '5%',
-      orient: 'vertical',
+      top: '12%',
+      left: 'center',
+      orient: 'horizontal',
       textStyle: {
-        fontSize: fs(13),
+        fontSize: fs(16),
         color: '#2c3e50',
-        fontWeight: '600'
+        fontWeight: 'bold'
       },
-      itemWidth: 16,
-      itemHeight: 16,
-      itemGap: 12,
+      itemWidth: 22,
+      itemHeight: 22,
+      itemGap: 25,
       icon: 'circle',
-      backgroundColor: 'rgba(255, 255, 255, 0.9)',
-      borderColor: '#e0e0e0',
-      borderWidth: 1,
-      padding: [10, 15],
-      borderRadius: 4,
+      backgroundColor: 'rgba(255, 255, 255, 0.95)',
+      borderColor: '#d0d0d0',
+      borderWidth: 1.5,
+      padding: [12, 20],
+      borderRadius: 6,
       selectedMode: 'multiple',
       inactiveColor: '#bdbdbd',
       inactiveBorderColor: '#999999'
@@ -259,7 +253,7 @@ const processData = (data) => {
       left: '5%',
       right: '3%',
       bottom: '8%',
-      top: '11%',
+      top: '20%',
       containLabel: true
     },
     xAxis: {
@@ -274,13 +268,13 @@ const processData = (data) => {
         }
       },
       axisLabel: {
-        fontSize: fs(11),
+        fontSize: fs(15),
         color: '#2c3e50',
-        fontWeight: '500',
+        fontWeight: 'bold',
         interval: 0,
         rotate: 25,
-        margin: 8,
-        lineHeight: 16,
+        margin: 10,
+        lineHeight: 18,
         align: 'right'
       },
       axisTick: {
@@ -301,7 +295,7 @@ const processData = (data) => {
       min: 0,
       nameTextStyle: {
         color: '#2c3e50',
-        fontSize: fs(14),
+        fontSize: fs(18),
         fontWeight: 'bold'
       },
       axisLine: {
@@ -313,9 +307,9 @@ const processData = (data) => {
       },
       axisLabel: {
         formatter: '{value}%',
-        fontSize: fs(12),
+        fontSize: fs(15),
         color: '#2c3e50',
-        fontWeight: '500'
+        fontWeight: 'bold'
       },
       splitLine: {
         lineStyle: {
