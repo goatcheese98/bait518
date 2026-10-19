@@ -3,7 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "npm --prefix wages-viz-app install && npm --prefix wages-viz-app run build",
-    "pages:build": "npm --prefix wages-viz-app install && npm --prefix wages-viz-app run build"
+    "install:locked": "npm --prefix wages-viz-app ci",
+    "build": "npm --prefix wages-viz-app run build",
+    "pages:build": "npm run build",
+    "type-check": "npm --prefix wages-viz-app run type-check",
+    "lint": "npm --prefix wages-viz-app run lint",
+    "test:unit": "npm --prefix wages-viz-app run test:unit -- --run",
+    "test:e2e": "npm --prefix wages-viz-app run test:e2e",
+    "cloud:build": "npm run install:locked -- --include=dev && npm run build"
   }
 }
