@@ -9,3 +9,7 @@ The existing restored checkout and package/lock hashes matched the onboarding in
 Foundation verification: locked install, focused model/test read-only ESLint, existing type-check, Vitest (13 tests including 12 data-contract cases), and production build. The first CI gate deliberately lints the new typed model/tests; the dependent UI PR expands the read-only lint gate after resolving/scoping baseline issues.
 
 Baseline observations are separate: original type-check/unit/build exit 0; original full read-only ESLint exit 1 (15 existing errors); original Playwright exit 1 because it expects the Vue starter heading “You did it!” instead of the wage dashboard. These pre-existing UI/lint issues belong to the dependent draft. The build retains the existing ECharts chunk-size warning. This foundation does not claim UI modernization, full-repository TypeScript conversion, or a deployed site.
+
+## Cloudflare follow-up
+
+The original foundation above passed its quality workflow, while the existing Pages and Workers integrations failed. [Cloudflare investigation](cloudflare-build.md) reproduces the clean root installation gap on both original heads, aligns Wrangler's Worker name with the check target, adds explicit `cloud:build` with dev build tools included, and pins the cloud-tested Node version. The foundation remains based on main; the explorer is rebased onto this follow-up foundation. CI now exercises the explicit cloud build and uses `.node-version`. No account settings or deployment were performed.

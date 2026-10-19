@@ -1,7 +1,7 @@
 name: Wage explorer quality
 on:
   pull_request:
-    paths: ['wages-viz-app/**', 'package.json', '.github/workflows/wages-quality.yml']
+    paths: ['wages-viz-app/**', 'package.json', '.node-version', 'wrangler.jsonc', '.github/workflows/wages-quality.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -16,12 +16,11 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version-file: '.node-version'
           cache: npm
           cache-dependency-path: wages-viz-app/package-lock.json
-      - run: npm run install:locked
+      - run: npm run cloud:build
       - run: npx eslint src/lib/wages.ts src/components/__tests__/wages.spec.ts
         working-directory: wages-viz-app
       - run: npm run type-check
       - run: npm run test:unit
-      - run: npm run build
