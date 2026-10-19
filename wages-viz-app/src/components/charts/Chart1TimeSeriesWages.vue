@@ -1,488 +1,309 @@
-<script setup>
-import { ref, onMounted, computed, watch } from 'vue'
-import Papa from 'papaparse'
-
-const props = defineProps({
-  fullscreen: {
-    type: Boolean,
-    default: false
-  }
-})
-
-const chartOption = ref({})
-const loading = ref(true)
-const chartRef = ref(null)
-const activeYear = ref(null)
-const timelineYears = ref([])
-const fontScale = computed(() => props.fullscreen ? 1.3 : 1)
-const rawData = ref(null)
-
-const fs = (size) => Math.round(size * fontScale.value)
-
-watch(() => props.fullscreen, () => {
-  if (rawData.value) {
-    processData(rawData.value)
-  }
-})
-
-onMounted(async () => {
+<script setup lang="ts">
+import { computed, onMounted, onBeforeUnmount, ref } from 'vue'
+import { compareWages, parseWages, percent, points, type Observation } from '../../lib/wages'
+const data = ref<Observation[]>([])
+const loading = ref(true),
+  error = ref(''),
+  message = ref('')
+const industry = ref('All industries'),
+  start = ref(2016),
+  end = ref(2025)
+const applied = ref({ industry: 'All industries', start: 2016, end: 2025 })
+const publicVisible = ref(true),
+  privateVisible = ref(true)
+const view = ref<'chart' | 'table'>('chart')
+const selectedYear = ref<number | null>(null)
+const controlsOpen = ref(false)
+const resultsElement = ref<HTMLElement | null>(null)
+const availableWidth = ref(560)
+let resizeObserver: ResizeObserver | undefined
+const industries = computed(() => [...new Set(data.value.map((row) => row.industry))].sort())
+const years = computed(() => [...new Set(data.value.map((row) => row.year))].sort((a, b) => a - b))
+const rows = computed(() =>
+  compareWages(data.value, applied.value.industry, applied.value.start, applied.value.end),
+)
+const selected = computed(() => rows.value.find((row) => row.year === selectedYear.value))
+const invalid = computed(() => start.value > end.value)
+let controller: AbortController | undefined
+async function load() {
+  controller?.abort()
+  controller = new AbortController()
+  loading.value = true
+  error.value = ''
   try {
-    // Load CSV data
-    const response = await fetch('/data/TABLEAU_sector_year.csv')
-    const csvText = await response.text()
-
-    Papa.parse(csvText, {
-      header: true,
-      dynamicTyping: true,
-      complete: (results) => {
-        rawData.value = results.data
-        processData(results.data)
+    const response = await fetch(`${import.meta.env.BASE_URL}data/TABLEAU_sector_year.csv`, {
+      signal: controller.signal,
+    })
+    if (!response.ok) throw new Error('Dataset request failed')
+    data.value = parseWages(await response.text())
+    syncYear()
+    message.value = `Updated period: ${applied.value.start}–${applied.value.end}. ${rows.value.length} years.`
+  } catch (cause) {
+    if (cause instanceof DOMException && cause.name === 'AbortError') return
+    error.value =
+      'The wage dataset could not load. Check the connection or dataset format and retry.'
+  } finally {
+    loading.value = false
+  }
+}
+function syncYear() {
+  if (!rows.value.some((row) => row.year === selectedYear.value))
+    selectedYear.value = rows.value[rows.value.length - 1]?.year ?? null
+}
+function apply() {
+  if (invalid.value || loading.value || error.value) return
+  applied.value = { industry: industry.value, start: start.value, end: end.value }
+  syncYear()
+  message.value = `Updated period: ${start.value}–${end.value}. ${rows.value.length} years.`
+}
+function reset() {
+  industry.value = 'All industries'
+  start.value = years.value[0] ?? 2016
+  end.value = years.value[years.value.length - 1] ?? 2025
+  publicVisible.value = true
+  privateVisible.value = true
+  apply()
+}
+// A fixed readable plot can scroll at narrow widths; labels never shrink with the viewport.
+const plotWidth = computed(() => Math.max(560, availableWidth.value, rows.value.length * 64))
+const values = computed(() =>
+  rows.value.flatMap((row) => [row.public, row.private]).filter((v): v is number => v !== null),
+)
+const minimum = computed(() => Math.min(0, ...values.value))
+const maximum = computed(() => Math.max(1, ...values.value))
+const y = (value: number) => 260 - ((value - minimum.value) / (maximum.value - minimum.value)) * 210
+const x = (index: number) =>
+  56 + (index * (plotWidth.value - 88)) / Math.max(1, rows.value.length - 1)
+function path(sector: 'public' | 'private') {
+  let previous = false
+  return rows.value
+    .map((row, index) => {
+      const value = row[sector]
+      if (value === null) {
+        previous = false
+        return ''
       }
+      const command = previous ? 'L' : 'M'
+      previous = true
+      return `${command}${x(index)},${y(value)}`
     })
-  } catch (error) {
-    console.error('Error loading data:', error)
-    loading.value = false
+    .join(' ')
+}
+onMounted(() => {
+  if (resultsElement.value) {
+    resizeObserver = new ResizeObserver((entries) => {
+      availableWidth.value = Math.floor(entries[0]?.contentRect.width ?? 560)
+    })
+    resizeObserver.observe(resultsElement.value)
   }
+  void load()
 })
-
-const processData = (data) => {
-  // Filter for "All industries" and split by sector to prepare the race
-  const publicData = data.filter(
-    (row) => row.Industry === 'All industries' && row.Sector_Type === 'Public Sector'
-  )
-  const privateData = data.filter(
-    (row) => row.Industry === 'All industries' && row.Sector_Type === 'Private Sector'
-  )
-
-  const years = Array.from(new Set([...publicData, ...privateData].map((row) => row.Year))).sort(
-    (a, b) => a - b
-  )
-  timelineYears.value = years
-
-  if (!years.length) {
-    chartOption.value = {}
-    loading.value = false
-    return
-  }
-  activeYear.value = years[0]
-
-  const valueForYear = (rows, key) =>
-    years.map((year) => {
-      const match = rows.find((row) => row.Year === year)
-      return match ? match[key] : null
-    })
-
-  const publicWages = valueForYear(publicData, 'Annual_Pct_Adjustment_Avg')
-  const privateWages = valueForYear(privateData, 'Annual_Pct_Adjustment_Avg')
-  const publicEmployees = valueForYear(publicData, 'Number_of_Employees')
-  const privateEmployees = valueForYear(privateData, 'Number_of_Employees')
-
-  const cumulative = (series) =>
-    years.map((_, index) => {
-      return series.slice(0, index + 1)
-    })
-
-  const cumulativeYears = cumulative(years)
-  const publicRace = cumulative(publicWages)
-  const privateRace = cumulative(privateWages)
-
-  chartOption.value = {
-    baseOption: {
-      backgroundColor: '#ffffff',
-      timeline: {
-        show: true,
-        axisType: 'category',
-        autoPlay: false,
-        loop: false,
-        playInterval: 1500,
-        currentIndex: 5,
-        bottom: 12,
-        left: '12%',
-        right: '12%',
-        height: 48,
-        symbolSize: 11,
-        label: {
-          color: '#37474f',
-          fontSize: fs(14),
-          margin: 18,
-          formatter: (value) => `${value}`
-        },
-        controlStyle: {
-          color: '#2c3e50',
-          borderColor: '#2c3e50'
-        },
-        lineStyle: {
-          color: '#90caf9'
-        },
-        progress: {
-          lineStyle: {
-            color: '#1976d2',
-            width: 5
-          },
-          itemStyle: {
-            color: '#1976d2'
-          }
-        },
-        data: years.map(String)
-      },
-      title: {
-        text: 'Public vs Private: Wage Adjustment Racing Chart',
-        subtext: 'Annual percentage adjustment trends {bold|(2016-2025)}',
-        left: 'center',
-        top: 5,
-        textStyle: {
-          fontSize: fs(32),
-          fontWeight: 'bold',
-          color: '#2c3e50'
-        },
-        subtextStyle: {
-          fontSize: fs(18),
-          color: '#666666',
-          rich: {
-            bold: {
-              fontWeight: 'bold',
-              color: '#2c3e50'
-            }
-          }
-        }
-      },
-      tooltip: {
-        trigger: 'axis',
-        axisPointer: {
-          type: 'line',
-          lineStyle: {
-            color: '#999',
-            width: 2
-          }
-        },
-        backgroundColor: 'rgba(255, 252, 245, 0.98)',
-        borderColor: '#2c3e50',
-        borderWidth: 3,
-        padding: [16, 20],
-        textStyle: {
-          color: '#2c3e50',
-          fontSize: fs(17),
-          fontFamily: 'Comic Sans MS, Brush Script MT, cursive'
-        },
-        formatter: (params) => {
-          if (!params.length) return ''
-          const dataIndex = params[0].dataIndex
-          const year = params[0].axisValue
-          let result = `<strong style="font-size: ${fs(20)}px; font-family: Comic Sans MS, Brush Script MT, cursive;">${year}</strong><br/><br/>`
-
-          // Get 2016 baseline values (first year)
-          const public2016 = publicWages[0]
-          const private2016 = privateWages[0]
-
-          params.forEach((item) => {
-            // Color code sector names
-            const sectorColor = item.seriesName === 'Public Sector' ? '#1976d2' : '#d32f2f'
-            result += `${item.marker} <strong style="color:${sectorColor};">${item.seriesName}: ${item.value}%</strong>`
-
-            // Calculate multiplier from 2016 levels
-            if (dataIndex > 0 && item.value != null) {
-              const baseline2016 = item.seriesName === 'Public Sector' ? public2016 : private2016
-
-              if (baseline2016 != null && baseline2016 !== 0) {
-                const multiplier = item.value / baseline2016
-                const multiplierText = `${multiplier.toFixed(1)}x`
-                const changeColor = multiplier >= 1 ? '#27ae60' : '#e74c3c'
-                result += ` <span style="color:${changeColor}; font-weight:bold;">(${multiplierText} vs 2016)</span>`
-              }
-            }
-            result += '<br/>'
-          })
-
-          return result
-        }
-      },
-      legend: {
-        data: ['Public Sector', 'Private Sector'],
-        top: 95,
-        textStyle: {
-          color: '#2c3e50',
-          fontSize: fs(16),
-          fontWeight: '500'
-        },
-        itemGap: 40,
-        itemWidth: 30,
-        itemHeight: 4
-      },
-      grid: {
-        left: '8%',
-        right: '6%',
-        bottom: 120,
-        top: '20%',
-        containLabel: true
-      },
-      xAxis: {
-        type: 'category',
-        name: 'Year',
-        boundaryGap: false,
-        nameLocation: 'middle',
-        nameGap: 32,
-        nameTextStyle: {
-          color: '#2c3e50',
-          fontSize: fs(18),
-          fontWeight: 'bold'
-        },
-        axisLine: {
-          lineStyle: {
-            color: '#333333',
-            width: 2
-          }
-        },
-        axisLabel: {
-          fontSize: fs(16),
-          color: '#2c3e50',
-          fontWeight: '500'
-        },
-        axisTick: {
-          lineStyle: {
-            color: '#333333'
-          }
-        },
-        data: cumulativeYears[0].map(String)
-      },
-      yAxis: {
-        type: 'value',
-        name: 'Annual Wage Adjustment (%)',
-        nameLocation: 'middle',
-        nameGap: 65,
-        nameTextStyle: {
-          color: '#2c3e50',
-          fontSize: fs(18),
-          fontWeight: 'bold'
-        },
-        axisLine: {
-          show: true,
-          lineStyle: {
-            color: '#333333',
-            width: 2
-          }
-        },
-        axisLabel: {
-          formatter: '{value}%',
-          fontSize: fs(16),
-          color: '#2c3e50',
-          fontWeight: '500'
-        },
-        splitLine: {
-          lineStyle: {
-            color: '#e0e0e0',
-            width: 1
-          }
-        },
-        axisTick: {
-          lineStyle: {
-            color: '#333333'
-          }
-        }
-      },
-      series: [
-        {
-          name: 'Public Sector',
-          type: 'line',
-          smooth: true,
-          symbolSize: 12,
-          lineStyle: {
-            width: 5,
-            color: '#1976d2'
-          },
-          itemStyle: {
-            color: '#1976d2',
-            borderWidth: 3,
-            borderColor: '#ffffff'
-          },
-          emphasis: {
-            focus: 'series',
-            scale: 1.2,
-            itemStyle: {
-              borderWidth: 4,
-              shadowBlur: 15,
-              shadowColor: 'rgba(25, 118, 210, 0.5)'
-            }
-          },
-          endLabel: {
-            show: true,
-            backgroundColor: 'rgba(255,255,255,0.9)',
-            borderColor: '#1976d2',
-            borderWidth: 1,
-            borderRadius: 6,
-            padding: [4, 8],
-            fontSize: fs(14),
-            fontWeight: '600',
-            color: '#1976d2',
-            formatter: ({ value }) => (value != null ? `${value}%` : '')
-          },
-          universalTransition: true,
-          data: publicRace[0]
-        },
-        {
-          name: 'Private Sector',
-          type: 'line',
-          smooth: true,
-          symbolSize: 12,
-          lineStyle: {
-            width: 5,
-            color: '#d32f2f'
-          },
-          itemStyle: {
-            color: '#d32f2f',
-            borderWidth: 3,
-            borderColor: '#ffffff'
-          },
-          emphasis: {
-            focus: 'series',
-            scale: 1.2,
-            itemStyle: {
-              borderWidth: 4,
-              shadowBlur: 15,
-              shadowColor: 'rgba(211, 47, 47, 0.5)'
-            }
-          },
-          endLabel: {
-            show: true,
-            backgroundColor: 'rgba(255,255,255,0.9)',
-            borderColor: '#d32f2f',
-            borderWidth: 1,
-            borderRadius: 6,
-            padding: [4, 8],
-            fontSize: fs(14),
-            fontWeight: '600',
-            color: '#d32f2f',
-            formatter: ({ value }) => (value != null ? `${value}%` : '')
-          },
-          universalTransition: true,
-          data: privateRace[0]
-        }
-      ]
-    },
-    options: years.map((year, index) => ({
-      title: {
-        subtext: `Annual percentage adjustment trends (${years[0]}-${year})`
-      },
-      xAxis: {
-        data: cumulativeYears[index].map(String)
-      },
-      series: [
-        {
-          data: publicRace[index]
-        },
-        {
-          data: privateRace[index]
-        }
-      ]
-    }))
-  }
-
-  loading.value = false
-}
-
-const replayAnimation = () => {
-  const chart = chartRef.value?.chart
-  if (!chart || !timelineYears.value.length) return
-  chart.dispatchAction({ type: 'timelineChange', currentIndex: 0 })
-  chart.dispatchAction({ type: 'timelinePlayChange', playState: true })
-  activeYear.value = timelineYears.value[0]
-}
-
-const onTimelineChange = (event) => {
-  const index = event?.currentIndex ?? 0
-  const year = timelineYears.value[index]
-  if (year != null) {
-    activeYear.value = year
-  }
-}
+onBeforeUnmount(() => {
+  controller?.abort()
+  resizeObserver?.disconnect()
+})
 </script>
 
 <template>
-  <div class="chart-container">
-    <div v-if="loading" class="loading">Loading data...</div>
-    <div v-else class="chart-wrapper">
-      <div class="chart-controls">
-        <span v-if="activeYear != null" class="year-badge">Current year: {{ activeYear }}</span>
-        <button type="button" class="replay-button" @click="replayAnimation">
-          Replay Animation
-        </button>
+  <div class="explorer-layout" :aria-busy="loading">
+    <aside class="control-rail" aria-label="Comparison filters">
+      <h2>Explore the comparison</h2>
+      <p class="mobile-summary">{{ applied.industry }} · {{ applied.start }}–{{ applied.end }}</p>
+      <button
+        class="edit-filters"
+        :aria-expanded="controlsOpen"
+        aria-controls="filter-form"
+        @click="controlsOpen = !controlsOpen"
+      >
+        Edit filters
+      </button>
+      <form id="filter-form" :class="{ 'controls-open': controlsOpen }" @submit.prevent="apply">
+        <label for="industry">Industry / source category</label>
+        <select id="industry" v-model="industry" :disabled="loading || !!error">
+          <option v-if="!industries.length">All industries</option>
+          <option v-for="name in industries" :key="name">{{ name }}</option>
+        </select>
+        <p class="hint">Source categories include jurisdictions; no categories are combined.</p>
+        <label for="start">From year</label
+        ><select id="start" v-model="start" :disabled="loading || !!error">
+          <option v-for="year in years" :key="year" :value="year">{{ year }}</option>
+        </select>
+        <label for="end">To year</label
+        ><select id="end" v-model="end" :disabled="loading || !!error">
+          <option v-for="year in years" :key="year" :value="year">{{ year }}</option>
+        </select>
+        <p v-if="invalid" role="alert">From year must be before or equal to To year.</p>
+        <div class="display-note">
+          <strong>Annual change (%)</strong>
+          <p>Percentage adjustment is not an hourly wage or cost-of-living measure.</p>
+        </div>
+        <button class="primary" :disabled="loading || !!error || invalid">Apply filters</button>
+        <button type="button" :disabled="loading || !!error" @click="reset">Reset filters</button>
+      </form>
+    </aside>
+    <section ref="resultsElement" class="results" aria-labelledby="results-title">
+      <div class="results-heading">
+        <h2 id="results-title">Annual wage adjustment</h2>
+        <a href="#methodology">Source &amp; methodology</a>
       </div>
-      <v-chart
-        ref="chartRef"
-        :option="chartOption"
-        class="chart-canvas"
-        style="width: 100%; height: 100%;"
-        autoresize
-        @timelinechanged="onTimelineChange"
-      />
-    </div>
+      <p class="status" role="status">
+        {{ loading ? 'Loading wage observations…' : error ? '' : message }}
+      </p>
+      <div v-if="loading" class="state">Loading chart and source table…</div>
+      <div v-else-if="error" class="state" role="alert">
+        <p>{{ error }}</p>
+        <button @click="load">Retry</button>
+      </div>
+      <div v-else-if="!rows.length" class="state">
+        <h3>No observations for this selection</h3>
+        <button @click="reset">Clear filters</button>
+      </div>
+      <template v-else>
+        <div class="result-tools">
+          <div class="view-switch" role="group" aria-label="Results view">
+            <button :aria-pressed="view === 'chart'" @click="view = 'chart'">Chart</button
+            ><button :aria-pressed="view === 'table'" @click="view = 'table'">Table</button>
+          </div>
+          <div class="year-control">
+            <label for="selected-year">Selected year</label
+            ><select id="selected-year" v-model="selectedYear">
+              <option v-for="row in rows" :value="row.year" :key="row.year">{{ row.year }}</option>
+            </select>
+          </div>
+        </div>
+        <div class="legend" role="group" aria-label="Visible chart series">
+          <label
+            ><input type="checkbox" v-model="publicVisible" /><span
+              aria-hidden="true"
+              class="public-key"
+              >━ ●</span
+            >
+            Public sector</label
+          >
+          <label
+            ><input type="checkbox" v-model="privateVisible" /><span
+              aria-hidden="true"
+              class="private-key"
+              >┄ ◆</span
+            >
+            Private sector</label
+          >
+        </div>
+        <p v-if="view === 'chart' && !publicVisible && !privateVisible">
+          Choose a sector to display its line. Source values remain available below.
+        </p>
+        <div
+          v-if="view === 'chart'"
+          class="plot-scroll"
+          tabindex="0"
+          role="region"
+          aria-label="Annual adjustment chart; scroll horizontally for all years. Use Selected year or Table for exact values."
+        >
+          <svg
+            :width="plotWidth"
+            height="310"
+            role="img"
+            aria-labelledby="plot-title plot-description"
+          >
+            <title id="plot-title">{{ applied.industry }} annual wage adjustments (%)</title>
+            <desc id="plot-description">
+              Public sector: solid line and circles. Private sector: dashed line and diamonds.
+              Missing values break lines. Exact values in the table and selected-year summary.
+            </desc>
+            <text x="56" y="20" class="axis-text">Annual adjustment (%)</text>
+            <g v-for="step in [0, 1, 2, 3, 4]" :key="step">
+              <line
+                x1="56"
+                :x2="plotWidth - 32"
+                :y1="50 + step * 52.5"
+                :y2="50 + step * 52.5"
+                class="grid-line"
+              />
+              <text x="8" :y="54 + step * 52.5" class="axis-text">
+                {{ (maximum - ((maximum - minimum) * step) / 4).toFixed(1) }}
+              </text>
+            </g>
+            <path v-if="publicVisible" :d="path('public')" class="public-line" />
+            <path v-if="privateVisible" :d="path('private')" class="private-line" />
+            <g v-for="(row, index) in rows" :key="row.year">
+              <text :x="x(index)" y="290" text-anchor="middle" class="axis-text">
+                {{ row.year }}
+              </text>
+              <circle
+                v-if="publicVisible && row.public !== null"
+                :cx="x(index)"
+                :cy="y(row.public)"
+                r="4"
+                class="public-point"
+              />
+              <path
+                v-if="privateVisible && row.private !== null"
+                :d="`M${x(index)},${y(row.private) - 5}l5,5 -5,5 -5,-5Z`"
+                class="private-point"
+              />
+            </g>
+          </svg>
+        </div>
+        <section
+          v-if="selected"
+          class="selected-detail"
+          aria-label="Selected year values"
+          aria-live="polite"
+        >
+          <h3>{{ selected.year }} · annual adjustment</h3>
+          <p>
+            Public: <b>{{ percent(selected.public) }}</b> · Private:
+            <b>{{ percent(selected.private) }}</b>
+          </p>
+          <p>
+            Difference: <b>{{ points(selected.difference) }}</b>
+          </p>
+        </section>
+        <div
+          v-if="view === 'table'"
+          class="table-scroll"
+          tabindex="0"
+          role="region"
+          aria-label="Source values table"
+        >
+          <table>
+            <caption>
+              {{
+                applied.industry
+              }}
+              · annual percentage adjustments. Difference in percentage points.
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Year</th>
+                <th scope="col">Public sector</th>
+                <th scope="col">Private sector</th>
+                <th scope="col">Difference (pp)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                v-for="row in rows"
+                :key="row.year"
+                :class="{ selected: row.year === selectedYear }"
+              >
+                <th scope="row">
+                  <button
+                    :aria-pressed="row.year === selectedYear"
+                    :aria-label="`Select year ${row.year}`"
+                    @click="selectedYear = row.year"
+                  >
+                    {{ row.year }}
+                  </button>
+                </th>
+                <td>{{ percent(row.public) }}</td>
+                <td>{{ percent(row.private) }}</td>
+                <td>{{ points(row.difference) }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </template>
+    </section>
   </div>
 </template>
-
-<style scoped>
-.chart-container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: #ffffff;
-}
-
-.loading {
-  font-size: 1.8rem;
-  color: #2c3e50;
-  padding: 2rem;
-  font-weight: 500;
-}
-
-.chart-wrapper {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.chart-canvas {
-  flex: 1;
-  min-height: 440px;
-}
-
-.chart-controls {
-  display: flex;
-  justify-content: flex-end;
-  gap: 1rem;
-  align-items: center;
-}
-
-.replay-button {
-  background: #2c3e50;
-  color: #ffffff;
-  border: none;
-  border-radius: 999px;
-  padding: 0.5rem 1.2rem;
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.replay-button:hover {
-  background: #1a252f;
-  transform: translateY(-1px);
-}
-
-.replay-button:active {
-  transform: translateY(0);
-}
-
-.year-badge {
-  background: rgba(44, 62, 80, 0.08);
-  color: #2c3e50;
-  border-radius: 999px;
-  padding: 0.4rem 1rem;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-</style>
