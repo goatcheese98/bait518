@@ -205,7 +205,7 @@ onBeforeUnmount(() => {
                 class="grid-line"
               />
               <text x="2" :y="40 + step * 50" class="axis-text">
-                {{ (high - ((high - low) * step) / 4).toFixed(1) }}
+                {{ (high - (high - low) * (step / 4)).toFixed(1) }}
               </text>
             </g>
             <line x1="48" :x2="plotWidth - 16" :y1="y(0)" :y2="y(0)" class="zero-line" />

@@ -147,7 +147,7 @@ function lines(label: string) {
       <g v-for="step in [0, 1, 2, 3, 4]" :key="step">
         <line x1="48" x2="974" :y1="60 + step * 62.5" :y2="60 + step * 62.5" class="grid-line" />
         <text x="2" :y="64 + step * 62.5" class="axis-text">
-          {{ (extent[1] - ((extent[1] - extent[0]) * step) / 4).toFixed(1) }}
+          {{ (extent[1] - (extent[1] - extent[0]) * (step / 4)).toFixed(1) }}
         </text>
       </g>
       <line

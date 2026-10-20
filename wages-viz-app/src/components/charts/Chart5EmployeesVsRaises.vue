@@ -117,10 +117,10 @@ const tableRows = computed(() =>
       <g v-for="step in [0, 1, 2, 3, 4]" :key="step">
         <line x1="48" x2="602" :y1="60 + step * 62.5" :y2="60 + step * 62.5" class="grid-line" />
         <text x="2" :y="64 + step * 62.5" class="axis-text">
-          {{ (axes.y[1] - ((axes.y[1] - axes.y[0]) * step) / 4).toFixed(1) }}
+          {{ (axes.y[1] - (axes.y[1] - axes.y[0]) * (step / 4)).toFixed(1) }}
         </text>
         <text :x="72 + step * 127.5" y="340" text-anchor="middle" class="axis-text">
-          {{ ((axes.x[0] + ((axes.x[1] - axes.x[0]) * step) / 4) / 1000).toFixed(0) }}k
+          {{ ((axes.x[0] + (axes.x[1] - axes.x[0]) * (step / 4)) / 1000).toFixed(0) }}k
         </text>
       </g>
       <line

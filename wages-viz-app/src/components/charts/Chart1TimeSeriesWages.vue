@@ -220,7 +220,7 @@ onBeforeUnmount(() => {
                 class="grid-line"
               />
               <text x="8" :y="54 + step * 52.5" class="axis-text">
-                {{ (maximum - ((maximum - minimum) * step) / 4).toFixed(1) }}
+                {{ (maximum - (maximum - minimum) * (step / 4)).toFixed(1) }}
               </text>
             </g>
             <path v-if="publicVisible" :d="path('public')" class="public-line" />

@@ -237,10 +237,10 @@ onBeforeUnmount(() => controller?.abort())
           </text>
           <g v-for="step in [0, 1, 2, 3, 4]" :key="step">
             <text x="4" :y="64 + step * 62.5" class="axis-text">
-              {{ (highY - ((highY - lowY) * step) / 4).toFixed(1) }}
+              {{ (highY - (highY - lowY) * (step / 4)).toFixed(1) }}
             </text>
             <text :x="72 + step * 127.5" y="340" text-anchor="middle" class="axis-text">
-              {{ (lowX + ((highX - lowX) * step) / 4).toFixed(1) }}
+              {{ (lowX + (highX - lowX) * (step / 4)).toFixed(1) }}
             </text>
           </g>
           <text x="320" y="370" text-anchor="middle" class="axis-text">
