@@ -33,110 +33,115 @@ async function captureComparison(page: Page, width: number, theme: string, state
 
 for (const width of [320, 768, 1024, 1440]) {
   for (const colorScheme of ['light', 'dark'] as const) {
-    test(`first-year ${width}px ${colorScheme}: chart/table equivalence and keyboard`, async ({
-      page,
-    }) => {
-      await page.setViewportSize({ width, height: 1000 })
-      await page.emulateMedia({ colorScheme, reducedMotion: 'reduce' })
-      const slide = await openComparison(page)
-      const comparison = slide.getByRole('region', {
-        name: 'First-year vs annual adjustments',
-        exact: true,
-      })
-      await expect(comparison.getByRole('status')).toContainText('2025 comparison')
-      const source = await page.request.get('/data/TABLEAU_sector_year.csv')
-      const csv = await source.text()
-      // Independent source extraction: the production CSV has quoted categories elsewhere,
-      // but the selected All industries aggregate rows contain no quoted fields.
-      const expected = csv
-        .trim()
-        .split('\n')
-        .slice(1)
-        .map((line) => line.split(','))
-        .filter((row) => row[1] === 'All industries' && row[2] === 'All Sectors')
-        .map((row) => ({ year: Number(row[0]), firstYear: Number(row[6]), annual: Number(row[7]) }))
-      expect(expected).toHaveLength(10)
-      const marks = await comparison.locator('.adjustment-bar').evaluateAll((elements) =>
-        elements.map((el) => ({
-          year: Number(el.getAttribute('data-year')),
-          series: el.getAttribute('data-series'),
-          value: Number(el.getAttribute('data-value')),
-        })),
-      )
-      expect(marks).toEqual(
-        expected.flatMap((row) => [
-          { year: row.year, series: 'firstYear', value: row.firstYear },
-          { year: row.year, series: 'annual', value: row.annual },
-        ]),
-      )
-      await comparison.getByRole('checkbox', { name: 'Annual average', exact: true }).uncheck()
-      await expect(comparison.locator('.adjustment-bar.annual')).toHaveCount(0)
-      await comparison.getByRole('checkbox', { name: 'Annual average', exact: true }).check()
-      await expect(comparison.locator('.adjustment-bar.annual')).toHaveCount(10)
-      expect(await comparison.evaluate((el) => getComputedStyle(el).backgroundColor)).toBe(
-        colorScheme === 'dark' ? 'rgb(10, 10, 11)' : 'rgb(255, 255, 255)',
-      )
-      expect(
-        await comparison
-          .locator('.adjustment-bar')
-          .first()
-          .evaluate((el) => getComputedStyle(el).animationName),
-      ).toBe('none')
-      expect(
-        await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth),
-      ).toBe(true)
-      await expect
-        .poll(() =>
-          comparison
-            .locator('.adjustment-bar[data-year="2025"]')
-            .first()
-            .evaluate((el) => {
-              const bar = el.getBoundingClientRect(),
-                region = el.closest('.comparison-scroll')!.getBoundingClientRect()
-              return bar.left >= region.left && bar.right <= region.right
-            }),
+    // A context preference survives Firefox's COOP browsing-context switch.
+    test.describe(`${width}px ${colorScheme} browser preference`, () => {
+      test.use({ colorScheme })
+
+      test(`first-year ${width}px ${colorScheme}: chart/table equivalence and keyboard`, async ({
+        page,
+      }) => {
+        await page.setViewportSize({ width, height: 1000 })
+        await page.emulateMedia({ reducedMotion: 'reduce' })
+        const slide = await openComparison(page)
+        const comparison = slide.getByRole('region', {
+          name: 'First-year vs annual adjustments',
+          exact: true,
+        })
+        await expect(comparison.getByRole('status')).toContainText('2025 comparison')
+        const source = await page.request.get('/data/TABLEAU_sector_year.csv')
+        const csv = await source.text()
+        // Independent source extraction: the production CSV has quoted categories elsewhere,
+        // but the selected All industries aggregate rows contain no quoted fields.
+        const expected = csv
+          .trim()
+          .split('\n')
+          .slice(1)
+          .map((line) => line.split(','))
+          .filter((row) => row[1] === 'All industries' && row[2] === 'All Sectors')
+          .map((row) => ({ year: Number(row[0]), firstYear: Number(row[6]), annual: Number(row[7]) }))
+        expect(expected).toHaveLength(10)
+        const marks = await comparison.locator('.adjustment-bar').evaluateAll((elements) =>
+          elements.map((el) => ({
+            year: Number(el.getAttribute('data-year')),
+            series: el.getAttribute('data-series'),
+            value: Number(el.getAttribute('data-value')),
+          })),
         )
-        .toBe(true)
-      await captureComparison(page, width, colorScheme, 'chart')
-      await comparison.getByRole('button', { name: 'Table', exact: true }).focus()
-      await page.keyboard.press('Enter')
-      await expect(comparison.getByRole('button', { name: 'Table', exact: true })).toHaveAttribute(
-        'aria-pressed',
-        'true',
-      )
-      const actualTable = await comparison.locator('tbody tr').evaluateAll((elements) =>
-        elements.map((el) => ({
-          year: Number(el.querySelector('th')?.textContent?.trim()),
-          values: [...el.querySelectorAll('td')].map((td) =>
-            parseFloat(td.querySelector('.cell-value')?.textContent ?? ''),
-          ),
-        })),
-      )
-      expect(actualTable).toEqual(
-        expected.map((row) => ({
-          year: row.year,
-          values: [row.firstYear, row.annual, Number((row.firstYear - row.annual).toFixed(2))],
-        })),
-      )
-      await comparison
-        .getByRole('button', { name: 'Inspect comparison year 2016', exact: true })
-        .focus()
-      await page.keyboard.press('Enter')
-      await expect(comparison.getByLabel('Comparison year', { exact: true })).toHaveValue('2016')
-      await expect(comparison.getByRole('status')).toContainText('Gap: -0.5 pp')
-      expect(
-        await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth),
-      ).toBe(true)
-      await captureComparison(page, width, colorScheme, 'table')
-      await slide.locator('.comparison-scroll').focus()
-      await expect(slide.locator('.comparison-scroll')).toBeFocused()
-      await page
-        .locator('#legacy-gallery')
-        .getByRole('button', { name: 'Enter Fullscreen' })
-        .click()
-      await expect(comparison).toHaveClass(/expanded/)
-      await page.keyboard.press('Escape')
-      await expect(comparison).not.toHaveClass(/expanded/)
+        expect(marks).toEqual(
+          expected.flatMap((row) => [
+            { year: row.year, series: 'firstYear', value: row.firstYear },
+            { year: row.year, series: 'annual', value: row.annual },
+          ]),
+        )
+        await comparison.getByRole('checkbox', { name: 'Annual average', exact: true }).uncheck()
+        await expect(comparison.locator('.adjustment-bar.annual')).toHaveCount(0)
+        await comparison.getByRole('checkbox', { name: 'Annual average', exact: true }).check()
+        await expect(comparison.locator('.adjustment-bar.annual')).toHaveCount(10)
+        expect(await comparison.evaluate((el) => getComputedStyle(el).backgroundColor)).toBe(
+          colorScheme === 'dark' ? 'rgb(10, 10, 11)' : 'rgb(255, 255, 255)',
+        )
+        expect(
+          await comparison
+            .locator('.adjustment-bar')
+            .first()
+            .evaluate((el) => getComputedStyle(el).animationName),
+        ).toBe('none')
+        expect(
+          await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth),
+        ).toBe(true)
+        await expect
+          .poll(() =>
+            comparison
+              .locator('.adjustment-bar[data-year="2025"]')
+              .first()
+              .evaluate((el) => {
+                const bar = el.getBoundingClientRect(),
+                  region = el.closest('.comparison-scroll')!.getBoundingClientRect()
+                return bar.left >= region.left && bar.right <= region.right
+              }),
+          )
+          .toBe(true)
+        await captureComparison(page, width, colorScheme, 'chart')
+        await comparison.getByRole('button', { name: 'Table', exact: true }).focus()
+        await page.keyboard.press('Enter')
+        await expect(comparison.getByRole('button', { name: 'Table', exact: true })).toHaveAttribute(
+          'aria-pressed',
+          'true',
+        )
+        const actualTable = await comparison.locator('tbody tr').evaluateAll((elements) =>
+          elements.map((el) => ({
+            year: Number(el.querySelector('th')?.textContent?.trim()),
+            values: [...el.querySelectorAll('td')].map((td) =>
+              parseFloat(td.querySelector('.cell-value')?.textContent ?? ''),
+            ),
+          })),
+        )
+        expect(actualTable).toEqual(
+          expected.map((row) => ({
+            year: row.year,
+            values: [row.firstYear, row.annual, Number((row.firstYear - row.annual).toFixed(2))],
+          })),
+        )
+        await comparison
+          .getByRole('button', { name: 'Inspect comparison year 2016', exact: true })
+          .focus()
+        await page.keyboard.press('Enter')
+        await expect(comparison.getByLabel('Comparison year', { exact: true })).toHaveValue('2016')
+        await expect(comparison.getByRole('status')).toContainText('Gap: -0.5 pp')
+        expect(
+          await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth),
+        ).toBe(true)
+        await captureComparison(page, width, colorScheme, 'table')
+        await slide.locator('.comparison-scroll').focus()
+        await expect(slide.locator('.comparison-scroll')).toBeFocused()
+        await page
+          .locator('#legacy-gallery')
+          .getByRole('button', { name: 'Enter Fullscreen' })
+          .click()
+        await expect(comparison).toHaveClass(/expanded/)
+        await page.keyboard.press('Escape')
+        await expect(comparison).not.toHaveClass(/expanded/)
+      })
     })
   }
 }

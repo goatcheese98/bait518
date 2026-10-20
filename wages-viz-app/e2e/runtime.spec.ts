@@ -7,7 +7,7 @@ const immutable = 'public, max-age=31536000, immutable'
 
 test('workerd: root HTML, CSP, browser resources and keyboard recovery', async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 1000 })
-  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' })
+  await page.emulateMedia({ reducedMotion: 'reduce' })
   const errors: string[] = []
   const policies: string[] = []
   page.on('pageerror', (error) => errors.push(error.message))
@@ -131,4 +131,26 @@ test('workerd: actual missing CSV response reaches the app error state and retry
   await expect(page.getByRole('status')).toContainText('10 years')
   await page.getByRole('button', { name: 'Table', exact: true }).click()
   await expect(page.getByRole('row', { name: /2016 1.3% 1.5% -0.2 pp/ })).toBeVisible()
+})
+
+
+test.describe('workerd browser preference across opener isolation', () => {
+  test.use({ colorScheme: 'dark' })
+
+  test('dark preference and rendered theme survive root, missing-route and root navigation', async ({ page }) => {
+    await page.setViewportSize({ width: 320, height: 1000 })
+    const response = await page.goto('/')
+    expect(response?.headers()['cross-origin-opener-policy']).toBe('same-origin')
+    await expect(page.getByRole('status')).toContainText('10 years')
+    expect(await page.evaluate(() => matchMedia('(prefers-color-scheme: dark)').matches)).toBe(true)
+    await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark')
+    const missing = await page.goto('/unknown-preference-route')
+    expect(missing?.status()).toBe(404)
+    expect(await page.evaluate(() => matchMedia('(prefers-color-scheme: dark)').matches)).toBe(true)
+    await expect(page.locator('body')).toHaveCSS('background-color', 'rgb(10, 10, 11)')
+    await page.screenshot({ path: 'docs/design/screens/runtime-404-320-dark.png', fullPage: true })
+    await page.getByRole('link', { name: 'Open wage explorer' }).click()
+    await expect(page.getByRole('status')).toContainText('10 years')
+    await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark')
+  })
 })
