@@ -1,6 +1,6 @@
 # First-year / annual chart migration — cloud evidence
 
-This is the next cohesive slice in existing draft #2, following the checkpoint at explorer `946c6f16af1092c6b16f5318951e44834d408edd`. Foundation draft #1 stays at `7c7d5fa9075d33abec3d1b97db9beb23582b7c4a`; that commit remains an ancestor of explorer. Two small follow-up commits separate the validated data contract/parity tests from native Vue chart/table/interaction styling. They append to explorer history; no published history rewrite, merge or release is needed.
+This is the next cohesive slice in existing draft #2, following the checkpoint at explorer `946c6f16af1092c6b16f5318951e44834d408edd`. Foundation draft #1 stays at `7c7d5fa9075d33abec3d1b97db9beb23582b7c4a`; that commit remains an ancestor of explorer. Small follow-up commits separate the validated data contract/parity tests from native Vue chart/table/interaction styling. An additional command fix forwards scoped root E2E arguments correctly. All commits append to explorer history; no published history rewrite, merge or release is needed.
 
 ## Before / after debt inventory
 
@@ -11,6 +11,7 @@ This is the next cohesive slice in existing draft #2, following the checkpoint a
 | Exact production aggregate parity | No focused tests | All 10 All industries / All Sectors observations match the legacy series and displayed two-decimal gaps |
 | First-year table / recovery | No table; failed requests can appear as an empty chart | Semantic table, selected year, loading/disabled/empty/error/retry states |
 | Mobile presentation | Fixed canvas, white surface, chart-only values | Readable scrolling plot, stacked labeled table rows, LUM light/dark tokens and Geist / Geist Mono |
+| Scoped root E2E arguments | npm consumed --grep instead of forwarding it | Correct npm delimiter; real root filtered and full browser commands pass |
 | Automated coverage | 13 unit / 11 browser tests | 28 unit / 23 browser tests; existing coverage retained |
 | Lint exceptions | Chart2 / Chart3 unused-variable exceptions; 2 existing viewport-condition warnings | Unchanged; no checks disabled and no new exception |
 
@@ -26,7 +27,7 @@ The new shared settlementRows helper performs CSV/schema validation for both the
 
 ## Browser and visual verification
 
-The pre-change production build reproduced the missing-table behavior: a focused Playwright test exits 1 because the legacy Chart4 slide has no Table button. Baseline cloud build, lint and the original 13 unit tests exit 0. The first attempted scoped command through the root npm forwarding script did not select tests; the reproduction was rerun directly in the nested app and failed on the actual missing control.
+The pre-change production build reproduced the missing-table behavior: a focused Playwright test exits 1 because the legacy Chart4 slide has no Table button. Baseline cloud build, lint and the original 13 unit tests exit 0. The first attempted scoped command through the root npm forwarding script did not select tests; the reproduction was rerun directly in the nested app and failed on the actual missing control. The root E2E wrapper now includes the npm argument delimiter, so `npm run test:e2e -- --grep "first-year chart provides"` reaches Playwright and passes after the fix. Full root E2E execution is also verified.
 
 Functional browser tests compare **all 20 plotted series marks** with independent production CSV values, then compare every table row and gap. Runs cover 320/768/1024/1440px, light/dark, reduced motion, keyboard Chart/Table and year selection, series visibility, source recovery, schema/HTTP errors, empty data, negative/missing/zero fixtures and fullscreen/Escape. The selected year is kept visible in the local plot scroller without moving the page. Both chart and table retain no body horizontal overflow.
 

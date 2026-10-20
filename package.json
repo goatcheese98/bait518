@@ -9,7 +9,7 @@
     "type-check": "npm --prefix wages-viz-app run type-check",
     "lint": "npm --prefix wages-viz-app run lint",
     "test:unit": "npm --prefix wages-viz-app run test:unit -- --run",
-    "test:e2e": "npm --prefix wages-viz-app run test:e2e",
+    "test:e2e": "npm --prefix wages-viz-app run test:e2e --",
     "cloud:build": "npm run install:locked -- --include=dev && npm run build"
   }
 }
