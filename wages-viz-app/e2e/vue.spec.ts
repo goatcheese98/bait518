@@ -1,4 +1,4 @@
-import { test, expect, type Page } from '@playwright/test'
+import { test, expect, type Page } from './runtimeFixtures'
 import { mkdir } from 'node:fs/promises'
 
 // The responsive control exists only at mobile/tablet widths. Assertions stay unconditional.

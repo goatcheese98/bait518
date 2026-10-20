@@ -32,6 +32,11 @@ jobs:
           CLOUDFLARE_CF_FETCH_ENABLED: 'false'
           WRANGLER_SEND_METRICS: 'false'
           WRANGLER_CHECK_FOR_UPDATES: 'false'
+      - run: npm run test:e2e -- --project=firefox --grep 'dark preference and rendered theme'
+        env:
+          CLOUDFLARE_CF_FETCH_ENABLED: 'false'
+          WRANGLER_SEND_METRICS: 'false'
+          WRANGLER_CHECK_FOR_UPDATES: 'false'
       - run: npm run test:e2e
         env:
           CLOUDFLARE_CF_FETCH_ENABLED: 'false'
@@ -47,27 +52,4 @@ jobs:
             wages-viz-app/logs
             wages-viz-app/runtime/generated
             wages-viz-app/docs/design/screens
-          retention-days: 7
-  diagnose-runtime:
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version-file: '.node-version'
-          cache: npm
-          cache-dependency-path: wages-viz-app/package-lock.json
-      - run: npm run cloud:build
-      - run: npx playwright install --with-deps firefox
-        working-directory: wages-viz-app
-      - run: npm run test:e2e -- --project=firefox runtime-header-diagnosis.spec.ts
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: bounded-runtime-diagnosis
-          path: |
-            wages-viz-app/playwright-report
-            wages-viz-app/test-results
-            wages-viz-app/logs
           retention-days: 7

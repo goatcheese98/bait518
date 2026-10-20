@@ -1,0 +1,57 @@
+{
+  "head": "c5a376c8bd30c20730e27d79813f5a5d0799d849",
+  "run": "https://github.com/goatcheese98/bait518/actions/runs/39397451657",
+  "job": 118543609127,
+  "playwright": "1.64.1",
+  "mode": "Real local workerd; each new browser context requested colorScheme dark; before=about:blank, after=root",
+  "matrix": [
+    {
+      "removal": "direct",
+      "before": true,
+      "media": false,
+      "theme": "light",
+      "background": "rgb(255, 255, 255)",
+      "errors": []
+    },
+    {
+      "removal": "unchanged",
+      "before": true,
+      "media": false,
+      "theme": "light",
+      "background": "rgb(255, 255, 255)",
+      "errors": []
+    },
+    {
+      "removal": "cross-origin-opener-policy",
+      "before": true,
+      "media": true,
+      "theme": "dark",
+      "background": "rgb(10, 10, 11)",
+      "errors": []
+    },
+    {
+      "removal": "content-security-policy",
+      "before": true,
+      "media": false,
+      "theme": "light",
+      "background": "rgb(255, 255, 255)",
+      "errors": []
+    },
+    {
+      "removal": "permissions-policy",
+      "before": true,
+      "media": false,
+      "theme": "light",
+      "background": "rgb(255, 255, 255)",
+      "errors": []
+    },
+    {
+      "removal": "all-security-headers",
+      "before": true,
+      "media": true,
+      "theme": "dark",
+      "background": "rgb(10, 10, 11)",
+      "errors": []
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test'
+import { test, expect } from './runtimeFixtures'
 import { readFile, readdir, mkdir } from 'node:fs/promises'
 import assetPaths from '../runtime/generated/asset-paths.json' with { type: 'json' }
 
@@ -139,6 +139,7 @@ test.describe('workerd browser preference across opener isolation', () => {
 
   test('dark preference and rendered theme survive root, missing-route and root navigation', async ({ page }) => {
     await page.setViewportSize({ width: 320, height: 1000 })
+    expect(await page.evaluate(() => matchMedia('(prefers-color-scheme: dark)').matches)).toBe(true)
     const response = await page.goto('/')
     expect(response?.headers()['cross-origin-opener-policy']).toBe('same-origin')
     await expect(page.getByRole('status')).toContainText('10 years')
