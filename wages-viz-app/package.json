@@ -8,14 +8,16 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
+    "build": "npm run build-only && npm run type-check",
     "preview": "vite preview",
     "test:unit": "vitest",
     "test:e2e": "playwright test",
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
     "lint": "eslint .",
-    "test:lint-contract": "node tools/lint-contract.mts"
+    "test:lint-contract": "node tools/lint-contract.mts",
+    "runtime:local": "wrangler dev --config ../wrangler.jsonc --local --ip 127.0.0.1 --port 4173 --inspector-port 0 --show-interactive-dev-session=false",
+    "runtime:dry-run": "wrangler deploy --config ../wrangler.jsonc --dry-run"
   },
   "dependencies": {
     "papaparse": "^5.5.3",
@@ -47,6 +49,7 @@
     "vite-plugin-vue-devtools": "^8.0.3",
     "vitest": "^4.1.12",
     "vue-eslint-parser": "^10.4.1",
-    "vue-tsc": "^3.1.1"
+    "vue-tsc": "^3.1.1",
+    "wrangler": "4.151.2"
   }
 }

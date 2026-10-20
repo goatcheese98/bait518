@@ -1,0 +1,2 @@
+# Local workerd state, never credentials or deployment artifacts
+.wrangler/

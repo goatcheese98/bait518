@@ -8,7 +8,7 @@ export default defineConfig({
   workers: 1,
   reporter: [['list'], ['html', { open: 'never' }]],
   use: {
-    baseURL: 'http://localhost:4173',
+    baseURL: 'http://127.0.0.1:4173',
     headless: true,
     trace: 'retain-on-failure',
   },
@@ -26,7 +26,9 @@ export default defineConfig({
     { name: 'webkit', use: { ...devices['Desktop Safari'] } },
   ],
   webServer: {
-    command: 'npm run preview -- --host 127.0.0.1',
+    command: 'npm run runtime:local',
+    env: { CLOUDFLARE_CF_FETCH_ENABLED: 'false', WRANGLER_SEND_METRICS: 'false', WRANGLER_CHECK_FOR_UPDATES: 'false', WRANGLER_LOG_PATH: 'logs/runtime/wrangler.log' },
+    timeout: 60_000,
     port: 4173,
     reuseExistingServer: false,
   },

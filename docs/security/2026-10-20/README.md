@@ -1,5 +1,7 @@
 # Bounded dependency-security slice — 2026-10-20
 
+Historical checkpoint: the residual wrapper limitation below is resolved by the [supported flat-config follow-up](flat-config/README.md), which retains this original evidence and adds zero-finding full/production audits.
+
 Baseline: explorer `4777d5cd7a9a5029b13b4236ef7656be2e3837cb`. Foundation stays `7c7d5fa9075d33abec3d1b97db9beb23582b7c4a`. This is a tested implementation candidate on the existing draft stack, not independent approval. The private Cloudflare hosting failures remain separate; no retry or provider/account setting change was made.
 
 ## Audit counts and complete scope
