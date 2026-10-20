@@ -1,6 +1,6 @@
 /// <reference types="vite/client" />
 
-// Compatibility declaration for the three untouched JavaScript chart components.
+// Compatibility declaration for the two untouched JavaScript chart components.
 // Vue's language tools infer the actual types for TypeScript SFCs.
 declare module '*.vue' {
   import type { DefineComponent } from 'vue'

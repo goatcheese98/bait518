@@ -24,13 +24,6 @@ export default defineConfigWithVueTs(
 
   pluginVue.configs['flat/essential'],
   vueTsConfigs.recommended,
-  // Two pre-existing unused declarations in the untouched industry leaders chart.
-  {
-    files: [
-      'src/components/charts/Chart2IndustryLeaders.vue',
-    ],
-    rules: { '@typescript-eslint/no-unused-vars': 'off' },
-  },
 
   {
     ...pluginVitest.configs.recommended,
