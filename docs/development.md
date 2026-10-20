@@ -29,3 +29,5 @@ The first-year/annual grouped-bar comparison is now a strict TypeScript native V
 Duration migration follow-up (38 unit / 29 browser; JS chart debt 4 → 3): [duration evidence](duration-migration.md). Earlier checkpoint counts above are historical.
 
 All active chart migrations are complete (JS chart debt 3 → 0), including the duration geometry review: [remaining chart evidence](remaining-charts-migration.md). Strict typecheck now includes E2E/tooling. CI runs Chromium, Firefox and WebKit; use `npm run test:e2e -- --project=chromium` when only managed Chromium is available. Earlier checkpoint counts above are historical.
+
+Bounded security follow-up: [full locked audit and residual chains](security/2026-10-20/README.md); full findings 38 → 4 high (one unresolved dev-only upstream advisory), production 7 → 0. The [extreme-axis-text regression](extreme-axis-text-fix.md) raises browser cases from 48 to 51 per engine. These results do not imply independent approval or hosting success.

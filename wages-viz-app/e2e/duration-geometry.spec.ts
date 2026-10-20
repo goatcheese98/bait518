@@ -87,6 +87,7 @@ for (const fixture of fixtures)
       )
     expect(cells).toEqual(fixture.values)
   })
+
 test('duration unsupported range is actionable and retry restores production geometry', async ({
   page,
 }) => {

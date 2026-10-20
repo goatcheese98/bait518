@@ -61,6 +61,7 @@ for (const width of [320, 1440])
     await page.keyboard.press('Escape')
     await expect(chart).not.toHaveClass(/expanded/)
   })
+
 test('leaders HTTP/schema/empty source states recover', async ({ page }) => {
   const chart = await sourceRecovery(
     page,
@@ -70,6 +71,7 @@ test('leaders HTTP/schema/empty source states recover', async ({ page }) => {
   )
   await expect(chart.locator('.leader-bar')).toHaveCount(8)
 })
+
 test('leaders keeps missing-versus-zero mean semantics', async ({ page }) => {
   await page.route('**/data/TABLEAU_sector_year.csv', (route) =>
     route.fulfill({

@@ -88,10 +88,12 @@ for (const width of [320, 1440])
     await page.keyboard.press('Escape')
     await expect(chart).not.toHaveClass(/expanded/)
   })
+
 test('distribution HTTP/schema/empty source states recover', async ({ page }) => {
   const chart = await sourceRecovery(page, 0, header, 'No wage distribution data available.')
   await expect(chart.locator('.distribution-point')).toHaveCount(49)
 })
+
 test('distribution missing/zero/negative source values keep category identity and indexed quartiles', async ({
   page,
 }) => {

@@ -93,6 +93,7 @@ for (const width of [320, 1440])
       await expect(chart).not.toHaveClass(/expanded/)
     })
   }
+
 test('duration HTTP/schema errors recover on retry', async ({ page }) => {
   let stage = 0
   await page.route('**/data/TABLEAU_sector_year.csv', async (route) => {
@@ -110,6 +111,7 @@ test('duration HTTP/schema errors recover on retry', async ({ page }) => {
   await chart.getByRole('button', { name: 'Retry duration data' }).click()
   await expect(chart.locator('.duration-point')).toHaveCount(11)
 })
+
 test('duration empty state and missing-versus-zero source accounting', async ({ page }) => {
   const header =
     'Year,Industry,Sector_Type,Duration_Months_Avg,Annual_Pct_Adjustment_Avg,First_Year_Pct_Adjustment_Avg,Number_of_Agreements,Number_of_Employees\n'

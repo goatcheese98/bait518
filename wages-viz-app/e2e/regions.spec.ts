@@ -77,6 +77,7 @@ for (const width of [320, 1440])
     await chart.screenshot({ path: `docs/design/screens/regions-${width}-light-table.png` })
     await noOverflow(page)
   })
+
 test('regions HTTP/schema/empty source states recover', async ({ page }) => {
   const chart = await sourceRecovery(
     page,
@@ -86,6 +87,7 @@ test('regions HTTP/schema/empty source states recover', async ({ page }) => {
   )
   await expect(chart.locator('.regional-point')).toHaveCount(11)
 })
+
 test('regions preserves missing/zero/negative values with finite visible coordinates', async ({
   page,
 }) => {
