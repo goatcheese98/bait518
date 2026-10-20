@@ -20,6 +20,8 @@ jobs:
           cache: npm
           cache-dependency-path: wages-viz-app/package-lock.json
       - run: npm run cloud:build
+      - run: npm --prefix wages-viz-app run test:lint-contract
+      - run: npm --prefix wages-viz-app audit --include=dev --include=optional
       - run: npm run lint
       - run: npm run type-check
       - run: npm run test:unit

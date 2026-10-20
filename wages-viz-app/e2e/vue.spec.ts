@@ -1,5 +1,10 @@
-import { test, expect } from '@playwright/test'
+import { test, expect, type Page } from '@playwright/test'
 import { mkdir } from 'node:fs/promises'
+
+// The responsive control exists only at mobile/tablet widths. Assertions stay unconditional.
+async function toggleMobileFilters(page: Page, width: number) {
+  if (width <= 768) await page.getByRole('button', { name: 'Edit filters' }).click()
+}
 
 for (const width of [320, 768, 1024, 1440]) {
   for (const colorScheme of ['light', 'dark'] as const) {
@@ -18,7 +23,7 @@ for (const width of [320, 768, 1024, 1440]) {
           .evaluate((el) => getComputedStyle(el).outlineStyle),
       ).toBe('solid')
       await page.keyboard.press('Enter')
-      if (width <= 768) await page.getByRole('button', { name: 'Edit filters' }).click()
+      await toggleMobileFilters(page, width)
       await page.getByLabel('From year', { exact: true }).selectOption('2016')
       await page.getByLabel('To year', { exact: true }).selectOption('2020')
       await page.getByRole('button', { name: 'Apply filters' }).click()
@@ -56,7 +61,7 @@ for (const width of [320, 768, 1024, 1440]) {
       expect(
         await page.locator('.public-line').evaluate((el) => getComputedStyle(el).animationName),
       ).toBe('none')
-      if (width <= 768) await page.getByRole('button', { name: 'Edit filters' }).click()
+      await toggleMobileFilters(page, width)
       await page.evaluate(() => document.fonts.ready)
       expect(await page.evaluate(() => document.fonts.check('16px Geist'))).toBe(true)
       const contrast = await page.evaluate(() => {

@@ -1,6 +1,7 @@
 {
   "extends": "@tsconfig/node22/tsconfig.json",
   "include": [
+    "tools/lint-contract.mts",
     "vite.config.*",
     "vitest.config.*",
     "cypress.config.*",
