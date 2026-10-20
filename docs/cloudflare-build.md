@@ -1,5 +1,7 @@
 # Cloudflare build investigation — no deployment performed
 
+Historical build investigation. The [local production-runtime follow-up](runtime-rehearsal.md) now prepares a Worker plus assets with status-aware security/cache policy. Asset-only descriptions below describe the earlier checkpoint. The private dashboard/log limitation remains unresolved.
+
 The original foundation HEAD `9cb49706afcd1936813b4ca8d6c7b8a50cbdd19b` and explorer HEAD `4b421a8ebb336f1fee2e5fd6b4bff331a238a599` both have passing GitHub quality workflows and failing Cloudflare Pages/Workers checks. This note separates reproducible repository gaps from unobserved dashboard settings. No Cloudflare account API, login, secret, account setting, deployment, retry, or release was invoked during diagnosis. Wrangler was used only with `deploy --dry-run`, metrics disabled; this neither uploads nor proves a deployment.
 
 ## Evidence from existing checks

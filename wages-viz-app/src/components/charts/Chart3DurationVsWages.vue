@@ -1,465 +1,523 @@
-<script setup>
-import { ref, onMounted, computed, watch } from 'vue'
-import Papa from 'papaparse'
-
-const props = defineProps({
-  fullscreen: {
-    type: Boolean,
-    default: false
-  }
+<script setup lang="ts">
+import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import { plotExtent } from '../../lib/plotScale'
+import { parseDuration, durationPoints, type DurationRow } from '../../lib/duration'
+const props = withDefaults(defineProps<{ fullscreen?: boolean }>(), { fullscreen: false })
+const rows = ref<DurationRow[]>([]),
+  loading = ref(true),
+  error = ref('')
+const view = ref<'chart' | 'table'>('chart'),
+  period = ref('2023–2025')
+const selectedIndustry = ref('Education, health, and social services')
+const years = computed(() => [...new Set(rows.value.map((r) => r.year))].sort((a, b) => a - b))
+const points = computed(() =>
+  durationPoints(
+    rows.value,
+    period.value === '2023–2025' ? [2023, 2024, 2025] : [Number(period.value)],
+  ),
+)
+const selected = computed(() => points.value.find((p) => p.name === selectedIndustry.value))
+watch(points, (next) => {
+  if (!next.some((p) => p.name === selectedIndustry.value))
+    selectedIndustry.value = next[0]?.name ?? ''
 })
-
-const chartOption = ref({})
-const loading = ref(true)
-const rawData = ref(null)
-const fontScale = computed(() => props.fullscreen ? 1.3 : 1)
-const fs = (size) => Math.round(size * fontScale.value)
-
-watch(() => props.fullscreen, () => {
-  if (rawData.value) {
-    processData(rawData.value)
-  }
-})
-
-const INDUSTRIES = [
-  'Construction',
-  'Education, health, and social services',
-  'Entertainment and hospitality',
-  'Finance and professional services',
-  'Information and culture',
-  'Manufacturing',
-  'Primary industries',
-  'Public administration',
-  'Transportation',
-  'Utilities',
-  'Wholesale and retail trade'
-]
-
-onMounted(async () => {
+const disabled = computed(() => loading.value || !!error.value || !rows.value.length)
+const groups = ['Education & Health', 'Entertainment & Hospitality', 'Other industries'] as const
+const visible = ref<string[]>([...groups])
+const group = (name: string) =>
+  name === 'Education, health, and social services'
+    ? groups[0]
+    : name === 'Entertainment and hospitality'
+      ? groups[1]
+      : groups[2]
+const extentX = computed(() =>
+  plotExtent(
+    points.value.map((p) => p.duration),
+    2,
+  ),
+)
+const extentY = computed(() =>
+  plotExtent(
+    points.value.map((p) => p.annual),
+    1,
+    true,
+  ),
+)
+const lowX = computed(() => extentX.value[0]),
+  highX = computed(() => extentX.value[1])
+const lowY = computed(() => extentY.value[0]),
+  highY = computed(() => extentY.value[1])
+const x = (v: number) => 72 + ((v - lowX.value) / (highX.value - lowX.value)) * 510
+const y = (v: number) => 310 - ((v - lowY.value) / (highY.value - lowY.value)) * 250
+let controller: AbortController | undefined
+async function load() {
+  controller?.abort()
+  controller = new AbortController()
+  loading.value = true
+  error.value = ''
   try {
-    const response = await fetch('/data/TABLEAU_sector_year.csv')
-    const csvText = await response.text()
-
-    Papa.parse(csvText, {
-      header: true,
-      dynamicTyping: true,
-      complete: (results) => {
-        rawData.value = results.data
-        processData(results.data)
-      }
+    const response = await fetch(`${import.meta.env.BASE_URL}data/TABLEAU_sector_year.csv`, {
+      signal: controller.signal,
     })
-  } catch (error) {
-    console.error('Error loading data:', error)
+    if (!response.ok) throw new Error('Dataset request failed')
+    const parsed = parseDuration(await response.text())
+    // Validate every selectable period before committing externally supplied data to reactive rendering.
+    const validate = (years?: number[]) => {
+      const next = durationPoints(parsed, years)
+      plotExtent(
+        next.map((p) => p.duration),
+        2,
+      )
+      plotExtent(
+        next.map((p) => p.annual),
+        1,
+        true,
+      )
+    }
+    validate()
+    for (const year of new Set(parsed.map((r) => r.year))) validate([year])
+    rows.value = parsed
+  } catch (cause) {
+    if (cause instanceof DOMException && cause.name === 'AbortError') return
+    error.value =
+      cause instanceof Error && cause.message.includes('range overflow')
+        ? 'Unsupported plot range: reduce the selected period or inspect the source values; this range exceeds finite plotting precision.'
+        : cause instanceof Error && cause.message.startsWith('Unsupported plot range')
+          ? cause.message
+          : 'The duration dataset could not load. Check the connection or dataset format and retry.'
+  } finally {
     loading.value = false
   }
-})
-
-const processData = (data) => {
-  const focusYears = [2023, 2024, 2025]
-
-  const filtered = data.filter((row) => {
-    return (
-      row.Sector_Type === 'All Sectors' &&
-      INDUSTRIES.includes(row.Industry) &&
-      focusYears.includes(row.Year)
-    )
-  })
-
-  const scatterData = INDUSTRIES.map((industry) => {
-    const rows = filtered.filter((row) => row.Industry === industry)
-    if (!rows.length) return null
-
-    const avgDuration =
-      rows.reduce((sum, row) => sum + (row.Duration_Months_Avg || 0), 0) / rows.length
-    const avgAnnual =
-      rows.reduce((sum, row) => sum + (row.Annual_Pct_Adjustment_Avg || 0), 0) / rows.length
-    const avgFirstYear =
-      rows.reduce((sum, row) => sum + (row.First_Year_Pct_Adjustment_Avg || 0), 0) / rows.length
-    const agreements = rows.reduce((sum, row) => sum + (row.Number_of_Agreements || 0), 0)
-    const employees = rows.reduce((sum, row) => sum + (row.Number_of_Employees || 0), 0)
-
-    return {
-      name: industry,
-      value: [
-        Number(avgDuration.toFixed(1)),
-        Number(avgAnnual.toFixed(2)),
-        Math.max(agreements, 1)
-      ],
-      avgAnnual: Number(avgAnnual.toFixed(2)),
-      avgFirstYear: Number(avgFirstYear.toFixed(2)),
-      avgDuration: Number(avgDuration.toFixed(1)),
-      agreements: Math.round(agreements),
-      employees: Math.round(employees)
-    }
-  }).filter(Boolean)
-
-  if (!scatterData.length) {
-    chartOption.value = {
-      title: {
-        text: 'Contract Duration vs Wage Growth',
-        left: 'center',
-        top: '40%',
-        textStyle: {
-          fontSize: fs(28),
-          fontWeight: 'bold',
-          color: '#2c3e50'
-        }
-      },
-      graphic: {
-        type: 'text',
-        left: 'center',
-        top: '52%',
-        style: {
-          text: 'No duration data available for the selected period.',
-          fontSize: fs(18),
-          fill: '#666666'
-        }
-      }
-    }
-    loading.value = false
-    return
-  }
-
-  const industryColors = {
-    'Construction': '#ffa726',
-    'Education, health, and social services': '#42a5f5',
-    'Entertainment and hospitality': '#ef5350',
-    'Finance and professional services': '#7e57c2',
-    'Information and culture': '#26a69a',
-    'Manufacturing': '#ab47bc',
-    'Primary industries': '#66bb6a',
-    'Public administration': '#5c6bc0',
-    'Transportation': '#29b6f6',
-    'Utilities': '#8d6e63',
-    'Wholesale and retail trade': '#ff7043'
-  }
-
-  const sizeScaler = (agreements) => {
-    const minSize = 18
-    const maxSize = 65
-    const agreementsValues = scatterData.map((item) => item.value[2])
-    const min = Math.min(...agreementsValues)
-    const max = Math.max(...agreementsValues)
-    if (min === max) return maxSize
-    return minSize + ((agreements - min) / (max - min)) * (maxSize - minSize)
-  }
-
-  const yMax = Math.ceil(Math.max(...scatterData.map((item) => item.value[1])) + 1)
-  const educationPoint = scatterData.find(
-    (item) => item.name === 'Education, health, and social services'
-  )
-
-  const highlightIndustries = [
-    'Education, health, and social services',
-    'Entertainment and hospitality'
-  ]
-
-  const highlightLabels = {
-    'Education, health, and social services': 'Education & Health',
-    'Entertainment and hospitality': 'Entertainment & Hospitality'
-  }
-
-  const highlightPoints = scatterData.filter((item) => highlightIndustries.includes(item.name))
-  const otherPoints = scatterData.filter((item) => !highlightIndustries.includes(item.name))
-
-  const makeScatterPoint = (item) => ({
-    ...item,
-    symbolSize: sizeScaler(item.value[2])
-  })
-
-  const otherSeries = {
-    name: 'Other industries',
-    type: 'scatter',
-    itemStyle: {
-      color: '#b0bec5',
-      shadowBlur: 10,
-      shadowColor: 'rgba(0, 0, 0, 0.15)'
-    },
-    data: otherPoints.map((item) => ({
-      ...makeScatterPoint(item),
-      itemStyle: {
-        color: '#b0bec5'
-      }
-    })),
-    emphasis: {
-      focus: 'series'
-    }
-  }
-
-  const highlightSeries = highlightPoints.map((point) => {
-    const alias = highlightLabels[point.name] || point.name
-    const color = industryColors[point.name] || '#ff7043'
-    return {
-      name: alias,
-      type: 'scatter',
-      color,
-      itemStyle: {
-        color,
-        shadowBlur: 20,
-        shadowColor: 'rgba(0, 0, 0, 0.25)'
-      },
-      data: [
-        {
-          ...makeScatterPoint(point),
-          label: {
-            show: true,
-            formatter: alias,
-            fontFamily:
-              '"Permanent Marker","Patrick Hand","Comic Sans MS","Bradley Hand",cursive',
-            color,
-            fontSize: point.name.length > 20 ? 14 : 16,
-            fontWeight: 600,
-            backgroundColor: 'rgba(255, 255, 255, 0.85)',
-            borderRadius: 8,
-            padding: [4, 8],
-            borderColor: 'rgba(0,0,0,0.12)',
-            borderWidth: 1,
-            offset: [0, 26]
-          }
-        }
-      ],
-      tooltip: {
-        formatter: (params) => {
-          const data = params.data
-          return `
-            <strong style="font-size: 16px;">${point.name}</strong><br/>
-            Avg Annual Adjustment: <strong>${data.avgAnnual}%</strong><br/>
-            Avg First-Year Adjustment: <strong>${data.avgFirstYear}%</strong><br/>
-            Avg Contract Duration: <strong>${data.avgDuration} months</strong><br/>
-            Agreements Signed: <strong>${data.agreements.toLocaleString()}</strong><br/>
-            Employees Covered: <strong>${data.employees.toLocaleString()}</strong>
-          `
-        }
-      },
-      emphasis: {
-        focus: 'series'
-      }
-    }
-  })
-
-  const bandSeries = {
-    type: 'scatter',
-    coordinateSystem: 'cartesian2d',
-    symbolSize: 0,
-    data: [],
-    markArea: {
-      silent: true,
-      itemStyle: {
-        color: 'rgba(46, 204, 113, 0.08)'
-      },
-      data: [
-        [
-          { yAxis: 3.5 },
-          { yAxis: yMax }
-        ]
-      ]
-    },
-    markLine: {
-      silent: true,
-      lineStyle: {
-        color: '#90caf9',
-        width: 2,
-        type: 'dashed'
-      },
-      data: [
-        {
-          name: '4% threshold',
-          yAxis: 4,
-          label: {
-            formatter: '4%+ raises',
-            color: '#1976d2',
-            fontWeight: '600',
-            fontSize: fs(13),
-            padding: [4, 6],
-            backgroundColor: 'rgba(255,255,255,0.8)',
-            borderRadius: 6,
-            position: 'end'
-          }
-        }
-      ]
-    }
-  }
-
-  const series = [...highlightSeries, otherSeries, bandSeries]
-
-  chartOption.value = {
-    backgroundColor: '#ffffff',
-    title: {
-      text: 'Do Longer Contracts Deliver Better Raises?',
-      subtext: 'Average contract duration vs. annual wage adjustment (2023-2025)\nBubble size = total agreements signed',
-      left: 'center',
-      top: 5,
-      textStyle: {
-        fontSize: fs(32),
-        fontWeight: 'bold',
-        color: '#2c3e50'
-      },
-      subtextStyle: {
-        fontSize: fs(16),
-        color: '#666666',
-        lineHeight: 22
-      }
-    },
-    legend: {
-      data: [...highlightSeries.map((item) => item.name), 'Other industries'],
-      top: 110,
-      left: 'center',
-      textStyle: {
-        color: '#2c3e50',
-        fontSize: fs(16),
-        fontWeight: '500'
-      },
-      itemWidth: 22,
-      itemHeight: 10,
-      itemGap: 30,
-      icon: 'roundRect'
-    },
-    graphic: [
-      {
-        type: 'text',
-        left: '65%',
-        top: '86%',
-        style: {
-          text: 'Shaded band highlights annual raises above 3.5%',
-          fontSize: fs(13),
-          fill: '#455a64',
-          fontWeight: 500,
-          lineHeight: 20
-        }
-      }
-    ],
-    tooltip: {
-      trigger: 'item',
-      backgroundColor: 'rgba(255, 252, 245, 0.98)',
-      borderColor: '#2c3e50',
-      borderWidth: 3,
-      padding: [16, 20],
-      textStyle: {
-        color: '#2c3e50',
-        fontSize: fs(17),
-        fontFamily: 'Comic Sans MS, Brush Script MT, cursive'
-      },
-      formatter: (params) => {
-        const { data } = params
-        return `
-          <strong style="font-size: ${fs(20)}px; font-family: Comic Sans MS, Brush Script MT, cursive;">${data.name}</strong><br/>
-          Avg Annual Adjustment: <strong>${data.avgAnnual}%</strong><br/>
-          Avg First-Year Adjustment: <strong>${data.avgFirstYear}%</strong><br/>
-          Avg Contract Duration: <strong>${data.avgDuration} months</strong><br/>
-          Agreements Signed: <strong>${data.agreements.toLocaleString()}</strong><br/>
-          Employees Covered: <strong>${data.employees.toLocaleString()}</strong>
-        `
-      }
-    },
-    grid: {
-      left: '8%',
-      right: '6%',
-      bottom: '16%',
-      top: '25%',
-      containLabel: true
-    },
-    xAxis: {
-      type: 'value',
-      name: 'Average Contract Duration (months)',
-      nameLocation: 'middle',
-      nameGap: 50,
-      min: Math.floor(Math.min(...scatterData.map((item) => item.value[0])) - 2),
-      max: Math.ceil(Math.max(...scatterData.map((item) => item.value[0])) + 2),
-      nameTextStyle: {
-        color: '#2c3e50',
-        fontSize: fs(18),
-        fontWeight: 'bold'
-      },
-      axisLine: {
-        lineStyle: {
-          color: '#333333',
-          width: 2
-        }
-      },
-      axisLabel: {
-        fontSize: fs(16),
-        color: '#2c3e50',
-        fontWeight: '500'
-      },
-      splitLine: {
-        lineStyle: {
-          color: '#e0e0e0',
-          width: 1
-        }
-      }
-    },
-    yAxis: {
-      type: 'value',
-      name: 'Average Annual Wage Adjustment (%)',
-      nameLocation: 'middle',
-      nameGap: 60,
-      min: Math.max(Math.floor(Math.min(...scatterData.map((item) => item.value[1])) - 1), 0),
-      max: Math.ceil(Math.max(...scatterData.map((item) => item.value[1])) + 1),
-      nameTextStyle: {
-        color: '#2c3e50',
-        fontSize: fs(18),
-        fontWeight: 'bold'
-      },
-      axisLine: {
-        lineStyle: {
-          color: '#333333',
-          width: 2
-        }
-      },
-      axisLabel: {
-        formatter: '{value}%',
-        fontSize: fs(16),
-        color: '#2c3e50',
-        fontWeight: '500'
-      },
-      splitLine: {
-        lineStyle: {
-          color: '#e0e0e0',
-          width: 1
-        }
-      }
-    },
-    visualMap: null,
-    series
-  }
-
-  loading.value = false
 }
+onMounted(() => {
+  void load()
+})
+onBeforeUnmount(() => controller?.abort())
 </script>
-
 <template>
-  <div class="chart-container">
-    <div v-if="loading" class="loading">Loading data...</div>
-    <v-chart
-      v-else
-      :option="chartOption"
-      class="chart-canvas"
-      style="width: 100%; height: 100%;"
-      autoresize
-    />
-  </div>
+  <section
+    class="duration-comparison"
+    :class="{ expanded: props.fullscreen }"
+    aria-labelledby="duration-title"
+    :aria-busy="loading"
+  >
+    <div class="comparison-heading">
+      <h2 id="duration-title">Do longer contracts deliver better raises?</h2>
+      <p>Average contract duration vs. annual wage adjustment · {{ period }} · All sectors</p>
+    </div>
+    <div class="comparison-tools">
+      <div role="group" aria-label="Duration comparison view">
+        <button :disabled="disabled" :aria-pressed="view === 'chart'" @click="view = 'chart'">
+          Chart</button
+        ><button :disabled="disabled" :aria-pressed="view === 'table'" @click="view = 'table'">
+          Table
+        </button>
+      </div>
+      <div class="year-picker">
+        <label for="duration-year">Duration period</label
+        ><select id="duration-year" v-model="period" :disabled="disabled">
+          <option>2023–2025</option>
+          <option v-for="year in years" :key="year" :value="String(year)">{{ year }}</option>
+        </select>
+      </div>
+    </div>
+    <p v-if="loading" role="status" class="comparison-state">
+      Loading contract duration observations…
+    </p>
+    <div v-else-if="error" role="alert" class="comparison-state">
+      <p>{{ error }}</p>
+      <button @click="load">Retry duration data</button>
+    </div>
+    <div v-else-if="!points.length" class="comparison-state">
+      <h3>No duration data available for the selected period.</h3>
+      <button @click="load">Reload duration data</button>
+    </div>
+    <template v-else>
+      <div class="comparison-legend" role="group" aria-label="Visible duration series">
+        <label v-for="name in groups" :key="name"
+          ><input type="checkbox" v-model="visible" :value="name" />{{ name }}</label
+        >
+      </div>
+      <label for="duration-industry">Inspect industry</label
+      ><select id="duration-industry" v-model="selectedIndustry">
+        <option v-for="point in points" :key="point.name">{{ point.name }}</option>
+      </select>
+      <div v-if="selected" role="status" class="comparison-detail">
+        <h3>{{ selected.name }}</h3>
+        <p>
+          {{ selected.duration }} months · {{ selected.annual }}% annual · {{ selected.firstYear }}%
+          first-year · {{ selected.agreements.toLocaleString('en-CA') }} agreements ·
+          {{ selected.employees.toLocaleString('en-CA') }} employees
+        </p>
+        <p>{{ selected.missing }} missing source fields (see calculation note).</p>
+      </div>
+      <div
+        v-if="view === 'chart'"
+        class="comparison-scroll"
+        tabindex="0"
+        role="region"
+        aria-label="Duration bubble chart; scroll horizontally or use Table for exact values"
+      >
+        <svg
+          width="640"
+          height="380"
+          role="img"
+          aria-labelledby="duration-plot-title duration-plot-desc"
+        >
+          <title id="duration-plot-title">
+            Contract duration and annual adjustment by industry
+          </title>
+          <desc id="duration-plot-desc">
+            Bubble diameter represents total agreements. Education and health use outlined circles,
+            entertainment uses dashed circles, other industries use filled circles. The shaded band
+            starts above 3.5%, with a dashed threshold at 4%. Exact statistics are in Table.
+          </desc>
+          <defs>
+            <clipPath id="duration-clip"><rect x="40" y="28" width="570" height="314" /></clipPath>
+          </defs>
+          <g clip-path="url(#duration-clip)">
+            <rect
+              x="48"
+              :y="y(highY)"
+              width="554"
+              :height="Math.max(0, y(Math.max(3.5, lowY)) - y(highY))"
+              class="duration-band"
+            />
+            <g v-for="step in [0, 1, 2, 3, 4]" :key="step">
+              <line
+                x1="48"
+                x2="602"
+                :y1="60 + step * 62.5"
+                :y2="60 + step * 62.5"
+                class="grid-line"
+              />
+            </g>
+            <line
+              v-if="lowY <= 4 && highY >= 4"
+              x1="48"
+              x2="602"
+              :y1="y(4)"
+              :y2="y(4)"
+              class="threshold"
+            />
+            <line
+              v-if="lowY <= 0 && highY >= 0"
+              class="duration-zero"
+              x1="48"
+              x2="602"
+              :y1="y(0)"
+              :y2="y(0)"
+            />
+            <circle
+              v-for="point in points.filter((p) => visible.includes(group(p.name)))"
+              :key="point.name"
+              class="duration-point"
+              :class="{
+                education: group(point.name) === groups[0],
+                entertainment: group(point.name) === groups[1],
+              }"
+              :data-industry="point.name"
+              :data-duration="point.duration"
+              :data-annual="point.annual"
+              :data-first-year="point.firstYear"
+              :data-agreements="point.agreements"
+              :data-employees="point.employees"
+              :cx="x(point.duration)"
+              :cy="y(point.annual)"
+              :r="point.size / 2"
+            >
+              <title>
+                {{ point.name }}: {{ point.duration }} months, {{ point.annual }}% annual;
+                {{ point.agreements }} agreements
+              </title>
+            </circle>
+          </g>
+          <text x="48" y="18" class="axis-text">
+            Annual adjustment (%) · band &gt;3.5% · dashed line 4%
+          </text>
+          <g v-for="step in [0, 1, 2, 3, 4]" :key="step">
+            <text x="4" :y="64 + step * 62.5" class="axis-text">
+              {{ (highY - (highY - lowY) * (step / 4)).toFixed(1) }}
+            </text>
+            <text :x="72 + step * 127.5" y="340" text-anchor="middle" class="axis-text">
+              {{ (lowX + (highX - lowX) * (step / 4)).toFixed(1) }}
+            </text>
+          </g>
+          <text x="320" y="370" text-anchor="middle" class="axis-text">
+            Average contract duration (months) · bubble diameter = agreements
+          </text>
+        </svg>
+      </div>
+      <div
+        v-else
+        class="comparison-scroll"
+        tabindex="0"
+        role="region"
+        aria-label="Duration source values table"
+      >
+        <table role="table">
+          <caption>
+            Arithmetic industry averages for
+            {{
+              period
+            }}; counts are totals
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Industry</th>
+              <th scope="col">Duration (months)</th>
+              <th scope="col">Annual (%)</th>
+              <th scope="col">First-year (%)</th>
+              <th scope="col">Agreements</th>
+              <th scope="col">Employees</th>
+              <th scope="col">Missing fields</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="point in points" :key="point.name">
+              <th scope="row">
+                <button
+                  @click="selectedIndustry = point.name"
+                  :aria-pressed="selectedIndustry === point.name"
+                >
+                  {{ point.name }}
+                </button>
+              </th>
+              <td
+                v-for="(value, label) in {
+                  'Duration (months)': point.duration,
+                  'Annual (%)': point.annual,
+                  'First-year (%)': point.firstYear,
+                  Agreements: point.agreements,
+                  Employees: point.employees,
+                  'Missing fields': point.missing,
+                }"
+                :key="label"
+              >
+                <span class="cell-label" aria-hidden="true">{{ label }}</span
+                ><span class="cell-value">{{ value }}</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </template>
+    <p class="comparison-note">
+      Source: Employment and Social Development Canada · existing sector/year CSV. Original
+      calculation: unweighted arithmetic means over the selected rows; blank source inputs
+      contribute zero to these means and totals. Missing-field counts distinguish blanks from
+      observed zero. Duration displays one decimal, adjustments up to two; counts are rounded.
+      Adjustments are percentages, not compounded wage levels.
+    </p>
+  </section>
 </template>
-
 <style scoped>
-.chart-container {
+.duration-point {
+  fill: var(--mut);
+  stroke: var(--bg);
+  stroke-width: 2;
+}
+.duration-point.education {
+  fill: var(--panel);
+  stroke: var(--blue);
+  stroke-width: 3;
+}
+.duration-point.entertainment {
+  fill: var(--panel);
+  stroke: var(--fg);
+  stroke-width: 3;
+  stroke-dasharray: 4 2;
+}
+.duration-band {
+  fill: var(--blue);
+  opacity: 0.08;
+}
+.duration-zero {
+  stroke: var(--fg);
+  stroke-width: 2;
+}
+.threshold {
+  stroke: var(--blue);
+  stroke-dasharray: 6 4;
+  stroke-width: 2;
+}
+
+.duration-comparison {
   width: 100%;
+  min-width: 0;
+  min-height: 0;
   height: 100%;
+  overflow: auto;
   display: flex;
   flex-direction: column;
+  gap: 16px;
+  color: var(--fg);
+  background: var(--bg);
+  font: var(--fs-md) / 1.5 var(--font-ui);
+  padding: 4px;
+}
+.comparison-heading {
+  display: grid;
+  gap: 8px;
+}
+h2 {
+  font-size: var(--fs-xl);
+  line-height: 1.3;
+}
+.comparison-heading p,
+.comparison-note {
+  color: var(--mut);
+}
+.comparison-tools {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.comparison-tools [role='group'] {
+  display: flex;
+  gap: 8px;
+}
+.comparison-tools [aria-pressed='true'] {
+  color: var(--on-acc);
+  background: var(--acc);
+  border-color: var(--acc);
+}
+.year-picker {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.comparison-legend {
+  display: flex;
+  gap: 8px 24px;
+  flex-wrap: wrap;
+}
+.comparison-legend label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  cursor: pointer;
+}
+.comparison-legend input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--acc);
+}
+.annual-key {
+  color: var(--blue);
+}
+.comparison-scroll {
+  overflow: auto;
+  max-width: 100%;
+  flex-shrink: 0;
+}
+.comparison-scroll svg {
+  display: block;
+}
+.axis-text {
+  fill: var(--mut);
+  font: 12px var(--font-mono);
+}
+.grid-line {
+  stroke: var(--line);
+}
+.zero-line {
+  stroke: var(--mut);
+}
+.adjustment-bar.firstYear {
+  fill: var(--fg);
+}
+.adjustment-bar.annual {
+  fill: var(--panel);
+  stroke: var(--blue);
+  stroke-width: 2;
+  stroke-dasharray: 4 2;
+}
+.zero-value {
+  stroke-width: 3;
+}
+.zero-value.firstYear {
+  stroke: var(--fg);
+}
+.zero-value.annual {
+  stroke: var(--blue);
+  stroke-dasharray: 3 2;
+}
+.comparison-detail {
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+  display: grid;
+  gap: 4px;
+}
+.comparison-detail h3 {
+  font-size: var(--fs-lg);
+}
+b,
+td,
+select {
+  font-family: var(--font-mono);
+}
+.comparison-note {
+  font-size: var(--fs-base);
+}
+.comparison-state {
+  min-height: 286px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
   justify-content: center;
-  background: #ffffff;
 }
-
-.loading {
-  font-size: 1.8rem;
-  color: #2c3e50;
-  padding: 2rem;
-  font-weight: 500;
+.expanded {
+  padding: 16px;
 }
-
-.chart-canvas {
-  flex: 1;
-  min-height: 440px;
+.active-year {
+  fill: var(--fg);
+  font-weight: 700;
+}
+.cell-label {
+  display: none;
+}
+@media (max-width: 768px) {
+  table {
+    min-width: 0;
+  }
+  caption {
+    display: block;
+  }
+  thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+  tbody,
+  tr {
+    display: block;
+  }
+  tr {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  th,
+  td {
+    border: 0;
+    padding: 4px;
+  }
+  td {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px;
+  }
+  .cell-label {
+    display: inline;
+    color: var(--mut);
+    font-family: var(--font-ui);
+  }
 }
 </style>

@@ -1,6 +1,8 @@
 {
   "extends": "@tsconfig/node22/tsconfig.json",
   "include": [
+    "tools/**/*.mts",
+    "runtime/**/*.ts",
     "vite.config.*",
     "vitest.config.*",
     "cypress.config.*",
@@ -10,6 +12,10 @@
   ],
   "compilerOptions": {
     "noEmit": true,
+    "lib": ["ES2023", "DOM"],
+    "resolveJsonModule": true,
+    "allowImportingTsExtensions": true,
+    "strict": true,
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
 
     "module": "ESNext",

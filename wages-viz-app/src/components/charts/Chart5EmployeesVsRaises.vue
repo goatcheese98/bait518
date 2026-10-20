@@ -1,333 +1,217 @@
-<script setup>
-import { ref, onMounted, computed, watch } from 'vue'
-import Papa from 'papaparse'
-
-const props = defineProps({
-  fullscreen: {
-    type: Boolean,
-    default: false
-  }
+<script setup lang="ts">
+import { computed, ref, watch } from 'vue'
+import ChartFrame from './ChartFrame.vue'
+import { useChartSource } from '../../lib/chartSource'
+import {
+  parseRegions,
+  regionalSummary,
+  regionalAxes,
+  regionalHighlights,
+  regionalYears,
+} from '../../lib/regions'
+withDefaults(defineProps<{ fullscreen?: boolean }>(), { fullscreen: false })
+const { rows, loading, error, load } = useChartSource(parseRegions)
+const period = ref('2016–2025'),
+  selected = ref('British Columbia')
+const years = computed(() => [...new Set(rows.value.map((r) => r.year))].sort((a, b) => a - b))
+const points = computed(() =>
+  regionalSummary(
+    rows.value,
+    period.value === '2016–2025' ? regionalYears : [Number(period.value)],
+  ),
+)
+const axes = computed(() => regionalAxes(points.value))
+const x = (value: number) =>
+  72 + ((value - axes.value.x[0]) / (axes.value.x[1] - axes.value.x[0])) * 510
+const y = (value: number) =>
+  310 - ((value - axes.value.y[0]) / (axes.value.y[1] - axes.value.y[0])) * 250
+watch(points, (next) => {
+  if (!next.some((p) => p.name === selected.value)) selected.value = next[0]?.name ?? ''
 })
-
-const chartOption = ref({})
-const loading = ref(true)
-const rawData = ref(null)
-const fontScale = computed(() => props.fullscreen ? 1.3 : 1)
-const fs = (size) => Math.round(size * fontScale.value)
-
-watch(() => props.fullscreen, () => {
-  if (rawData.value) {
-    processData(rawData.value)
-  }
-})
-
-const PROVINCES = [
-  'Alberta',
-  'British Columbia',
-  'Manitoba',
-  'New Brunswick',
-  'Newfoundland and Labrador',
-  'Nova Scotia',
-  'Ontario',
-  'Prince Edward Island',
-  'Quebec',
-  'Saskatchewan',
-  'Multi-provinces'
-]
-
-onMounted(async () => {
-  try {
-    const response = await fetch('/data/TABLEAU_sector_year.csv')
-    const csvText = await response.text()
-
-    Papa.parse(csvText, {
-      header: true,
-      dynamicTyping: true,
-      complete: (results) => {
-        rawData.value = results.data
-        processData(results.data)
-      }
-    })
-  } catch (error) {
-    console.error('Error loading data:', error)
-    loading.value = false
-  }
-})
-
-const processData = (data) => {
-  const focusYears = Array.from({ length: 2025 - 2016 + 1 }, (_, i) => 2016 + i)
-
-  const filtered = data.filter((row) => {
-    return (
-      row.Sector_Type === 'All Sectors' &&
-      PROVINCES.includes(row.Industry) &&
-      focusYears.includes(row.Year)
-    )
-  })
-
-  const provinceData = PROVINCES.map((province) => {
-    const rows = filtered.filter((row) => row.Industry === province)
-    if (!rows.length) return null
-
-    const annualAvg =
-      rows.reduce((sum, row) => sum + (row.Annual_Pct_Adjustment_Avg || 0), 0) / rows.length
-    const employeesTotal = rows.reduce((sum, row) => sum + (row.Number_of_Employees || 0), 0)
-    const employees = employeesTotal / rows.length
-    const agreements = rows.reduce((sum, row) => sum + (row.Number_of_Agreements || 0), 0)
-    const firstYearAvg =
-      rows.reduce((sum, row) => sum + (row.First_Year_Pct_Adjustment_Avg || 0), 0) / rows.length
-
-    return {
-      name: province,
-      employees,
-      employeesTotal,
-      annualAvg,
-      agreements,
-      firstYearAvg
-    }
-  }).filter(Boolean)
-
-  if (!provinceData.length) {
-    chartOption.value = {
-      title: {
-        text: 'Employees vs. Wage Adjustments',
-        left: 'center',
-        top: '40%',
-        textStyle: {
-          fontSize: fs(28),
-          fontWeight: 'bold',
-          color: '#2c3e50'
-        }
-      },
-      graphic: {
-        type: 'text',
-        left: 'center',
-        top: '52%',
-        style: {
-          text: 'No regional data available for the selected period.',
-          fontSize: fs(18),
-          fill: '#666666'
-        }
-      }
-    }
-    loading.value = false
-    return
-  }
-
-  const employeeValues = provinceData.map((item) => item.employees)
-  const annualValues = provinceData.map((item) => item.annualAvg)
-  const employeeMin = Math.min(...employeeValues)
-  const employeeMax = Math.max(...employeeValues)
-  const annualMin = Math.min(...annualValues)
-  const annualMax = Math.max(...annualValues)
-
-  const symbolSize = (employees) => {
-    const minSize = 18
-    const maxSize = 70
-    if (employeeMin === employeeMax) return maxSize
-    return minSize + ((employees - employeeMin) / (employeeMax - employeeMin)) * (maxSize - minSize)
-  }
-
-  const highlightColors = {
-    'British Columbia': '#1e88e5',
-    'Ontario': '#43a047',
-    'Quebec': '#f4511e',
-    'Alberta': '#8e24aa'
-  }
-
-  const makeSeries = (label, color, items) => ({
-    name: label,
-    type: 'scatter',
-    data: items.map((item) => ({
-      name: item.name,
-      value: [item.employees, Number(item.annualAvg.toFixed(2))],
-      annualAvg: item.annualAvg,
-      firstYearAvg: item.firstYearAvg,
-      employees: item.employees,
-      employeesTotal: item.employeesTotal,
-      agreements: item.agreements,
-      symbolSize: symbolSize(item.employees)
-    })),
-    itemStyle: {
-      color,
-      shadowBlur: 12,
-      shadowColor: 'rgba(0, 0, 0, 0.18)'
-    },
-    emphasis: {
-      focus: 'series'
-    }
-  })
-
-  const highlightSeries = Object.entries(highlightColors)
-    .map(([region, color]) => {
-      const point = provinceData.find((item) => item.name === region)
-      if (!point) return null
-      return makeSeries(region, color, [point])
-    })
-    .filter(Boolean)
-
-  const otherProvinces = provinceData.filter((item) => !(item.name in highlightColors))
-  const otherSeries = otherProvinces.length ? makeSeries('Other provinces', '#90a4ae', otherProvinces) : null
-
-  chartOption.value = {
-    backgroundColor: '#ffffff',
-    title: {
-      text: 'Do Bigger Bargaining Units Win Bigger Raises?',
-      subtext: 'Average annual % adjustment vs. employees represented (2016-2025)',
-      left: 'center',
-      top: 5,
-      textStyle: {
-        fontSize: fs(32),
-        fontWeight: 'bold',
-        color: '#2c3e50'
-      },
-      subtextStyle: {
-        fontSize: fs(16),
-        color: '#666666'
-      }
-    },
-    tooltip: {
-      trigger: 'item',
-      backgroundColor: 'rgba(255, 252, 245, 0.98)',
-      borderColor: '#2c3e50',
-      borderWidth: 3,
-      padding: [16, 20],
-      textStyle: {
-        color: '#2c3e50',
-        fontSize: fs(17),
-        fontFamily: 'Comic Sans MS, Brush Script MT, cursive'
-      },
-      formatter: (params) => {
-        const { data } = params
-        return `
-          <strong style="font-size: ${fs(20)}px; font-family: Comic Sans MS, Brush Script MT, cursive;">${data.name}</strong><br/>
-          Avg Annual Adjustment: <strong>${data.annualAvg.toFixed(2)}%</strong><br/>
-          Avg First-Year Adjustment: <strong>${data.firstYearAvg.toFixed(2)}%</strong><br/>
-          Avg Employees Covered (per year): <strong>${Math.round(data.employees).toLocaleString()}</strong><br/>
-          Total Employees Across Deals: <strong>${Math.round(data.employeesTotal).toLocaleString()}</strong><br/>
-          Agreements Signed (2016-2025): <strong>${Math.round(data.agreements).toLocaleString()}</strong>
-        `
-      }
-    },
-    legend: {
-      data: [...highlightSeries.map((series) => series.name), ...(otherSeries ? ['Other provinces'] : [])],
-      top: 80,
-      textStyle: {
-        color: '#2c3e50',
-        fontSize: fs(16),
-        fontWeight: '500'
-      },
-      itemGap: 26
-    },
-    grid: {
-      left: '10%',
-      right: '6%',
-      bottom: '12%',
-      top: '21%',
-      containLabel: true
-    },
-    xAxis: {
-      type: 'value',
-      name: 'Average Employees Covered (per year)',
-      nameLocation: 'middle',
-      nameGap: 50,
-      min: Math.max(Math.floor(employeeMin / 1000) * 1000 - 5000, 0),
-      max: Math.ceil(employeeMax / 1000) * 1000 + 5000,
-      nameTextStyle: {
-        color: '#2c3e50',
-        fontSize: fs(18),
-        fontWeight: 'bold'
-      },
-      axisLabel: {
-      formatter: (value) => `${(value / 1000).toFixed(0)}k`,
-        fontSize: fs(16),
-        color: '#2c3e50',
-        fontWeight: '500'
-      },
-      axisLine: {
-        lineStyle: {
-          color: '#333333',
-          width: 2
-        }
-      },
-      splitLine: {
-        lineStyle: {
-          color: '#e0e0e0',
-          width: 1
-        }
-      }
-    },
-    yAxis: {
-      type: 'value',
-      name: 'Average Annual Wage Adjustment (%)',
-      nameLocation: 'middle',
-      nameGap: 60,
-      min: Math.max(Math.floor(annualMin) - 1, 0),
-      max: Math.ceil(annualMax + 1),
-      nameTextStyle: {
-        color: '#2c3e50',
-        fontSize: fs(18),
-        fontWeight: 'bold'
-      },
-      axisLabel: {
-        formatter: '{value}%',
-        fontSize: fs(16),
-        color: '#2c3e50',
-        fontWeight: '500'
-      },
-      axisLine: {
-        lineStyle: {
-          color: '#333333',
-          width: 2
-        }
-      },
-      splitLine: {
-        lineStyle: {
-          color: '#e0e0e0',
-          width: 1
-        }
-      }
-    },
-    series: otherSeries ? [...highlightSeries, otherSeries] : [...highlightSeries]
-  }
-
-  loading.value = false
-}
+const detail = computed(() => points.value.find((p) => p.name === selected.value))
+const groups = [...regionalHighlights, 'Other provinces']
+const visible = ref<string[]>([...groups])
+const group = (name: string) =>
+  regionalHighlights.some((region) => region === name) ? name : 'Other provinces'
+const tableRows = computed(() =>
+  points.value.map((p) => ({
+    key: p.name,
+    label: p.name,
+    values: [
+      p.annualAvg.toFixed(2),
+      p.firstYearAvg.toFixed(2),
+      Math.round(p.employees),
+      Math.round(p.employeesTotal),
+      Math.round(p.agreements),
+      p.missing,
+    ],
+  })),
+)
 </script>
-
 <template>
-  <div class="chart-container">
-    <div v-if="loading" class="loading">Loading data...</div>
-    <v-chart
-      v-else
-      :option="chartOption"
-      class="chart-canvas"
-      style="width: 100%; height: 100%;"
-      autoresize
-    />
-  </div>
+  <ChartFrame
+    id="regions"
+    title="Do Bigger Bargaining Units Win Bigger Raises?"
+    :subtitle="`Average annual % adjustment vs. employees represented (${period})`"
+    :loading="loading"
+    :error="error"
+    empty="No regional data available for the selected period."
+    :fullscreen="fullscreen"
+    :columns="[
+      'Region',
+      'Avg Annual Adjustment (%)',
+      'Avg First-Year Adjustment (%)',
+      'Avg Employees Covered (per year)',
+      'Total Employees Across Deals',
+      'Agreements Signed',
+      'Missing fields',
+    ]"
+    :table-rows="tableRows"
+    :selected="selected"
+    @select="selected = $event"
+    @retry="load"
+    note="Original arithmetic means count blank fields as zero contributions; totals sum the selected rows. Missing-field counts distinguish absent inputs from observed zero. The plot uses the unrounded average employee count and two-decimal annual adjustment; bubble diameter represents average employees. Displayed employee/agreement counts are rounded. Percentages are not compounded wage levels."
+  >
+    <template #controls
+      ><label for="regional-period"
+        >Regional period
+        <select id="regional-period" v-model="period" :disabled="loading || !!error">
+          <option>2016–2025</option>
+          <option v-for="year in years" :key="year" :value="String(year)">{{ year }}</option>
+        </select></label
+      ></template
+    >
+    <template #detail>
+      <div class="series-controls" role="group" aria-label="Visible regional series">
+        <label v-for="name in groups" :key="name"
+          ><input type="checkbox" v-model="visible" :value="name" />{{ name }}</label
+        >
+      </div>
+      <label for="regional-inspect"
+        >Inspect region
+        <select id="regional-inspect" v-model="selected">
+          <option v-for="point in points" :key="point.name">{{ point.name }}</option>
+        </select></label
+      >
+      <p v-if="detail" role="status">
+        {{ detail.name }} · Avg Annual Adjustment: {{ detail.annualAvg.toFixed(2) }}% · Avg
+        First-Year Adjustment: {{ detail.firstYearAvg.toFixed(2) }}% · Avg Employees Covered (per
+        year): {{ Math.round(detail.employees).toLocaleString('en-CA') }} · Total Employees Across
+        Deals: {{ Math.round(detail.employeesTotal).toLocaleString('en-CA') }} · Agreements Signed
+        ({{ period }}): {{ Math.round(detail.agreements).toLocaleString('en-CA') }}
+      </p>
+    </template>
+    <svg
+      width="640"
+      height="390"
+      role="img"
+      aria-labelledby="regional-plot-title regional-plot-desc"
+    >
+      <title id="regional-plot-title">Do Bigger Bargaining Units Win Bigger Raises?</title>
+      <desc id="regional-plot-desc">
+        British Columbia, Ontario, Quebec and Alberta retain separate highlighted series; other
+        provinces share a series. Circle stroke patterns identify groups in addition to color.
+        Bubble diameter scales with average employees. Exact values and counts appear in Table.
+      </desc>
+      <text x="48" y="18" class="axis-text">Average Annual Wage Adjustment (%)</text>
+      <g v-for="step in [0, 1, 2, 3, 4]" :key="step">
+        <line x1="48" x2="602" :y1="60 + step * 62.5" :y2="60 + step * 62.5" class="grid-line" />
+        <text x="2" :y="64 + step * 62.5" class="axis-text">
+          {{ (axes.y[1] - (axes.y[1] - axes.y[0]) * (step / 4)).toFixed(1) }}
+        </text>
+        <text :x="72 + step * 127.5" y="340" text-anchor="middle" class="axis-text">
+          {{ ((axes.x[0] + (axes.x[1] - axes.x[0]) * (step / 4)) / 1000).toFixed(0) }}k
+        </text>
+      </g>
+      <line
+        v-if="axes.y[0] <= 0 && axes.y[1] >= 0"
+        x1="48"
+        x2="602"
+        :y1="y(0)"
+        :y2="y(0)"
+        class="zero-line"
+      />
+      <circle
+        v-for="point in points.filter((p) => visible.includes(group(p.name)))"
+        :key="point.name"
+        class="regional-point"
+        :class="`series-${groups.indexOf(group(point.name))}`"
+        :data-region="point.name"
+        :data-employees="point.employees"
+        :data-annual="point.plotAnnual"
+        :data-first-year="point.firstYearAvg"
+        :data-total="point.employeesTotal"
+        :data-agreements="point.agreements"
+        :cx="x(point.employees)"
+        :cy="y(point.plotAnnual)"
+        :r="point.size / 2"
+      >
+        <title>
+          {{ point.name }}: {{ point.annualAvg.toFixed(2) }}% annual;
+          {{ Math.round(point.employees) }} average employees
+        </title>
+      </circle>
+      <text x="320" y="375" text-anchor="middle" class="axis-text">
+        Average Employees Covered (per year)
+      </text>
+    </svg>
+  </ChartFrame>
 </template>
-
 <style scoped>
-.chart-container {
-  width: 100%;
-  height: 100%;
+label {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background: #ffffff;
+  gap: 8px;
+  flex-wrap: wrap;
+  min-width: 0;
 }
-
-.loading {
-  font-size: 1.8rem;
-  color: #2c3e50;
-  padding: 2rem;
-  font-weight: 500;
+select {
+  max-width: 100%;
+  font-family: var(--font-mono);
 }
-
-.chart-canvas {
-  flex: 1;
-  min-height: 440px;
+.series-controls {
+  display: flex;
+  gap: 8px 24px;
+  flex-wrap: wrap;
+}
+.series-controls label {
+  min-height: 44px;
+}
+.series-controls input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--acc);
+}
+.axis-text {
+  fill: var(--mut);
+  font: 12px var(--font-mono);
+}
+.grid-line {
+  stroke: var(--line);
+}
+.zero-line {
+  stroke: var(--fg);
+  stroke-width: 2;
+}
+.regional-point {
+  fill: var(--panel);
+  stroke: var(--blue);
+  stroke-width: 3;
+}
+.series-1 {
+  stroke-dasharray: 6 2;
+}
+.series-2 {
+  stroke: var(--fg);
+  stroke-dasharray: 2 3;
+}
+.series-3 {
+  stroke: var(--fg);
+  stroke-dasharray: 8 3 2 3;
+}
+.series-4 {
+  fill: var(--mut);
+  stroke: var(--bg);
+  stroke-width: 2;
 }
 </style>

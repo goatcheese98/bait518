@@ -1,0 +1,22 @@
+# Supported flat-config replacement and runtime tooling
+
+Baseline: reviewed explorer `55fe4e7b6c11749aea5ae241f7228bea07e89c58`; foundation unchanged at `7c7d5fa9075d33abec3d1b97db9beb23582b7c4a`. This follow-up supersedes the earlier residual-wrapper limitation, without changing that historical audit snapshot.
+
+The official [Vue flat-config composition](https://eslint.vuejs.org/user-guide/#example-configuration-with-typescript-eslint-and-prettier) and [typescript-eslint supported dependency versions](https://typescript-eslint.io/users/dependency-versions/) support the existing ESLint 10 stack. Direct `typescript-eslint@8.72.0` and `vue-eslint-parser@10.4.1` replace `@vue/eslint-config-typescript@14.9.0`; no forced versions, overrides, peer relaxation or advisory suppression. The wrapper's type-aware mode was not enabled. Its repository scan and all 17 now-unused graph entries are removed, including fast-glob, micromatch and braces. Vue's essential/base configs, TS recommended rules and TS core-rule overrides on `.vue` files are composed explicitly. Vue remains the outer parser with per-script delegation; TS syntax in templates, ES2024, disabled JSX and `vue/block-lang` requiring `ts` are preserved. Vitest/Playwright scopes and all five global exclusions are unchanged.
+
+[Before](before.json) and [after](after.json) are identical normalized snapshots of **all 53 discovered original files and four complete effective configurations**: every rule/option, parser/delegate metadata/options, plugin, processor and global. New runtime/tools/test files add coverage, not a reduced original discovery set. `npm run test:lint-contract` rechecks every historical path/config, nested exclusions, and eleven real nested TS/MTS/TSX/Vue fixtures, including TS templates, constructor parameter properties/core overrides, unused/any rules, malformed TS, script language restrictions, Vue template errors, and focused Vitest/Playwright detection. It writes the current discovered file inventory to `logs/lint-contract.json` for CI artifacts. Responsive filter toggling is factored into a layout helper; existing assertions remain unconditional. Read-only lint now has zero errors and warnings.
+
+| Full locked graph (runtime/build/dev/optional) | Before | After |
+| --- | --- | --- |
+| npm vulnerable package entries | 4 high, one distinct GHSA | **0** |
+| Production vulnerable entries | 0 | **0** |
+| Locked entries excluding root | 434 | 476 |
+| Dependency/optional/peer edges | 752 | 812 |
+| Optional flags (overlap dev/runtime) | 53 | 86 |
+| Platform-restricted entries | 53 | 83 |
+
+Wrapper removal alone leaves 417 entries. Pinning **Wrangler 4.151.2** for reproducible local workerd rehearsal adds 59 dev/optional entries, hence 476 total. The larger graph is audited in full, including non-Linux optional binaries, rather than hidden with an omit flag. [Before graph/findings](before-graph.json), [after graph](after-graph.json), [after findings](after-findings.json), [full audit](full-audit.json), and [production audit](production-audit.json) retain exact node paths/versions/integrity/flags and all edges. Both new audits exit 0; no residual advisory chain remains at this snapshot. The original modernization baseline had 38 full / 7 production entries; the prior checkpoint reduced these to 4 / 0, and this follow-up reaches 0 / 0. Future advisory changes remain possible and the CI full audit is a failure gate.
+
+Verification: strict peer locked install, `npm ls --all --include=optional`, strict app/tooling/unit/E2E types, read-only lint, eleven lint-contract fixtures, **73 unit tests** (original 70 plus three status-policy cases), **59 cloud Chromium browser cases** (original 51 plus eight runtime cases), production build and no-upload Wrangler dry-run pass locally. The bounded hosted gate runs all 59 cases in Chromium/Firefox/WebKit against actual local workerd (177 total); actual hosted results and exact refs are reported in draft #2 after completion, never presumed here. See [runtime policy and limitations](../../../runtime-rehearsal.md).
+
+No app component, data/parser/math module, production CSV, dependency override or framework migration is changed. All 56 tracked CSVs are byte-identical to baseline; all six active charts remain TypeScript, with zero handwritten JS chart components. This is an implementation candidate; the prior checkpoint's independent review is not approval of the new delta. Exact model ID and reasoning setting are unavailable to the session.

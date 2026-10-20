@@ -1,380 +1,135 @@
-<script setup>
-import { ref, onMounted, computed, watch } from 'vue'
-import Papa from 'papaparse'
-
-const props = defineProps({
-  fullscreen: {
-    type: Boolean,
-    default: false
-  }
+<script setup lang="ts">
+import { computed, ref, watch } from 'vue'
+import ChartFrame from './ChartFrame.vue'
+import { useChartSource } from '../../lib/chartSource'
+import { parseLeaders, leaderSummary } from '../../lib/leaders'
+withDefaults(defineProps<{ fullscreen?: boolean }>(), { fullscreen: false })
+const { rows, loading, error, load } = useChartSource(parseLeaders)
+const period = ref('2023–2025'),
+  selected = ref('')
+const years = computed(() => [...new Set(rows.value.map((r) => r.year))].sort((a, b) => a - b))
+const points = computed(() =>
+  leaderSummary(
+    rows.value,
+    period.value === '2023–2025' ? [2023, 2024, 2025] : [Number(period.value)],
+  ),
+)
+watch(points, (next) => {
+  if (!next.some((p) => p.industry === selected.value)) selected.value = next[0]?.industry ?? ''
 })
-
-const chartOption = ref({})
-const loading = ref(true)
-const rawData = ref(null)
-const fontScale = computed(() => props.fullscreen ? 1.3 : 1)
-const fs = (size) => Math.round(size * fontScale.value)
-
-watch(() => props.fullscreen, () => {
-  if (rawData.value) {
-    processData(rawData.value)
-  }
-})
-
-const INDUSTRIES = [
-  'Construction',
-  'Education, health, and social services',
-  'Entertainment and hospitality',
-  'Finance and professional services',
-  'Information and culture',
-  'Manufacturing',
-  'Primary industries',
-  'Public administration',
-  'Transportation',
-  'Utilities',
-  'Wholesale and retail trade'
-]
-
-onMounted(async () => {
-  try {
-    const response = await fetch('/data/TABLEAU_sector_year.csv')
-    const csvText = await response.text()
-
-    Papa.parse(csvText, {
-      header: true,
-      dynamicTyping: true,
-      complete: (results) => {
-        rawData.value = results.data
-        processData(results.data)
-      }
-    })
-  } catch (error) {
-    console.error('Error loading data:', error)
-    loading.value = false
-  }
-})
-
-const processData = (data) => {
-  const focusYears = [2023, 2024, 2025]
-
-  const filtered = data.filter((row) => {
-    return (
-      row.Sector_Type === 'All Sectors' &&
-      INDUSTRIES.includes(row.Industry) &&
-      focusYears.includes(row.Year)
-    )
-  })
-
-  const industrySummary = INDUSTRIES.map((industry) => {
-    const rows = filtered.filter((row) => row.Industry === industry)
-    const adjustments = rows
-      .map((row) => row.Annual_Pct_Adjustment_Avg)
-      .filter((value) => typeof value === 'number')
-
-    const firstYear = rows
-      .map((row) => row.First_Year_Pct_Adjustment_Avg)
-      .filter((value) => typeof value === 'number')
-
-    const employeeTotal = rows
-      .map((row) => row.Number_of_Employees)
-      .filter((value) => typeof value === 'number')
-
-    const avgAnnual =
-      adjustments.length > 0
-        ? adjustments.reduce((sum, value) => sum + value, 0) / adjustments.length
-        : 0
-    const avgFirstYear =
-      firstYear.length > 0
-        ? firstYear.reduce((sum, value) => sum + value, 0) / firstYear.length
-        : 0
-    const totalEmployees =
-      employeeTotal.length > 0 ? employeeTotal.reduce((sum, value) => sum + value, 0) : 0
-
-    const latestRow = rows.find((row) => row.Year === 2025) || rows[rows.length - 1]
-
-    return {
-      industry,
-      avgAnnual: Number(avgAnnual.toFixed(2)),
-      avgFirstYear: Number(avgFirstYear.toFixed(2)),
-      employeeTotal: Math.round(totalEmployees),
-      latestYear: latestRow ? latestRow.Year : null,
-      latestAnnual: latestRow ? latestRow.Annual_Pct_Adjustment_Avg : null
-    }
-  }).filter((item) => item.avgAnnual > 0)
-
-  industrySummary.sort((a, b) => b.avgAnnual - a.avgAnnual)
-
-  const topIndustries = industrySummary.slice(0, 8)
-
-  // Cohesive color palette - darker blues for higher employee coverage
-  const getBarColor = (employeeTotal, index) => {
-    // Create gradient based on employee count (more employees = darker blues)
-    const minEmployees = Math.min(...topIndustries.map(item => item.employeeTotal))
-    const maxEmployees = Math.max(...topIndustries.map(item => item.employeeTotal))
-    const normalized = (employeeTotal - minEmployees) / (maxEmployees - minEmployees)
-
-    // Blue palette from very light to dark based on employee coverage
-    const lightBlue = [187, 222, 251]  // #BBDEFB - Much lighter for better contrast
-    const darkBlue = [25, 118, 210]    // #1976D2
-
-    const r = Math.round(lightBlue[0] + (darkBlue[0] - lightBlue[0]) * normalized)
-    const g = Math.round(lightBlue[1] + (darkBlue[1] - lightBlue[1]) * normalized)
-    const b = Math.round(lightBlue[2] + (darkBlue[2] - lightBlue[2]) * normalized)
-
-    const startColor = `rgb(${r}, ${g}, ${b})`
-    const endColor = `rgb(${Math.min(r + 40, 255)}, ${Math.min(g + 40, 255)}, ${Math.min(b + 40, 255)})`
-
-    return {
-      type: 'linear',
-      x: 0,
-      y: 0,
-      x2: 1,
-      y2: 0,
-      colorStops: [
-        { offset: 0, color: startColor },
-        { offset: 1, color: endColor }
-      ]
-    }
-  }
-
-  if (!topIndustries.length) {
-    chartOption.value = {
-      title: {
-        text: 'Industry Leaders Overview',
-        left: 'center',
-        top: '40%',
-        textStyle: {
-          fontSize: fs(28),
-          fontWeight: 'bold',
-          color: '#2c3e50'
-        }
-      },
-      graphic: {
-        type: 'text',
-        left: 'center',
-        top: '52%',
-        style: {
-          text: 'No industry-level data available for the selected period.',
-          fontSize: fs(18),
-          fill: '#666666'
-        }
-      }
-    }
-    loading.value = false
-    return
-  }
-
-  const firstYearValues = topIndustries.map((item) => item.avgFirstYear)
-  const minFirstYear = Math.min(...firstYearValues)
-  const maxFirstYear = Math.max(...firstYearValues)
-
-  const interpolateColor = (value) => {
-    if (maxFirstYear === minFirstYear) {
-      return '#43a047'
-    }
-    const ratio = (value - minFirstYear) / (maxFirstYear - minFirstYear)
-    const start = [165, 214, 167]
-    const end = [67, 160, 71]
-    const channel = (idx) => Math.round(start[idx] + (end[idx] - start[idx]) * ratio)
-    return `rgb(${channel(0)}, ${channel(1)}, ${channel(2)})`
-  }
-
-  chartOption.value = {
-    backgroundColor: '#ffffff',
-    title: {
-      text: 'Which Industries Lead Wage Growth?',
-      subtext: 'Average annual % adjustment (2023-2025)',
-      left: 'center',
-      top: 5,
-      textStyle: {
-        fontSize: fs(32),
-        fontWeight: 'bold',
-        color: '#2c3e50'
-      },
-      subtextStyle: {
-        fontSize: fs(16),
-        color: '#666666',
-        lineHeight: 22
-      }
-    },
-    tooltip: {
-      trigger: 'item',
-      backgroundColor: 'rgba(255, 252, 245, 0.98)',
-      borderColor: '#2c3e50',
-      borderWidth: 3,
-      padding: [16, 20],
-      textStyle: {
-        color: '#2c3e50',
-        fontSize: fs(17),
-        fontFamily: 'Comic Sans MS, Brush Script MT, cursive'
-      },
-      formatter: (params) => {
-        const { data } = params
-        return `
-          <strong style="font-size: ${fs(20)}px; font-family: Comic Sans MS, Brush Script MT, cursive;">${data.industry}</strong><br/>
-          Avg Annual Adjustment: <strong>${data.avgAnnual}%</strong><br/>
-          Avg First-Year Adjustment: <strong>${data.avgFirstYear}%</strong><br/>
-          Latest Year Observed: <strong>${data.latestYear || 'n/a'}</strong><br/>
-          Employees Covered (2023-2025): <strong>${data.employeeTotal.toLocaleString()}</strong>
-        `
-      }
-    },
-    grid: {
-      left: '3%',
-      right: '10%',
-      bottom: '12%',
-      top: '15%',
-      containLabel: true
-    },
-    xAxis: {
-      type: 'value',
-      min: 0,
-      max: Math.ceil(Math.max(...topIndustries.map((item) => item.avgAnnual)) + 1),
-      name: 'Average Annual % Adjustment',
-      nameLocation: 'middle',
-      nameGap: 50,
-      nameTextStyle: {
-        color: '#2c3e50',
-        fontSize: fs(18),
-        fontWeight: 'bold'
-      },
-      axisLine: {
-        show: false
-      },
-      axisLabel: {
-        formatter: '{value}%',
-        fontSize: fs(16),
-        color: '#37474f',
-        fontWeight: '500'
-      },
-      splitLine: {
-        lineStyle: {
-          color: '#f0f0f0',
-          width: 1,
-          type: 'dashed'
-        }
-      }
-    },
-    yAxis: {
-      type: 'category',
-      data: topIndustries.map((item) => item.industry),
-      name: 'Industry',
-      nameLocation: 'end',
-      nameGap: 15,
-      nameTextStyle: {
-        color: '#2c3e50',
-        fontSize: fs(18),
-        fontWeight: 'bold'
-      },
-      axisLine: {
-        lineStyle: {
-          color: '#e0e0e0',
-          width: 1
-        }
-      },
-      axisLabel: {
-        fontSize: fs(15),
-        color: '#37474f',
-        fontWeight: '500',
-        margin: 12
-      },
-      axisTick: {
-        show: false
-      },
-      splitLine: {
-        show: true,
-        lineStyle: {
-          color: '#f5f5f5',
-          width: 1,
-          type: 'solid'
-        }
-      }
-    },
-    visualMap: null,
-    series: [
-      {
-        type: 'bar',
-        data: topIndustries.map((item, index) => ({
-          value: item.avgAnnual,
-          industry: item.industry,
-          avgAnnual: item.avgAnnual,
-          avgFirstYear: item.avgFirstYear,
-          latestYear: item.latestYear,
-          latestAnnual: item.latestAnnual,
-          employeeTotal: item.employeeTotal,
-          itemStyle: {
-            color: getBarColor(item.employeeTotal, index),
-            borderRadius: [0, 12, 12, 0],
-            shadowBlur: 8,
-            shadowColor: 'rgba(0, 0, 0, 0.15)',
-            shadowOffsetX: 2,
-            shadowOffsetY: 2
-          }
-        })),
-        realtimeSort: true,
-        barMaxWidth: 45,
-        label: {
-          show: true,
-          position: 'right',
-          formatter: '{c}%',
-          fontSize: fs(16),
-          fontWeight: 'bold',
-          color: '#2c3e50',
-          distance: 8
-        },
-        emphasis: {
-          itemStyle: {
-            shadowBlur: 20,
-            shadowColor: 'rgba(0, 0, 0, 0.35)',
-            borderWidth: 2,
-            borderColor: '#ffffff'
-          },
-          label: {
-            fontSize: fs(18),
-            fontWeight: 'bold'
-          }
-        }
-      }
-    ]
-  }
-
-  loading.value = false
-}
+const detail = computed(() => points.value.find((p) => p.industry === selected.value))
+const high = computed(() => Math.ceil(Math.max(...points.value.map((p) => p.avgAnnual)) + 1))
+const tableRows = computed(() =>
+  points.value.map((p) => ({
+    key: p.industry,
+    label: p.industry,
+    values: [p.avgAnnual, p.avgFirstYear, p.latestYear, p.employeeTotal, p.missing],
+  })),
+)
+const coverage = computed(() => Math.max(1, ...points.value.map((p) => p.employeeTotal)))
 </script>
-
 <template>
-  <div class="chart-container">
-    <div v-if="loading" class="loading">Loading data...</div>
-    <v-chart
-      v-else
-      :option="chartOption"
-      class="chart-canvas"
-      style="width: 100%; height: 100%;"
-      autoresize
-    />
-  </div>
+  <ChartFrame
+    id="leaders"
+    title="Which Industries Lead Wage Growth?"
+    :subtitle="`Average annual % adjustment (${period}) · All Sectors`"
+    :loading="loading"
+    :error="error"
+    empty="No industry-level data available for the selected period."
+    :fullscreen="fullscreen"
+    :columns="[
+      'Industry',
+      'Avg Annual Adjustment (%)',
+      'Avg First-Year Adjustment (%)',
+      'Latest Year Observed',
+      'Employees Covered',
+      'Missing fields',
+    ]"
+    :table-rows="tableRows"
+    :selected="selected"
+    @select="selected = $event"
+    @retry="load"
+    note="Original calculation: means omit missing adjustment values, employee counts are summed, rounded annual averages above zero are ranked and the top eight retained. Missing counts distinguish absent inputs from observed zero. Adjustments are not compounded wage levels."
+  >
+    <template #controls
+      ><label for="leaders-period"
+        >Industry period
+        <select aria-label="Industry period" id="leaders-period" v-model="period" :disabled="loading || !!error">
+          <option>2023–2025</option>
+          <option v-for="year in years" :key="year" :value="String(year)">{{ year }}</option>
+        </select></label
+      ></template
+    >
+    <template #detail
+      ><label
+        >Inspect industry
+        <select v-model="selected">
+          <option v-for="point in points" :key="point.industry">{{ point.industry }}</option>
+        </select></label
+      >
+      <p v-if="detail" role="status">
+        {{ detail.industry }} · Avg Annual Adjustment: {{ detail.avgAnnual }}% · Avg First-Year
+        Adjustment: {{ detail.avgFirstYear }}% · Latest Year Observed:
+        {{ detail.latestYear ?? 'n/a' }} · Employees Covered ({{ period }}):
+        {{ detail.employeeTotal.toLocaleString('en-CA') }}
+      </p></template
+    >
+    <svg
+      width="920"
+      :height="points.length * 56 + 80"
+      role="img"
+      aria-labelledby="leaders-plot-title leaders-plot-desc"
+    >
+      <title id="leaders-plot-title">Which Industries Lead Wage Growth?</title>
+      <desc id="leaders-plot-desc">
+        Top eight average annual percentage adjustments, ranked descending. Bar opacity represents
+        employee coverage. Exact annual, first-year, latest-year and employee values are in Table.
+      </desc>
+      <g v-for="(point, index) in points" :key="point.industry">
+        <text x="8" :y="index * 56 + 33" class="axis-text">{{ point.industry }}</text>
+        <rect
+          class="leader-bar"
+          :data-industry="point.industry"
+          :data-annual="point.avgAnnual"
+          :data-first-year="point.avgFirstYear"
+          :data-employees="point.employeeTotal"
+          :data-latest-year="point.latestYear"
+          x="330"
+          :y="index * 56 + 12"
+          :width="(point.avgAnnual / high) * 500"
+          height="30"
+          :fill-opacity="0.35 + (0.65 * point.employeeTotal) / coverage"
+        >
+          <title>{{ point.industry }}: {{ point.avgAnnual }}%</title>
+        </rect>
+        <text :x="340 + (point.avgAnnual / high) * 500" :y="index * 56 + 33" class="axis-text">
+          {{ point.avgAnnual }}%
+        </text>
+      </g>
+      <text x="330" :y="points.length * 56 + 36" class="axis-text">
+        Average Annual % Adjustment · employee coverage indicated by bar opacity
+      </text>
+    </svg>
+  </ChartFrame>
 </template>
-
 <style scoped>
-.chart-container {
-  width: 100%;
-  height: 100%;
+select {
+  max-width: 100%;
+  font-family: var(--font-mono);
+}
+label {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background: #ffffff;
+  gap: 8px;
+  flex-wrap: wrap;
+  min-width: 0;
 }
-
-.loading {
-  font-size: 1.8rem;
-  color: #2c3e50;
-  padding: 2rem;
-  font-weight: 500;
+.leader-bar {
+  fill: var(--blue);
+  stroke: var(--blue);
 }
-
-.chart-canvas {
-  flex: 1;
-  min-height: 440px;
+.axis-text {
+  fill: var(--fg);
+  font: 12px var(--font-mono);
 }
 </style>

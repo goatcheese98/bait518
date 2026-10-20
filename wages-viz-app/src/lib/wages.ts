@@ -1,4 +1,4 @@
-import Papa from 'papaparse'
+import { settlementRows } from './settlementCsv'
 
 export interface Observation {
   year: number
@@ -14,24 +14,15 @@ export interface Comparison {
 }
 
 export function parseWages(text: string): Observation[] {
-  const parsed = Papa.parse<Record<string, unknown>>(text.replace(/^\uFEFF/, ''), {
-    header: true,
-    skipEmptyLines: 'greedy',
-    dynamicTyping: false,
-  })
-  const headers = parsed.meta.fields
-  const names = ['Year', 'Industry', 'Sector_Type', 'Annual_Pct_Adjustment_Avg']
-  if (
-    parsed.errors.length ||
-    !headers ||
-    names.some((name) => !headers.includes(name)) ||
-    ('renamedHeaders' in parsed.meta && parsed.meta.renamedHeaders !== null) ||
-    new Set(headers).size !== headers.length
-  )
-    throw new Error('Invalid CSV schema or rows')
+  const data = settlementRows(text, [
+    'Year',
+    'Industry',
+    'Sector_Type',
+    'Annual_Pct_Adjustment_Avg',
+  ])
   const seen = new Set<string>()
   const observations: Observation[] = []
-  for (const row of parsed.data) {
+  for (const row of data) {
     const sector = row.Sector_Type
     if (
       typeof sector !== 'string' ||
