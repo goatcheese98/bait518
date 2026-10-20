@@ -11,11 +11,20 @@ export default defineConfig({
     baseURL: 'http://localhost:4173',
     headless: true,
     trace: 'retain-on-failure',
-    launchOptions: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH
-      ? { executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH }
-      : {},
   },
-  projects: [{ name: 'chromium', use: { ...devices['Desktop Chrome'] } }],
+  projects: [
+    {
+      name: 'chromium',
+      use: {
+        ...devices['Desktop Chrome'],
+        launchOptions: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH
+          ? { executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH }
+          : {},
+      },
+    },
+    { name: 'firefox', use: { ...devices['Desktop Firefox'] } },
+    { name: 'webkit', use: { ...devices['Desktop Safari'] } },
+  ],
   webServer: {
     command: 'npm run preview -- --host 127.0.0.1',
     port: 4173,

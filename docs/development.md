@@ -27,3 +27,5 @@ The app fetches bundled CSV using Vite BASE_URL. No server adapter, bindings, pr
 The first-year/annual grouped-bar comparison is now a strict TypeScript native Vue/SVG chart with a semantic mobile table. See [its parity, debt inventory and cloud evidence](first-year-migration.md).
 
 Duration migration follow-up (38 unit / 29 browser; JS chart debt 4 → 3): [duration evidence](duration-migration.md). Earlier checkpoint counts above are historical.
+
+All active chart migrations are complete (JS chart debt 3 → 0), including the duration geometry review: [remaining chart evidence](remaining-charts-migration.md). Strict typecheck now includes E2E/tooling. CI runs Chromium, Firefox and WebKit; use `npm run test:e2e -- --project=chromium` when only managed Chromium is available. Earlier checkpoint counts above are historical.

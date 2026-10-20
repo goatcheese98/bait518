@@ -1,574 +1,325 @@
-<script setup>
-import { ref, onMounted, computed, watch } from 'vue'
-import Papa from 'papaparse'
-
-const props = defineProps({
-  fullscreen: {
-    type: Boolean,
-    default: false
+<script setup lang="ts">
+import { computed, ref } from 'vue'
+import ChartFrame, { type ChartTableRow } from './ChartFrame.vue'
+import { useChartSource } from '../../lib/chartSource'
+import {
+  parseDistribution,
+  distributionSummary,
+  distributionExtent,
+  distributionIndustries,
+} from '../../lib/distribution'
+withDefaults(defineProps<{ fullscreen?: boolean }>(), { fullscreen: false })
+const { rows, loading, error, load } = useChartSource(parseDistribution)
+const model = computed(() => distributionSummary(rows.value))
+const selectedYear = ref(2025),
+  selectedIndustry = ref<string>(distributionIndustries[0])
+const selected = computed(() =>
+  model.value.observations.find(
+    (r) => r.year === selectedYear.value && r.category === selectedIndustry.value,
+  ),
+)
+const years = computed(() => [...new Set(rows.value.map((r) => r.year))].sort((a, b) => a - b))
+const groups = ['Older Years', '2020', '2021', '2022', '2023', '2024', '2025']
+const visible = ref<string[]>([...groups])
+const group = (year: number) => (year < 2020 ? 'Older Years' : String(year))
+const extent = computed(() =>
+  model.value.points.length
+    ? distributionExtent(model.value.points.map((p) => p.annual))
+    : ([0, 1] as const),
+)
+const y = (value: number) =>
+  310 - ((value - extent.value[0]) / (extent.value[1] - extent.value[0])) * 250
+const x = (industry: string) =>
+  100 + distributionIndustries.findIndex((name) => name === industry) * 200
+const fmt = (value: number | null | undefined) =>
+  value === null || value === undefined ? null : Number(value.toFixed(2))
+const tableRows = computed<ChartTableRow[]>(() =>
+  model.value.boxes.length
+    ? [
+        ...model.value.boxes.map((b) => ({
+          key: `summary:${b.industry}`,
+          label: `${b.industry} · Box Plot`,
+          values: [
+            '2016–2025',
+            '—',
+            '—',
+            '—',
+            b.min.toFixed(2),
+            b.q1.toFixed(2),
+            b.median.toFixed(2),
+            b.q3.toFixed(2),
+            b.max.toFixed(2),
+          ],
+        })),
+        ...model.value.observations.map((r) => ({
+          key: `${r.category}:${r.year}`,
+          label: `${r.category} · ${r.year}`,
+          values: [r.year, fmt(r.annual), r.employees, r.agreements, '—', '—', '—', '—', '—'],
+        })),
+      ]
+    : [],
+)
+function inspect(key: string) {
+  const row = model.value.observations.find((r) => `${r.category}:${r.year}` === key)
+  if (row) {
+    selectedIndustry.value = row.category
+    selectedYear.value = row.year
+  } else selectedIndustry.value = key.slice('summary:'.length)
+}
+function lines(label: string) {
+  const result: string[] = []
+  for (const word of label.split(' ')) {
+    if (!result.length || result[result.length - 1]!.length + word.length > 25) result.push(word)
+    else result[result.length - 1] += ' ' + word
   }
-})
-
-const chartOption = ref({})
-const loading = ref(true)
-const rawData = ref(null)
-const fontScale = computed(() => props.fullscreen ? 1.3 : 1)
-const fs = (size) => Math.round(size * fontScale.value)
-
-watch(() => props.fullscreen, () => {
-  if (rawData.value) {
-    processData(rawData.value)
-  }
-})
-
-const INDUSTRIES = [
-  'Information and culture',
-  'Education, health, and social services',
-  'Public administration',
-  'Manufacturing',
-  'Entertainment and hospitality'
-]
-
-onMounted(async () => {
-  try {
-    const response = await fetch('/data/TABLEAU_sector_year.csv')
-    const csvText = await response.text()
-
-    Papa.parse(csvText, {
-      header: true,
-      dynamicTyping: true,
-      complete: (results) => {
-        rawData.value = results.data
-        processData(results.data)
-      }
-    })
-  } catch (error) {
-    console.error('Error loading data:', error)
-    loading.value = false
-  }
-})
-
-const processData = (data) => {
-  const years = Array.from({ length: 2025 - 2016 + 1 }, (_, i) => 2016 + i)
-
-  // Filter for all sectors across all industries
-  const filtered = data.filter((row) => {
-    return (
-      row.Sector_Type === 'All Sectors' &&
-      INDUSTRIES.includes(row.Industry) &&
-      years.includes(row.Year)
-    )
-  })
-
-  console.log('Filtered data count:', filtered.length)
-
-  // Prepare box plot data for each industry
-  const boxplotData = []
-  const scatterDataByYear = {
-    2020: [],
-    2021: [],
-    2022: [],
-    2023: [],
-    2024: [],
-    2025: []
-  }
-  const olderYearsData = []
-
-  INDUSTRIES.forEach((industry, industryIndex) => {
-    const industryRows = filtered.filter((row) => row.Industry === industry)
-    const wageValues = industryRows
-      .map((row) => row.Annual_Pct_Adjustment_Avg)
-      .filter((value) => typeof value === 'number' && !isNaN(value))
-      .sort((a, b) => a - b)
-
-    console.log(`${industry}: ${wageValues.length} data points`, wageValues)
-
-    if (wageValues.length === 0) {
-      console.warn(`No data for ${industry}`)
-      return
-    }
-
-    // Calculate quartiles for box plot
-    const min = Math.min(...wageValues)
-    const max = Math.max(...wageValues)
-    const q1Index = Math.floor(wageValues.length * 0.25)
-    const medianIndex = Math.floor(wageValues.length * 0.5)
-    const q3Index = Math.floor(wageValues.length * 0.75)
-
-    const q1 = wageValues[q1Index]
-    const median = wageValues[medianIndex]
-    const q3 = wageValues[q3Index]
-
-    boxplotData.push([min, q1, median, q3, max])
-
-    // Add individual data points for scatter overlay (all years)
-    industryRows.forEach((row) => {
-      if (typeof row.Annual_Pct_Adjustment_Avg === 'number') {
-        const dataPoint = {
-          value: [industryIndex, row.Annual_Pct_Adjustment_Avg],
-          industry: industry,
-          year: row.Year,
-          wage: Number(row.Annual_Pct_Adjustment_Avg.toFixed(2)),
-          employees: row.Number_of_Employees,
-          agreements: row.Number_of_Agreements
-        }
-
-        if (row.Year >= 2020 && row.Year <= 2025) {
-          scatterDataByYear[row.Year].push(dataPoint)
-        } else {
-          olderYearsData.push(dataPoint)
-        }
-      }
-    })
-  })
-
-  console.log('Box plot data:', boxplotData)
-  console.log('Scatter data by year:', scatterDataByYear)
-  console.log('Older years data count:', olderYearsData.length)
-
-  if (!boxplotData.length) {
-    chartOption.value = {
-      title: {
-        text: 'Industry Wage Distribution',
-        left: 'center',
-        top: '40%',
-        textStyle: {
-          fontSize: fs(28),
-          fontWeight: 'bold',
-          color: '#2c3e50'
-        }
-      },
-      graphic: {
-        type: 'text',
-        left: 'center',
-        top: '52%',
-        style: {
-          text: 'No wage distribution data available.',
-          fontSize: fs(18),
-          fill: '#666666'
-        }
-      }
-    }
-    loading.value = false
-    return
-  }
-
-  const yearColors = {
-    2016: '#bdbdbd',
-    2017: '#bdbdbd',
-    2018: '#bdbdbd',
-    2019: '#bdbdbd',
-    2020: '#fff59d',
-    2021: '#ffeb3b',
-    2022: '#ffc107',
-    2023: '#ff9800',
-    2024: '#ff5722',
-    2025: '#d32f2f'
-  }
-
-  chartOption.value = {
-    backgroundColor: '#ffffff',
-    title: {
-      text: 'How Do Wage Gains Vary Across Industries?',
-      subtext: 'Annual wage adjustment distribution by industry {bold|(2016-2025)}',
-      left: 'center',
-      top: 5,
-      textStyle: {
-        fontSize: fs(32),
-        fontWeight: 'bold',
-        color: '#2c3e50'
-      },
-      subtextStyle: {
-        fontSize: fs(16),
-        color: '#666666',
-        lineHeight: 20,
-        rich: {
-          bold: {
-            fontWeight: 'bold',
-            color: '#2c3e50'
-          }
-        }
-      }
-    },
-    legend: {
-      data: [
-        { name: 'Highlighted Years:', icon: 'none' },
-        { name: '2020', itemStyle: { color: yearColors[2020] } },
-        { name: '2021', itemStyle: { color: yearColors[2021] } },
-        { name: '2022', itemStyle: { color: yearColors[2022] } },
-        { name: '2023', itemStyle: { color: yearColors[2023] } },
-        { name: '2024', itemStyle: { color: yearColors[2024] } },
-        { name: '2025', itemStyle: { color: yearColors[2025] } }
-      ],
-      top: '12%',
-      left: 'center',
-      orient: 'horizontal',
-      textStyle: {
-        fontSize: fs(16),
-        color: '#2c3e50',
-        fontWeight: 'bold'
-      },
-      itemWidth: 22,
-      itemHeight: 22,
-      itemGap: 15,
-      icon: 'circle',
-      backgroundColor: 'rgba(255, 255, 255, 0.95)',
-      borderColor: '#d0d0d0',
-      borderWidth: 1.5,
-      padding: [12, 20],
-      borderRadius: 6,
-      selectedMode: 'multiple',
-      inactiveColor: '#90caf9',
-      inactiveBorderColor: '#64b5f6'
-    },
-    tooltip: {
-      trigger: 'item',
-      backgroundColor: 'rgba(255, 252, 245, 0.98)',
-      borderColor: '#2c3e50',
-      borderWidth: 3,
-      padding: [16, 20],
-      textStyle: {
-        color: '#2c3e50',
-        fontSize: fs(17),
-        fontFamily: 'Comic Sans MS, Brush Script MT, cursive'
-      },
-      formatter: (params) => {
-        if (params.componentSubType === 'boxplot') {
-          const industry = INDUSTRIES[params.dataIndex]
-          const [min, q1, median, q3, max] = params.data
-          return `
-            <strong style="font-size: ${fs(20)}px; font-family: Comic Sans MS, Brush Script MT, cursive;">${industry}</strong><br/>
-            Maximum: <strong>${max.toFixed(2)}%</strong><br/>
-            Upper Quartile (Q3): <strong>${q3.toFixed(2)}%</strong><br/>
-            Median: <strong>${median.toFixed(2)}%</strong><br/>
-            Lower Quartile (Q1): <strong>${q1.toFixed(2)}%</strong><br/>
-            Minimum: <strong>${min.toFixed(2)}%</strong>
-          `
-        } else {
-          const { data } = params
-          return `
-            <strong style="font-size: ${fs(20)}px; font-family: Comic Sans MS, Brush Script MT, cursive;">${data.industry}</strong><br/>
-            Year: <strong>${data.year}</strong><br/>
-            Annual Adjustment: <strong>${data.wage}%</strong><br/>
-            Employees: <strong>${data.employees ? data.employees.toLocaleString() : 'N/A'}</strong><br/>
-            Agreements: <strong>${data.agreements ? data.agreements.toLocaleString() : 'N/A'}</strong>
-          `
-        }
-      }
-    },
-    grid: {
-      left: '5%',
-      right: '3%',
-      bottom: '10%',
-      top: '20%',
-      containLabel: true
-    },
-    xAxis: {
-      type: 'category',
-      data: INDUSTRIES,
-      boundaryGap: true,
-      nameGap: 30,
-      axisLine: {
-        lineStyle: {
-          color: '#333333',
-          width: 2
-        }
-      },
-      axisLabel: {
-        fontSize: fs(13),
-        color: '#2c3e50',
-        fontWeight: 'bold',
-        interval: 0,
-        rotate: 0,
-        margin: 8,
-        lineHeight: 16,
-        align: 'center'
-      },
-      axisTick: {
-        show: true,
-        lineStyle: {
-          color: '#333333'
-        }
-      },
-      splitLine: {
-        show: false
-      }
-    },
-    yAxis: {
-      type: 'value',
-      name: 'Annual Wage Adjustment (%)',
-      nameLocation: 'middle',
-      nameGap: 60,
-      min: 0,
-      nameTextStyle: {
-        color: '#2c3e50',
-        fontSize: fs(18),
-        fontWeight: 'bold'
-      },
-      axisLine: {
-        show: true,
-        lineStyle: {
-          color: '#333333',
-          width: 2
-        }
-      },
-      axisLabel: {
-        formatter: '{value}%',
-        fontSize: fs(15),
-        color: '#2c3e50',
-        fontWeight: 'bold'
-      },
-      splitLine: {
-        lineStyle: {
-          color: '#eeeeee',
-          width: 1,
-          type: 'solid'
-        }
-      }
-    },
-    series: [
-      {
-        name: 'Box Plot',
-        type: 'boxplot',
-        data: boxplotData,
-        itemStyle: {
-          color: 'rgba(100, 181, 246, 0.15)',
-          borderColor: '#1976d2',
-          borderWidth: 2.5
-        },
-        boxWidth: ['35%', '55%'],
-        emphasis: {
-          itemStyle: {
-            borderWidth: 3.5,
-            borderColor: '#0d47a1',
-            shadowBlur: 12,
-            shadowColor: 'rgba(0, 0, 0, 0.4)'
-          }
-        }
-      },
-      // Dummy series for legend label
-      {
-        name: 'Highlighted Years:',
-        type: 'scatter',
-        data: [],
-        symbolSize: 0
-      },
-      // Older years (2016-2019) - gray
-      {
-        name: 'Older Years',
-        type: 'scatter',
-        data: olderYearsData,
-        symbolSize: 20,
-        itemStyle: {
-          color: '#bdbdbd',
-          opacity: 0.35,
-          borderWidth: 1.5,
-          borderColor: '#ffffff',
-          shadowBlur: 2,
-          shadowColor: 'rgba(0, 0, 0, 0.1)'
-        },
-        emphasis: {
-          itemStyle: {
-            opacity: 0.7,
-            shadowBlur: 8,
-            shadowColor: 'rgba(0, 0, 0, 0.3)',
-            borderWidth: 2.5
-          },
-          scale: 1.2
-        },
-        zlevel: 1,
-        legendHoverLink: false
-      },
-      // Year 2020
-      {
-        name: '2020',
-        type: 'scatter',
-        data: scatterDataByYear[2020],
-        symbolSize: 20,
-        itemStyle: {
-          color: yearColors[2020],
-          opacity: 0.85,
-          borderWidth: 1.5,
-          borderColor: '#ffffff',
-          shadowBlur: 3,
-          shadowColor: 'rgba(0, 0, 0, 0.15)'
-        },
-        emphasis: {
-          itemStyle: {
-            opacity: 1,
-            shadowBlur: 12,
-            shadowColor: 'rgba(0, 0, 0, 0.4)',
-            borderWidth: 3
-          },
-          scale: 1.3
-        },
-        zlevel: 1
-      },
-      // Year 2021
-      {
-        name: '2021',
-        type: 'scatter',
-        data: scatterDataByYear[2021],
-        symbolSize: 20,
-        itemStyle: {
-          color: yearColors[2021],
-          opacity: 0.85,
-          borderWidth: 1.5,
-          borderColor: '#ffffff',
-          shadowBlur: 3,
-          shadowColor: 'rgba(0, 0, 0, 0.15)'
-        },
-        emphasis: {
-          itemStyle: {
-            opacity: 1,
-            shadowBlur: 12,
-            shadowColor: 'rgba(0, 0, 0, 0.4)',
-            borderWidth: 3
-          },
-          scale: 1.3
-        },
-        zlevel: 1
-      },
-      // Year 2022
-      {
-        name: '2022',
-        type: 'scatter',
-        data: scatterDataByYear[2022],
-        symbolSize: 20,
-        itemStyle: {
-          color: yearColors[2022],
-          opacity: 0.85,
-          borderWidth: 1.5,
-          borderColor: '#ffffff',
-          shadowBlur: 3,
-          shadowColor: 'rgba(0, 0, 0, 0.15)'
-        },
-        emphasis: {
-          itemStyle: {
-            opacity: 1,
-            shadowBlur: 12,
-            shadowColor: 'rgba(0, 0, 0, 0.4)',
-            borderWidth: 3
-          },
-          scale: 1.3
-        },
-        zlevel: 1
-      },
-      // Year 2023
-      {
-        name: '2023',
-        type: 'scatter',
-        data: scatterDataByYear[2023],
-        symbolSize: 20,
-        itemStyle: {
-          color: yearColors[2023],
-          opacity: 0.85,
-          borderWidth: 1.5,
-          borderColor: '#ffffff',
-          shadowBlur: 3,
-          shadowColor: 'rgba(0, 0, 0, 0.15)'
-        },
-        emphasis: {
-          itemStyle: {
-            opacity: 1,
-            shadowBlur: 12,
-            shadowColor: 'rgba(0, 0, 0, 0.4)',
-            borderWidth: 3
-          },
-          scale: 1.3
-        },
-        zlevel: 1
-      },
-      // Year 2024
-      {
-        name: '2024',
-        type: 'scatter',
-        data: scatterDataByYear[2024],
-        symbolSize: 20,
-        itemStyle: {
-          color: yearColors[2024],
-          opacity: 0.85,
-          borderWidth: 1.5,
-          borderColor: '#ffffff',
-          shadowBlur: 3,
-          shadowColor: 'rgba(0, 0, 0, 0.15)'
-        },
-        emphasis: {
-          itemStyle: {
-            opacity: 1,
-            shadowBlur: 12,
-            shadowColor: 'rgba(0, 0, 0, 0.4)',
-            borderWidth: 3
-          },
-          scale: 1.3
-        },
-        zlevel: 1
-      },
-      // Year 2025
-      {
-        name: '2025',
-        type: 'scatter',
-        data: scatterDataByYear[2025],
-        symbolSize: 20,
-        itemStyle: {
-          color: yearColors[2025],
-          opacity: 0.85,
-          borderWidth: 1.5,
-          borderColor: '#ffffff',
-          shadowBlur: 3,
-          shadowColor: 'rgba(0, 0, 0, 0.15)'
-        },
-        emphasis: {
-          itemStyle: {
-            opacity: 1,
-            shadowBlur: 12,
-            shadowColor: 'rgba(0, 0, 0, 0.4)',
-            borderWidth: 3
-          },
-          scale: 1.3
-        },
-        zlevel: 1
-      }
-    ]
-  }
-
-  loading.value = false
+  return result
 }
 </script>
-
 <template>
-  <div class="chart-container">
-    <div v-if="loading" class="loading">Loading data...</div>
-    <v-chart
-      v-else
-      :option="chartOption"
-      class="chart-canvas"
-      style="width: 100%; height: 100%;"
-      autoresize
-    />
-  </div>
+  <ChartFrame
+    id="distribution"
+    title="How Do Wage Gains Vary Across Industries?"
+    subtitle="Annual wage adjustment distribution by industry (2016–2025)"
+    :loading="loading"
+    :error="error"
+    empty="No wage distribution data available."
+    :fullscreen="fullscreen"
+    :columns="[
+      'Observation',
+      'Year',
+      'Annual Adjustment (%)',
+      'Employees',
+      'Agreements',
+      'Minimum (%)',
+      'Lower Quartile (Q1)',
+      'Median (%)',
+      'Upper Quartile (Q3)',
+      'Maximum (%)',
+    ]"
+    :table-rows="tableRows"
+    :selected="`${selectedIndustry}:${selectedYear}`"
+    @select="inspect"
+    @retry="load"
+    note="Box Plot quartiles use the original sorted observation indices floor(n×0.25), floor(n×0.5), floor(n×0.75), without interpolation. Missing annual observations are omitted from plot/quartiles; observed zero is retained. The table includes source counts and missing values as Not available. Percentages are not compounded wage levels."
+  >
+    <template #controls
+      ><label for="distribution-year"
+        >Inspect year
+        <select id="distribution-year" v-model="selectedYear">
+          <option v-for="year in years" :key="year" :value="year">{{ year }}</option>
+        </select></label
+      ></template
+    >
+    <template #detail
+      ><div class="series-controls" role="group" aria-label="Highlighted Years:">
+        <label v-for="name in groups" :key="name"
+          ><input type="checkbox" v-model="visible" :value="name" />{{ name }}</label
+        >
+      </div>
+      <label for="distribution-industry"
+        >Inspect distribution industry
+        <select id="distribution-industry" v-model="selectedIndustry">
+          <option v-for="industry in distributionIndustries" :key="industry">{{ industry }}</option>
+        </select></label
+      >
+      <p role="status">
+        {{ selectedIndustry }} · Year: {{ selectedYear }} · Annual Adjustment:
+        {{ fmt(selected?.annual) ?? 'Not available'
+        }}{{ selected?.annual === null || !selected ? '' : '%' }} · Employees:
+        {{ selected?.employees ?? 'Not available' }} · Agreements:
+        {{ selected?.agreements ?? 'Not available' }}
+      </p></template
+    >
+    <svg
+      width="1000"
+      height="420"
+      role="img"
+      aria-labelledby="distribution-plot-title distribution-plot-desc"
+    >
+      <title id="distribution-plot-title">How Do Wage Gains Vary Across Industries?</title>
+      <desc id="distribution-plot-desc">
+        Box Plot with minimum, lower quartile, median, upper quartile and maximum, overlaid by
+        individual annual observations. Highlighted Years: 2020 through 2025; Older Years: 2016
+        through 2019. The selected year is labeled; stroke patterns distinguish other highlighted
+        years in addition to color. All observations and quartiles are in Table.
+      </desc>
+      <text x="48" y="18" class="axis-text">Annual Wage Adjustment (%)</text>
+      <g v-for="step in [0, 1, 2, 3, 4]" :key="step">
+        <line x1="48" x2="974" :y1="60 + step * 62.5" :y2="60 + step * 62.5" class="grid-line" />
+        <text x="2" :y="64 + step * 62.5" class="axis-text">
+          {{ (extent[1] - ((extent[1] - extent[0]) * step) / 4).toFixed(1) }}
+        </text>
+      </g>
+      <line
+        v-if="extent[0] <= 0 && extent[1] >= 0"
+        x1="48"
+        x2="974"
+        :y1="y(0)"
+        :y2="y(0)"
+        class="zero-line"
+      />
+      <g
+        v-for="box in model.boxes"
+        :key="box.industry"
+        class="distribution-box"
+        :data-industry="box.industry"
+        :data-values="JSON.stringify([box.min, box.q1, box.median, box.q3, box.max])"
+      >
+        <line
+          :x1="x(box.industry)"
+          :x2="x(box.industry)"
+          :y1="y(box.min)"
+          :y2="y(box.max)"
+          class="whisker"
+        />
+        <line
+          v-for="(value, index) in [box.min, box.max]"
+          :key="index"
+          :x1="x(box.industry) - 30"
+          :x2="x(box.industry) + 30"
+          :y1="y(value)"
+          :y2="y(value)"
+          class="whisker"
+        />
+        <rect
+          :x="x(box.industry) - 50"
+          :y="y(box.q3)"
+          width="100"
+          :height="Math.max(1, y(box.q1) - y(box.q3))"
+          class="quartile-box"
+        />
+        <line
+          :x1="x(box.industry) - 50"
+          :x2="x(box.industry) + 50"
+          :y1="y(box.median)"
+          :y2="y(box.median)"
+          class="whisker"
+        />
+        <title>
+          {{ box.industry }}: minimum {{ box.min }}, Q1 {{ box.q1 }}, median {{ box.median }}, Q3
+          {{ box.q3 }}, maximum {{ box.max }}
+        </title>
+      </g>
+      <g
+        v-for="point in model.points.filter((p) => visible.includes(group(p.year)))"
+        :key="`${point.industry}:${point.year}`"
+      >
+        <circle
+          class="distribution-point"
+          :class="[
+            { older: point.year < 2020, 'selected-point': point.year === selectedYear },
+            `year-${point.year}`,
+          ]"
+          :data-industry="point.industry"
+          :data-year="point.year"
+          :data-annual="point.annual"
+          :cx="x(point.industry)"
+          :cy="y(point.annual)"
+          r="10"
+        >
+          <title>{{ point.industry }}, {{ point.year }}: {{ point.wage }}%</title>
+        </circle>
+        <text
+          v-if="point.year === selectedYear"
+          :x="x(point.industry) + 14"
+          :y="y(point.annual) + 4"
+          class="point-year"
+        >
+          {{ point.year }}
+        </text>
+      </g>
+      <text
+        v-for="industry in distributionIndustries"
+        :key="industry"
+        :x="x(industry)"
+        y="344"
+        text-anchor="middle"
+        class="axis-text"
+      >
+        <tspan
+          v-for="(line, index) in lines(industry)"
+          :key="index"
+          :x="x(industry)"
+          :dy="index ? 16 : 0"
+        >
+          {{ line }}
+        </tspan>
+      </text>
+    </svg>
+  </ChartFrame>
 </template>
-
 <style scoped>
-.chart-container {
-  width: 100%;
-  height: 100%;
+label {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background: #ffffff;
+  gap: 8px;
+  flex-wrap: wrap;
+  min-width: 0;
 }
-
-.loading {
-  font-size: 1.8rem;
-  color: #2c3e50;
-  padding: 2rem;
-  font-weight: 500;
+select {
+  max-width: 100%;
+  font-family: var(--font-mono);
 }
-
-.chart-canvas {
-  flex: 1;
-  min-height: 440px;
+.series-controls {
+  display: flex;
+  gap: 8px 24px;
+  flex-wrap: wrap;
+}
+.series-controls label {
+  min-height: 44px;
+}
+.series-controls input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--acc);
+}
+.axis-text,
+.point-year {
+  fill: var(--mut);
+  font: 12px var(--font-mono);
+}
+.grid-line {
+  stroke: var(--line);
+}
+.whisker,
+.zero-line {
+  stroke: var(--fg);
+  stroke-width: 2;
+}
+.quartile-box {
+  stroke: var(--blue);
+  stroke-width: 2;
+  fill: var(--blue);
+  fill-opacity: 0.12;
+}
+.distribution-point {
+  fill: var(--panel);
+  stroke: var(--fg);
+  stroke-width: 2;
+}
+.year-2020 {
+  stroke-dasharray: 2 2;
+}
+.year-2021 {
+  stroke: var(--blue);
+}
+.year-2022 {
+  stroke-dasharray: 5 2;
+}
+.year-2023 {
+  stroke: var(--blue);
+  stroke-dasharray: 1 3;
+}
+.year-2024 {
+  stroke-dasharray: 8 2 2 2;
+}
+.older {
+  fill: var(--mut);
+  stroke: var(--bg);
+  opacity: 0.4;
+}
+.selected-point {
+  fill: var(--acc);
+  stroke: var(--on-acc);
 }
 </style>

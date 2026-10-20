@@ -39,3 +39,5 @@ Five legacy charts retain their original JavaScript internals, white chart surfa
 Final code review checked typed boundary validation, duplicate handling, null propagation, SVG numeric inputs, Vue's escaped source labels (no raw HTML), request abort/observer cleanup, filter/year state, narrow-screen overflow and scoped legacy styling. There is no new secret/config input, executable data, or background external service request.
 
 Duration migration follow-up (38 unit / 29 browser; JS chart debt 4 → 3): [duration evidence](duration-migration.md). Earlier checkpoint counts above are historical.
+
+All active chart migrations are complete (JS chart debt 3 → 0), including the duration geometry review: [remaining chart evidence](remaining-charts-migration.md). Strict typecheck now includes E2E/tooling. CI runs Chromium, Firefox and WebKit; use `npm run test:e2e -- --project=chromium` when only managed Chromium is available. Earlier checkpoint counts above are historical.

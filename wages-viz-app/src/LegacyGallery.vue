@@ -85,7 +85,7 @@ onBeforeUnmount(() => {
         :class="['wages-swiper', { fullscreen: isFullscreen }]"
       >
         <SwiperSlide>
-          <div class="slide-card">
+          <div class="slide-card modern-chart-card">
             <Chart6IndustryWageDistribution :fullscreen="isFullscreen" />
           </div>
         </SwiperSlide>

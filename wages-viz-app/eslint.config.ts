@@ -4,9 +4,7 @@ import pluginVue from 'eslint-plugin-vue'
 import pluginVitest from '@vitest/eslint-plugin'
 import pluginPlaywright from 'eslint-plugin-playwright'
 
-// Existing untouched charts remain JavaScript. Changed scripts use strict TypeScript.
-import { configureVueProject } from '@vue/eslint-config-typescript'
-configureVueProject({ scriptLangs: ['ts', 'js'] })
+// All active Vue scripts use strict TypeScript; no legacy chart exceptions remain.
 
 export default defineConfigWithVueTs(
   {
