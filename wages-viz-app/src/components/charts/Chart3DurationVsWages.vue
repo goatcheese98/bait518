@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import { plotExtent } from '../../lib/plotScale'
 import { parseDuration, durationPoints, type DurationRow } from '../../lib/duration'
 const props = withDefaults(defineProps<{ fullscreen?: boolean }>(), { fullscreen: false })
 const rows = ref<DurationRow[]>([]),
@@ -29,12 +30,23 @@ const group = (name: string) =>
     : name === 'Entertainment and hospitality'
       ? groups[1]
       : groups[2]
-const lowX = computed(() => Math.floor(Math.min(...points.value.map((p) => p.duration)) - 2))
-const highX = computed(() => Math.ceil(Math.max(...points.value.map((p) => p.duration)) + 2))
-const lowY = computed(() =>
-  Math.max(Math.floor(Math.min(...points.value.map((p) => p.annual)) - 1), 0),
+const extentX = computed(() =>
+  plotExtent(
+    points.value.map((p) => p.duration),
+    2,
+  ),
 )
-const highY = computed(() => Math.ceil(Math.max(...points.value.map((p) => p.annual)) + 1))
+const extentY = computed(() =>
+  plotExtent(
+    points.value.map((p) => p.annual),
+    1,
+    true,
+  ),
+)
+const lowX = computed(() => extentX.value[0]),
+  highX = computed(() => extentX.value[1])
+const lowY = computed(() => extentY.value[0]),
+  highY = computed(() => extentY.value[1])
 const x = (v: number) => 72 + ((v - lowX.value) / (highX.value - lowX.value)) * 510
 const y = (v: number) => 310 - ((v - lowY.value) / (highY.value - lowY.value)) * 250
 let controller: AbortController | undefined
@@ -50,13 +62,29 @@ async function load() {
     if (!response.ok) throw new Error('Dataset request failed')
     const parsed = parseDuration(await response.text())
     // Validate every selectable period before committing externally supplied data to reactive rendering.
-    durationPoints(parsed)
-    for (const year of new Set(parsed.map((r) => r.year))) durationPoints(parsed, [year])
+    const validate = (years?: number[]) => {
+      const next = durationPoints(parsed, years)
+      plotExtent(
+        next.map((p) => p.duration),
+        2,
+      )
+      plotExtent(
+        next.map((p) => p.annual),
+        1,
+        true,
+      )
+    }
+    validate()
+    for (const year of new Set(parsed.map((r) => r.year))) validate([year])
     rows.value = parsed
   } catch (cause) {
     if (cause instanceof DOMException && cause.name === 'AbortError') return
     error.value =
-      'The duration dataset could not load. Check the connection or dataset format and retry.'
+      cause instanceof Error && cause.message.includes('range overflow')
+        ? 'Unsupported plot range: reduce the selected period or inspect the source values; this range exceeds finite plotting precision.'
+        : cause instanceof Error && cause.message.startsWith('Unsupported plot range')
+          ? cause.message
+          : 'The duration dataset could not load. Check the connection or dataset format and retry.'
   } finally {
     loading.value = false
   }
@@ -164,7 +192,22 @@ onBeforeUnmount(() => controller?.abort())
                 class="grid-line"
               />
             </g>
-            <line x1="48" x2="602" :y1="y(4)" :y2="y(4)" class="threshold" />
+            <line
+              v-if="lowY <= 4 && highY >= 4"
+              x1="48"
+              x2="602"
+              :y1="y(4)"
+              :y2="y(4)"
+              class="threshold"
+            />
+            <line
+              v-if="lowY <= 0 && highY >= 0"
+              class="duration-zero"
+              x1="48"
+              x2="602"
+              :y1="y(0)"
+              :y2="y(0)"
+            />
             <circle
               v-for="point in points.filter((p) => visible.includes(group(p.name)))"
               :key="point.name"
@@ -288,6 +331,10 @@ onBeforeUnmount(() => controller?.abort())
 .duration-band {
   fill: var(--blue);
   opacity: 0.08;
+}
+.duration-zero {
+  stroke: var(--fg);
+  stroke-width: 2;
 }
 .threshold {
   stroke: var(--blue);
