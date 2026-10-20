@@ -97,7 +97,7 @@ onBeforeUnmount(() => {
         </SwiperSlide>
 
         <SwiperSlide>
-          <div class="slide-card">
+          <div class="slide-card modern-chart-card">
             <Chart3DurationVsWages :fullscreen="isFullscreen" />
           </div>
         </SwiperSlide>

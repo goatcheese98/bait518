@@ -26,7 +26,7 @@ async function captureComparison(page: Page, width: number, theme: string, state
       el.scrollTop = 0
     })
     await page
-      .locator('.modern-chart-card')
+      .locator('.swiper-slide-active .modern-chart-card')
       .screenshot({ path: `docs/design/screens/adjustments-${width}-${theme}-${state}.png` })
   }
 }

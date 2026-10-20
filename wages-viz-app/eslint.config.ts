@@ -24,11 +24,10 @@ export default defineConfigWithVueTs(
 
   pluginVue.configs['flat/essential'],
   vueTsConfigs.recommended,
-  // Three pre-existing unused declarations in two unrelated legacy charts.
+  // Two pre-existing unused declarations in the untouched industry leaders chart.
   {
     files: [
       'src/components/charts/Chart2IndustryLeaders.vue',
-      'src/components/charts/Chart3DurationVsWages.vue',
     ],
     rules: { '@typescript-eslint/no-unused-vars': 'off' },
   },
