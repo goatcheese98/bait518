@@ -338,6 +338,9 @@ tr.selected {
   display: grid;
   gap: 16px;
 }
+.more-charts {
+  grid-template-columns: minmax(0, 1fr);
+}
 .more-charts > button {
   justify-self: start;
 }

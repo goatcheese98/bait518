@@ -17,3 +17,7 @@ Only existing CSV values ship. The handoff's fictional years/values/captions are
 The five remaining charts retain their existing slide navigation and fullscreen behavior in an on-demand gallery. Their original white chart surfaces and JavaScript internals are outside this slice; this is not a full repository TypeScript or dark-chart migration. The first comparison has no timed animation, so reduced motion loses no data. No new wage values, external provider requests, source/model changes or deployments were made.
 
 Runtime screenshots are under `../../wages-viz-app/docs/design/screens/`. These are cloud Chromium screenshots, not the Paper PNG exports. Paper PNGs were not attached and are not committed; the original exports can be added later without replacing the candidate.
+
+## First-year / annual follow-up
+
+The first-year/annual comparison now extends these same LUM tokens and type/spacing conventions to a native Vue grouped-bar chart and a stacked mobile source table. It remains in the five-view gallery; four other chart implementations remain JavaScript. This is a tested implementation candidate, without a new Paper artboard or approval. [Runtime/parity evidence](../first-year-migration.md).

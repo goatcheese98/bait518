@@ -202,7 +202,7 @@ test('other five charts and fullscreen remain available', async ({ page }) => {
   for (let index = 1; index < 5; index++) {
     await gallery.locator('.swiper-button-next').click()
     await expect(gallery.locator('.swiper-slide').nth(index)).toHaveClass(/swiper-slide-active/)
-    await expect(gallery.locator('.swiper-slide-active canvas')).toBeVisible()
+    await expect(gallery.locator('.swiper-slide-active canvas, .swiper-slide-active .adjustment-comparison svg')).toBeVisible()
   }
   await page.getByRole('button', { name: 'Hide other charts' }).click()
   await expect(gallery).toHaveCount(0)

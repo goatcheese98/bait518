@@ -103,7 +103,7 @@ onBeforeUnmount(() => {
         </SwiperSlide>
 
         <SwiperSlide>
-          <div class="slide-card">
+          <div class="slide-card modern-chart-card">
             <Chart4FirstYearVsAnnual :fullscreen="isFullscreen" />
           </div>
         </SwiperSlide>
@@ -362,5 +362,26 @@ footer {
   .slideshow-container {
     padding: 1rem;
   }
+}
+
+.slideshow-container:has(.swiper-slide-active .modern-chart-card) { padding:0; }
+.wages-swiper:has(.swiper-slide-active .modern-chart-card) { height:920px; padding:0 0 56px; }
+#legacy-gallery:not(.fullscreen):has(.swiper-slide-active .modern-chart-card) .fullscreen-toggle {
+  position:static; align-self:flex-end; margin:12px; box-shadow:none; border-radius:var(--r-sm); background:var(--acc); color:var(--on-acc);
+}
+.wages-swiper:has(.swiper-slide-active .modern-chart-card) :deep(.swiper-button-prev),
+.wages-swiper:has(.swiper-slide-active .modern-chart-card) :deep(.swiper-button-next) {
+  top:auto; bottom:0; margin-top:0; width:44px; height:44px; border-radius:var(--r-sm); background:var(--panel); color:var(--fg); border-color:var(--line);
+}
+.wages-swiper:has(.swiper-slide-active .modern-chart-card) :deep(.swiper-pagination) {
+  left:56px; right:56px; width:auto; bottom:12px;
+}
+#legacy-gallery.fullscreen .slide-card.modern-chart-card { padding-top:64px; }
+.modern-chart-card { background:var(--bg); border-color:var(--line); color:var(--fg); padding:16px; min-width:0; }
+.swiper-slide:has(.modern-chart-card) { min-width:0; }
+@media (max-width:768px) {
+  .wages-swiper:has(.swiper-slide-active .modern-chart-card) { height:1100px; }
+  .swiper-slide:has(.modern-chart-card) { padding:0; }
+  .modern-chart-card { padding:8px; }
 }
 </style>

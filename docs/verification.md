@@ -1,5 +1,7 @@
 # Cloud verification and review
 
+Current follow-up: [first-year chart migration evidence and before/after debt inventory](first-year-migration.md). The earlier checkpoint evidence below remains pinned to its original heads.
+
 Stack 1: [foundation draft #1](https://github.com/goatcheese98/bait518/pull/1), branch `codex/lum-wages-foundation`, tested HEAD `9cb49706afcd1936813b4ca8d6c7b8a50cbdd19b`, base main `b8e8f6389ab2db478017be5d1a3a0c89f65fc97b`. Independently tested snapshot tree `29aa472b19ab9f7490b0ce4a280ead1e32d5eaf9` exactly equals the published tree. Locked install, focused read-only lint, typecheck, 13 Vitest tests and build all exit 0. No UI behavior changes in that draft.
 
 Original implementation evidence below is pinned to the original heads. A follow-up corrects Cloudflare root installation and Worker naming; see [the diagnosis](cloudflare-build.md) for current build instructions, exact settings and reproduction. It does not claim deployment success.
