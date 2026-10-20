@@ -109,7 +109,7 @@ onBeforeUnmount(() => {
         </SwiperSlide>
 
         <SwiperSlide>
-          <div class="slide-card">
+          <div class="slide-card modern-chart-card">
             <Chart5EmployeesVsRaises :fullscreen="isFullscreen" />
           </div>
         </SwiperSlide>
